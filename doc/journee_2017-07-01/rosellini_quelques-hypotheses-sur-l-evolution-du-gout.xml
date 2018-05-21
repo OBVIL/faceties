@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://oeuvres.github.io/Teinte/teinte.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-stylesheet type="text/css" href="../../../Teinte/opentei.css"?>
+<?xml-stylesheet type="text/xsl" href="../../../Teinte/tei2html.xsl"?>
+<!--Odette: 2018-04-24T15:37:51+02:00-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="fre">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Quelques hypothèses sur l’évolution du goût du public pour les contes facétieux au
+            XVII<hi rend="sup">e</hi> siècle</title>
+        <author key="Rosellini, Michèle">Michèle Rosellini</author>
+      </titleStmt>
+      <editionStmt>
+        <edition>OBVIL</edition>
+        <respStmt>
+          <name>Louise Amazan</name>
+          <resp>Relecture, Stylage</resp>
+        </respStmt>
+        <respStmt>
+          <name>Éric Thiébaud</name>
+          <resp>Édition TEI</resp>
+        </respStmt>
+      </editionStmt>
+      <publicationStmt>
+        <publisher>Sorbonne Université, LABEX OBVIL</publisher>      <idno>http://obvil.paris-sorbonne.fr/corpus/faceties/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout</idno>
+        <availability status="restricted">
+          <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
+            <p>Copyright © 2018 Sorbonne Université, agissant pour le Laboratoire d’Excellence
+              « Observatoire de la vie littéraire » (ci-après dénommé OBVIL).</p>
+            <p>Cette ressource électronique protégée par le code de la propriété intellectuelle sur
+              les bases de données (L341-1) est mise à disposition de la communauté scientifique
+              internationale par l’OBVIL, selon les termes de la licence Creative Commons : «
+              Attribution - Pas d’Utilisation Commerciale - Pas de Modification 3.0 France (CC
+              BY-NC-ND 3.0 FR) ».</p>
+            <p>Attribution : afin de référencer la source, toute utilisation ou publication dérivée
+              de cette ressource électroniques comportera le nom de l’OBVIL et surtout l’adresse
+              Internet de la ressource.</p>
+            <p>Pas d’Utilisation Commerciale : dans l’intérêt de la communauté scientifique, toute
+              utilisation commerciale est interdite.</p>
+            <p>Pas de Modification : l’OBVIL s’engage à améliorer et à corriger cette ressource
+              électronique, notamment en intégrant toutes les contributions extérieures, la
+              diffusion de versions modifiées de cette ressource n’est pas souhaitable.</p>
+          </licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl><hi rend="sc">Citer cet article :</hi> Michèle Rosellini, « Quelques hypothèses sur l’évolution du goût du public pour les contes facétieux au <num>xvii<hi rend="sup">e</hi></num> siècle », [in] <title>Les Publics de la facétie (<hi rend="sc">xv</hi><hi rend="sup">e</hi>–<hi rend="sc">xvii</hi><hi rend="sup">e</hi> siècles)</title>, Actes de la journée d’étude organisée par le projet <hi rend="i">Facéties</hi> (Labex OBVIL) le 1<hi rend="sup">er</hi> juillet 2017. Mis en ligne le 26-04-2018. URL : <ref target="http://obvil.paris-sorbonne.fr/corpus/faceties/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout">http://obvil.paris-sorbonne.fr/corpus/faceties/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout</ref></bibl>
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <creation>
+        <date when="2017"/>
+      </creation>
+      <langUsage>
+        <language ident="fre"/>
+      </langUsage>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head>Introduction</head>
+        <p>Le succès en France des facéties de la Renaissance ne se dément pas au <num>xvii</num><hi
+            rend="sup">e</hi> siècle, comme en témoignent les nombreuses réimpressions de la
+          traduction française du <hi rend="i">Decameron</hi><note place="bottom">Outre les trois
+            rééditions du <num>xvi<hi rend="sup">e</hi></num> siècle à Paris, Lyon et Amsterdam
+            (1548, 1558, 1597) du <hi rend="i">Decameron de Messire Jehan Boccace florentin,
+              nouvellement traduict d’Italien en Françoys par Maistre Anthoine Le Maçon conseiller
+              du Roy &amp; trésorier de l’extraordinaire de ses guerres</hi>, initialement publié
+            chez Estienne Roffet en 1545, le <num>xvii<hi rend="sup">e</hi></num> siècle compte au
+            moins 7 éditions d’une version modernisée de cette traduction sous le titre : <hi
+              rend="i">Le Decameron de Jean Boccace traduit de l’italien en françois par Maître
+              Anthoine Le Maçon</hi>. La plus récente paraît en 1670 chez Claude Barbin, le libraire
+            à la mode du Paris galant sous le règne de Louis XIV.</note>, ainsi que l’édition de
+          compilations de contes facétieux de provenances diverses<note place="bottom">Voir, ici
+            même, l’article de Tiphaine <hi rend="sc">Rolland</hi> sur <ref
+              target="../journee_2017-07-01/rolland_facetie-dans-les-ruelles-galantes">« l’évolution du lectorat des
+              compilations plaisantes de 1640 à 1660 »</ref>.</note>.</p>
+        <p>Mais, hormis les péritextes de ces éditions et rééditions, nous manquons de témoignages
+          qui nous permettraient de saisir la nature du goût du public pour la facétie, les
+          fonctions de ce type de lecture, la répartition sociale des lecteurs. Néanmoins les formes
+          de réception oblique que sont l’imitation, l’adaptation, la réécriture de contes facétieux
+          par les auteurs du <num>xvii<hi rend="sup">e</hi></num> siècle peuvent fournir des
+          éléments d’information sur les publics visés par la facétie, le type de satisfaction
+          qu’ils en attendent, les usages moraux, sociaux ou simplement ludiques qu’ils peuvent en
+          faire. Ces informations sont fournies par les péritextes (Avertissements aux lecteurs,
+          Épîtres dédicatoires, et leurs variantes satiriques et parodiques), mais aussi par les
+          textes eux-mêmes — notamment les discours de personnages conçus comme des figures de
+          lecteurs, voire comme des témoins intra-diégétiques de la réception de l’œuvre. Ces
+          sources d’information internes sont utilement enrichies par les commentaires externes que
+          fournissent d’une part les correspondances et, de l’autre, les textes polémiques impliqués
+          dans les querelles et controverses littéraires.</p>
+        <p>Un parcours, nécessairement sommaire, de ces éléments discursifs met assez clairement en
+          évidence une évolution dans le goût du public en matière de facétie. Dans la première
+          moitié du siècle, le conte facétieux est recherché pour son caractère divertissant, pour
+          le rire franc qu’il provoque, et qui se traduit par la métaphore thérapeutique, héritée du
+          siècle précédent, du « remède à la mélancolie ». Les valeurs de divertissement et
+          d’eutrapélie se maintiennent dans les discours de justification tout au long du siècle,
+          mais ils semblent perdre de leur pertinence dans sa seconde moitié. Ce qu’on observe de
+          vraiment nouveau à partir des années 1660, c’est l’effort des auteurs pour motiver et
+          policer les insertions facétieuses dans leurs ouvrages, en prenant explicitement en compte
+          l’élargissement du public de la littérature comique dans son ensemble (théâtre, roman,
+          nouvelle), notamment en direction des femmes : le goût pour la facétie doit pouvoir
+          s’accorder avec l’esthétique galante alors à l’honneur dans la société cultivée. Aussi se
+          vit-il au second degré, à l’abri d’une connivence de bon aloi.</p>
+      </div>
+        <div>
+          <head>Le remploi des contes facétieux dans les histoires comiques : composition
+            fragmentaire et visée divertissante</head>
+          <p>Les auteurs d’histoires comiques, un genre renouvelé au début du siècle, font grand
+            usage des facéties publiées au siècle précédent sous forme de fragments insérés,
+            aisément repérables même quand ils impliquent le protagoniste<note place="bottom">Alors
+              que les <hi rend="i">Histoires comiques ou entretiens facétieux.De l’invention d’un
+                des beaux esprits de ce temps</hi>, publiées en 1612 par Toussaint Du Bray — et
+              attribuées par Charles Sorel au sieur [François] du Souhait — adoptent la forme
+              classique des contes à multiples narrateurs encadrés par un récit-cadre, l’<hi
+                rend="i">Histoire comique de Francion</hi> que Sorel fait paraître anonymement en
+              1623 chez un libraire concurrent, Pierre Billaine, rompent avec cette tradition
+              facétieuse en proposant un récit continu à la troisième personne centré sur un
+              protagoniste, Francion, qui devient, pour le tiers de l’ouvrage, le narrateur
+              autodiégétique de son histoire. La matière facétieuse subsiste, mais sous la forme
+              modulaire d’anecdotes insérées sans solution de continuité dans le fil de la
+              narration, et, quelquefois, racontées à titre de divertissement par tel ou tel
+              narrateur. La plupart réemploient des motifs facétieux anciens.</note>. Leur fonction
+            divertissante s’affiche à l’intérieur du récit comme dans le discours encadrant. Ainsi,
+            quand Charles Sorel fait paraître l’<hi rend="i">Histoire comique de Francion</hi>, en
+            1623, il dote son auteur anonyme d’un tempérament mélancolique, ce qui justifie, de
+            manière topique, le recours à des histoires facétieuses :</p>
+          <quote>
+            <p rend="indent">Je n’ay point trouvé de remede plus aysé ny plus salutaire à l’ennuy
+              qui m’affligeoit il y a quelque temps, que de m’amuser a descrire une histoire qui
+              tinst davantage du folastre que du sérieux, de maniere qu’une <hi rend="i"
+                >melancolique cause</hi> a produit un <hi rend="i">facetieux effect</hi>. Jamais je
+              n’eusse fait veoir cette pièce, sans le desir que j’ai de montrer aux hommes les vices
+              auxquels ils se laissent insensiblement emporter<note place="bottom"><hi rend="i"
+                  >Histoire comique de Francion en laquelle sont découvertes les plus subtiles
+                  finesses et trompeuses inventions tant des hommes que des femmes de toutes sortes
+                  de conditions et d’âge. Non moins profitables pour s’en garder, que plaisantes à
+                  la lecture</hi>, Paris, P. Billaine, 1623, « Avertissement d’importance au
+                lecteur » ; <hi rend="i">Histoire comique de Francion</hi>, réimprimée sur
+                l’exemplaire unique de l’édition originale [1623] et sur les éditions de 1626 et
+                1633, éd. Emile Roy, Hachette, 1924, t. I, p. <num>iii</num>.</note>.</p>
+          </quote>
+          <p>Il leur attribue en outre — comme on le remarque ici — la vertu de corriger les vices,
+            ce qui revient à inscrire le récit dans le genre satirique<note place="bottom">Dans sa
+                <hi rend="i">Bibliothèque française</hi> de 1664 (augmentée en 1667), Sorel rangera
+                l’<hi rend="i">Histoire comique de Francion</hi> parmi les « romans comiques et
+              satiriques », une section du chapitre <num>ix</num> consacré aux fictions narratives
+              en prose.</note>. Il programme par là un mode de lecture double, divertissant et
+            édifiant, prolongeant ainsi la visée exemplaire des contes de la Renaissance. Ce sérieux
+            paradoxal de la facétie est assumé au niveau intradiégétique par les compagnons du
+            héros, qui, le retrouvant à Rome après une longue séparation, jouissent du récit de ses
+            aventures et lui reconnaissent une valeur exemplaire, bien que la plupart de ses
+            prouesses aient consisté à berner des villageois naïfs :</p>
+          <quote>
+            <p rend="indent">Lors que Francion conta ses advantures de Berger et de Charlatan, il
+              ravit chacun d’admiration. Mon Dieu, ce dit Dorini, que je suis fasché que nous ne
+              sommes plus tost venu en Italie. Nous eussions possible eu nouvelles de vostre
+              desastre, et nous ne vous eussions pas laissez en un si mauvais estat. Vous vous
+              mocquez, dit Raymond, je serois bien marry que l’on eust tiré Francion de l’estat où
+              il estoit : il n’auroit point accompli de si belles choses. […] Vous avez raison,
+              reprit Francion, et je ne voudrois pas avoir vecu autrement que j’ay fait. Neanmoins
+              je vous diray, a le bien prendre ce ne sont que des friponneries. Ouy, ce dit Raymond,
+              mais vos friponneries valent mieux ordinairement que les plus serieuses occupations de
+              ceux qui gouvernent les peuples<note place="bottom"><hi rend="i">Histoire comique de
+                  Francion</hi>, chap. <num>x</num> ; éd. cit., t. III, p. 164.</note>.</p>
+          </quote>
+          <p>Cette dernière affirmation est à entendre comme une boutade provocatrice, certes, mais
+            elle n’en révèle pas moins sérieusement la visée critique de l’histoire comique, y
+            compris dans son matériau facétieux, à l’égard des normes morales et sociales de la
+            culture officielle.</p>
+          <p>Le genre « comique » protégeait en principe l’auteur (et surtout l’imprimeur-libraire,
+            dans le cas d’une publication anonyme) de l’imputation d’offense à l’honnêteté publique.
+            Mais après la condamnation des auteurs du <hi rend="i">Parnasse des poètes
+              satyriques</hi> — contemporaine de la parution de l’<hi rend="i">Histoire comique de
+              Francion</hi> —, et le long procès de Théophile de Viau qui s’en est suivi, il
+            devenait nécessaire de purger le texte de ses facéties les plus obscènes. C’est chose
+            faite dans la deuxième version de l’<hi rend="i">Histoire comique de Francion</hi>
+            publiée en 1626 ; toutefois l’expurgation ne modère pas l’expansion des facéties, qui se
+            multiplient dans les quatre chapitres ajoutés. Sorel en rendra compte en 1633 dans le
+            texte liminaire de la troisième version, enfin attribuée, mais à un auteur prête-nom,
+            Nicolas Moulinet Du Parc. La tendance est encore à la surenchère de contes facétieux,
+            qui sont jugés dignes d’être conservés, même s’ils sont apocryphes, dans la mesure où
+            ils ont assuré le succès du livre dans ses précédentes versions :</p>
+          <quote>
+            <p rend="indent">Il [Nicolas Moulinet Du Parc] écrivit donc les aventures de ce cavalier
+              auxquelles il donna le titre d’<hi rend="i">Histoire comique</hi>, et ce fut à l’envi
+              de Du Souhait, champenois, et comme pour le braver, à cause qu’auparavant Du Souhait
+              avait donné le même titre à <hi rend="i">quelques contes qu’il avait ramassés</hi>. Il
+              y avait de la contention entre ces deux esprits qui étaient d’un même temps, mais
+              notre auteur a bien précédé celui-là, comme l’on peut voir par <hi rend="i">le bon
+                accueil que l’on a fait à son ouvrage</hi>, au lieu que celui de Du Souhait a
+              demeuré dans l’obscurité et n’a été imprimé qu’une fois<note place="bottom"><hi
+                  rend="i">La vraye histoire comique de Francion par Nicolas de Moulinet Sr
+                  Duparc</hi> [Ch. Sorel], Paris, P. Billaine, 1633, « Avis aux lecteurs » ; c’est
+                moi qui souligne.</note>.</p>
+          </quote>
+          <p>Le pseudo-éditeur va jusqu’à prétendre que ce sont les lecteurs eux-mêmes qui l’ont
+            enrichi de nouveaux contes<note place="bottom"><quote>« Cette <hi rend="i">Histoire
+                  comique de Francion</hi> fut imprimée pour la première fois en l’an mil six cent
+                vingt-deux, mais il n’y avait que sept livres. Quelques autres livres suivants étant
+                venus entre les mains des libraires après la mort de Du Parc, l’on les fit
+                promptement imprimer, d’autant que ce que l’on avait déjà vu <hi rend="i">avait été
+                  reçu parfaitement bien</hi> ; mais l’on dit que, pource qu’il y avait eu des
+                brèches en cet original, il y eut <hi rend="i">quelques gens qui aimèrent tellement
+                  cet ouvrage</hi> qu’ils prirent la peine de le réparer et d’y <hi rend="i">insérer
+                  quelques contes de leur invention</hi> qui s’y trouvèrent fort à propos. »</quote>
+                (<hi rend="i">Ibid.</hi> ; c’est moi qui souligne.)</note>. La fiction éditoriale
+            construit ainsi l’image monstrueuse d’une œuvre collective assignée à un seul nom
+            d’auteur :</p>
+          <quote>
+            <p rend="indent">Au reste, en ce qui est de ces choses modernes qui ont été mises ici
+              parce que l’on les a trouvées <hi rend="i">fort bien enchâssées dedans l’histoire</hi>
+              et qu’elles étaient trop connues pour être désormais oubliées, il les y a fallu
+              laisser ; mais néanmoins tout cela est arrangé avec tel ordre que nous pouvons dire
+              que nous avons maintenant la <hi rend="i">Vraie Histoire de Francion</hi> ayant été
+              corrigée sur les manuscrits de l’auteur. Au reste, pour ce qui est de ces choses
+              étrangères, nous ne disons point si elles sont meilleures ou pires que le principal du
+              livre, car il y a différente espèce de beautés. Il faut considérer aussi que cela est
+              en si petite quantité, au prix de ce qui a été fait par Du Parc, que cela n’est pas si
+              considérable et que, quand cela serait dehors, l’<hi rend="i">Histoire</hi> n’en
+              vaudrait guère moins, tellement que l’on ne l’y laisse que pour <hi rend="i">rendre
+                plus satisfaits les plus curieux qui ne veulent rien perdre de ce qu’ils ont vu une
+                fois dans les livres</hi> ; joint que c’est une maxime qu’en ce qui est de <hi
+                rend="i">ces livres de plaisir</hi>, il est permis d’y changer plus librement qu’aux
+                autres<note place="bottom"><hi rend="i">Ibid.</hi> ; c’est moi qui
+              souligne.</note>.</p>
+          </quote>
+          <p>Le choix de l’accumulation sans discernement de prétendues strates d’écriture répond
+            aux aspirations supposées d’un lectorat goulu, qui ne veut perdre aucune miette des
+            contes facétieux, quelle que soit leur authenticité. On est là dans un régime de pure
+            consommation qui paraît s’accorder à la forte présence du corps dans la facétie. Mais
+            nous pouvons également voir dans cette construction éditoriale fictive la transposition
+            péritextuelle d’une histoire de la réception du roman, étendue sur dix années et marquée
+            par un succès exceptionnel, non seulement auprès du public français mais aussi européen,
+            comme l’indiquent ses vingt-trois rééditions dans les grands centres d’imprimerie
+            (Paris, Lyon, Rouen, Leyde, Amsterdam) entre 1635 et 1739 et ses sept traductions, en
+            anglais, néerlandais et allemand. Quelle que soit l’originalité de la forme narrative
+            inventée par Sorel, un tel succès témoigne de la vitalité du goût du lectorat élargi
+            pour la facétie.</p>
+          <p>Vingt ans après la première édition du <hi rend="i">Francion</hi>, Tristan L’Hermite
+            campe encore, au seuil de son histoire comique autodiégétique, <hi rend="i">Le Page
+              disgracié</hi>, un auteur mélancolique s’adressant à un lecteur friand de
+            divertissement, ami intime dans la fiction auctoriale et figure du lecteur impliqué dans
+            le dispositif métadiscursif :</p>
+          <quote>
+            <p rend="indent">Cher Thirinte, je connois bien que ma resistance est inutile ; et que
+              vous voulez absolument sçavoir tout le cours de ma vie, et quelles ont esté jusqu’ici
+              les postures de ma fortune. Je n’ay pas resolu de faire languir davantage votre
+              curieux desir ; mais j’ay bien de la peine à prendre la resolution d’y satisfaire.
+              Comment aurai-je la hardiesse de mettre au jour des avantures si peu considerables ?
+              Comment est-il possible que vous rencontriez quelque douceur en des matieres ou j’ai
+              trouvé tant d’amertume, et que ce qui me fut si difficile a supporter vous soit
+              agreable a lire<note place="bottom">Tristan <hi rend="sc">L’Hermite</hi>, <hi rend="i"
+                  >Le Page disgracié. Ou l’on void de vifs caracteres d’hommes de tous temperamens,
+                  et de toutes professions</hi>, Paris, Toussaint Quinet, 1643 ; première partie,
+                chapitre premier. Prélude du page disgracié.</note> ?</p>
+          </quote>
+          <p rend="indent">Or, pour garantir au destinataire de son récit le plaisir qu’il en
+            escompte, en dépit des vicissitudes du héros, l’auteur choisit de découper son récit en
+            chapitres brefs, suivant le modèle, évident ici, des recueils de contes<note
+              place="bottom"><quote>« Toutesfois, [ma vie] a esté jusqu’à cette heure si traversée,
+                et mes voyages et mes amours sont si remplis d’accidents, que leur diversité vous
+                pourra plaire. J’ay divisé toute ceste Histoire en petits chapitres, de peur de vous
+                estre ennuyeux par un trop long discours, et pour vous faciliter le moyen de me
+                laisser en tous les lieux où je pourray vous estre moins agreable. »</quote> (<hi
+                rend="i">Ibid.</hi>)</note>. Les facéties abondent dans les épisodes où le page a
+            mission de divertir son maître : au début du récit quand il est au service d’un « jeune
+            prince » — alias Henry de Bour*bon, duc de Verneuil, le fils naturel d’Henri IV — et
+            vers la fin, quand il est employé par un « grand seigneur » comme secrétaire pour ses
+            affaires et lecteur pour ses heures de loisir. Ainsi, par la médiation des livres, le
+            page se fait conteur, acteur et auteur de facéties :</p>
+          <quote>
+            <p rend="indent">Bien souvent, je lui contais quelque aventure nouvelle que j’avais
+              apprise ; d’autres fois, c’était une vieille histoire renouvelée que j’avais prise ou
+              dans le <hi rend="i">Décaméron</hi> de Boccace, ou dans Straparole, Pogge Florentin,
+              le <hi rend="i">Fuggilozio</hi>, les <hi rend="i">Sérées</hi> de Bouchet, et autres
+              auteurs qui se sont voulu charitablement appliquer à guérir la mélancolie. J’employais
+              quelquefois deux ou trois pages et autant de jeunes officiers de sa maison, pour
+              représenter les soirs devant lui quelque espèce de comédie dont j’avais ajusté les
+              paroles selon la force de mon esprit<note place="bottom"><hi rend="i">Le Page
+                  disgracié</hi>, deuxième partie, chap. <num>xxix</num> ; éd. Jacques Prévot,
+                Paris, Gallimard, coll. « Folio », 1994, p. 207.</note>.</p>
+          </quote>
+          <p>Les références sont précises, et dessinent la bibliothèque virtuelle des contes, telle
+            qu’elle a été assimilée par le héros, ressource inépuisable pour son imagination et
+            source de ses propres inventions facétieuses. La population du château est bon public
+            dans son ensemble et se laisse aller à rire ; mais la maîtresse de maison résiste au
+            rire collectif et sa désapprobation menace le page d’une nouvelle disgrâce : <quote>« je
+              m’insinuais tous les jours de plus en plus aux bonnes grâces de mon maître — remarque
+              le Je narrant —, mais cela ne faisait qu’irriter la mauvaise humeur de ma maîtresse.
+              J’étais un Mome, qui divertissais agréablement mon Jupiter, mais qui ne pouvais agréer
+              à ma Junon<note place="bottom"><hi rend="i">Ibid.</hi>, chap. <num>xxx</num> ;
+                éd. cit., p. 208-209.</note> »</quote>. Une farce improvisée avec les autres
+            domestiques le met particulièrement en difficulté, car elle choque la spectatrice
+            malveillante, qui souligne la grossièreté toute facétieuse d’un bon mot de la « farce de
+            l’accouchée » en affectant la pudeur outragée :</p>
+          <quote>
+            <p rend="indent">Notre maître rit extrêmement de cette ridicule comédie, et tout le
+              monde en approuva l’invention, fors la maîtresse du château qui ne s’y trouva point
+              disposée à cause de la haine secrète qu’elle avait pour moi ; de plus, elle témoigna
+              se scandaliser fort de ce que le jeune cuisinier, qui faisait le mari de l’accouchée,
+              avait dit, sans penser qu’elle fût présente à la naissance de son enfant : « Voilà un
+              fort beau garçon, il a déjà du poil au derrière. » Cette parole n’était pas
+              respectueuse ; mais <hi rend="i">une dame de condition, et de son âge</hi>, eût mieux
+              fait de faire semblant qu’elle ne l’avait pas entendue que d’en gronder trois ou
+              quatre heures et de feindre d’être malade, comme elle fit avec <hi rend="i">des
+                grimaces ridicules</hi><note place="bottom"><hi rend="i">Ibid.</hi>, p. 208 ; c’est
+                moi qui souligne.</note>.</p>
+          </quote>
+          <p>Par-delà la situation narrative concrète, les commentaires du page suggèrent qu’il est
+            absurde de restreindre la licence d’un genre littéraire par les convenances sociales.
+            Tristan projette ainsi une image inédite du lectorat des facéties : l’indifférence aux
+            préjugés de la bienséance, qui signale une indépendance d’esprit toute aristocratique.
+            Mais, à l’époque, la rudesse de l’aristocratie guerrière<note place="bottom">Les
+              aventures du page se situent dans les années 1620, marquées par la guerre à outrance
+              que le roi Louis XIII mène en Languedoc contre les huguenots et dans lesquelles
+              lui-même se retrouve enrôlé ; ainsi tous ses protecteurs sont des militaires ou des
+              hommes d’État.</note> s’accommode de la grossièreté de la facétie. Cette tolérance va
+            nettement s’infléchir vers le milieu du siècle, quand la prise de pouvoir personnel du
+            jeune Louis XIV succède à la fin des affrontements de la Fronde.</p>
+          <p>De ce processus, la réédition en 1667 par Jean-Baptiste L’Hermite du roman de son frère
+            fournit un témoignage significatif. L’éditeur s’arroge la prérogative auctoriale de son
+            défunt frère en faisant imprimer en tête de l’édition sa propre épître dédicatoire,
+            qu’il adresse à celui dont Tristan a fait, sous le couvert de l’anonymat, le héros de la
+            première partie : le duc de Verneuil. Jean-Baptiste attribue <hi rend="i">a priori</hi>
+            au dédicataire princier la liberté d’esprit et le goût du divertissement des lecteurs,
+            auditeurs et spectateurs aristocrates des facéties intradiégétiques du récit de
+            Tristan :</p>
+          <quote>
+            <p rend="indent">Monseigneur,</p>
+            <p/>
+            <p rend="indent">Ce Page disgracié oublie les chagrins de sa disgrace, si
+              vous lui faites maintenant un si favorable acceüil, que celuy qu’il a receu tant de
+              fois de vostre Altesse. Sa jeunesse avoit fait concevoir de si grandes esperances, de
+              tout ce qu’il y avoit d’honnestes gens dans la Cour, qu’on ne peût douter que les
+              precoces qu’il en avoit données, ne fussent ensuite des fruits dignes d’estre servis à
+              la Table du Fils du Grand Henry. Je veux dire, Monseigneur, que ce Page, outre
+              l’excellente éducation qu’il a receuë chez vous, y a apporté <hi rend="i">une jeunesse
+                si enjoüée</hi>, que les traits en sont tout esprit et dignes d’estre apportez comme
+              des mets tres-exquis et très delicieux à vostre Table, où les sages propos, et <hi
+                rend="i">les pointes d’esprit</hi> sont plus à écouter que les Symposiaques des plus
+              sçavans Philosophes. Ce Page, Monseigneur, cherche à vous entretenir aux heures qui
+              succedent à vos occupations serieuses, afin que son enjouëment et la souplesse de ses
+              ingenieuses intrigues puissent <hi rend="i">délasser vostre esprit</hi>, et contribuer
+              à vostre <hi rend="i">divertissement</hi> par quelque chose qui surprenne
+                l’imagination<note place="bottom"><hi rend="i">Le Page disgracié. Ou l’on void de
+                  vifs caracteres d’hommes de tous temperamens, et de toutes professions.</hi> Par
+                Mr Tristan l’Hermite, Gentil-homme ordinaire de la suite de feu Monseigneur le Duc
+                d’Orleans, Paris, André Boutonné, 1667 ; « A son altesse Monseigneur Henry de
+                Bourbon, duc de Verneuil […] » (n. p.).</note>.</p>
+          </quote>
+          <p>La confusion de la vie et du roman, favorisée par la clef imprimée en fin de volume,
+            produit ici un court-circuitage temporel qui ressuscite le page dans sa relation passée
+            avec le dédicataire. Ce dispositif sert les ambitions de l’éditeur et frère de l’auteur,
+            comme le manifeste le soin qu’il a de conformer son don littéraire aux circonstances du
+            mariage du duc :</p>
+          <quote>
+            <p rend="indent">Il y paroist, Monseigneur, je ne sçay quoy d’ingenu et de spirituel
+              tout ensemble, qui promettoit les belles productions de son esprit, qui ont éclaté
+              dans les Ruelles les plus épurées et les Cercles des esprits les plus delicats. Mais,
+              Monseigneur, comme la lumiere donne l’éclat à la beauté des objets ; que la joye
+              escoute plus volontiers la symphonie que la tristesse d’ailleurs rendroit importune et
+              desagreable, aussi dans un temps où le Myrthe et les Roses sont jonchées dans vostre
+              Palais, il se figure que parmy les resjoüissances de l’Hymen, <hi rend="i">les
+                galanteries de sa jeunesse et les evenemens facetieux</hi> dont elle a esté
+              agreablement surprise, seront de saison, et un amusement qui pourra contribuer à la
+              feste, où</p>
+            <quote>
+              <l>Le jeu, le ris et la dance</l>
+              <l>Sont partout en abondance,</l>
+              <l>Les delices ont leur tour,</l>
+              <l>La tristesse se retire,</l>
+              <l>Et personne ne souspire,</l>
+              <l>S’il ne souspire d’amour<note place="bottom"><hi rend="i">Ibid.</hi></note>.</l>
+            </quote>
+          </quote>
+          <p>Ici s’affirme le double sens des vocables « galant », « galanterie ». Les « galanteries
+            de [la] jeunesse » de l’auteur-narrateur, c’est-à-dire ses polissonneries facétieuses,
+            sont jugées aptes à figurer parmi les réjouissances du mariage, que l’éditeur entend
+            pour sa part célébrer par un exercice de galanterie poétique : la petite épigramme en
+            octosyllabe qu’il insère dans son épître. Ce dernier trait mérite notre attention : nous
+            sommes en 1667, et, à cette époque, la facétie n’est pas jugée incompatible avec
+            l’esthétique galante qui s’impose dans la société mondaine (ici illustrée par le
+            prosimètre) à condition de se parer des qualités de l’enjouement et de l’élégance
+            railleuse, ce qui implique sa conversion aux normes de la civilité, sa participation au
+            « processus de civilisation », au sens où l’entendent les traducteurs de
+            Norbert Elias.</p>
+        </div>
+        <div>
+          <head>Évolution du traitement de la facétie après 1660 : motivation et
+            « civilisation »</head>
+          <p>Molière fait grand usage des <hi rend="i">scenarii</hi> facétieux : la structure à
+            renversement de la <hi rend="i">burla</hi> ou du <hi rend="i">motto</hi> qui sous-tend
+            le conte lui procure l’efficacité dramatique nécessaire à la comédie comme à la farce.
+            Mais la comédie leur donne immédiatement une résonance morale du fait de sa portée
+            satirique, entraînant des débats dans le public, avec parfois une coloration de
+            scandale. Dans les critiques qu’il adresse au dramaturge sur son <hi rend="i">École des
+              femmes</hi>, le journaliste Donneau de Visé fait assumer par le public le scandale
+            moral de la représentation du désir féminin, tandis qu’il se réserve de critiquer la
+            composition de la pièce ; sur ce plan, l’accusation de plagiat le dispute au reproche de
+            traitement défectueux du sujet :</p>
+          <quote>
+            <p rend="indent">[<hi rend="sc">Straton</hi>.] Le sujet de ces deux pièces<note
+                place="bottom"><hi rend="i">L’École des maris</hi> (1661) et <hi rend="i">L’École
+                  des femmes</hi> (1662).</note> n’est point de son invention, il est tiré de divers
+              endroits, à savoir de Boccace, des contes de d’Ouville, de <hi rend="i">La Précaution
+                inutile</hi> de Scarron. Et ce qu’il y a de plus beau dans la dernière est tiré d’un
+              livre intitulé <hi rend="i">Les Nuits facétieuses du seigneur Straparole</hi>, dans
+              une histoire duquel un rival vient tous les jours faire confidence à son ami, sans
+              savoir qu’il est son rival, des faveurs qu’il obtient de sa maîtresse, ce qui fait
+              tout le sujet et la beauté de <hi rend="i">L’École des femmes</hi>.</p>
+            <p>Cette pièce a produit des effets tout nouveaux, tout le monde l’a trouvée méchante et
+              tout le monde y a couru. Les dames l’ont blâmée et l’ont été voir. Elle a réussi sans
+              avoir plu et elle a plu à plusieurs qui ne l’ont pas trouvée bonne. Mais, pour vous en
+              dire mon sentiment, c’est le sujet le plus mal conduit qui fût jamais et je suis prêt
+              de soutenir qu’il n’y a point de scène où l’on ne puisse faire voir une infinité de
+                fautes<note place="bottom">[<hi rend="sc">Donneau de Visé</hi>], <hi rend="i"
+                  >Nouvelles nouvelles</hi>, 1663, troisième partie, p. 232-233.</note>.</p>
+          </quote>
+          <p>Les sources narratives facétieuses sont évidentes : les deux <hi rend="i">Écoles</hi>
+            recourent au motif de la « précaution inutile » récemment emprunté par Scarron à Boccace
+            et Ouville pour ses <hi rend="i">Nouvelles tragi-comiques</hi> (1656) ; et <hi rend="i"
+              >L’École des femmes</hi> transpose dans le dialogue entre Horace et Arnolphe le <hi
+              rend="i">scenario</hi> des « confidences mal adressées » de la « Fable <num>iv</num> »
+            des <hi rend="i">Facétieuses nuits</hi>, dont la version française est disponible depuis
+            le milieu du <num>xvi<hi rend="sup">e</hi></num> siècle<note place="bottom"><hi rend="i"
+                >Les facecieuses nuictz du seigneur Ian Francois Straparole. Aveq les Fables &amp;
+                Enigmes, racontées par deux jeunes gētilzhommes, &amp; dix Damoiselles. Nouvellement
+                traduittes d’Italien en François, par Ian Louveau</hi>, Lyon, Guillaume Rouillé,
+              1560. La « Fable <num>iv</num> » de la première partie propose l’intrigue suivante :
+              Nérin, fils de Galois, roi de Portugal, a été élevé dans la réclusion et n’a connu que
+              sa mère et sa nourrice ; arrivé à Padoue pour ses études, il trouve toutes les femmes
+              moins belles qu’elles ; voulant le désabuser, maître Raymond, un médecin de sa
+              connaissance, le convie à se rendre un certain jour à la messe, où il envoie sa propre
+              femme, Janeton, parée pour mettre en valeur sa beauté ; s’étant épris d’elle, Nérin la
+              suit, parvient à se faire recevoir, et devient sur le champ son amant ; le mari étant
+              revenu chez lui à l’improviste pour chercher quelque médicament, Janeton cache Nérin
+              derrière les rideaux du lit ; le lendemain, celui-ci conte à Raymond sa bonne fortune
+              et loue l’habileté de Janeton ; furieux, Raymond tente de lui tendre un piège, mais
+              lui révèle à son insu l’identité de sa maîtresse, si bien que Nérin s’enfuit avec
+              elle, laissant le mari <quote>« mourir de déplaisir »</quote>.</note>. Mais ce que le
+            critique reproche au dramaturge, c’est d’avoir, par cette transposition, opté pour une
+            narration répétitive au détriment des règles de l’action dramatique.</p>
+          <p>Molière ripostera en retournant la critique en éloge dans <hi rend="i">La Critique de
+              l’École des femmes</hi> :</p>
+          <quote>
+            <p rend="indent"> <hi rend="sc">Uranie</hi>. Pour moi, je trouve que la beauté du sujet de <hi rend="i">L’École des Femmes</hi>
+              consiste dans cette <hi rend="i">confidence perpétuelle</hi> ; et ce qui me paraît <hi
+                rend="i">assez plaisant</hi>, c’est qu’un homme qui a de l’esprit et qui est averti
+              de tout par une innocente qui est sa maîtresse et par un étourdi qui est son rival, ne
+              puisse avec cela éviter ce qui lui arrive<note place="bottom"><hi rend="i">La Critique
+                  de l’École des femmes</hi>, sc. <num>vi</num> ; <hi rend="sc">Molière</hi>, <hi
+                  rend="i">Œuvres complètes</hi>, éd. Georges Forestier et Claude Bourqui, Paris,
+                Gallimard, « Bibliothèque de la Pléiade », 2010, t. I, p. 510 ; c’est moi qui
+                souligne.</note>.</p>
+          </quote>
+          <p>Mais il fait mieux que riposter : il reprend l’avantage en démontrant que les emprunts
+            comme les inventions facétieuses sont mis au service de la peinture des caractères et de
+            la dynamique de leur affrontement, gages du comique de la pièce :</p>
+          <quote>
+            <p rend="indent"> <hi rend="sc">Dorante</hi>. Pour ce qui est des <hi rend="i">enfants par l’oreille</hi>, ils ne sont plaisants
+              que par réflexion à Arnolphe ; et l’Auteur n’a pas mis cela <hi rend="i">pour être de
+                soi un bon mot</hi> : mais seulement <hi rend="i">pour une chose qui caractérise
+                l’homme</hi>, et <hi rend="i">peint d’autant mieux son extravagance</hi>, puisqu’il
+              rapporte une sottise triviale qu’a dite Agnès, comme la chose la plus belle du monde
+              et qui lui donne une joie inconcevable<note place="bottom"><hi rend="i">Ibid.</hi> ;
+                c’est moi qui souligne.</note>.</p>
+          </quote>
+          <p>En dépit des allégations malveillantes de Donneau de Visé, le public qui a fait un
+            succès à la pièce ne s’y est pas trompé : il a apprécié le parti dramatique et satirique
+            que Molière a su tirer de la matière facétieuse de sa comédie. La poétique du genre dans
+            lequel s’inscrit l’adaptation de la facétie apparaît donc déterminante dans la réception
+            que lui accorde le public. C’est là encore le critère d’un goût cultivé, voire
+            raffiné.</p>
+          <p>La Fontaine a clairement conscience de cette évolution culturelle, quand il publie, de
+            1664 à 1694 des <hi rend="i">Contes et nouvelles en vers</hi> qui livrent à ses
+            contemporains la réécriture « galante » des contes facétieux français et italiens du
+            Moyen Âge et de la Renaissance. La matière de ses sources l’expose — comme Molière
+            d’ailleurs — au double reproche d’obscénité et de misogynie. Aussi fait-il valoir dans
+            ses textes liminaires la saine « gaieté » des vieux contes — une forme de rusticité
+            naïve et innocente — et, partant, leur innocuité morale et sociale :</p>
+          <quote>
+            <p rend="indent">[…] Mais je m’amuse à des choses ausquelles on ne prendra peut estre
+              pas garde<note place="bottom">La variété des pièces du recueil.</note>, tandis que
+              j’ay lieu d’apprehender des objections bien plus importantes. On m’en peut faire <hi
+                rend="i">deux principales</hi> : l’une que <hi rend="i">ce Livre est
+              licentieux</hi> ; l’autre qu’<hi rend="i">il n’épargne pas assez le beau sexe</hi>.
+              Quant <hi rend="i">à la premiere</hi>, je dis hardiment que la nature du Conte le
+              vouloit ainsi ; estant une loy indispensable selon Horace, ou plustôt selon la raison
+              et le sens commun, de se conformer aux choses dont on écrit. […] Qui voudroit reduire
+              Bocace à la même pudeur que Virgile, ne feroit asseurément rien qui vaille, et
+              pecheroit contre les Loix de la bienseance en prenant à tâche de les observer. Car,
+              afin que l’on ne s’y trompe pas, en matiere de Vers et de Prose, <hi rend="i"
+                >l’extrême pudeur et la bienseance sont deux choses bien differentes</hi>. Ciceron
+              fait consister la derniere à dire ce qu’il est à propos qu’on die, eu égard au lieu,
+              au temps, et aux personnes qu’on entretient. Ce principe une fois posé, ce n’est pas
+              une faute de jugement que d’entretenir les gens d’aujourd’huy de Contes un peu libres.
+              Je ne peche pas non plus en cela contre la Morale. S’il y a quelque chose dans nos
+              écrits qui puisse faire impression sur les ames, <hi rend="i">ce n’est nullement la
+                gayeté de ces Contes</hi> ; elle passe legerement : je craindrois plustost une douce
+              melancholie, où les Romans les plus chastes et les plus modestes sont très-capables de
+              nous plonger, et qui est une grande preparation pour l’amour. Quant à <hi rend="i">la
+                seconde objection</hi>, par laquelle on me reproche que ce Livre fait tort aux
+              femmes, on auroit raison si je parlois serieusement ; mais qui ne voit que <hi
+                rend="i">cecy est jeu</hi>, et par consequent ne peut porter coup<note
+                place="bottom"><hi rend="i">Contes et nouvelles en vers</hi>, première partie,
+                1665 ; Préface (c’est moi qui souligne).</note> ?</p>
+          </quote>
+          <p>Mais sa plus grande force persuasive, il la trouve dans la forme de son expression
+            versifiée qui substitue l’allusion et le tour métaphorique à la désignation directe de
+            la « chose » malséante. Ainsi peut-il se réclamer du lectorat féminin, porteur des
+            exigences de la pudeur, et promoteur des codes de la galanterie :</p>
+          <quote>
+            <l>Je dois trop au beau sexe ; il me fait trop d’honneur</l>
+            <l>De lire ces recits, si tant est qu’il les lise.</l>
+            <l>Pourquoy non ? c’est assez qu’il condamne en son cœur</l>
+            <l><space/><space/>Celles qui font quelque sottise.</l>
+            <l><space/><space/>Ne peut-il pas, sans qu’il le dise,</l>
+            <l><space/><space/>Rire <hi rend="i">sous-cape</hi> de ces <hi rend="i">tours</hi>,</l>
+            <l><space/><space/>Quelque <hi rend="i">avanture</hi> qu’il y trouve ?</l>
+            <l>[…]</l>
+            <l>Contons ; mais contons bien ; c’est le point principal ;</l>
+            <l>C’est tout ; à cela prés, Censeurs, je vous conseille</l>
+            <l>De dormir comme moy sur l’une et l’autre oreille.</l>
+            <l><space/><space/>Censurez tant qu’il vous plaira</l>
+            <l><space/><space/>Mechans vers et phrases mechantes ;</l>
+            <l><space/><space/>Mais pour <hi rend="i">bons tours</hi>, laissez-les là ;</l>
+            <l><space/><space/>Ce sont <hi rend="i">choses indifférentes</hi> ;</l>
+            <l><space/><space/>Je n’y vois <hi rend="i">rien de perilleux</hi>. […]<note place="bottom"><hi
+                  rend="sc">La Fontaine</hi>, <hi rend="i">Contes et nouvelles en vers, Troisième
+                  partie</hi> (1671), « Les Oyes de Frere Philippe. Nouvelle tirée de
+                Boccace ».</note></l>
+          </quote>
+          <p>Il est intéressant de noter ici que le sujet à la première personne du singulier, qui
+            s’impose comme anaphorique de l’expression convenue « le beau sexe », fait du lectorat
+            féminin une sorte de personnage autonome conscient de ses choix. Dans cette adresse aux
+            lectrices ainsi configurée, La Fontaine n’entend pas toutefois établir une relation
+            exclusive, mais manifester, par l’inclusion d’un cas limite de la lecture galante
+            — encore à la périphérie du convenable mais néanmoins compris dans le domaine de
+            l’acceptable — l’extension du public mondain auquel il destine sa réécriture en vers des
+            contes facétieux-licencieux de la Renaissance. Nous disposons d’une archive qui confirme
+            le succès de cette stratégie auctoriale et éditoriale : la correspondance de
+            Bussy-Rabutin et de sa cousine, Marie de Rabutin, marquise de Sévigné. Celle-ci témoigne
+            de son goût pour les <hi rend="i">Contes</hi> par son insistance à le faire partager par
+            sa fille. Elle s’empresse, par exemple, de lui envoyer, dès leur parution en mars 1671,
+            le volume de la <hi rend="i">Troisième partie</hi> des <hi rend="i">Contes</hi> et celui
+            des <hi rend="i">Fables nouvelles</hi>, accompagnés de ce billet qui tente de l’inciter
+            à les lire en dépit de ses préventions par une forme de connivence ironique :</p>
+          <quote>
+            <p rend="indent">Si est-ce que je vous donnerai ces deux livres de La Fontaine, quand
+              vous devriez être en colère. Il y a des endroits jolis et très jolis, et d’autres
+              ennuyeux. On ne veut jamais se contenter d’avoir bien fait ; en croyant mieux faire on
+              fait mal<note place="bottom">À Madame de Grignan, à Saint-Germain, ce [lundi]
+                30 mars [1671] (M<hi rend="sup">me</hi> de <hi rend="sc">Sévigné</hi>, <hi rend="i"
+                  >Correspondance</hi> t. I, éd. Roger Duchêne, Paris, Gallimard, 1972, p. 204). À
+                peu de temps de là, elle repart à l’attaque, avec la diplomatie nécessaire, contre
+                la réprobation (ou l’indifférence) de sa correspondance : <quote>« Ne jetez pas si
+                  loin les livres de La Fontaine. Il y a des fables qui vous raviront, et des contes
+                  qui vous charmeront. La fin des<hi rend="i">Oies de frère Philippe, Les Rémois, Le
+                    Petit Chien</hi>, tout cela est très joli ; il n’y a que ce qui n’est point de
+                  ce style qui est plat. Je voudrais faire une fable qui lui fît entendre combien
+                  cela est misérable de forcer son esprit à sortir de son genre, et combien la folie
+                  de vouloir chanter sur tous les tons fait une mauvaise musique. Il ne faut point
+                  qu’il sorte du talent qu’il a de conter. »</quote> (À Madame de Grignan, à Paris,
+                ce [mercredi] 6 mai [1671], éd. cit., p. 247.)</note>.</p>
+          </quote>
+          <p>Mais elle fait mieux pour familiariser ses proches avec l’esprit facétieux des <hi
+              rend="i">Contes</hi> : elle s’approprie les situations et les personnages
+            lafontainiens pour en faire des « applications » satiriques à son entourage, un jeu
+            qu’elle partage avec son ami Guittaut et son cousin Coulanges, ses correspondants les
+            plus en sympathie avec son enjouement dénué de tabous :</p>
+          <quote>
+            <p rend="indent">On ne peut jamais être moins rouillé que vous l’êtes ; vos lettres font
+              nos délices. La peinture de l’homme juché, partagé entre les plaintes de
+                Philomèle<note place="bottom"><hi rend="i">Fables</hi>, III, <num>xv</num> :
+                « Philomèle et Prognè ».</note> et la précaution d’Hans Carvel, est la plus folle et
+              la plus plaisante vision qu’on puisse avoir. Il faut bien souffrir que vous-même
+              rompiez en visière quand vous combattez avec de telles armes ; je n’y sais point
+              résister. Ce qui se passe dans votre pays mériterait un voyage exprès. […]<note
+                place="bottom">À Guittaut [juillet-août 1684], <hi rend="i">Correspondance</hi>
+                t. III, éd. cit., 1987, p. 131-132.</note></p>
+          </quote>
+          <p>Le conte intitulé « L’anneau d’Hans Carvel » auquel l’épistolière fait allusion relève
+            du régime obscène de la facétie<note place="bottom"><p>En voici la
+                  chute :</p><quote><l>[…] Une nuit qu’ayant tenu table,</l><l>Et bû force bon vin
+                  nouveau,</l><l>Carvel ronfloit prés de Babeau,</l><l>Il luy fut avis que le
+                  diable</l><l>Luy mettoit au doigt un anneau,</l><l>Qu’il luy disoit : Je sçais la
+                  peine</l><l>Qui te tourmente et qui te gesne,</l><l>Carvel, j’ay pitié de ton
+                  cas ;</l><l>Tien cette bague et ne la lâches,</l><l>Car tandis qu’au doigt tu
+                  l’auras,</l><l>Ce que tu crains point ne seras,</l><l>Point ne seras sans que le
+                  sçaches.</l><l>Trop ne puis vous remercier,</l><l>Dit Carvel, la faveur est
+                  grande.</l><l>Monsieur Satan, Dieu vous le rende,</l><l>Grandmercy Monsieur
+                  l’Aumônier.</l><l>Là dessus achevant son somme,</l><l>Et les yeux encore
+                  aggravez,</l><l>Il se trouva que le bon homme</l><l>Avoit le doigt où vous
+                    sçavez.</l><bibl>(« L’anneau d’Hans Carvel », <title>Contes et nouvelles
+                      en vers</title>, deuxième partie, 1665.)</bibl></quote></note>. Sa généalogie remonte aux
+              <hi rend="i">Facéties</hi> du Pogge<note place="bottom">Précisément la 133<hi
+                rend="sup">e</hi> <hi rend="i">facetia</hi>, intitulée <hi rend="i">Visio Francisei
+                Philelphi</hi>.</note> et passe par Rabelais<note place="bottom"><hi rend="i">Tiers
+                Livre</hi>, l. III, chap. <num>xxviii</num> ; Rabelais a substitué le nom d’Hans
+              Carvel à celui de Philelphe.</note>. En mentionnant ce conte particulièrement
+            inconvenant, l’épistolière donne la mesure de sa liberté morale et langagière, qui n’est
+            pas brimée par la pudeur excessive de la châtelaine de Tristan, ni par celle de Climène,
+            la détractrice précieuse de Molière. Cet échange épistolaire dessine une forme de
+            réception nouvelle de la facétie, favorisée par le travail de « civilisation » accompli
+            par La Fontaine. Elle s’appuie en effet sur le contrat de connivence qu’installent les
+            multiples adresses et intrusions du conteur, et le ton enjoué qu’il maintient
+            continûment comme le lien le plus sûr du commerce galant. Elle est inventive, à la
+            mesure même du dispositif narratif lafontainien qui laisse toujours au lecteur
+              <quote>« quelque chose à penser<note place="bottom"><quote><l> Mais les ouvrages les
+                    plus courts</l><l>Sont toujours les meilleurs. En cela j’ai pour
+                    guides</l><l>Tous les maîtres de l’art, et tiens qu’il faut laisser</l><l>Dans
+                    les plus beaux sujets quelque chose à penser :</l><l>Ainsi ce discours doit
+                      cesser.</l><bibl>(« Discours à Monsieur le duc de La Rochefoucauld »,
+                        <title>Fables</title>, X, <num>xiv</num>, v. 53-57.)</bibl></quote></note> »</quote> et
+            en appelle à sa collaboration interprétative. Cette forme de lecture, tout à la fois
+            émancipée des tabous de la pudibonderie et soucieuse de l’élégance de la forme, anticipe
+            l’évolution qui marquera l’illustration des <hi rend="i">Contes et nouvelles en
+              vers</hi> de la fin du <num>xvii<hi rend="sup">e</hi></num> siècle au milieu du
+              <num>xviii<hi rend="sup">e</hi></num>. Nous pouvons l’observer en trois étapes.</p>
+          <figure>
+            <graphic
+              url="https://github.com/OBVIL/faceties/tree/master/journee-2017-07-01_rosellini_quelques-hypotheses-sur-l-evolution-du-gout_img01.jpg"/>
+            <head>Illustration de « L’anneau d’Hans Carvel » par Romeyn de Hooghe pour les <hi rend="i"
+                >Contes et nouvelles en vers</hi>, Amsterdam, Henry Desbordes, 1685. <lb/>Source : <ref
+                target="http://utpictura18.univ-montp3.fr/GenerateurNotice.php?numnotice=A6035"
+                >Utpictura18</ref>. (Également consultable sur <ref
+                target="https://www.e-rara.ch/zut/content/pageview/8317116">e-rara</ref>.)</head>
+          </figure>
+          <figure>
+            <graphic
+              url="https://github.com/OBVIL/faceties/tree/master/journee-2017-07-01_rosellini_quelques-hypotheses-sur-l-evolution-du-gout_img02.jpg"/>
+            <head>Illustration de Charles Eisen pour les <hi rend="i">Contes et nouvelles en vers</hi>,
+              Paris, Joseph-Gérard Barbou, 1762 (édition dite « des Fermiers généraux »). <lb/>Source :
+                <ref target="http://utpictura18.univ-montp3.fr/GenerateurNotice.php?numnotice=A5959"
+                >Utpictura18</ref>. (Également consultable sur <ref
+                target="http://gallica.bnf.fr/ark:/12148/btv1b8615798h/f88.image"
+              >Gallica</ref>.)</head>
+          </figure>
+          <figure>
+            <graphic
+              url="https://github.com/OBVIL/faceties/tree/master/journee-2017-07-01_rosellini_quelques-hypotheses-sur-l-evolution-du-gout_img03.jpg"/>
+            <head>Cette illustration de « L’anneau d’Hans Carvel » est l’un des 57 dessins exécutés en
+              1770 par Jean-Honoré Fragonard pour une édition qui ne verra pas le jour (gravés pour
+              la parution du seul premier tome en 1795 chez P. Didot l'aîné). Paris, musée du Petit-Palais. <lb/>Source : <ref
+                target="http://utpictura18.univ-montp3.fr/GenerateurNotice.php?numnotice=A2877"
+                >Utpictura18</ref>.</head>
+          </figure>
+          <p>On le constate aisément : à la scène précisément dessinée mais très « habillée » et peu
+            explicite du graveur néerlandais Romeyn de Hooghe, succèdent deux illustrations
+            empreintes de l’esthétique galante caractéristique du <num>xviii</num><hi rend="sup"
+              >e</hi> siècle. L’image composée par Charles Eisen conserve une référence très marquée
+            au conte facétieux par sa focalisation sur la main du diable forçant celle d’Hans Carvel
+            endormi à l’intromission sexuelle que le lecteur est censé ne découvrir qu’à la chute du
+            récit. Mais Fragonard choisit de fondre l’anecdote dans la nuée vaguement surnaturelle
+            qui surmonte le baldaquin pour centrer la scène sur les corps dénudés en laissant hors
+            champ le geste inconvenant de l’époux. On peut ainsi voir à l’œuvre une évolution de la
+            représentation de la scène intime marquée tout à la fois — et sans contradiction — par
+            l’épuration et l’érotisation. Appelée par le goût d’un public formé par la culture
+            galante, cette évolution esthétique nous apparaît comme la poursuite dans le champ des
+            beaux-arts d’un processus initié dès la seconde moitié du <num>xvii</num><hi rend="sup"
+              >e</hi> siècle en littérature, et dont le traitement et la réception de la facétie
+            semblent constituer un marqueur significatif.</p>
+          <p>Dans cette période, le goût pour les contes facétieux, renouvelé par une pratique
+            sociale de la lecture elle-même infléchie par les formes nouvelles de sociabilité que
+            sont la conversation et la correspondance, s’oriente vers une délectation au second
+            degré, dans l’entre-soi de l’élite cultivée. La Fontaine invente la formule parfaite
+            pour répondre à ces attentes, et peut-être même contribuer à les créer — ou du moins à
+            les légitimer, ce qui est manifeste à l’égard du public féminin<note place="bottom">La
+              communication de Tiphaine <hi rend="sc">Rolland</hi> (<ref
+                target="../journee_2017-07-01/rolland_facetie-dans-les-ruelles-galantes">voir</ref>) révèle dans
+              l’édition de compilations facétieuses antérieure à la publication des premiers
+              recueils de <hi rend="i">Contes et nouvelles en vers</hi> la réponse à une attente du
+              lectorat similaire à celle que j’ai cru pouvoir déceler à partir des péritextes
+              lafontainiens. Ce qui confirme la pertinence esthétique et éthique de l’orientation
+              donnée par La Fontaine au traitement de la matière facétieuse, tout en relativisant sa
+              contribution à l’évolution du goût du public.</note>. Sur la base de ces observations,
+            il semble qu’on puisse avancer l’hypothèse d’une <hi rend="i">classicisation</hi> de la
+            réception des contes facétieux à la fin du <num>xvii<hi rend="sup">e</hi></num> siècle,
+            répondant aux goûts d’un public « éduqué » par les nouvelles normes esthétiques et
+            éthiques qui régissent, solidairement, la production des œuvres littéraires et les
+            interactions sociales.</p>
+          <signed>Michèle <hi rend="sc">Rosellini</hi>
+            <lb/>Institut d’Histoire des Représentations et des Idées dans les Modernités
+            <lb/>(IHRIM-UMR 5317-CNRS/ENS de Lyon)</signed>
+        </div>
+      </body>
+  </text>
+</TEI>

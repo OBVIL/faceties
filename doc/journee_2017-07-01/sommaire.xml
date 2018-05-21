@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://oeuvres.github.io/Teinte/teinte.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-stylesheet type="text/css" href="../../../Teinte/opentei.css"?>
+<?xml-stylesheet type="text/xsl" href="../../../Teinte/tei2html.xsl"?>
+<!--Odette: 2018-04-25T16:26:23+02:00-->
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="fre">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title type="main">Les Publics de la facétie (XV<hi rend="sup">e</hi>–XVII<hi rend="sup">e</hi> siècles)</title>
+        <title type="sub">Actes de la journée d’étude organisée par le projet Facéties (Labex OBVIL) le 1<hi rend="sup">er</hi> juillet 2017.</title>
+      </titleStmt>
+      <editionStmt/>
+      <publicationStmt>
+        <availability status="restricted"/>
+      </publicationStmt>
+      <sourceDesc/>
+    </fileDesc>
+    <profileDesc>
+      <creation/>
+      <langUsage>
+        <language ident="fre"/>
+      </langUsage>
+    </profileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <div>
+        <head>Les Publics de la facétie. 
+<lb/>XV<hi rend="sup">e</hi>–XVII<hi rend="sup">e</hi> siècles</head>
+      </div>
+      <div type="h1sub">
+        <head></head>
+        <p rend="image"/>
+        <p/>
+        <p>Présentation</p>
+        <div>
+          <head>Contributions</head>
+          <p>Klaus Kipf (Ludwig-Maximilians Universität, Munich)</p>
+          <p><ref target="">Le public de la littérature facétieuse latine en Allemagne aux XV<hi rend="sup">e</hi> et XVI<hi rend="sup"> e</hi> siècles</ref>.</p>
+          <p/>
+          <p>Katell Lavéant (Université d’Utrecht)</p>
+          <p>La longue vie des textes joyeux français : éditions et lectorats de statuts parodiques du XVI<hi rend="sup">e</hi> au XIX<hi rend="sup">e</hi> siècle.</p>
+          <p/>
+          <p>Marie-Claire Thomine (Université de Lille)</p>
+          <p>Quels publics pour l’édition par Estienne Groulleau des <hi rend="i">Discours d’aucuns propos rustiques et facétieux</hi> de Noël Du Fail (Paris, 1547) ?</p>
+          <p/>
+          <p>Romain Weber (Bibliothèque historique de la ville de Paris)</p>
+          <p>Les recueils facétieux pirates augmentés, une piste d’étude pour leurs publics.</p>
+          <p/>
+          <p>Louise Amazan (Sorbonne Université et BnF, Réserve des livres rares)</p>
+          <p>La publication des <hi rend="i">Joyeuses narrations</hi> en 1557, maillon d’une politique éditoriale concertée.</p>
+          <p/>
+          <p>Marine Gaulin, Julie Monsterlet (Université de Lille)</p>
+          <p>Éléments sur les <hi rend="i">Joyeuses narrations</hi>.</p>
+          <p/>
+          <p>Anne Boutet (Université de Tours, CESR)</p>
+          <p>Lire <hi rend="i">L’Heptaméron</hi> au XVII<hi rend="sup">e</hi> siècle : éditions et réception.</p>
+          <p/>
+          <p>Tiphaine Rolland (Sorbonne Université)</p>
+          <p><ref target="#rolland"><seg rend="lienhypertexte">La facétie dans les ruelles galantes ? Évolutions du lectorat des compilations plaisantes </seg><seg rend="lienhypertexte">(1640-1660)</seg></ref>.</p>
+          <p/>
+          <p>Michèle Rosellini (ENS de Lyon)</p>
+          <p><ref target="file:///D:/commit/faceties/fwdfactiesmiseenlignejournedtudedu1erjuillet/work/rosellini"><seg rend="lienhypertexte">Quelques hypothèses sur l’évolution du goût du public pour les contes facétieux au XVII</seg><hi rend="sup">e</hi><seg rend="lienhypertexte"> siècle</seg></ref>.</p>
+          <p/>
+          <p>Elsa Kammerer (Université de Lille, IUF)</p>
+          <p>La <hi rend="i">Geschichtklitterung</hi> de Johann Fischart dans le sillage des recueils de facéties : nouvelles hypothèses sur une possible « communauté de rieurs ».</p>
+          <p/>
+          <p/>
+          <p>Journée d’étude proposée et organisée par 
+<lb/>Marie-Claire Thomine (Professeur à l’université de Lille) 
+<lb/>et Louise Amazan (conservatrice, BnF, Réserve des livres rares).</p>
+        </div>
+      </div>
+    </body>
+  </text>
+</TEI>
