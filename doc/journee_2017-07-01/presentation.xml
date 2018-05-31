@@ -1,20 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../../../Teinte/tei2html.xsl"?>
 <?xml-model href="http://oeuvres.github.io/Teinte/teinte.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<!--Odette: 2018-04-25T16:26:12+02:00-->
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="fr">
   <teiHeader>
     <fileDesc>
-      <titleStmt/>
-      <editionStmt/>
+      <titleStmt>
+        <title>Présentation</title>
+        <author>Louise Amazan</author>
+        <author>Marie-Claire Thomine</author>
+      </titleStmt>
+      <editionStmt>
+        <edition>OBVIL</edition>
+        <respStmt>
+          <name>Louise Amazan</name>
+          <resp>Texte de présentation</resp>
+        </respStmt>
+        <respStmt>
+          <name>Marie-Claire Thomine</name>
+          <resp>Texte de présentation</resp>
+        </respStmt>
+        <respStmt>
+          <name>Stella Louis</name>
+          <resp>Édition TEI</resp>
+        </respStmt>
+      </editionStmt>
       <publicationStmt>
-        <availability status="restricted"/>
+      <publisher>Sorbonne Université, LABEX OBVIL</publisher>
+      <date when="2018"/>
+      <idno>http://obvil.paris-sorbonne.fr/corpus/faceties/doc/presentation/</idno>
+      <availability status="restricted">
+        <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
+          <p>Copyright © 2018 Université Paris-Sorbonne, agissant pour le Laboratoire d’Excellence « Observatoire de la vie littéraire » (ci-après dénommé OBVIL).</p>
+          <p>Cette ressource électronique protégée par le code de la propriété intellectuelle sur les bases de données (L341-1) est mise à disposition de la communauté scientifique internationale par l’OBVIL, selon les termes de la licence Creative Commons : « Attribution - Pas d’Utilisation Commerciale - Pas de Modification 3.0 France (CC BY-NC-ND 3.0 FR) ».</p>
+          <p>Attribution : afin de référencer la source, toute utilisation ou publication dérivée de cette ressource électroniques comportera le nom de l’OBVIL et surtout l’adresse Internet de la ressource.</p>
+          <p>Pas d’Utilisation Commerciale : dans l’intérêt de la communauté scientifique, toute utilisation commerciale est interdite.</p>
+          <p>Pas de Modification : l’OBVIL s’engage à améliorer et à corriger cette ressource électronique, notamment en intégrant toutes les contributions extérieures, la diffusion de versions modifiées de cette ressource n’est pas souhaitable.</p>
+        </licence>
+      </availability>
       </publicationStmt>
-      <sourceDesc/>
+      <sourceDesc>
+        <bibl>Présentation de la Journée d’étude organisée par le projet <hi rend="i">Facéties</hi> (Labex Obvil) le 1<hi rend="sup">er</hi> juillet 2017. Les publics de la facétie XV<hi rend="sup">e</hi> – XVII<hi rend="sup">e</hi> siècles.</bibl>
+      </sourceDesc>
     </fileDesc>
     <profileDesc>
-      <creation/>
+      <creation>
+        <date when="2017">le 01 juillet 2017</date>
+      </creation>
       <langUsage>
-        <language ident=""/>
+        <language ident="fr"/>
       </langUsage>
     </profileDesc>
   </teiHeader>
@@ -29,15 +62,15 @@
       <p>Quelques questions ont guidé nos réflexions lors de cette journée d’étude :</p>
       <p>à qui les imprimeurs et libraires, les commanditaires et/ou les auteurs s’adressent-ils ? Quel type de lectorat visent-ils ? La facture et la composition des volumes (format, nombre de pages/feuillets, typographie, présence ou non d’illustrations), le discours paratextuel, le texte lui-même et les choix qu’il implique (langue latine ou langue vernaculaire, types de récits) portent-ils les traces d’une destination à un lectorat en particulier ? Comment ces différents éléments du « discours du livre » (A. Arzoumanov, T. Tran, A. Réach-Ngô) parviennent-ils à façonner une communauté facétieuse, rêvée ou non ? De façon simultanée, à l’autre bout de la chaîne, l’on a pu étudier (à partir des marques de possession sur les exemplaires) <hi rend="i">qui</hi> lit effectivement les ouvrages facétieux et quel décalage apparaît parfois entre le lectorat dessiné par les auteurs et facteurs du livre et le public réel. On s’est également demandé quelles « pratiques de lecture » (R. Chartier) sont associées à la diversité des réalisations de la littérature comique et facétieuse. De façon plus diachronique, on s’est intéressé aux modalités et au fonctionnement des rééditions, que celles-ci entérinent un changement ou une évolution du lectorat initialement prévu ou bien qu’elles cherchent, parfois à toute force, à élargir leur public.</p>
       <p/>
-      <p><ref target="#kipf">Klaus Kipf</ref> étudie le public de la littérature facétieuse latine en Allemagne aux <num>xv<hi rend="sup">e</hi></num> et <num>xvi<hi rend="sup">e</hi></num> siècles et montre que les <hi rend="i">Confabulationes</hi> du Pogge et la collection de Heinrich Bebel constituent un genre éditorial qui a très vite trouvé ses lecteurs, lecteurs qui souvent deviennent eux-mêmes écrivains. Aux côtés des collections latines destinées à un public humaniste se développent d’autre part à partir de 1558 des collections en langue allemande, destinées à un public élargi, celui par exemple des prêcheurs protestants.</p>
-      <p><ref target="#laveant">Katell Lavéant</ref> met en lumière la « longue vie des textes joyeux français » en montrant que les statuts parodiques, textes très brefs, ne se sont conservés que lorsqu’ils ont été mis en recueil dès le <num>xvi<hi rend="sup">e</hi></num> siècle et ont survécu pour certains jusqu’au <num>xix<hi rend="sup">e</hi></num> siècle, devenus tout à la fois objets de divertissement et objets culturels.</p>
-      <p>Les <hi rend="i">Propos rustiques</hi> de Noël Du Fail (1547) examinés par <ref target="#thomine">Marie-Claire Thomine</ref> connaissent quelques métamorphoses facétieuses (au niveau du titre, mais aussi du texte avec l’ajout de deux chapitres apocryphes) qui en disent long sur les goûts du public ou du moins sur l’idée que se font de ces goûts les professionnels du livre à l’époque.</p>
-      <p>La table ronde sur le recueil paru chez Benoît Rigaud en 1557, les <hi rend="i">Joyeuses narrations advenues de nostre temps</hi>, a permis de montrer qu’elles constituaient le maillon d’une politique éditoriale concertée, reposant sur la compilation, l’accumulation, le florilège et sur la volonté de diffuser à Lyon pour un large public des succès parisiens (<ref target="#amazan">Louise Amazan</ref>) ; le paratexte et le choix des nouvelles examinés par <ref target="#gaulin-monsterlet">Marine Gaulin et Julie Monsterlet</ref> a confirmé l’idée d’un élargissement à un public plus large, notamment féminin.</p>
-      <p><ref target="#weber">Romain Weber</ref> a proposé comme piste d’étude pour les publics des recueils facétieux les éditions pirates augmentées en s’appuyant sur deux exemples, <hi rend="i">La Nouvvelle Fabrique</hi> de Philippe d’Alcripe et <hi rend="i">Les Heures Perdues d’un cavalier françois</hi> de René de Menou ; les remaniements des éditeurs, qui modifient, ajoutent, enlèvent des éléments, sont autant de traces matérielles et textuelles de la lecture.</p>
+      <p>Klaus Kipf étudie le public de la littérature facétieuse latine en Allemagne aux <num>xv<hi rend="sup">e</hi></num> et <num>xvi<hi rend="sup">e</hi></num> siècles et montre que les <hi rend="i">Confabulationes</hi> du Pogge et la collection de Heinrich Bebel constituent un genre éditorial qui a très vite trouvé ses lecteurs, lecteurs qui souvent deviennent eux-mêmes écrivains. Aux côtés des collections latines destinées à un public humaniste se développent d’autre part à partir de 1558 des collections en langue allemande, destinées à un public élargi, celui par exemple des prêcheurs protestants.</p>
+      <p>Katell Lavéant met en lumière la « longue vie des textes joyeux français » en montrant que les statuts parodiques, textes très brefs, ne se sont conservés que lorsqu’ils ont été mis en recueil dès le <num>xvi<hi rend="sup">e</hi></num> siècle et ont survécu pour certains jusqu’au <num>xix<hi rend="sup">e</hi></num> siècle, devenus tout à la fois objets de divertissement et objets culturels.</p>
+      <p>Les <hi rend="i">Propos rustiques</hi> de Noël Du Fail (1547) examinés par Marie-Claire Thomine connaissent quelques métamorphoses facétieuses (au niveau du titre, mais aussi du texte avec l’ajout de deux chapitres apocryphes) qui en disent long sur les goûts du public ou du moins sur l’idée que se font de ces goûts les professionnels du livre à l’époque.</p>
+      <p>La table ronde sur le recueil paru chez Benoît Rigaud en 1557, les <hi rend="i">Joyeuses narrations advenues de nostre temps</hi>, a permis de montrer qu’elles constituaient le maillon d’une politique éditoriale concertée, reposant sur la compilation, l’accumulation, le florilège et sur la volonté de diffuser à Lyon pour un large public des succès parisiens (Louise Amazan) ; le paratexte et le choix des nouvelles examinés par Marine Gaulin et Julie Monsterlet a confirmé l’idée d’un élargissement à un public plus large, notamment féminin.</p>
+      <p>Romain Weber a proposé comme piste d’étude pour les publics des recueils facétieux les éditions pirates augmentées en s’appuyant sur deux exemples, <hi rend="i">La Nouvvelle Fabrique</hi> de Philippe d’Alcripe et <hi rend="i">Les Heures Perdues d’un cavalier françois</hi> de René de Menou ; les remaniements des éditeurs, qui modifient, ajoutent, enlèvent des éléments, sont autant de traces matérielles et textuelles de la lecture.</p>
       <p/>
-      <p>Dans la table ronde modérée par Dominique Bertrand, <ref target="#boutet">Anne Boutet</ref> s’est appuyée sur le traitement éditorial, au <num>xvii<hi rend="sup">e</hi></num> siècle, de <hi rend="i">L’Heptaméron</hi> de Marguerite de Navarre pour en étudier les modes de lecture. <ref target="#rolland">Tiphaine Rolland</ref> a analysé les rapports entre facétie et galanterie en montrant, à partir de l’examen de quelques entreprises éditoriales des années 1640-1660, la tension entre un effort de modernisation des compilations plaisantes (à travers par exemple les modifications des titres) et l’entretien délibéré d’une forme d’archaïsme. <ref target="#rosellini">Michèle Rosellini</ref> formule des hypothèses sur l’évolution du goût du public pour les contes facétieux au <num>xvii<hi rend="sup">e</hi></num> siècle : l’imitation, l’adaptation, la réécriture chez Sorel, Tristan L’Hermite ou encore Molière et La Fontaine, peuvent fournir de précieuses informations sur les publics de la facétie à l’époque classique.</p>
+        <p>Dans la table ronde modérée par Dominique Bertrand, Anne Boutet s’est appuyée sur le traitement éditorial, au <num>xvii<hi rend="sup">e</hi></num> siècle, de <hi rend="i">L’Heptaméron</hi> de Marguerite de Navarre pour en étudier les modes de lecture. <ref target="https://github.com/OBVIL/faceties/blob/master/doc/journee_2017-07-01/rolland_facetie-dans-les-ruelles-galantes">Tiphaine Rolland</ref> a analysé les rapports entre facétie et galanterie en montrant, à partir de l’examen de quelques entreprises éditoriales des années 1640-1660, la tension entre un effort de modernisation des compilations plaisantes (à travers par exemple les modifications des titres) et l’entretien délibéré d’une forme d’archaïsme. <ref target="https://github.com/OBVIL/faceties/blob/master/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout">Michèle Rosellini</ref> formule des hypothèses sur l’évolution du goût du public pour les contes facétieux au <num>xvii<hi rend="sup">e</hi></num> siècle : l’imitation, l’adaptation, la réécriture chez Sorel, Tristan L’Hermite ou encore Molière et La Fontaine, peuvent fournir de précieuses informations sur les publics de la facétie à l’époque classique.</p>
       <p/>
-      <p><ref target="#kammerer">Elsa Kammerer</ref> a participé à la publication des actes en s’intéressant à la <hi rend="i">Geschichtklitterung</hi> de Johann Fischart, recréation en langue allemande du <hi rend="i">Gargantua</hi> de Rabelais qui connaît trois éditions successives en 1575, 1582 et 1590 ; l’ouvrage conçu à partir de différentes traditions comiques, notamment facétieuses, lui semble s’adresser à un public spécifique, celui des anciens élèves de l’Académie de Johann Sturm à Strasbourg, de manière à (re)créer une « communauté de rieurs ».</p>
+      <p>Elsa Kammerer a participé à la publication des actes en s’intéressant à la <hi rend="i">Geschichtklitterung</hi> de Johann Fischart, recréation en langue allemande du <hi rend="i">Gargantua</hi> de Rabelais qui connaît trois éditions successives en 1575, 1582 et 1590 ; l’ouvrage conçu à partir de différentes traditions comiques, notamment facétieuses, lui semble s’adresser à un public spécifique, celui des anciens élèves de l’Académie de Johann Sturm à Strasbourg, de manière à (re)créer une « communauté de rieurs ».</p>
     </div>
     </body>
   </text>

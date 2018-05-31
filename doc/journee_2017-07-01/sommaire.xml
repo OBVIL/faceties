@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="http://oeuvres.github.io/Teinte/teinte.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-stylesheet type="text/css" href="../../../Teinte/opentei.css"?>
 <?xml-stylesheet type="text/xsl" href="../../../Teinte/tei2html.xsl"?>
 <!--Odette: 2018-04-25T16:26:23+02:00-->
-<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="fre">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="fr">
   <teiHeader>
     <fileDesc>
       <titleStmt>
         <title type="main">Les Publics de la facétie (XV<hi rend="sup">e</hi>–XVII<hi rend="sup">e</hi> siècles)</title>
         <title type="sub">Actes de la journée d’étude organisée par le projet Facéties (Labex OBVIL) le 1<hi rend="sup">er</hi> juillet 2017.</title>
+        <author>Louise Amazan</author>
+        <author>Marie-Claire Thomine</author>
       </titleStmt>
-      <editionStmt/>
+      <editionStmt>
+        <edition>OBVIL</edition>
+        <respStmt>
+          <name>Louise Amazan</name>
+          <resp>Sommaire</resp>
+        </respStmt>
+        <respStmt>
+          <name>Marie-Claire Thomine</name>
+          <resp>Sommaire</resp>
+        </respStmt>
+        <respStmt>
+          <name>Stella Louis</name>
+          <resp>Édition TEI</resp>
+        </respStmt>
+      </editionStmt>
       <publicationStmt>
-        <availability status="restricted"/>
+        <publisher>Sorbonne Université, LABEX OBVIL</publisher>
+        <date when="2018"/>
+        <idno>http://obvil.paris-sorbonne.fr/corpus/faceties/doc/presentation/</idno>
+        <availability status="restricted">
+          <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
+            <p>Copyright © 2018 Université Paris-Sorbonne, agissant pour le Laboratoire d’Excellence « Observatoire de la vie littéraire » (ci-après dénommé OBVIL).</p>
+            <p>Cette ressource électronique protégée par le code de la propriété intellectuelle sur les bases de données (L341-1) est mise à disposition de la communauté scientifique internationale par l’OBVIL, selon les termes de la licence Creative Commons : « Attribution - Pas d’Utilisation Commerciale - Pas de Modification 3.0 France (CC BY-NC-ND 3.0 FR) ».</p>
+            <p>Attribution : afin de référencer la source, toute utilisation ou publication dérivée de cette ressource électroniques comportera le nom de l’OBVIL et surtout l’adresse Internet de la ressource.</p>
+            <p>Pas d’Utilisation Commerciale : dans l’intérêt de la communauté scientifique, toute utilisation commerciale est interdite.</p>
+            <p>Pas de Modification : l’OBVIL s’engage à améliorer et à corriger cette ressource électronique, notamment en intégrant toutes les contributions extérieures, la diffusion de versions modifiées de cette ressource n’est pas souhaitable.</p>
+          </licence>
+        </availability>
       </publicationStmt>
-      <sourceDesc/>
+      <sourceDesc>
+        <bibl>Les Publics de la facétie. XV<hi rend="sup">e</hi>–XVII<hi rend="sup">e</hi> siècles. Sommaire</bibl>
+      </sourceDesc>
     </fileDesc>
     <profileDesc>
-      <creation/>
+      <creation>
+        <date when="2017">le 01 juillet 2017</date>
+      </creation>
       <langUsage>
-        <language ident="fre"/>
+        <language ident="fr"/>
       </langUsage>
     </profileDesc>
   </teiHeader>
@@ -29,15 +59,13 @@
         <head>Les Publics de la facétie. 
 <lb/>XV<hi rend="sup">e</hi>–XVII<hi rend="sup">e</hi> siècles</head>
       </div>
-      <div type="h1sub">
-        <head></head>
-        <p rend="image"/>
-        <p/>
-        <p>Présentation</p>
+      <div>
+        <head>Présentation</head>
+      </div>
         <div>
           <head>Contributions</head>
           <p>Klaus Kipf (Ludwig-Maximilians Universität, Munich)</p>
-          <p><ref target="">Le public de la littérature facétieuse latine en Allemagne aux XV<hi rend="sup">e</hi> et XVI<hi rend="sup"> e</hi> siècles</ref>.</p>
+          <p>Le public de la littérature facétieuse latine en Allemagne aux XV<hi rend="sup">e</hi> et XVI<hi rend="sup"> e</hi> siècles.</p>
           <p/>
           <p>Katell Lavéant (Université d’Utrecht)</p>
           <p>La longue vie des textes joyeux français : éditions et lectorats de statuts parodiques du XVI<hi rend="sup">e</hi> au XIX<hi rend="sup">e</hi> siècle.</p>
@@ -58,10 +86,10 @@
           <p>Lire <hi rend="i">L’Heptaméron</hi> au XVII<hi rend="sup">e</hi> siècle : éditions et réception.</p>
           <p/>
           <p>Tiphaine Rolland (Sorbonne Université)</p>
-          <p><ref target="#rolland"><seg rend="lienhypertexte">La facétie dans les ruelles galantes ? Évolutions du lectorat des compilations plaisantes </seg><seg rend="lienhypertexte">(1640-1660)</seg></ref>.</p>
+          <p><ref target="https://github.com/OBVIL/faceties/blob/master/doc/journee_2017-07-01/rolland_facetie-dans-les-ruelles-galantes.xml">La facétie dans les ruelles galantes ? Évolutions du lectorat des compilations plaisantes (1640-1660)</ref>.</p>
           <p/>
           <p>Michèle Rosellini (ENS de Lyon)</p>
-          <p><ref target="file:///D:/commit/faceties/fwdfactiesmiseenlignejournedtudedu1erjuillet/work/rosellini"><seg rend="lienhypertexte">Quelques hypothèses sur l’évolution du goût du public pour les contes facétieux au XVII</seg><hi rend="sup">e</hi><seg rend="lienhypertexte"> siècle</seg></ref>.</p>
+          <p><ref target="https://github.com/OBVIL/faceties/blob/master/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout">Quelques hypothèses sur l’évolution du goût du public pour les contes facétieux au XVII<hi rend="sup">e</hi> siècle</ref>.</p>
           <p/>
           <p>Elsa Kammerer (Université de Lille, IUF)</p>
           <p>La <hi rend="i">Geschichtklitterung</hi> de Johann Fischart dans le sillage des recueils de facéties : nouvelles hypothèses sur une possible « communauté de rieurs ».</p>
@@ -71,7 +99,6 @@
 <lb/>Marie-Claire Thomine (Professeur à l’université de Lille) 
 <lb/>et Louise Amazan (conservatrice, BnF, Réserve des livres rares).</p>
         </div>
-      </div>
     </body>
   </text>
 </TEI>

@@ -44,13 +44,13 @@
         </respStmt>
         <respStmt>
           <name>Stella Louis</name>
-          <resp>Édition TEI 2018</resp>
+          <resp>Édition TEI</resp>
         </respStmt>
       </editionStmt>
       <publicationStmt>
         <publisher>Université Paris-Sorbonne, LABEX OBVIL</publisher>
         <date when="2018"/>
-        <idno>http://obvil.paris-sorbonne.fr/corpus/faceties/ xml/anonyme_joyeuses-narrations/</idno>
+        <idno>http://obvil.paris-sorbonne.fr/corpus/faceties/xml/anonyme_joyeuses-narrations/</idno>
         <availability status="restricted">
           <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
             <p>Copyright © 2018 Université Paris-Sorbonne, agissant pour le Laboratoire d’Excellence « Observatoire de la vie littéraire » (ci-après dénommé OBVIL).</p>
