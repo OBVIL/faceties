@@ -158,6 +158,7 @@
         </index>
         <pb n="3" xml:id="XI-D-065_003"/>
         <head rend="center i">La premiere Narration.</head>
+        <!-- revoir structure des titres -->
         <head rend="justify">   D’vn maistre fol, qui contrefaisoit 
           <lb/>le Medecin, lequel n’auoit que d’vne 
           <lb/>sorte de pillules pour toutes mala-
@@ -1073,9 +1074,7 @@ _         <lb/>                        les gens.</p>
         </index>
         <pb n="32" xml:id="D-XI-065_032"/>
         <head rend="center i">La huitiéme Narration.</head>
-       <head rend="justify">      Dv’n plaisant fol, lequel recon-
-_         <lb rend="hyphen"/>fortoit vn paoure home qui estoit 
-_         <lb/>blecé en la iambe.</head>
+       <head rend="justify">      Dv’n plaisant fol, lequel recon-<lb rend="hyphen"/>fortoit vn paoure home qui estoit <lb/>blecé en la iambe.</head>
         <p/>
           <p><hi rend="big">E</hi>N vn village des parties de Lombar-
 _         <lb rend="hyphen"/>die estoit vn rustique qui auoit des 
@@ -1120,7 +1119,7 @@ _         <lb/>iamais tu ne te feusses blecé.</p>
           <term type="source">[Traduction de Laurent du Premierfait]</term>
         </index>
         <head rend="center i">La neuf-iéme Narration. </head>
-        <head rend="justify">D'un Cuisinier lequel fit acroire à 
+        <head rend="justify">D’un Cuisinier lequel fit acroire à 
 _         <lb/>   son maistre, que les Grues viues 
 _         <lb/>   n’ont iamais qu’une cuisse.</head>
           <p/>
@@ -1181,7 +1180,7 @@ _         <lb/>&amp; luy demanda ou estoit la cuisse de celle
 _         <lb/>Grue. Adonc respondit le Cuisinier qu’il 
 _         <lb/>n’en auoit point d’autres, &amp; que les Grues 
 _         <lb/>viues n’en auoient qu’une. Si dit Conrad, 
-_         <lb/>i'en ay veu plusieurs d’autres : mais elles en 
+_         <lb/>i’en ay veu plusieurs d’autres : mais elles en 
 _         <lb/>ont deux. Certes dit le Cuisin[i]er qui fauoit 
 _         <lb/>bien mentir : sauf vostre grace elle n’en 
 _         <lb/>auoit qu’vne, &amp; si vous me voulez mener 
@@ -1274,7 +1273,7 @@ _         <lb/>faire ainsi comme tu dis.</p>
           <term type="source">[Traduction de Laurent du Premierfait]</term>
         </index>
         <head rend="center i">La dix-iéme Narration. </head>
-        <head>D'vne ieune femme laquelle faisoit 
+        <head>D’vne ieune femme laquelle faisoit 
 _         <lb/>    ratisser son mary, dans vn grand 
 _         <lb/>    vaisseau de terre, &amp; ce pendant 
 _         <lb/>    son amoureux la brinballoit.</head>
@@ -1314,7 +1313,7 @@ _         <lb rend="hyphen"/>ceau qui l’aymoit fort, &amp; aussi faisoit elle
 _         <lb/>luy semblablement. Pour laquelle chose 
 _         <lb/>composerent ensemble &amp; prindrent vn 
 _         <lb/>statut, comme il pourroit venir tous les 
-_         <lb/>iours vers elle : C'est assauoir quand son 
+_         <lb/>iours vers elle : C’est assauoir quand son 
 _         <lb/>mary se leueroit chacun iour au matin 
 _         <lb/>pour aller ouurer de son mestier, l’amou-
 _         <lb rend="hyphen"/>reux iouuenceau seroit en aucun lieu pour 
@@ -1351,7 +1350,7 @@ _         <lb/>sois tousiours louē, car combien que tu
 _         <lb/>m’as fait paoure, aumoins tu m’as con-
 _         <lb rend="hyphen"/>forté &amp; pouruen d’vne bonne &amp; honneste 
 _         <lb/>femme ! certes ie suis bien heureux : car 
-_         <lb/><abbr>incontinēt</abbr> que i'ay esté party, elle ha fer
+_         <lb/><abbr>incontinēt</abbr> que i’ay esté party, elle ha fer
 _         <lb rend="hyphen" resp="editor"/>mé son huys de pœur qu’il ne vint aucune 
 _         <lb/>personne pour luy faire déplaisir : parquoy 
 _         <lb/>il estimoit qu’elle auoit fermé son huys 
@@ -1383,14 +1382,14 @@ _         <lb/>rien faire, &amp; si n’auons pas vn mourceau
 _         <lb/>de pain ? He paoure home que voulez vous 
 _         <lb/>faire ! pourquoy estes vous retourné de 
 _         <lb/>besongne ? Et elle commença à plourer &amp;
-_         <lb/>dire. Pensez vous que i'aille engager ma 
+_         <lb/>dire. Pensez vous que i’aille engager ma 
 _         <lb/>robbe pour auoir du pain ? &amp; aussi mes au-
 _         <lb rend="hyphen"/>tres besongnes ? Vous sauez bien que ie 
 _         <lb/>me tue chacun iour de besongner, &amp; si ne 
 _         <lb/>cesse nuit &amp; iour du soir ne du matin de 
           <pb n="42" xml:id="XI-D-065_042"/>
           <lb/>filler ! Ie n’ay repos ne cesse, &amp; tellement 
-_         <lb/>que i'en ay les paoures ongles tous écor-
+_         <lb/>que i’en ay les paoures ongles tous écor-
 _         <lb rend="hyphen"/>chez &amp; deschirez, &amp; cela fais-ie affin d’a-
 _         <lb rend="hyphen"/>uoir vn peu d’huyle pour mettre en no-
 _         <lb rend="hyphen"/>stre chambre à bruler la nuit. Ha ha mary 
@@ -1403,11 +1402,11 @@ _         <lb/>encores plus fort à plourer que deuant en
 _         <lb/>disant. Las moy chetiue paoure femme &amp;
 _         <lb/>méchante que ie fuis, en quel malheur fus 
 _         <lb/>ie onques nee ! &amp; en quel malpoint ie fus 
-_         <lb/>baillee à toy paoure méchant ! car i'ay re-
+_         <lb/>baillee à toy paoure méchant ! car i’ay re-
 _         <lb rend="hyphen"/>fusé de fi vaillans homes, riches &amp; puis-
 _         <lb rend="hyphen"/>sans, pour venir auec toy, affin d’auoir en 
 _         <lb/>ta compagnie aucun soulas &amp; deduit ! Et 
-_         <lb/>maintenant ie voy ceux que i'ay refusez 
+_         <lb/>maintenant ie voy ceux que i’ay refusez 
 _         <lb/>qui sont mariez, &amp; leurs femmes qu’ilz 
 _         <lb/>ont épousees font tout ce qu’elles veulent, 
 _         <lb/>&amp; ont de l’or &amp; de l’argent, &amp; ie n’ay 
@@ -1421,7 +1420,7 @@ _         <lb/>méchante niayse, qui fuis <abbr>bōne</abbr> &amp; loyalle,
           <pb n="43" xml:id="XI-D-065_043"/>
           <lb/>qui besogne volentiers (Dieu le sait) ie 
 _         <lb/>suis mal traictee en grand malaise ! mais 
-_         <lb/>i'endure la fortune, &amp; m’esbahis que ne 
+_         <lb/>i’endure la fortune, &amp; m’esbahis que ne 
 _         <lb/>prens des amans ainsi que font les autres 
 _         <lb/>qui se font brimbaler plain vn benot ! Or 
 _         <lb/>machés ces motz donc mon mary, &amp; cro-
@@ -1443,18 +1442,18 @@ _         <lb rend="hyphen"/>bahy &amp; esperdu, &amp; respondit. He mamie
 _         <lb/>ne te courrouce point, ie te prie ne te vueil
 _         <lb rend="hyphen" resp="editor"/>les point ainsi troubler. Tu dois croire 
 _         <lb/>que ie te cognois &amp; say quelle tu es, &amp;
-_         <lb/>encores en cestuy matin i'ay bien cogneu 
+_         <lb/>encores en cestuy matin i’ay bien cogneu 
 _         <lb/>&amp; aperceu en partie que tu m’es loyalle, 
-_         <lb/>pource que i'ay trouué ton huys fermé 
+_         <lb/>pource que i’ay trouué ton huys fermé 
 _         <lb/>de paour qu’il ne vint aucuns malfaiteurs 
 _         <lb/>auec toy, mais vray est ainsi qu’auiour-
           <pb n="44" xml:id="XI-D-065_044"/>
-          <lb/>d’huy comme i'alloye besogner de mon 
-_         <lb/>mestier, i'ay trouué ce bon home icy à 
-_         <lb/>qui i'ay trouué ce bon home icy à 
-_         <lb/>qui i'ay vendu ce vaisseau qui ne nous fai-
+          <lb/>d’huy comme i’alloye besogner de mon 
+_         <lb/>mestier, i’ay trouué ce bon home icy à 
+_         <lb/>qui i’ay trouué ce bon home icy à 
+_         <lb/>qui i’ay vendu ce vaisseau qui ne nous fai-
 _         <lb rend="hyphen"/>soit qu’empecher nostre <abbr>chābre</abbr>, &amp; pour-
-_         <lb rend="hyphen"/>ce i'estoye retourné pour luy bailler, &amp;
+_         <lb rend="hyphen"/>ce i’estoye retourné pour luy bailler, &amp;
 _         <lb/>m’en baille cing gros d’argent, de quoy 
 _         <lb/>nous aurons du pain assez pour vn mois. 
 _         <lb/>Lors respondit Peronnelle. Ie voy en 
@@ -1494,7 +1493,7 @@ _         <lb/>dire. Ou es tu dy bonne femme ? Et le
 _         <lb/>mary qui montoit en haut commença à 
 _         <lb/>dire, me voicy. Ie suis celuy que tu deman
 _         <lb rend="hyphen" resp="editor"/>des. Lors dit le Iouuenceau. Ie veux par-
-_         <lb rend="hyphen"/>ler à la femme à qui i'ay fait le marché. 
+_         <lb rend="hyphen"/>ler à la femme à qui i’ay fait le marché. 
 _         <lb/>Pourtant dit le mary de la ieune femme 
 _         <lb/>au Iouuenceau. Faites auec moy seure-
 _         <lb rend="hyphen"/>ment, car ie vous prometz en bonne foy 
@@ -1561,7 +1560,7 @@ _         <lb/>maison par le mary mesme.</p>
           </div>
       <div>
         <index>
-          <term type="titre">[L'histoire d’une femme qui cachait deux amants enfermés dans sa chambre qui prendront la fuite quand le mari viendra dans la maison.]</term>
+          <term type="titre">[L’histoire d’une femme qui cachait deux amants enfermés dans sa chambre qui prendront la fuite quand le mari viendra dans la maison.]</term>
           <term type="lieu">[La cité de Parme]</term>
           <term type="lieu">[Un village en périphérie]</term>
           <term type="personnage">[Elizabeth, la femme d’un chevalier]</term>
@@ -1571,8 +1570,8 @@ _         <lb/>maison par le mary mesme.</p>
           <term type="source">[Boccace, VII, 6]</term>
           <term type="source">[Traduction de Laurent du Premierfait]</term>
         </index>
-        <head rend="center i">L'onziéme Narration.</head>
-        <head>    D'vne dame laquelle auoit deux 
+        <head rend="center i">L’onziéme Narration.</head>
+        <head>    D’vne dame laquelle auoit deux 
 _         <lb/>amoureux, enfermés en sa chambre, 
 _         <lb/>&amp; ne sauoient rien l’vn de l’autre, &amp; 
 _         <lb/>le mary venu à la maison comme 
@@ -1669,7 +1668,7 @@ _         <lb/>parolles le mieux qu’elle peut : &amp; apres
 _         <lb/>luy demanda quelle chose il queroit. Le 
 _         <lb/>cheualier ainsi <abbr>cōme</abbr> autrefois auoit fait 
           <pb n="51" xml:id="XI-D-065_051"/>
-          <lb/>embrassa la dame &amp; luy dit. I'ay ouy dire <!-- reprise 2018-12-24 -->
+          <lb/>embrassa la dame &amp; luy dit. I’ay ouy dire <!-- reprise 2018-12-24 -->
 _         <lb/>que vostre mary n’estoit point auec vous, 
 _         <lb/>pour laquelle chose ie vous suis venu voir 
 _         <lb/>pour moy solacier auec vous vn peu de 
@@ -1737,7 +1736,7 @@ _         <lb rend="hyphen"/>rouce. Adonc la dame se tirant deuers son
 _         <lb/>lict ou Lyonnet estoit caché, affin qu’il 
 _         <lb/>ouyst ces parolles respondit. Sire iamais 
 _         <lb/>en ma vie ie n’euz plus grand paour que 
-_         <lb/>i'ay eu maintenant, car ceans s’en est fouy 
+_         <lb/>i’ay eu maintenant, car ceans s’en est fouy 
 _         <lb/>vn iouuenceau que ie ne cognois, lequel 
 _         <lb/>cestuy cheualier nommé sire Lambert Du
 _         <lb rend="hyphen" resp="editor"/>ché poursuiuoit à tout vne espee nue en 
@@ -1772,7 +1771,7 @@ _         <lb rend="hyphen"/>uoit s’en est allé. Adoncques Lyonnet
 _         <lb/>estant mussé derriere la courtine qui 
 _         <lb/>auoit bien ouy ce que ladite dame auoit 
 _         <lb/>dit à son mary, vint hardiment deuant 
-_         <lb/>le mary. Et luy dit : Qu'as tu fait au sire 
+_         <lb/>le mary. Et luy dit : Qu’as tu fait au sire 
 _         <lb/>Lambert Duché ? Certes dit le iouuenceau, 
 _         <lb/>ie ne luy ay rien fait que ie sache, mais 
 _         <lb/>ie cuide qu’il m’ha prins pour vn autre, &amp;
@@ -1785,7 +1784,7 @@ _         <lb/>Et quand ie vy qu’il venoit vers moy à
 _         <lb/>pointe de cheual, ie m’en fuy, &amp; ne luy 
 _         <lb/>demanday point les causes de ses mena-
 _         <lb rend="hyphen"/>ces. Donc en fuyant par la grace de Dieu, 
-_         <lb/>&amp; de cette dame, i'ay trouué cette cham
+_         <lb/>&amp; de cette dame, i’ay trouué cette cham
 _         <lb rend="hyphen" resp="editor"/>bre ouuerte, ou ie me suis bouté pour moy 
 _         <lb/>sauuer. Lors dit le mary au iouuenceau. 
 _         <lb/>Naye pœur de rien, car ie te meneray 
@@ -1813,7 +1812,7 @@ _         <lb/></head>
           <term type="source">[Pogge, 81]</term>
         </index>
         <div>
-          <head>   D'vn ieune Sotouard lequel ne 
+          <head>   D’vn ieune Sotouard lequel ne 
 _         <lb/>seut trouuer l’engin de sa femme 
 _         <lb/>la premiere nuit, dont mit son com-
 _         <lb rend="hyphen"/>pagnon huit iours en sa place, pour 
@@ -1891,7 +1890,7 @@ _         <lb/>de ses peines.</p>
 _         <lb/>La treziéme Narration. 
 _         <lb/></head>
         <index>
-          <term type="titre">[L'histoire de deux jeunes amoureux échafaudant un plan ingénieux pour coucher ensemble.]</term>
+          <term type="titre">[L’histoire de deux jeunes amoureux échafaudant un plan ingénieux pour coucher ensemble.]</term>
           <term type="lieu">[près de Lyon sur la Saône.]</term>
           <term type="lieu">[un hôtel sur la route]</term>
           <term type="personnage">[Prince, un jouvenceau]</term>
@@ -1914,7 +1913,7 @@ _         <lb/>vn paoure home tenant hostellerie,
 _         <lb/>lequel auoit épousé vne tresbelle femme 
 _         <lb/>de laquelle il auoit eu vne belle fille</p>
           <p><del>a</del>agee de quinze à seize ans, &amp; vn filz en-
-_         <lb rend="hyphen"/>uiron d’vn an. C'estuy home nonobstant 
+_         <lb rend="hyphen"/>uiron d’vn an. C’estuy home nonobstant 
 _         <lb/>qu’il ne fust gueres riches, auoit vn petit 
 _         <lb/>logis. Il estoit bon home &amp; faisoit vo-</p>
           <p>
@@ -2021,7 +2020,7 @@ _         <lb/>ordonnances, ne dormit point, mais</p>
           <p>
           <pb n="61" xml:id="XI-D-065_061"/>
           </p>
-          <p>veilla iusque à ce que l’hoste &amp; l[']<del>h'o</del>ho-
+          <p>veilla iusque à ce que l’hoste &amp; l[’]<del>h’o</del>ho-
 _         <lb rend="hyphen"/>stesse dormissent, puis quand il apper-
 _         <lb rend="hyphen"/>ceut qu’ilz dormoient, il se leua gente-
 _         <lb rend="hyphen"/>ment, &amp; alla au lit auquel la iouuen-
@@ -2097,10 +2096,10 @@ _         <lb/>compagnon, commença en basse voix
 _         <lb/>luy dire, Adrian ie te dy vrayement 
 _         <lb/>que oncques ne fut chose si douce com-
 _         <lb rend="hyphen"/>me est Alison la fille de nostre hoste, 
-_         <lb/>car par le corps bieu i'ay eu auec elle 
+_         <lb/>car par le corps bieu i’ay eu auec elle 
 _         <lb/>la plus grande delectation que oncques 
 _         <lb/>home eut auec femme, &amp; si te dy qu’en 
-_         <lb/>ceste nuit i'ay cheuauché plus de sept lieuës 
+_         <lb/>ceste nuit i’ay cheuauché plus de sept lieuës 
 _         <lb/>depuis que ie partis d’auec toy, &amp; main-
 _         <lb rend="hyphen"/>tenant mon cueur est saoulé de ce qu’il 
 _         <lb/>ha tant desiré. Quand l’hoste ouyt ces 
@@ -2168,7 +2167,7 @@ _         <lb/>vrayes, mais tu les dits pource qu’en son-
 _         <lb rend="hyphen"/>geant tu cuides la chose estre telle comme 
 _         <lb/>tu songes, &amp; certes les parolles que tu dis 
 _         <lb/>te porteront dommage, &amp; pource reuiens 
-_         <lb/>en <abbr>tō</abbr> lit, que Dieu te <abbr>dōne</abbr> mal an. L'hoste 
+_         <lb/>en <abbr>tō</abbr> lit, que Dieu te <abbr>dōne</abbr> mal an. L’hoste 
 _         <lb/>en oyant ce que la femme auoit dit, &amp; ce 
 _         <lb/>que disoit Adrian commença à croire tres 
 _         <lb/>fermement en luy que Prince songeast. Et 
@@ -2186,7 +2185,7 @@ _         <lb/>[q]ui estoient dignes de ieu &amp; de rys. Et</p>
 _         <lb/>si fort à rire qu’il ne sauoit qu’il deuoit 
 _         <lb/>faire, &amp; tous les autres pareillement. Et 
 _         <lb/>Prince faignant soy éueiller hucha Adrian 
-_         <lb/>en luy demandant. N'est-il pas encores 
+_         <lb/>en luy demandant. N’est-il pas encores 
 _         <lb/>iours ? Et ouy, respondit Adrian. Lieue toy 
 _         <lb/>&amp; t’en viens ça. Adonc Prince faignant 
 _         <lb/>estre tout sommeilleux se leua du lit &amp; re
@@ -2223,7 +2222,7 @@ _         <lb/>quelque maniere que ce fust.</p>
         </index>
         <p/>
         <div>
-          <head>D'un prestre, lequel laissa sa robbe 
+          <head>D’un prestre, lequel laissa sa robbe 
 _         <lb/>     en gage pour l’acollade à vne fem
 _         <lb rend="hyphen" resp="editor"/>me, &amp; comme il la retira cauteu-
 _         <lb rend="hyphen"/>     leusement sans bailler argent.</head>
@@ -2304,7 +2303,7 @@ _         <lb/>interroga le mary de ceste femme en quel
 _         <lb/>lieu il alloit. Et il respondit. Sire, vraye-
 _         <lb rend="hyphen"/>ment ie vois iusques à la ville de Florence, 
 _         <lb/>&amp; porte ceste charge à vn home pour me 
-_         <lb/>ayder à vne grande besongne que i'ay à 
+_         <lb/>ayder à vne grande besongne que i’ay à 
 _         <lb/>faire en la ville, car vn home m’ha fait ci-
 _         <lb rend="hyphen"/>ter pour comparoir deuant le Iuge des 
 _         <lb/>malfaiteurs. Cestuy prestre fut moult 
@@ -2330,7 +2329,7 @@ _         <lb/>quartier par ceste grande chaleur ? Se</p>
           <pb n="70" xml:id="XI-D-065_070"/>
           </p>
           <p>Dieu me doint ioye, dit le prestre, 
-_         <lb/>ie vous viens voir, car i'ay trouué vostre 
+_         <lb/>ie vous viens voir, car i’ay trouué vostre 
 _         <lb/>mary allant à Florence apres son Asne, 
 _         <lb/>parquoy dame Bellecouleur ie te prye 
 _         <lb/>que tu me dise si tu as en pensee de me 
@@ -2364,7 +2363,7 @@ _         <lb/>Si tu veux chapperon, chausses, souliers</p>
           <p>ou ceinture de laine, ou de soye, ou quel-
 _         <lb rend="hyphen"/>que autre chose ie te la donneray. Lors 
 _         <lb/>respondit la femme. Ie n’ay cure, prestre 
-_         <lb/>de telles choses : car i'en ay assez : mais 
+_         <lb/>de telles choses : car i’en ay assez : mais 
 _         <lb/>puis que vous m’aymez tant ainsi comme 
 _         <lb/>vous dites, que ne me faites vous aucun 
 _         <lb/>plaisir &amp; seruice : &amp; apres ie ferois tou-
@@ -2373,8 +2372,8 @@ _         <lb rend="hyphen"/>stre, quelle chose tu veux &amp; voulontiers
 _         <lb/>ie te le feray. Lors dit la femme. Samedy 
 _         <lb/>porchain venant il me faut aller à Flo-
 _         <lb rend="hyphen"/>rence, pour rendre une très grande quantité 
-_         <lb/>de laine que i'ay filee au fuseau &amp; au tou-
-_         <lb rend="hyphen"/>ret, &amp; me conuient aussi faire r'appareil-
+_         <lb/>de laine que i’ay filee au fuseau &amp; au tou-
+_         <lb rend="hyphen"/>ret, &amp; me conuient aussi faire r’appareil-
 _         <lb rend="hyphen"/>ler mon touret, auquel ie l’ay fillee. Et si 
 _         <lb/>me voulez prester cent solz, dont vous 
 _         <lb/>estez bien aisé, ie dégageray ma bonne 
@@ -2539,11 +2538,11 @@ _         <lb/>ne parla iusques à vendenges au prestre,
 _         <lb/>qui apres icelle menaça en disant, qu’il la 
 _         <lb/>feroit entrer en la gueule du grand Lu-
 _         <lb rend="hyphen"/>cifer. Et pour paour d’icelle menace la 
-_         <lb/>femme se r'apaisa avec le prestre. Et en 
+_         <lb/>femme se r’apaisa avec le prestre. Et en 
 _         <lb/>beuuant de vin doux &amp; en mangeant des 
 _         <lb/>chastagnes cuites, la paix fut faite entre 
 _         <lb/>eux deux. Et en lieu des cents solz, le pre-
-_         <lb rend="hyphen"/>stre luy fit r'adouber ses cimbales, &amp; les 
+_         <lb rend="hyphen"/>stre luy fit r’adouber ses cimbales, &amp; les 
 _         <lb/>fit attacher en vne clochette. Et par ainsi 
 _         <lb/>fut Bellecouleur contente dudit prestre.</p>
         </div>
@@ -2563,7 +2562,7 @@ _         <lb/>fut Bellecouleur contente dudit prestre.</p>
         </index>
         <p/>
         <div>
-          <head>      D'vne ieune fille laquelle ne vou
+          <head>      D’vne ieune fille laquelle ne vou
 _         <lb rend="hyphen" resp="editor"/>loit point estre mariee à vn home 
 _         <lb/>qui eust des genitoires, &amp; comme vn 
 _         <lb/>fin gallant faignit n’en auoir point, 
@@ -2659,7 +2658,7 @@ _         <lb rend="hyphen"/>tint en son cueur : Et pource elle commen
 _         <lb rend="hyphen" resp="editor"/>ça à regarder Angle, lequel luy sembla 
 _         <lb/>vn moult bel home, &amp; ne ressembloit pas 
 _         <lb/>à sa fille qui abhominoit les genitoires, 
-_         <lb/>ains dit. C'est moult grand dommage 
+_         <lb/>ains dit. C’est moult grand dommage 
 _         <lb/>que ce ieune filz n’est home naturel. Si 
 _         <lb/>commença icelle femme à penser que si</p>
           <p>
@@ -2693,14 +2692,14 @@ _         <lb/>voulut informer plus auant, &amp; alla à l’e-
 _         <lb rend="hyphen"/>stable pour voir si l’asne auoit point de ge(-)
 _         <lb rend="hyphen" resp="editor"/>nitoires, &amp; cogneut qu’il n’en auoit point, 
 _         <lb/>parquoy l’hoste incontinent tira Angle à 
-_         <lb/>part, &amp; luy dit. N'aués vous point dit telz 
+_         <lb/>part, &amp; luy dit. N’aués vous point dit telz 
 _         <lb/>motz, &amp; telles choses en entrans ceans ?</p>
           <p>
           <pb n="81" xml:id="XI-D-065_081"/>
           </p>
           <p>Adonc iceluy Angle en rougissant, fai-
 _         <lb rend="hyphen"/>gnant de vouloir nier la chose respondit 
-_         <lb/>en ceste maniere. Sire, qu’est ce que i'ay 
+_         <lb/>en ceste maniere. Sire, qu’est ce que i’ay 
 _         <lb/>dit ? ce n’est à vous ny gaing ny perte : nul 
 _         <lb/>n’y a interest sinon moy, à qui la chose 
 _         <lb/>touche. Et alors l’hoste le pressa tant qu’il 
@@ -2809,7 +2808,7 @@ _         <lb/>ieu, que tant elle desiroit. Angle luy
 _         <lb/>respondit que c’estoit le ieu des estrilles. 
 _         <lb/>Lors dit la pucelle. Vrayment en iour 
 _         <lb/>de ma vie ie ne vis chose meilleure, car 
-_         <lb/>i'en veux souvent estre estrillee, pource 
+_         <lb/>i’en veux souvent estre estrillee, pource 
 _         <lb/>que le ieu me plaist fort, &amp; est bien à mon 
 _         <lb/>gré. Parquoy Angle pour luy complaire 
 _         <lb/>au commencement il continua le ieu si 
@@ -2831,7 +2830,7 @@ _         <lb rend="hyphen"/>niere de s’excuser, &amp; en passant par un</p>
 _         <lb/>commença à dire à sa femme. Vrayment 
 _         <lb/>mon estrille est cheute icy. Et se descen-
 _         <lb rend="hyphen"/>dirent tous deux pour chercher ceste 
-_         <lb/>estrille, mais oncq' ne la peurent trou-
+_         <lb/>estrille, mais oncq’ ne la peurent trou-
 _         <lb rend="hyphen"/>uer. Parquoy elle fit si grand dueil qu’el-
 _         <lb rend="hyphen"/>le en cuida mourir. Et pour ce que la nuit 
 _         <lb/>aprochoit, Angle dit à Constance. Il est 
@@ -2841,7 +2840,7 @@ _         <lb rend="hyphen"/>cy que l’estrille ne soit trouuee. Puis qu’el(-
 _         <lb rend="hyphen" resp="editor"/>le est perdue (dit Angle) le remede est 
 _         <lb/>d’en acheter vne autre, &amp; pource ie te 
 _         <lb/>prometz de t’en acheter vne à le pre-
-_         <lb rend="hyphen"/>miere foire ou i'iray. Constance par ceste 
+_         <lb rend="hyphen"/>miere foire ou i’iray. Constance par ceste 
 _         <lb/>promesse fut appaisee, pour esperance 
 _         <lb/>qu’elle auoit d’auoir vne neuue estrille, 
 _         <lb/>puis luy dit. Il ya vne foire à trois 
@@ -2878,12 +2877,12 @@ _         <lb/>estoit dolente. Quand le mary fut arriué
 _         <lb/>&amp; descendu, il demanda ou estoit sa fem(-)
 _         <lb rend="hyphen" resp="editor"/>me, &amp; on luit dit qu’elle estoit en sa cham(-)
 _         <lb rend="hyphen" resp="editor"/>bre mal disposee. Angle montre à la cham(-)
-_         <lb rend="hyphen" resp="editor"/>bre voir Constance, &amp; luy dit. Qu'esse 
+_         <lb rend="hyphen" resp="editor"/>bre voir Constance, &amp; luy dit. Qu’esse 
 _         <lb/>cy ma douce amie, quelle chere faites 
 _         <lb/>vous ? Constance respondit. Ie dois bien 
 _         <lb/>faire mauuaise chere quand ne m’aués 
 _         <lb/>point apporté d’estrille. Ha dites vous, si 
-_         <lb/>ay dea vne que le marchant de qui i'ay 
+_         <lb/>ay dea vne que le marchant de qui i’ay 
 _         <lb/>acheté mes bestes m’a donné en payant le 
 _         <lb/>vin de nostre marché. Et elle demy ioyeu-
 _         <lb rend="hyphen"/>se &amp; demy courroucee dit. Or voyons s’il 
@@ -2957,10 +2956,10 @@ _         <lb/>auoit fait cela : Il répondit : Des mal-</p>
           <pb n="89" xml:id="XI-D-065_089"/>
           </p>
           <p>faiteurs qui me vouloient faire mourir. 
-_         <lb/>Et me dirent que ie choisisse lequel i'ay-
+_         <lb/>Et me dirent que ie choisisse lequel i’ay-
 _         <lb rend="hyphen"/>merois mieux perdre la vie, ou vn de 
 _         <lb/>mes membres. Lors ie consideray que 
-_         <lb/>i'aymoye mieux perdre vn de mes 
+_         <lb/>i’aymoye mieux perdre vn de mes 
 _         <lb/>membres que ma vie. Et pour ce que tous 
 _         <lb/>noz membres nous sont necessaires à ga-
 _         <lb rend="hyphen"/>ner nostre vie, &amp; aussi que ie cognois 
@@ -2991,7 +2990,7 @@ _         <lb/>par moitié leurs vaches, veaux &amp; brebis.</p>
           <p>Le mary faisoit emmener sa part 
 _         <lb/>par vne chambriere qu’il auoit au vilage 
 _         <lb/>d’ou il estoit, puis dit Angle à sa fem-
-_         <lb rend="hyphen"/>me. I'ay encores dedans ma bourse qui 
+_         <lb rend="hyphen"/>me. I’ay encores dedans ma bourse qui 
 _         <lb/>est attachee à mon pourpoint vingt solz, 
 _         <lb/>ou vous auez la moitié, Constance m’a-
 _         <lb rend="hyphen"/>lie, tenez, ouurez la &amp; la prenez. Alors 
@@ -3014,7 +3013,7 @@ _         <lb/>Vray est que l’estrille me fut couppee, &amp;
 _         <lb/>apres ie requis l’instrumēt baculatif d’vn 
 _         <lb/>moyne qui auoit esté occis de nouueau, &amp;
             
-_         <lb/>ie le ioigny aupres du mien. Par ainsi i'ay 
+_         <lb/>ie le ioigny aupres du mien. Par ainsi i’ay 
 _         <lb/>recouuert l’instrument du moyne, au 
 _         <lb/>lieu du mien. En vérité dit elle, il me 
 _         <lb/>semble que ce n’est pas celuy que sou-
@@ -3025,7 +3024,7 @@ _         <lb rend="hyphen"/>liez auoir, car il est plus habille à ce</p>
           <p>ieu, que nul autre. Dieu face pardon au 
 _         <lb/>moyne qui tel instrument porta, ie prie(-)
 _         <lb rend="hyphen" resp="editor"/>ray souuent Dieu pour son ame. Puis 
-_         <lb/>tout soudain courut à la fenestre, &amp; r'ap-
+_         <lb/>tout soudain courut à la fenestre, &amp; r’ap-
 _         <lb rend="hyphen"/>pella la chambriere qui menoit les bestes 
 _         <lb/>&amp; luy dit que l’appointement estoit fait. 
 _         <lb/>Et deslors en auant furent en grande 
@@ -3054,7 +3053,7 @@ _         <lb/>peuuent.</p>
         </index>
         <p/>
         <div>
-          <head>    D'vn vieux Docteur aux loix, le-
+          <head>    D’vn vieux Docteur aux loix, le-
 _         <lb rend="hyphen"/>quel épousa vne ieune fille, &amp; ne 
 _         <lb/>pouuoit fornir à l’appointement, 
 _         <lb/>Parquoy luy bailla vn Calendrier 
@@ -3077,7 +3076,7 @@ _         <lb rend="hyphen"/>tainte, ne fornir ce qu’il auoit commencé,
 _         <lb/>mais demoura tout honteux. Et conside-
 _         <lb rend="hyphen"/>rant que la fille seroit marrie contre luy, 
 _         <lb/>&amp; que iamais ne l’aymeroit, il imagina en 
-_         <lb/>soy comment il la pourroit r'appaiser, &amp;
+_         <lb/>soy comment il la pourroit r’appaiser, &amp;
             
 _         <lb/>qu’elle ne le contragnist pas si souvent à 
 _         <lb/>la besongne, que son oeuure le requeroit. 
@@ -3172,7 +3171,7 @@ _         <lb rend="hyphen"/>cement (combien qu’il ne le cogneust
 _         <lb/>point) luy dit et répondit : Mon bel 
 _         <lb/>amy, certes ie ne cognois qui vous estes, 
 _         <lb/>ne aussi celle que votre femme appel-
-_         <lb rend="hyphen"/>lez, toutefoys i'ay bien ceans vne fille 
+_         <lb rend="hyphen"/>lez, toutefoys i’ay bien ceans vne fille 
 _         <lb/>tres belle, vous la verrez volontiers : Si 
 _         <lb/>c’est celle que demandez, ie croy qu’elle 
 _         <lb/>vous cognoistra : Si elle est à vous, ie 
@@ -3209,7 +3208,7 @@ _         <lb/>femme luy répondit, en luy monstrant
 _         <lb/>sa follie &amp; son ignorance : Mais pensez 
 _         <lb/>vous que ie soye si sotte de décognoistre 
 _         <lb/>les gens si de leger ? Nenny nenny, mais 
-_         <lb/>i'ay apprins vne autre note que vous 
+_         <lb/>i’ay apprins vne autre note que vous 
 _         <lb/>n’auez en vostre Calendrier : il est tous-
 _         <lb rend="hyphen"/>iours endroit nous iour ouurier, il n’est 
 _         <lb/>ceans heure qu’on ne besongne, nous 
@@ -3217,7 +3216,7 @@ _         <lb/>faisons rage quand à bien besongner,
 _         <lb/>voz Calendriers ne sont que vieille hon-
 _         <lb rend="hyphen"/>gne. Et de ceste réponce le paoure mai-
 _         <lb rend="hyphen"/>stre Richard fut fort courroucé, &amp; en 
-_         <lb/>lamentant luy dit de rechef, M'amye, 
+_         <lb/>lamentant luy dit de rechef, M’amye, 
 _         <lb/>pensez à vostre honneur, &amp; qu’elle vi-
 _         <lb rend="hyphen"/>lennie vous po<del>n</del>[u]uez acquerir &amp; estre 
 _         <lb/>concubine de cet home, car mieux vau-
@@ -3305,7 +3304,7 @@ _         <lb rend="hyphen" resp="editor"/>ueilleux accidēs : &amp; de tous il
 _         <lb rend="hyphen"/>pa auec vn rubis, &amp; s’en retourna à 
 _         <lb/>sa maison.</head>
           <p/>
-          <p><hi rend="big">I</hi>l y eut à Perouse (comme i'ay autrefois 
+          <p><hi rend="big">I</hi>l y eut à Perouse (comme i’ay autrefois 
 _         <lb/>entendu) vn ieune home nommé André 
 _         <lb/>de pierre, maquignon de cheuaux, lequel 
 _         <lb/>ayant entendu qu’il y en auoit bon mar-
@@ -3479,7 +3478,7 @@ _         <lb/>estoit lors véue) fut celle sans point de fau-
 _         <lb rend="hyphen"/>te qui l’ayma : tellement qu’ayant ou-
 _         <lb rend="hyphen"/>blié la peur du pere &amp; des freres, &amp; encor 
 _         <lb/>qui plus est de son honneur, s’appriuoisa 
-_         <lb/>tant auec luy que i'en nasquis &amp; en suis 
+_         <lb/>tant auec luy que i’en nasquis &amp; en suis 
 _         <lb/>sortie telle que tu me vois : apres, quand</p>
           <p>
           <pb n="104" xml:id="XI-D-065_0104"/>
@@ -3487,7 +3486,7 @@ _         <lb/>sortie telle que tu me vois : apres, quand</p>
           <p>l’occasion fut venue à nostre pere de partir 
 _         <lb/>de Palerme &amp; s’en retourner à Perouse, il 
 _         <lb/>laissa ma mere &amp; moy petite fille : ne ia-
-_         <lb rend="hyphen"/>mais depuis (au moins que i'aye sceu) ne se 
+_         <lb rend="hyphen"/>mais depuis (au moins que i’aye sceu) ne se 
 _         <lb/>souuint d’elle ne de moy : dont (s’il n’auoit 
 _         <lb/>esté mon pere) ie le blamerois fort : cōside-
 _         <lb rend="hyphen"/>rant son ingratitude enuers ma mere : en-
@@ -3561,7 +3560,7 @@ _         <lb/>estat à qui vous ne deussiez estre agreable :
 _         <lb/><abbr>nō</abbr> seulemēt à moy qui ne suis qu’vn petit 
             _         <lb/>marchant, mais ie vous prie d’vne chose <abbr>q̃</abbr></p>
           <p><abbr>vo<hi rend="sup">9</hi></abbr> me faciez certain <abbr>cōme</abbr> vous auez sceu 
-_         <lb/>que i'estois en ceste ville. A qui elle respō- 
+_         <lb/>que i’estois en ceste ville. A qui elle respō- 
             _         <lb/>dit. Ce matin vne paoure femme <abbr>q̃</abbr> se tient 
 _         <lb/>souuēt auec moy me la fait sauoir , par ce 
 _         <lb/>qu’elle ha lōguemēt demouré auec vostre 
@@ -3701,7 +3700,7 @@ _         <lb rend="hyphen"/><abbr>biē</abbr> &amp; là appella, hurta, &amp; f
 _         <lb rend="hyphen"/>guemēt, mais ce fut en vain: <abbr>dōnt</abbr> il cōmēça 
 _         <lb/>à dire en pleurāt comme celuy qui voyoit 
 _         <lb/>clairemēt sa décōuenue. Helas, <abbr>cōment</abbr> en 
-_         <lb/>peu de tēps i'ay perdu cinq cēs escus &amp; vne 
+_         <lb/>peu de tēps i’ay perdu cinq cēs escus &amp; vne 
 _         <lb/>sœur, &amp; apres plusieurs autres paroles cō- 
 _         <lb/>mēça de rechef à fraper à l’huis &amp; à crier. 
             _         <lb/>Et tant frapa, &amp; cria si fort, <abbr>q̃</abbr> plusieurs des 
@@ -3788,7 +3787,7 @@ _         <lb/>cestuy là &amp; de son regard : &amp; aussi esmeu
 _         <lb/>du cōseil de ses voisins, lesquelz parloient 
 _         <lb/>(<abbr>cōme</abbr> il pēsoit) en charité, print son che-
 _         <lb rend="hyphen"/>min pour s’en retourner à l’hostellerie le 
-_         <lb/>plus dolēt que fut oncq' personne &amp; deses(-)
+_         <lb/>plus dolēt que fut oncq’ personne &amp; deses(-)
 _         <lb rend="hyphen" resp="editor"/>peré de son argēt par celle voye par ou il 
 _         <lb/>auoit suiuy le iour la chābrilōne, &amp; se dé-
 _         <lb rend="hyphen"/>plaisāt à soy mesme pour la puāteur qu’il 
@@ -3826,7 +3825,7 @@ _         <lb rend="hyphen"/>rāt là ou ceste infortune luy pouuoit estre
 _         <lb/>aduenue dirēt en eux mesmes : Cecy verita(-)
 _         <lb rend="hyphen" resp="editor"/>blemēt a esté en la maison de Scarabō bo-
 _         <lb rend="hyphen"/>tefeu, &amp; s’estās retournés vers luy, l’vn d’i-
-            _         <lb rend="hyphen"/>ceux luy dit. Bō home encor'<abbr>q̃</abbr> tu ayes per-
+            _         <lb rend="hyphen"/>ceux luy dit. Bō home encor’<abbr>q̃</abbr> tu ayes per-
 _         <lb rend="hyphen"/>du ton argēt si dois tu grādemēt louër no(-)
 _         <lb rend="hyphen" resp="editor"/>stre seigneur de la fortune qui t’est adue-
 _         <lb rend="hyphen"/>nue d’estre tōbé, &amp; que tu n’as peu rentrer 
@@ -3900,7 +3899,7 @@ _         <lb/>sans son tres <abbr>grād</abbr> <abbr>dōmage</abbr> : toutefoi
 _         <lb/>sorty &amp; <abbr>ayāt</abbr> trouué ces armes qu’il sauoit 
 _         <lb/>bien que ses <abbr>cōpagnōs</abbr> n’<abbr>auoiēt</abbr> point ap-
 _         <lb rend="hyphen"/>portees, il 
-            encor' plus à s’esmer-
+            encor’ plus à s’esmer-
 _         <lb rend="hyphen"/>ueiller : mais ne sachāt que c’estoit, se plai(-)
 _         <lb rend="hyphen" resp="editor"/>gnant de sa fortune, sans toucher à aucu-
 _         <lb rend="hyphen"/>ne chose delibera de partir de là, &amp; s’en al-
@@ -4078,8 +4077,8 @@ _         <lb/>mettre en prison. Puis quand le pays
 _         <lb/>de Sicile se rebella contre le Roy 
 _         <lb/>Charles, ledit filz fut recogneu de sa 
 _         <lb/>mere, &amp; épousa la fille de son maistre : 
-_         <lb/>Et son frere fut retrouué : puis tous en(-)
-_         <lb rend="hyphen" resp="editor"/>semble retournerēt en grand credit.</head>
+_         <lb/>Et son frere fut retrouué : puis tous en
+_         <lb rend="hyphen" resp="editor"/>semble <abbr>retournerēt</abbr> en grand credit.</head>
           <p/>
           <p/>
           <p/>
@@ -4105,12 +4104,12 @@ _         <lb/>soit à des gens heureux, ou malheureux : d’au-
 _         <lb rend="hyphen"/>tant qu’il rend auisez les premiers, &amp; con-
 _         <lb rend="hyphen"/>solle les secondz. Et par ainsi <abbr>cōbien</abbr> qu’il 
 _         <lb/>en ayt esté dit de <abbr>grādes</abbr> choses par cy de-
-_         <lb rend="hyphen"/>uant, i'entend de raconter toutefois vne 
+_         <lb rend="hyphen"/>uant, i’entend de raconter toutefois vne 
 _         <lb/>nouuelle, non moins veritable que pitoia-
 _         <lb rend="hyphen"/>ble : laquelle encor qu’elle ait eu heureuse 
 _         <lb/>fin, neantmoins l’amertume fut telle &amp; si 
 _         <lb/><abbr>grāde</abbr>, qu’à peine peux ie croire que iamais 
-_         <lb/>par ioye suruenante elle se soit r'adoucie.</p>
+_         <lb/>par ioye suruenante elle se soit r’adoucie.</p>
           <p><space> </space>Tres cheres dames, vous deuez sauoir 
 _         <lb/>qu’apres la mort de Federic deuziéme Em(-)
 _         <lb rend="hyphen" resp="editor"/>pereur, vn nommé Manfredy fut <abbr>courōné</abbr> 
@@ -4130,7 +4129,7 @@ _         <lb/>de seureté de la courte foy des Siciliens, &amp;</p>
           <p>
           <pb n="123" xml:id="XI-D-065_0123"/>
           </p>
-          <p>ne voulāt deuenir suiet de l’ēnemy de son 
+          <p>ne <abbr>voulāt</abbr> deuenir suiet de l’ēnemy de son 
 _         <lb/>seigneur, s’apprestoit de s’en fuyr : mais 
 _         <lb/>estāt cecy cogneu des Siciliens, luy &amp; plu-
 _         <lb rend="hyphen"/>sieurs autres, amis &amp; seruiteurs du Roy 
@@ -4268,14 +4267,14 @@ _         <lb/>et sa femme qui suyuoient leurs chiens, les(-)</p>
           <pb n="127" xml:id="XI-D-065_0127"/>
           </p>
           <p>quelz voyans ceste cy qui estoit deuenue 
-_         <lb/>noire, maigre, &amp; velue, s’émerueillerēt grá 
+_         <lb/>noire, maigre, &amp; velue, s’émerueillerēt grá<!-- erreur --> 
 _         <lb/>dement delle, &amp; elle beaucoup plus d’eux : 
 _         <lb/>mais <abbr>quāt</abbr> (à sa requeste) le gētilhome eut 
 _         <lb/>retiré ses chiens arriere, ils firēt tāt apres 
 _         <lb/>plusieurs prieres qu’ilz luy firent dire qui 
 _         <lb/>elle estoit &amp; ce qu’elle faisoit là : laquelle 
 _         <lb/>leur declara entieremēt toute sa qualité, sa 
-_         <lb/>déconuenue, &amp; son estrange deliberation : 
+_         <lb/>déconuenue, &amp; son estrange deliberation :<!-- erreur? --> 
 _         <lb/>ce que oyāt le gentil home qui auoit co-
 _         <lb rend="hyphen"/>gneu fort bien son mary il ploura de com-
 _         <lb rend="hyphen"/>passion : &amp; se parforça grādemēt auec dou-
@@ -4491,7 +4490,7 @@ _         <lb/>plus ie n’espere auoir aucun bien. De la-
 _         <lb rend="hyphen"/>quelle prison ie n’espere iamais sortir, 
 _         <lb/>sinon mort. Et comment ? dit celuy qui 
 _         <lb/>le gardoit. Que te soucies-tu de ce que 
-_         <lb/>font les grans Rois ? Qu'auois tu affaire</p>
+_         <lb/>font les grans Rois ? Qu’auois tu affaire</p>
           <p>
           <pb n="134" xml:id="XI-D-065_0134"/>
           </p>
@@ -4508,11 +4507,11 @@ _         <lb/>ie le puis bien declairer maintenant asseu-
 _         <lb rend="hyphen"/>rément, puis que ie me voy hors du peril 
 _         <lb/>que ie craignois, si ie l’eusse découuert : 
 _         <lb/>il fut appellé (&amp; est encores s’il vit) Hen-
-_         <lb rend="hyphen"/>ryet Capece : &amp; moy i'ay nom Geofroy, 
+_         <lb rend="hyphen"/>ryet Capece : &amp; moy i’ay nom Geofroy, 
 _         <lb/>&amp; non Iannot : &amp; ne fais point de doute, 
-_         <lb/>que si i'estois hors d’icy, &amp; que ie retour-
+_         <lb/>que si i’estois hors d’icy, &amp; que ie retour-
 _         <lb rend="hyphen"/>nasse en Sicile, que ie n’eusse encores tres 
-_         <lb/>grande authorité. L'honneste home de 
+_         <lb/>grande authorité. L’honneste home de 
 _         <lb/>Garde sans s’en informer plus auant ra-
 _         <lb rend="hyphen"/>conta tout cecy le plus tost qu’il eut le 
 _         <lb/>loysir à messire Courard : lequel l’ayant 
@@ -4586,7 +4585,7 @@ _         <lb/>de dominer, ne le desir d’auoir d’argent,
 _         <lb/>ne aucune autre occasion que ce soit, ne 
 _         <lb/>me firent iamais comme traistre commet-
 _         <lb rend="hyphen"/>tre aucune insidiation à l’encontre de ce 
-_         <lb/>qui est à vous : certes i'ay aymé &amp; ayme 
+_         <lb/>qui est à vous : certes i’ay aymé &amp; ayme 
 _         <lb/>encores vostre fille, &amp; tousiours l’ayme-
 _         <lb rend="hyphen"/>ray : par ce que ie la repute digne de mon</p>
           <p>
@@ -4606,7 +4605,7 @@ _         <lb/>comme vous &amp; plusieurs autres le font,
 _         <lb/>vous aduisant que ie le commis comme 
 _         <lb/>amy, &amp; non comme ennemy. Ce que vous 
 _         <lb/>offrez de vouloir faire, ie l’ay tousiours 
-_         <lb/>desiré : &amp; si i'eusse pensé qu’il m’eust esté 
+_         <lb/>desiré : &amp; si i’eusse pensé qu’il m’eust esté 
 _         <lb/>ottroyé, il y ha long temps que ie l’eusse 
 _         <lb/>demandé : &amp; d’autant plus l’auray-ie agrea 
 _         <lb/>ble, comme l’esperance en estoit moin-
@@ -4665,7 +4664,7 @@ _         <lb/>tel gendre ? A qui sa femme respondit :
 _         <lb/>Non pas seulement l’vn d’eux, qui sont 
 _         <lb/>gentilz homes, mais vn belistre (quand 
 _         <lb/>il vous plairoit) me seroit agreable. 
-_         <lb/>Adonques dit messire Courard : I'espere 
+_         <lb/>Adonques dit messire Courard : I’espere 
 _         <lb/>vous en rendre dans peu de iours tou-
 _         <lb rend="hyphen"/>tes deux ioyeuses. Et voyant desia les 
 _         <lb/>deux ieunes creatures retournees en leur 
@@ -4678,7 +4677,7 @@ _         <lb/>croire que les douleurs de ses malheu-
 _         <lb rend="hyphen"/>reuses fortunes l’ayent laissé tant viure : 
 _         <lb/>mais toutefois si ainsi estoit ce me seroit 
 _         <lb/>vn grand contentemēt : comme celuy qui 
-_         <lb/>penseroyt recouuer encor' par son con-
+_         <lb/>penseroyt recouuer encor’ par son con-
 _         <lb rend="hyphen"/>seil grand’ partie de mon bien en Sici-
 _         <lb rend="hyphen"/>le. Alors messire Courard fit venir l’vne 
 _         <lb/>&amp; l’autre femme, qui firēt toutes deux vne 
@@ -4840,7 +4839,7 @@ _         <lb/>table encores au premier seruice, arriua
 _         <lb/>celuy qui estoit allé en Sicile, &amp; entre au-
 _         <lb rend="hyphen"/>tres choses raconta de Henryet, comme 
 _         <lb/>estant detenu en captiuité grande par le 
-_         <lb/>roy Charles, quand l[']émotion se leua par 
+_         <lb/>roy Charles, quand l[’]émotion se leua par 
 _         <lb/>la ville contre le Roy, le peuple courut en 
 _         <lb/>fureur à la prison, qui tua les gardes, &amp;
             
@@ -4852,7 +4851,7 @@ _         <lb rend="hyphen" resp="editor"/>dement en la grace du Roy Pierre, leq
 _         <lb/>l’auoit remis en tous ses biens &amp; hōneurs 
 _         <lb/>ou il estoit au parauant, auec grande &amp;
             
-_         <lb/>bonne authorité : adioustant encor' qu’il 
+_         <lb/>bonne authorité : adioustant encor’ qu’il 
 _         <lb/>l’auoit receu auec grand honneur, &amp; qu’il 
 _         <lb/>auoit fait vne ioye inestimable de sa fem-
 _         <lb rend="hyphen"/>me &amp; de son filz : desquelz il n’auoit ia-
@@ -4870,7 +4869,7 @@ _         <lb/>au deuant des gentilz homes, qui ve-
 _         <lb rend="hyphen"/>noient pour querir madame Britolle &amp;
             
 _         <lb/>Geoffroy, &amp; les receut ioyeusement, puis 
-_         <lb/>les fit asseoir à son banquet : qui encor' 
+_         <lb/>les fit asseoir à son banquet : qui encor’ 
 _         <lb/>n’estoit au milieu. La femme de Geof-
 _         <lb rend="hyphen"/>froy &amp; tous les autres de la compagnie 
 _         <lb/>les virent, auec tant de ioye qu’il n’en fut 
@@ -4930,7 +4929,7 @@ _         <lb/></head>
         </index>
         <p/>
         <div>
-          <head>       D'un Pallefrenier qui se coucha 
+          <head>       D’un Pallefrenier qui se coucha 
 _         <lb/>avec la femme de Agiluf, Roy de Lō-
 _         <lb rend="hyphen"/>bardie : <abbr>dōnt</abbr> le Roy s’aperceut secret-
 _         <lb rend="hyphen"/>tement, &amp; le trouva, puis le tondit : le 
@@ -5251,7 +5250,7 @@ _         <lb/>la gehenne, martyrer, examiner, &amp; inter-
 _         <lb rend="hyphen"/>roguer, &amp; le faisant ainsi, il eust decouuert 
 _         <lb/>ce que chacun doit tascher de couurir, &amp;
             
-_         <lb/>qui estant découuert (encor' qu’il en eust 
+_         <lb/>qui estant découuert (encor’ qu’il en eust 
 _         <lb/>prins entiere vengeance) il n’eust sceu tou(-)
 _         <lb rend="hyphen" resp="editor"/>tefois en diminuer, mais bien plustost ac-
 _         <lb rend="hyphen"/>croistre sa honte, &amp; contaminer l’honne-
@@ -5277,7 +5276,7 @@ _         <lb/>                       fortune.</p>
           <term type="titre">[La vingtième narration]</term>
           <term type="lieu">[Florence, Italie]</term>
           <term type="personnage">[La noble dame]</term>
-          <term type="personnage">[L'homme d’église]</term>
+          <term type="personnage">[L’homme d’église]</term>
           <term type="personnage">[Le noble amant de la dame]</term>
           <term type="source">[Le Décaméron de Boccace, traduction d’Antoine le Maçon]</term>
         </index>
@@ -5293,7 +5292,7 @@ _         <lb/>iouyr de son amy.</head>
           <p/>
           <p><hi rend="big">I</hi>l y eut en nostre cité (plus plaine de 
 _         <lb/>tromperies que d’amour, ou de foy) ne 
-_         <lb/>sont encor' guere d’ans passez, vne gen-
+_         <lb/>sont encor’ guere d’ans passez, vne gen-
 _         <lb rend="hyphen"/>tille femme de bon esperit, &amp; de grand 
 _         <lb/>cueur, plaine d’autant de beauté &amp; de 
 _         <lb/>louables conditions, que aucune autre 
@@ -5315,7 +5314,7 @@ _         <lb/>faiseur de draps de layne, ne pouuoit</p>
 _         <lb/>cueur si bas : estimant pour ceste cause que 
 _         <lb/>nul home de basse condition (tant riche 
 _         <lb/>fust il) n’estoit digne d’auoir vne gentil 
-_         <lb/>femme en mariage : &amp; voyant encor' que 
+_         <lb/>femme en mariage : &amp; voyant encor’ que 
 _         <lb/>auec toutes ses richesses il ne sauoit rien 
 _         <lb/>plus auant que déuyder vn eschaueau ou 
 _         <lb/>faire ordir vne toille, ou bien disputer 
@@ -5356,7 +5355,7 @@ _         <lb/>voudroit volontiers confesser à luy. Le re-
 _         <lb rend="hyphen"/>ligieux la voyant, &amp; estimant gentil fem-
 _         <lb rend="hyphen"/>me, comme elle estoit, l’ouyt volontiers : 
 _         <lb/>&amp; apres qu’elle se fut confessee elle luy 
-_         <lb/>voulut encor' dire vn mot, &amp; elle commença 
+_         <lb/>voulut encor’ dire vn mot, &amp; elle commença 
 _         <lb/>ainsi. Mon pere, il me conuient recourir 
 _         <lb/>à vous pour ayde &amp; conseil, de ce que vous 
 _         <lb/>orrez. Ie say (comment celle qui vous l’ay 
@@ -5368,7 +5367,7 @@ _         <lb/>comme d’home tres riche, &amp; qui le peut
 _         <lb/>bien faire, au moyen dequoy il vous faut 
 _         <lb/>croire que ie l’ayme plus que moymesme : 
 _         <lb/>&amp; laissons à part ce que ie ferois pour luy : 
-_         <lb/>mais si i'auois seulement pensé chose qui 
+_         <lb/>mais si i’auois seulement pensé chose qui 
 _         <lb/>fust contre son honneur, ou plaisir, ie ne 
 _         <lb/>pense que iamais aucune malheureuse</p>
           <p>
@@ -5384,21 +5383,21 @@ _         <lb rend="hyphen"/>quente souuent auec vous, &amp; est beau, &amp;
 _         <lb/>grand personnage, vestu d’habillemens 
 _         <lb/>noirs assez honnestes ; ne cuidant parad-
 _         <lb rend="hyphen"/>uenture que iaye telle intention comme 
-_         <lb/>i'ay, semble qu’il m’ait assiegee, ne iamais 
+_         <lb/>i’ay, semble qu’il m’ait assiegee, ne iamais 
 _         <lb/>ie ne me puis mettre à porte ne à fenestre, 
 _         <lb/>ne sortir de la maison qu’il ne me soit in-
 _         <lb rend="hyphen"/>continent au deuant, dont ie suis tres de-
-_         <lb rend="hyphen"/>plaisante : encor' m’ébays ie qu’il n’est ores 
+_         <lb rend="hyphen"/>plaisante : encor’ m’ébays ie qu’il n’est ores 
 _         <lb/>icy, &amp; pource que telles façōs de faire font 
 _         <lb/>souuent acquerir blame aux honnestes 
-_         <lb/>femmes sans leur coulpe, i'ay pensé quel-
+_         <lb/>femmes sans leur coulpe, i’ay pensé quel-
 _         <lb rend="hyphen"/>quefois de le luy faire dire par mes freres : 
-_         <lb/>mais apres i'ay considéré que les homes 
+_         <lb/>mais apres i’ay considéré que les homes 
 _         <lb/>font aucunefois les messages de telle sorte 
 _         <lb/>que les responces s’en ensuyuent mauuai-
 _         <lb rend="hyphen"/>ses, dont naissent les parolles, &amp; des parol-
 _         <lb rend="hyphen"/>les l’on vient au fait : parquoy afin que 
-_         <lb/>mal &amp; scandale n’en aduinssent, i'ay mieux 
+_         <lb/>mal &amp; scandale n’en aduinssent, i’ay mieux 
 _         <lb/>aymé m’en taire, &amp; me suis deliberee de le 
 _         <lb/>dire plustost à vous que à vn autre : tant 
 _         <lb/>pour ce qu’il me semble que vous estes 
@@ -5457,7 +5456,7 @@ _         <lb/>&amp; d’vne autre, le tira à part, &amp; le reprint
 _         <lb/>par assez gracieux moyen, de la poursuy-
 _         <lb rend="hyphen"/>te &amp; des œillades qu’il croyoit qu’il fist à 
 _         <lb/>celle dame, comme elle luy auoit donné à 
-_         <lb/>entēdre. L'honneste home s’en émerueil-
+_         <lb/>entēdre. L’honneste home s’en émerueil-
 _         <lb rend="hyphen"/>la grandemēt comme celuy qui ne l’auoit 
 _         <lb/>iamais veuë, &amp; n’estoit accoustumé de pas-
 _         <lb rend="hyphen"/>ser que peu de fois deuant sa maison : par-
@@ -5512,7 +5511,7 @@ _         <lb/>s’estant mise à ses piedz commença sa con(-)
 _         <lb rend="hyphen" resp="editor"/>fession, par pleurer. Le beau pere voyant 
 _         <lb/>cecy luy demanda pitoyablement quelle 
 _         <lb/>nouuelle luy estoit suruenue. La dame re-
-_         <lb rend="hyphen"/>spondit. Mon pere, les nouuelles que i'ay 
+_         <lb rend="hyphen"/>spondit. Mon pere, les nouuelles que i’ay 
 _         <lb/>ne sont autres que de ce maudit de Dieu 
 _         <lb/>vostre amy, duquel l’autre hier ie me plai-
 _         <lb rend="hyphen"/>gnis à vous, par ce que ie croy <abbr>certaine-
@@ -5539,7 +5538,7 @@ _         <lb/>elle vne bource &amp; vne ceinture : dont ie</p>
           </p>
           <p>fus si marrie que si ie n’eusse eu esgard à la 
 _         <lb/>crainte de Dieu, &amp; apres pour l’amour de 
-_         <lb/>vous i'eusse fait le diable : toutefois ie 
+_         <lb/>vous i’eusse fait le diable : toutefois ie 
 _         <lb/>m’en suis gardee : &amp; n’ay voulu faire ne di-
 _         <lb rend="hyphen"/>re chose aucune que ie ne le vous aye pre-
 _         <lb rend="hyphen"/>mierement fait sauoir. Encore m’aduisay 
@@ -5549,18 +5548,18 @@ _         <lb rend="hyphen" resp="editor"/>tees affin qu’elle les luy reportas
 _         <lb/>congé mal gracieux que ie luy donnay) de 
 _         <lb/>la rappeller, craignant qu’elle ne la retinst 
 _         <lb/>pour soy, &amp; luy fist accroire que ie l’eusse 
-_         <lb/>receuë, comme i'ay entēdu que telles fem-
+_         <lb/>receuë, comme i’ay entēdu que telles fem-
 _         <lb rend="hyphen"/>mes font quelques fois, &amp; pleine de despit 
 _         <lb/>la luy ostay des mains, &amp; vous l’ay appor-
 _         <lb rend="hyphen"/>tee à fin quevous la luy rēdiez, &amp; luy disiez 
 _         <lb/>que ie n’ay necessité de chose qu’il aye : 
 _         <lb/>par ce que la mercy Dieu &amp; de mon mary, 
-_         <lb/>i'ay tant de bources &amp; tant de ceintures 
+_         <lb/>i’ay tant de bources &amp; tant de ceintures 
 _         <lb/>que ie le noyerois dedans. Parquoy mon 
 _         <lb/>pere ie me viens excuser à vous : que s’il 
 _         <lb/>ne se veut abstenir de cecy ie le diray à 
 _         <lb/>mon mary, &amp; à mes freres, quelque chose 
-_         <lb/>qu’il en puisse aduenir : car i'ayme trop 
+_         <lb/>qu’il en puisse aduenir : car i’ayme trop 
 _         <lb/>mieux qu’il recoyue iniure (si receuoir la 
 _         <lb/>doit) que moy blasme pour luy. Et par vo-
 _         <lb rend="hyphen"/>stre foy mon pere cela ne vous semble il 
@@ -5631,7 +5630,7 @@ _         <lb/><abbr>recōmençant</abbr> les parolles qu’il luy auoit
 _         <lb/>autrefois dit, l’iniuriant de plus beau &amp; se 
 _         <lb/>courroussant, le reprent grandement de 
 _         <lb/>ce que luy auoit dit la dame qu’il auoit 
-_         <lb/>fait. L'honneste home qui encores ne 
+_         <lb/>fait. L’honneste home qui encores ne 
 _         <lb/>voyoit à quelle fin tendoit son dire nyoit</p>
           <p>
           <pb n="168" xml:id="XI-D-065_0168"/>
@@ -5642,10 +5641,10 @@ _         <lb rend="hyphen"/>re cecy au beaupere : si par fortune la da-
 _         <lb rend="hyphen"/>me la luy auoit baillee : mais le beau pere 
 _         <lb/>brulant de colere luy dit : commēt le peux 
 _         <lb/>tu nyer mauuais home ? Les voyla : regar-
-_         <lb rend="hyphen"/>de si tu les cognois. L'honneste home fai-
+_         <lb rend="hyphen"/>de si tu les cognois. L’honneste home fai-
 _         <lb rend="hyphen"/>sant semblant d’en estre fort honteux luy 
 _         <lb/>dit : certes ouy ie les cognois &amp; vous con-
-_         <lb rend="hyphen"/>fesse que i'ay mal fait, mais ie vous iure 
+_         <lb rend="hyphen"/>fesse que i’ay mal fait, mais ie vous iure 
 _         <lb/>(puisque ie la voy en telle deliberation) 
 _         <lb/>que vous n’en orrez iamais plus parler. 
 _         <lb/>A tant furent les paroles grandes : &amp; à la 
@@ -5654,7 +5653,7 @@ _         <lb/>&amp; la ceinture à ce sien amy, &amp; apres l’auoir
 _         <lb/>bien presché et coniuré de ne tascher plus 
 _         <lb/>à toutes ces choses, &amp; luy l’ayant ainsi 
 _         <lb/>promis il luy donna congé de s’en aller. 
-_         <lb/>L'honneste homme tres ioyeux tant de la 
+_         <lb/>L’honneste homme tres ioyeux tant de la 
 _         <lb/>certitude qu’il luy sembloit auoir de l’a-
 _         <lb rend="hyphen"/>mytie de la dame, que du beau present 
 _         <lb/>qu’il auoit receu, s’en alla incontinent 
@@ -5683,7 +5682,7 @@ _         <lb/>mais pource que ie vous promis l’autre
 _         <lb/>iour de ne faire aucune chose sans vous en 
 _         <lb/>aduertir, ie suis venue pour m’excuser, &amp;
             
-_         <lb/>affin que vous croyez que i'ay occasion de 
+_         <lb/>affin que vous croyez que i’ay occasion de 
 _         <lb/>pleurer &amp; me courrousser, ie vous veux 
 _         <lb/>dire ce que vostre amy (ou plustost le dia-
 _         <lb rend="hyphen"/>ble d’enfer) m’ha fait ce matin deuant 
@@ -5695,7 +5694,7 @@ _         <lb/>mon iardin, &amp; desia il auoi<del>r</del>[t] ouuert la fe-
 _         <lb rend="hyphen"/>nestre &amp; vouloit entrer dedans la cham-
 _         <lb rend="hyphen"/>bre, quand ie m’esueillay : &amp; soudaine-
 _         <lb rend="hyphen"/>ment me leuay, &amp; voulois commencer à 
-_         <lb/>crier : ce que de fait i'eusse fait n’eust esté</p>
+_         <lb/>crier : ce que de fait i’eusse fait n’eust esté</p>
           <p>
           <pb n="170" xml:id="XI-D-065_0170"/>
           </p>
@@ -5781,7 +5780,7 @@ _         <lb/>he dieu voicy vn honneste home qui est
 _         <lb/>deuenu ribleur de nuit : crocheteur de iar-
 _         <lb rend="hyphen"/>dins, &amp; escheleur d’arbres : penses tu vain-
 _         <lb rend="hyphen"/>cre par importunité la sainteté de ceste da(-)
-_         <lb rend="hyphen" resp="editor"/>me ? Qu'as-tu affaire de l’aller chercher la 
+_         <lb rend="hyphen" resp="editor"/>me ? Qu’as-tu affaire de l’aller chercher la 
 _         <lb/>nuit dessus les arbres ? il n’est chose au 
 _         <lb/>monde qui tant luy déplaise que toy : &amp;
             
@@ -5799,7 +5798,7 @@ _         <lb/>luy faiz plus aucū déplaisir, qu’elle face ce</p>
           <pb n="173" xml:id="XI-D-065_0173"/>
           </p>
           <p>qu’il luy plaira : que feras tu malheureux 
-_         <lb/>si elle le dit à ses freres ? L'honneste home 
+_         <lb/>si elle le dit à ses freres ? L’honneste home 
 _         <lb/>ayant sagemēt cōprins ce qu’il auoit à fai-
 _         <lb rend="hyphen"/>re rapaisa le beau pere au mieux qu’il sceut 
 _         <lb/>auecques tres <abbr>grādes</abbr> promesses de n’y re-
@@ -5914,7 +5913,7 @@ _         <lb/>la derniere (<abbr>cōme</abbr> elle auoit esté la premie(-)
 _         <lb rend="hyphen" resp="editor"/>re) ilz prindrēt vn ordre &amp; vne cōclusion 
 _         <lb/>ensemble en la maniere que vous orrez : 
 _         <lb/>afin qu’il ne fallust que la chambriere l’al-
-_         <lb rend="hyphen"/>last querir à chacune fois. C'est que ledit 
+_         <lb rend="hyphen"/>last querir à chacune fois. C’est que ledit 
 _         <lb/>Federic prēdroit garde tous les iours qu’il 
 _         <lb/>iroit ou reuiēdroit d’vn sien lieu qui estoit 
 _         <lb/>vn peu plus haut que celuy de la dame, à 
@@ -5974,7 +5973,7 @@ _         <lb/>Cesse, oys tu ce que ie oy ? il semble qu’on</p>
           </p>
           <p>hurte à nostre huys. Hurter (dit la fem-
 _         <lb rend="hyphen"/>me) Nostre dame Iean <abbr>mō</abbr> amy ne sais tu 
-_         <lb/>pas que c’est ? c’est vn esprit, <abbr>dōnt</abbr> i'ay eu ces 
+_         <lb/>pas que c’est ? c’est vn esprit, <abbr>dōnt</abbr> i’ay eu ces 
 _         <lb/>nuitz passees la plus <abbr>grāde</abbr> peur qu’on eut 
 _         <lb/>iamais : voyre telle que aussi tost que ie le 
 _         <lb/>oyoye ie mettoye la teste souz la couuer-
@@ -5982,10 +5981,9 @@ _         <lb rend="hyphen"/>ture, ne iamais ie n’auoye la hardiesse de
 _         <lb/>la tirer dehors s’il estoit iour tout clair. 
 _         <lb/>Va va ma femme (dit Iean) n’ayes point de 
 _         <lb/>peur si en ce est vn : car quand nous nous 
-_         <lb/>sommes mis au lit, i'ay dit le <seg xml:lang="lat">Te lucis</seg>, &amp; l’<seg xml:lang="lat">In</seg>
-            
-_         <lb/><seg xml:lang="lat">temerata</seg>, &amp; tant d’autres <abbr>bōnes</abbr> oraisons, 
-_         <lb/>&amp; outre ce, i'ay fait le signe de la croix à 
+_         <lb/>sommes mis au lit, i’ay dit le <seg xml:lang="lat">Te lucis</seg>, &amp; l’<seg xml:lang="lat">In
+_         <lb/> temerata</seg>, &amp; tant d’autres <abbr>bōnes</abbr> oraisons, 
+_         <lb/>&amp; outre ce, i’ay fait le signe de la croix à 
 _         <lb/>tous les coins du lit, au <abbr>nō</abbr> du pere, du filz, 
 _         <lb/>&amp; du saint esprit, tellement qu’il ne faut 
 _         <lb/>point auoir peur de quelque puissance 
@@ -6000,18 +5998,18 @@ _         <lb/>ie ne me tiendray iamais asseuree, si nous
 _         <lb/>ne le coniurons puis que tu es ceans. Iean 
 _         <lb/>dit : Et comment se coniure il ? Dit la fem-
 _         <lb rend="hyphen"/>me, ie le say tresbien coniurer : car l’autre 
-_         <lb/>iour quand i'allay gaigner les pardons à 
+_         <lb/>iour quand i’allay gaigner les pardons à 
 _         <lb/>Fiezole, vne de ces recluses, qui est (mon</p>
           <p>
           <pb n="179" xml:id="XI-D-065_0179"/>
           </p>
-          <p>amy Iean) la ples sainte chose (&amp; i'en ap-
+          <p>amy Iean) la ples sainte chose (&amp; i’en ap-
 _         <lb rend="hyphen"/>pelle Dieu à tesmoin) me voyant ainsi 
 _         <lb/>paoureuse des espritz, m’ensegna vne bon(-)
 _         <lb rend="hyphen" resp="editor"/>ne &amp; sainte oraison : &amp; dit qu’elle l’auoit 
 _         <lb/>éprouuee plusieurs fois auant qu’elle fust 
 _         <lb/>recluse, dont tousiours elle s’en est bien 
-_         <lb/>trouuee : mais Dieu sache si iamais i'eusse 
+_         <lb/>trouuee : mais Dieu sache si iamais i’eusse 
 _         <lb/>eu la hardiesse de l’aller éprouuer seule : 
 _         <lb/>toutefois maintenant que tu es ceans, ie 
 _         <lb/>veux que nous l’allions coniurer. Iean dit 
@@ -6065,7 +6063,7 @@ _         <lb/>bonne heure, car ce n’est pas moy qui ay
 _         <lb/>tourné la teste de l’asne, ains a esté quel-
 _         <lb rend="hyphen"/>que autre, que Dieu le mette en mal an : &amp;
             
-_         <lb/>ie suis icy auecq' Ieā <abbr>mō</abbr> mary : parquoy il 
+_         <lb/>ie suis icy auecq’ Ieā <abbr>mō</abbr> mary : parquoy il 
 _         <lb/>s’en alla sans coucher, &amp; sans souper. Mais 
 _         <lb/>vne mienne voisine qui est femme fort</p>
           <p>
@@ -6111,7 +6109,7 @@ _         <lb rend="hyphen"/>auenture servir quelque fois.</p>
         </index>
         <p/>
         <div>
-          <head>    D'vn Roy, &amp; d’vn Cheualier Ro-
+          <head>    D’vn Roy, &amp; d’vn Cheualier Ro-
 _         <lb rend="hyphen"/>main, deceuz par vn mesme moyen, 
 _         <lb/>lesquelz trouuerēt leurs femmes en 
 _         <lb/>adultere, à savoir l’vne auec vn nain, 
@@ -6144,7 +6142,7 @@ _         <lb/>iour demādé, s’il auoit iamais veu pres, ou
 _         <lb/>loin, autre home de forme autāt <abbr>biē</abbr> cōpo-
 _         <lb rend="hyphen"/>see : <abbr>cōntre</abbr> ce, qu’il cuidoit, luy fut ainsi re-
 _         <lb rend="hyphen"/>spondu : ie dy (respondit Fauste) que selon 
-_         <lb/>que ie voy, &amp; que i'en ay ouy parler à cha-
+_         <lb/>que ie voy, &amp; que i’en ay ouy parler à cha-
 _         <lb rend="hyphen"/>cun, tu as peu de pareilz au <abbr>mōde</abbr> en beau-
 _         <lb rend="hyphen"/>té, hors mis vn miē frere appellé Iocōde, ie 
 _         <lb/>croy <abbr>biē</abbr>, qu’en beauté tu laisses tous les au(-)
@@ -6239,7 +6237,7 @@ _         <lb/>&amp; dit à son frere, vaten tout beau iusques
 _         <lb/>au premier logis, car il est force que ie re-
 _         <lb rend="hyphen"/>tourne dans Rome : &amp; croy e<del>u</del>[n]cor que ie t’a(-)
 _         <lb rend="hyphen" resp="editor"/>taindray par le chemin, autre ne peut faire 
-_         <lb/>mon message : na'yes doute, car ie feray 
+_         <lb/>mon message : na’yes doute, car ie feray 
 _         <lb/>bien tost auec toy. A ces motz il tourne le 
 _         <lb/>roussin à <abbr>grād</abbr> trot, dit àDieu à ses gens, &amp;
             
@@ -6281,7 +6279,7 @@ _         <lb/>monstre plus estre celle : en sorte qu’il ne
 _         <lb/>pourra plus faire parangon de beauté, 
 _         <lb/>sinon en vain : auec le dueil luy vint vne 
 _         <lb/>fieure si moleste, qu’elle le fait seiourner 
-_         <lb/>à L'arbe &amp; à Ar<del>u</del>[n]e : &amp; s’il auoit rien gardé 
+_         <lb/>à L’arbe &amp; à Ar<del>u</del>[n]e : &amp; s’il auoit rien gardé 
 _         <lb/>de beau, demoura pasle &amp; roty, comme 
 _         <lb/>la rose cueillie au soleil. A Fauste, (outre</p>
           <p>
@@ -6357,7 +6355,7 @@ _         <lb/>iours apres, vid le nain semblablement</p>
           <pb n="189" xml:id="XI-D-065_0189"/>
           </p>
           <p>auec la Royne, qui font au Roy mesme 
-_         <lb/>deshonneur, encor'elle se plaint que le 
+_         <lb/>deshonneur, encor’elle se plaint que le 
 _         <lb/>nain l’ayme peu. Ioconde à cet estrange 
 _         <lb/>spectacle reseraine le front, les yeux, le 
 _         <lb/>visage, &amp; deuint ioyeux comme deuant, 
@@ -6376,7 +6374,7 @@ _         <lb/>ne qui luy déplaise, encor’ qu’il cognoisse
 _         <lb/>droittement qu’on fait tort à sa maiesté, il 
 _         <lb/>n’en fera iamais vengeance, &amp; Ioconde 
 _         <lb/>luy manifeste la chose, pour laquelle il 
-_         <lb/>auoit esté plusieurs iours dolent. C'estoit 
+_         <lb/>auoit esté plusieurs iours dolent. C’estoit 
 _         <lb/>pour auoir trouué sa vilaine femme en-
 _         <lb rend="hyphen"/>tre les bras d’vn sien vassal, &amp; que telle 
 _         <lb/>peine à la fin l’eust mis à mort, si le con-
@@ -6394,7 +6392,7 @@ _         <lb/>luy monstra le laid monstre, qui tenoit sa
 _         <lb/>femme sous luy, &amp; fait iouër des reins à 
 _         <lb/>plaisir. Si l’acte sembla au Roy plain de 
 _         <lb/>vitupere, vous le deuez bien croyre sans 
-_         <lb/>que i'en iure, il fut pour enrager, &amp; deue-
+_         <lb/>que i’en iure, il fut pour enrager, &amp; deue-
 _         <lb rend="hyphen"/>nir fol : mais force luy fut de boyre cela 
 _         <lb/>doux comme lait, &amp; aualler le courroux 
 _         <lb/>ameremēt aigre, puis qu’il l’auoit promis : 
@@ -6426,7 +6424,7 @@ _         <lb/>païs, &amp; autant qu’ilz en trouuoient de</p>
           <p>belles, elles estoient toutes courtoises à 
 _         <lb/>leurs prieres. Ilz donnoient, &amp; or don-
 _         <lb rend="hyphen"/>né seruoit d’estrenne &amp; d’arres, &amp; souuēt 
-_         <lb/>r'emboursoient leur argent : car ilz en 
+_         <lb/>r’emboursoient leur argent : car ilz en 
 _         <lb/>prierent maintes, &amp; si furent fouuent 
 _         <lb/>priez. Parquoy en allant çà &amp; là, ilz co-
 _         <lb rend="hyphen"/>gneurent par vraye experience que non 
@@ -6476,11 +6474,11 @@ _         <lb rend="hyphen"/>mencerent de parler ensemble. Le valet
 _         <lb/>luy demanda ou elle alloit, &amp; lequel des 
 _         <lb/>deux seigneurs elle auoit pour amy. Elle 
 _         <lb/>luy conta tout le fait d’entre eux, parquoy 
-_         <lb/>dit, quand i'esperois de viure auec toy, tu 
+_         <lb/>dit, quand i’esperois de viure auec toy, tu 
 _         <lb/>t’en vas, &amp; si ne say si iamais ie te reuerray. 
 _         <lb/>Mes intentions douces se font ameres, 
 _         <lb/>puis que tu es à autruy, &amp; puis que tu t’es-
-_         <lb rend="hyphen"/>longnes, quand i'auois deliberé de te de-
+_         <lb rend="hyphen"/>longnes, quand i’auois deliberé de te de-
 _         <lb rend="hyphen"/>mander à ton pere pour femme, &amp; t’épou-
 _         <lb rend="hyphen"/>ser. La fille répondit qu’il auoit trop tar-
 _         <lb rend="hyphen"/>dé à venir, le compagnon voyant cela plo-
@@ -6491,7 +6489,7 @@ _         <lb rend="hyphen"/>re disant, me veux tu ainsi laisser mourir ?</p>
           <p>dont elle piteuse disoit, croy que ie ne le 
 _         <lb/>desire pas moins que toy, mais ie n’y com-
 _         <lb rend="hyphen"/>prens ne temps n’y lieu, icy au milieu de 
-_         <lb/>tant de gens. L'amoureux respond, ie suis 
+_         <lb/>tant de gens. L’amoureux respond, ie suis 
 _         <lb/>asseuré que si tu m’aymes tu trouueras au 
 _         <lb/>moins ceste nuit lieu, par lequel nous 
 _         <lb/>pourrons iouyr vn peu ensemble des biēs 
@@ -6540,9 +6538,9 @@ _         <lb rend="hyphen"/>ual. Ioconde luy respond le semblable, &amp;
 _         <lb/>dit, tu me dis ce que ie te deurois dire, à 
 _         <lb/>toy touche de te reposer, car toute nuit 
 _         <lb/>tu as cheuauché en haste. Et moy encores 
-_         <lb/>(dit le Roy) i'eusses laissé courir mon 
+_         <lb/>(dit le Roy) i’eusses laissé courir mon 
 _         <lb/>courtaut pour vn coup, si tu m’eusses pre-
-_         <lb rend="hyphen"/>sté vn peu le cheual, tant que i'eusses fait 
+_         <lb rend="hyphen"/>sté vn peu le cheual, tant que i’eusses fait 
 _         <lb/>mon affaire. Ioconde luy repliqua, &amp; dit 
 _         <lb/>ie suis ton vassal, tu peux faire &amp; rom-
 _         <lb rend="hyphen"/>pre pache auec moy, parquoy il ne con-
