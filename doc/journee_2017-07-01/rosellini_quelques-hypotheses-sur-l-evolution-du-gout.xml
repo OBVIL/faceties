@@ -23,7 +23,7 @@
         </respStmt>
       </editionStmt>
       <publicationStmt>
-        <publisher>Sorbonne Université, LABEX OBVIL</publisher>      <idno>http://obvil.paris-sorbonne.fr/corpus/faceties/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout</idno>
+        <publisher>Sorbonne Université, LABEX OBVIL</publisher>      <idno>http://obvil.sorbonne-universite.fr/corpus/faceties/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout</idno>
         <availability status="restricted">
           <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
             <p>Copyright © 2018 Sorbonne Université, agissant pour le Laboratoire d’Excellence
@@ -45,7 +45,7 @@
         </availability>
       </publicationStmt>
       <sourceDesc>
-        <bibl><hi rend="sc">Citer cet article :</hi> Michèle Rosellini, « Quelques hypothèses sur l’évolution du goût du public pour les contes facétieux au <num>xvii<hi rend="sup">e</hi></num> siècle », [in] <title>Les Publics de la facétie (<hi rend="sc">xv</hi><hi rend="sup">e</hi>–<hi rend="sc">xvii</hi><hi rend="sup">e</hi> siècles)</title>, Actes de la journée d’étude organisée par le projet <hi rend="i">Facéties</hi> (Labex OBVIL) le 1<hi rend="sup">er</hi> juillet 2017. Mis en ligne le 26-04-2018. URL : <ref target="http://obvil.paris-sorbonne.fr/corpus/faceties/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout">http://obvil.paris-sorbonne.fr/corpus/faceties/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout</ref></bibl>
+        <bibl><hi rend="sc">Citer cet article :</hi> Michèle Rosellini, « Quelques hypothèses sur l’évolution du goût du public pour les contes facétieux au <num>xvii<hi rend="sup">e</hi></num> siècle », [in] <title>Les Publics de la facétie (<hi rend="sc">xv</hi><hi rend="sup">e</hi>–<hi rend="sc">xvii</hi><hi rend="sup">e</hi> siècles)</title>, Actes de la journée d’étude organisée par le projet <hi rend="i">Facéties</hi> (Labex OBVIL) le 1<hi rend="sup">er</hi> juillet 2017. Mis en ligne le 26-04-2018. URL : <ref target="http://obvil.sorbonne-universite.fr/corpus/faceties/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout">http://obvil.sorbonne-universite.fr/corpus/faceties/doc/journee_2017-07-01/rosellini_quelques-hypotheses-sur-l-evolution-du-gout</ref></bibl>
       </sourceDesc>
     </fileDesc>
     <profileDesc>
