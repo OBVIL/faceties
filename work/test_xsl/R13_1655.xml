@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Le recueil des hystoires des repeus franches</title>
+                <author>Anonyme</author>
+            </titleStmt>
+            <editionStmt>
+                <edition>OBVIL</edition>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>Sorbonne Université LABEX OBVIL</publisher>
+                <date when="2019"/>
+                <idno>http://http://obvil.sorbonne-universite.site/corpus/faceties/cote_iii-f-019</idno>
+                <availability status="restricted">
+                    <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
+                        <p>Cette ressource électronique protégée par le code de la propriété intellectuelle sur les bases de données (L341-1) est mise à disposition de la communauté scientifique internationale par l’OBVIL, selon les termes de la licence Creative Commons : 	« Attribution - Pas d’Utilisation Commerciale - Pas de Modification 3.0 France (CCBY-NC-ND 3.0 FR) ».</p>
+                        <p>Attribution : afin de référencer la source, toute utilisation ou publication dérivée de cette ressource électroniques comportera le nom de l’OBVIL et surtout l’adresse Internet de la ressource.</p>
+                        <p>Pas d’Utilisation Commerciale : dans l’intérêt de la communauté scientifique, toute utilisation commerciale est interdite.</p>
+                        <p>Pas de Modification : l’OBVIL s’engage à améliorer et à corriger cette ressource électronique, notamment en intégrant toutes les contributions extérieures, la diffusion de versions modifiées de cette ressource n’est pas souhaitable.</p>
+                    </licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl>Anonyme, Le recueil des hystoires des repeus franches, Paris, Denis Meslier, 1490, Bibliothèque du château de Chantilly, Cabinet des livres, III-F-019.</bibl>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <creation>
+                <date when="1490"/>
+            </creation>
+            <langUsage>
+                <language ident="fr"/>
+            </langUsage>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div>
+                <head>Le recueil des hystoires des repeus franches</head>
+                <castList>
+                    <castItem xml:id="acteur"/>
+                    <castItem xml:id="clerc"/>
+                    <castItem xml:id="gallant"/>
+                </castList>
+                <index>
+                    <term type="lieu">[premier lieu où se passe la narration]</term>
+                    <term type="lieu">[deuxième lieu etc.]</term>
+                    <term type="personnage">[premier personnage, soit nom + fonction, soit nom, soit fonction (drapière, bourgeois, curé)]</term>
+                    <term type="personnage">[deuxième personnage,etc.]</term>
+                </index>
+                <div>
+                    <p rend="center">&lt;Image&gt;</p>
+                </div>
+                <div>
+                    <pb n="f. a1r"/>
+                    <div>
+                  <p rend="noindent">mourray pas doucement ne mollement.
+    <lb/>Car la mort est dure &amp; amere &amp; <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> ne me
+    <lb/>veux pas secrettement confesser : car ce que
+    <lb/>
+                     <choice>
+                        <orig>i</orig>
+                        <reg>j</reg>
+                     </choice>’ay fait durant ma vie est à plusieurs gens &amp;
+    <lb/>en plusieurs païs notoire, car ceux à qui <choice>
+                        <orig>i</orig>
+                        <reg>j</reg>
+                     </choice>’ay
+    <lb/>fait aucun bien ilz le diront bien derriere
+    <lb/>moy, &amp; si <choice>
+                        <orig>i</orig>
+                        <reg>j</reg>
+                     </choice>’ay fait à aucun quelque mal, ilz
+    <lb/>ne le tairont pas : mais <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> me repens de deux
+    <lb/>choses que <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> ne les <choice>
+                        <orig>sçauoye</orig>
+                        <reg>sçavoye</reg>
+                     </choice> accomplir. La
+    <lb/>beguine dist, soyes <choice>
+                        <orig>ioyeux</orig>
+                        <reg>joyeux</reg>
+                     </choice> de ce que vous
+    <lb/>
+                     <choice>
+                        <orig>auez</orig>
+                        <reg>avez</reg>
+                     </choice> laisse quelque mal, mais ayez repen2010
+    <lb/>tance de voz pechez. Alors <choice>
+                        <orig>Vlespiegle</orig>
+                        <reg>Ulespiegle</reg>
+                     </choice> dist, il
+    <lb/>me desplaist que <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> n’ay pas accomply deux
+    <lb/>chose : car <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> ne les <choice>
+                        <orig>scauoye</orig>
+                        <reg>scavoye</reg>
+                     </choice> accomplir, ne
+    <lb/>
+                     <choice>
+                        <orig>trouuer</orig>
+                        <reg>trouver</reg>
+                     </choice> façon pour les faire, lors la beguine
+    <lb/>dist, elles sont bonne ou <choice>
+                        <orig>mauuaise</orig>
+                        <reg>mauvaise</reg>
+                     </choice>, que ne
+    <lb/>l’<choice>
+                        <orig>aues</orig>
+                        <reg>aves</reg>
+                     </choice> accomply. <choice>
+                        <orig>Vlespiegle</orig>
+                        <reg>Ulespiegle</reg>
+                     </choice> dit, c’est ainsi
+    <lb/>que l’on le veut prendre. Car il me despleut
+    <lb/>que quand <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> voye aucun nettoyer ses dans
+    <lb/>&amp; vous me tirez <choice>
+                        <orig>ꝑ</orig>
+                        <reg>par</reg>
+                     </choice> les <choice>
+                        <orig>cheueux</orig>
+                        <reg>cheveux</reg>
+                     </choice>. Le premier
+    <lb/>à tout <choice>
+                        <orig>vn</orig>
+                        <reg>un</reg>
+                     </choice> cousteau ou d’aucune autre chose
+    <lb/>que <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> n’<choice>
+                        <orig>auoyes</orig>
+                        <reg>avoyes</reg>
+                     </choice> point chié ou embrene le
+    <lb/>cousteau, l’autre est, qui me desplaist que <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice>
+                     <lb/>ne <choice>
+                        <orig>pouuois</orig>
+                        <reg>pouvois</reg>
+                     </choice> pas estouper toutes les ancien2010
+    <lb/>nes femmes qui vont outre les <choice>
+                        <orig>cinquãte</orig>
+                        <reg>cinquante</reg>
+                     </choice> ans
+    <lb/>leur cul à tout des grans clouz de boys : car
+    <lb/>elles ne sont prouffitables que pour chier
+    <lb/>sur la terre sur quoy croissent les fruitz, la
+    <lb/>beguine dist. Dieu nous vueille garder, <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice>
+                     <lb/>oys bien que si vous estiez fort &amp; eussiez la
+    <lb/>
+                     <choice>
+                        <orig>Vlespiegle</orig>
+                        <reg>Ulespiegle</reg>
+                     </choice>, &amp; son pere <choice>
+                        <orig>auoit</orig>
+                        <reg>avoit</reg>
+                     </choice>
+                     <lb/>
+                     <choice>
+                        <orig>nõ</orig>
+                        <reg>non</reg>
+                     </choice> Nicolas, &amp; sa mere Vui2010
+    <lb/>
+                     <pb n="f. 103"/>
+                  </p>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </text>
+</TEI>
