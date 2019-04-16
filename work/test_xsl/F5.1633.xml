@@ -1,0 +1,3262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Le recueil des hystoires des repeus franches</title>
+            <author>Anonyme</author>
+         </titleStmt>
+         <editionStmt>
+            <edition>OBVIL</edition>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>Sorbonne Université LABEX OBVIL</publisher>
+            <date when="2019"/>
+            <idno>http://http://obvil.sorbonne-universite.site/corpus/faceties/cote_iii-f-019</idno>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
+                  <p>Cette ressource électronique protégée par le code de la propriété intellectuelle sur les bases de données (L341-1) est mise à disposition de la communauté scientifique internationale par l’OBVIL, selon les termes de la licence Creative Commons : 	« Attribution - Pas d’Utilisation Commerciale - Pas de Modification 3.0 France (CCBY-NC-ND 3.0 FR) ».</p>
+                  <p>Attribution : afin de référencer la source, toute utilisation ou publication dérivée de cette ressource électroniques comportera le nom de l’OBVIL et surtout l’adresse Internet de la ressource.</p>
+                  <p>Pas d’Utilisation Commerciale : dans l’intérêt de la communauté scientifique, toute utilisation commerciale est interdite.</p>
+                  <p>Pas de Modification : l’OBVIL s’engage à améliorer et à corriger cette ressource électronique, notamment en intégrant toutes les contributions extérieures, la diffusion de versions modifiées de cette ressource n’est pas souhaitable.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>Anonyme, Le recueil des hystoires des repeus franches, Paris, Denis Meslier, 1490, Bibliothèque du château de Chantilly, Cabinet des livres, III-F-019.</bibl>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <creation>
+            <date when="1490"/>
+         </creation>
+         <langUsage>
+            <language ident="fr"/>
+         </langUsage>
+      </profileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <div>
+            <head>Le recueil des hystoires des repeus franches</head>
+            <castList>
+               <castItem xml:id="acteur"/>
+               <castItem xml:id="clerc"/>
+               <castItem xml:id="gallant"/>
+            </castList>
+            <index>
+               <term type="lieu">[premier lieu où se passe la narration]</term>
+               <term type="lieu">[deuxième lieu etc.]</term>
+               <term type="personnage">[premier personnage, soit nom + fonction, soit nom, soit fonction (drapière, bourgeois, curé)]</term>
+               <term type="personnage">[deuxième personnage,etc.]</term>
+            </index>
+            <div>
+               <p rend="center">&lt;Image&gt;</p>
+            </div>
+            <div>
+               <pb n="f. a1r"/>
+               <div>
+                  <head>Le recueil <choice>
+                        <orig>ꝛ</orig>
+                        <reg>et</reg>
+                     </choice> hystoires des repeus <choice>
+                        <orig>frãche</orig>
+                        <reg>franche</reg>
+                     </choice>
+                  </head>
+                  <l>
+                     <choice>
+                        <orig>Uous</orig>
+                        <reg>Vous</reg>
+                     </choice> qui serches les repeues franches</l>
+                  <l>Et tant <choice>
+                        <orig>iours</orig>
+                        <reg>jours</reg>
+                     </choice> 
+                     <choice>
+                        <orig>ouuriers</orig>
+                        <reg>ouvriers</reg>
+                     </choice> que dimenches</l>
+                  <l>
+                     <choice>
+                        <orig>Naues</orig>
+                        <reg>Naves</reg>
+                     </choice> pas plante de monnoye</l>
+                  <l>Affin que chascun de vous oye.</l>
+                  <l>Comme len les peut <choice>
+                        <orig>recouurer</orig>
+                        <reg>recouvrer</reg>
+                     </choice>
+                  </l>
+                  <l>
+                     <choice>
+                        <orig>Uueilles</orig>
+                        <reg>Vueilles</reg>
+                     </choice> vous au <choice>
+                        <orig>sermõ</orig>
+                        <reg>sermon</reg>
+                     </choice> 
+                     <choice>
+                        <orig>trouuer</orig>
+                        <reg>trouver</reg>
+                     </choice>
+                  </l>
+                  <l>Qui est escript dedens ce <choice>
+                        <orig>liure</orig>
+                        <reg>livre</reg>
+                     </choice>
+                  </l>
+                  <l>Mettes tous peine de le luyre</l>
+                  <l>Entre vous <choice>
+                        <orig>ieunes</orig>
+                        <reg>jeunes</reg>
+                     </choice> perrucatz</l>
+                  <l>procureurs <choice>
+                        <orig>nouueaulx</orig>
+                        <reg>nouveaulx</reg>
+                     </choice> 
+                     <choice>
+                        <orig>aduocatz</orig>
+                        <reg>advocatz</reg>
+                     </choice>
+                  </l>
+                  <l>Aprenans aulx despens daultruy</l>
+                  <l>venes y tost sans nul estry</l>
+                  <l>clers de praticque diligens</l>
+                  <l>qui congnoisses si bien vos gens</l>
+                  <l>sergens a pie et a <choice>
+                        <orig>cheual</orig>
+                        <reg>cheval</reg>
+                     </choice>
+                  </l>
+                  <l>venez y damont et <choice>
+                        <orig>daual</orig>
+                        <reg>daval</reg>
+                     </choice>
+                  </l>
+                  <l>Les hoirs de deffung pathelin</l>
+                  <l>qui <choice>
+                        <orig>saues</orig>
+                        <reg>saves</reg>
+                     </choice> 
+                     <choice>
+                        <orig>iargon</orig>
+                        <reg>jargon</reg>
+                     </choice> 
+                     <choice>
+                        <orig>iobelin</orig>
+                        <reg>jobelin</reg>
+                     </choice>
+                  </l>
+                  <l>Cappitaine du pont abailon</l>
+                  <l>Tous les subgetz francoys villon</l>
+                  <l>Soyes a ce coup <choice>
+                        <orig>resueilles</orig>
+                        <reg>resveilles</reg>
+                     </choice>
+                  </l>
+                  <l>Pas ne deues estre oublies</l>
+                  <l>Tous gallans a pourpoings <choice>
+                        <orig>sãs</orig>
+                        <reg>sans</reg>
+                     </choice> 
+                     <choice>
+                        <orig>mãches</orig>
+                        <reg>manches</reg>
+                     </choice>
+                  </l>
+                  <l>qui ont besoing des repeues franches</l>
+                  <l>et tous ceulx tant <choice>
+                        <orig>yuer</orig>
+                        <reg>yver</reg>
+                     </choice> queste</l>
+                  <l>qui en ont grande necessite</l>
+                  <l>
+                     <choice>
+                        <orig>Uenes</orig>
+                        <reg>Venes</reg>
+                     </choice> vous aprendres comment</l>
+                  <l>Les maistres <choice>
+                        <orig>ancieunement</orig>
+                        <reg>jeunement</reg>
+                     </choice>
+                  </l>
+                  <l>
+                     <choice>
+                        <orig>Sauoient</orig>
+                        <reg>Savoient</reg>
+                     </choice> tous les tours de ce faire</l>
+                  <l>Messire chacun poic de nayre</l>
+                  <l>Qui des <choice>
+                        <orig>liures</orig>
+                        <reg>livres</reg>
+                     </choice> soit les <choice>
+                        <orig>vsages</orig>
+                        <reg>usages</reg>
+                     </choice>
+                  </l>
+                  <l>En veult luyre tous les passages</l>
+                  <l>De celluy est pris appetis</l>
+                  <l>
+                     <choice>
+                        <orig>Uenes</orig>
+                        <reg>Venes</reg>
+                     </choice> y donc grans et petis</l>
+                  <l>Car de la science <choice>
+                        <orig>sauoir</orig>
+                        <reg>savoir</reg>
+                     </choice>
+                  </l>
+                  <l>Vous ne pourres que mieulx valoir</l>
+                  <pb n="f. a1v"/>
+                  <l>Venes y <choice>
+                        <orig>cheuaucheurs</orig>
+                        <reg>chevaucheurs</reg>
+                     </choice> descuyrie</l>
+                  <l>
+                     <choice>
+                        <orig>Seruiteurs</orig>
+                        <reg>Serviteurs</reg>
+                     </choice> de grant seigneurie</l>
+                  <l>Venes y sans dillaction</l>
+                  <l>Tous gens sotz toutes sottes</l>
+                  <l>Venez y bigotz et bigottes</l>
+                  <l>Venez y toutes truppellines</l>
+                  <l>Cordeliers et <choice>
+                        <orig>iacoppines</orig>
+                        <reg>jacoppines</reg>
+                     </choice>
+                  </l>
+                  <l>Venes aussy toutes prestresses</l>
+                  <l>Qui <choice>
+                        <orig>scaues</orig>
+                        <reg>scaves</reg>
+                     </choice> pieca les adresses</l>
+                  <l>Des presbitaires hault et bas</l>
+                  <l>Gardes que vous ny failliez pas</l>
+                  <l>Venes y gorrieres et gorries</l>
+                  <l>Qui faictes si bien les manieres</l>
+                  <l>Que cest <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> chose terrible</l>
+                  <l>Pour bien faire tout le possible</l>
+                  <l>Toutes manieres de farceurs</l>
+                  <l>Anciens et <choice>
+                        <orig>ieunes</orig>
+                        <reg>jeunes</reg>
+                     </choice> mocqueurs</l>
+                  <l>Venes y tous vrays macquereaulx</l>
+                  <l>De tous estas vilz et <choice>
+                        <orig>nouueaulx</orig>
+                        <reg>nouveaulx</reg>
+                     </choice>
+                  </l>
+                  <l>
+                     <choice>
+                        <orig>Uenes</orig>
+                        <reg>Venes</reg>
+                     </choice> y toutes macquerelles</l>
+                  <l>Qui par voz subtilles querelles</l>
+                  <l>
+                     <choice>
+                        <orig>Auez</orig>
+                        <reg>Avez</reg>
+                     </choice> 
+                     <choice>
+                        <orig>tousiours</orig>
+                        <reg>tousjours</reg>
+                     </choice> en vos maisons</l>
+                  <l>Pour <choice>
+                        <orig>auoyr</orig>
+                        <reg>avoyr</reg>
+                     </choice> en toutes saisons</l>
+                  <l>Tant aux <choice>
+                        <orig>iours</orig>
+                        <reg>jours</reg>
+                     </choice> 
+                     <choice>
+                        <orig>ouuriers</orig>
+                        <reg>ouvriers</reg>
+                     </choice> que dimenches</l>
+                  <l>
+                     <choice>
+                        <orig>souuent</orig>
+                        <reg>souvent</reg>
+                     </choice> les bonnes repeues franches</l>
+                  <l>
+                     <choice>
+                        <orig>Uenez</orig>
+                        <reg>Venez</reg>
+                     </choice> y tous bons pardonneurs</l>
+                  <l>Qui <choice>
+                        <orig>scauez</orig>
+                        <reg>scavez</reg>
+                     </choice> faire les honneurs</l>
+                  <l>Aux villages de bons pastes</l>
+                  <l>
+                     <choice>
+                        <orig>Auecques</orig>
+                        <reg>Avecques</reg>
+                     </choice> ses gras curates</l>
+                  <l>Qui ayment bien vostre venue</l>
+                  <l>Pour <choice>
+                        <orig>auoir</orig>
+                        <reg>avoir</reg>
+                     </choice> la franche repeue</l>
+                  <l>Affin que <choice>
+                        <orig>chascũ</orig>
+                        <reg>chascun</reg>
+                     </choice> deux en orte</l>
+                  <l>Les paroissiens quon aporte</l>
+                  <l>Des biens aux pardons de ce lieu</l>
+                  <l>Et quon face du bien pour dieu</l>
+                  <l>Tant que le pardonneur sen aille</l>
+                  <l>Le cure ne despendra maille</l>
+                  <l>Et aura maistre <choice>
+                        <orig>iehan</orig>
+                        <reg>jehan</reg>
+                     </choice> lorens</l>
+                  <pb n="f. a2r"/>
+                  <l>fermement payant les despens</l>
+                  <l>et quarte de vin simplement</l>
+                  <l>au cure a son partement</l>
+                  <l>De tout estat soit bas ou hault</l>
+                  <l>Venez y qui ny ait deffault</l>
+                  <l>Venez y varletz chamberieres</l>
+                  <l>Qui <choice>
+                        <orig>scauez</orig>
+                        <reg>scavez</reg>
+                     </choice> si bien les manieres</l>
+                  <l>en disant mainte bonne <choice>
+                        <orig>baue</orig>
+                        <reg>bave</reg>
+                     </choice>
+                  </l>
+                  <l>
+                     <choice>
+                        <orig>Dauoir</orig>
+                        <reg>Davoir</reg>
+                     </choice> du meilleur de la <choice>
+                        <orig>caue</orig>
+                        <reg>cave</reg>
+                     </choice>
+                  </l>
+                  <l>et puis <choice>
+                        <orig>ioyeusement</orig>
+                        <reg>joyeusement</reg>
+                     </choice> preschez</l>
+                  <l>Apres que voz gens sont couchez</l>
+                  <l>Ceulx qui serchent banquetz ou feste</l>
+                  <l>Pour dire quelque chansonnette</l>
+                  <l>Affin daraper la repeue.</l>
+                  <l>Que chascun de vous se remue</l>
+                  <l>Dy venir bien legierement.</l>
+                  <l>Et vous pourres ouyr comment</l>
+                  <l>
+                     <choice>
+                        <orig>Vng</orig>
+                        <reg>Ung</reg>
+                     </choice> grant tas de bonnes commeres</l>
+                  <l>
+                     <choice>
+                        <orig>Soyuent</orig>
+                        <reg>Soyvent</reg>
+                     </choice> bien <choice>
+                        <orig>trouuer</orig>
+                        <reg>trouver</reg>
+                     </choice> manieres</l>
+                  <l>De faire leurs maris coqus.</l>
+                  <l>Venez y et natendes plus</l>
+                  <l>Entre vous prestres sans <choice>
+                        <orig>seiour</orig>
+                        <reg>sejour</reg>
+                     </choice>
+                  </l>
+                  <l>Qui dites deux messes pour <choice>
+                        <orig>iour</orig>
+                        <reg>jour</reg>
+                     </choice>
+                  </l>
+                  <l>A saint innocent ou ailleurs</l>
+                  <l>
+                     <choice>
+                        <orig>Uenez</orig>
+                        <reg>Venez</reg>
+                     </choice> pour <choice>
+                        <orig>sauoir</orig>
+                        <reg>savoir</reg>
+                     </choice> plusieurs</l>
+                  <l>Des passages et des adresses</l>
+                  <l>De maintes petites finesses</l>
+                  <l>Que len fait tout facilement</l>
+                  <l>En maint lieu la <choice>
+                        <orig>frãche</orig>
+                        <reg>franche</reg>
+                     </choice> repeue</l>
+                  <l>Qui ne doibt a nul estre tenue</l>
+                  <l>Par tel cy qui veue ne laura</l>
+                  <l>Payera a celluy qui fera</l>
+                  <l>De ceste repeue le present</l>
+                  <l>De lescot sen ira exent</l>
+                  <l>Moyennant qui monstre ce <choice>
+                        <orig>liure</orig>
+                        <reg>livre</reg>
+                     </choice>
+                  </l>
+                  <l>Par ce moyen sera <choice>
+                        <orig>deliure</orig>
+                        <reg>delivre</reg>
+                     </choice>
+                  </l>
+                  <l>En lieu ou <choice>
+                        <orig>naura</orig>
+                        <reg>navra</reg>
+                     </choice> este veu</l>
+                  <l>Il sera franchement repeu</l>
+                  <pb n="f. a2v"/>
+                  <l>Ainsi quon orra plus a plain</l>
+                  <l>Qui de lentendement prendra soing</l>
+                  <sp who="acteur">
+                     <speaker>                               Lacteur</speaker>
+                     <l>Quant <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> ouy ce present <choice>
+                           <orig>mandemẽt</orig>
+                           <reg>mandement</reg>
+                        </choice>
+                     </l>
+                     <l>Quon semonnoit venir a lacteur</l>
+                     <l>Lesdessusdit <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> pensay <choice>
+                           <orig>fermemẽt</orig>
+                           <reg>fermement</reg>
+                        </choice>
+                     </l>
+                     <l>De my <choice>
+                           <orig>trouuer</orig>
+                           <reg>trouver</reg>
+                        </choice> 
+                        <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> en pris <choice>
+                           <orig>lauẽture</orig>
+                           <reg>laventure</reg>
+                        </choice>
+                     </l>
+                     <l>Comme celluy de droite nature</l>
+                     <l>vouloit de ce faire narrassion</l>
+                     <l>A telle fin quil en fust <choice>
+                           <orig>menciõ</orig>
+                           <reg>mencion</reg>
+                        </choice>
+                     </l>
+                     <l>A <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> chascun pour le <choice>
+                           <orig>tẽps</orig>
+                           <reg>temps</reg>
+                        </choice> 
+                        <choice>
+                           <orig>auenir</orig>
+                           <reg>avenir</reg>
+                        </choice>
+                     </l>
+                     <l>Qui se <choice>
+                           <orig>actẽdẽt</orig>
+                           <reg>actendent</reg>
+                        </choice> ont <choice>
+                           <orig>intẽciõ</orig>
+                           <reg>intencion</reg>
+                        </choice>
+                     </l>
+                     <l>Que les repeues les <choice>
+                           <orig>vendrõt</orig>
+                           <reg>vendront</reg>
+                        </choice> secourir</l>
+                     <l/>
+                     <l>Mais se secours est <choice>
+                           <orig>dãciẽnement</orig>
+                           <reg>danciennement</reg>
+                        </choice>
+                     </l>
+                     <l>Tout le repas de chetif par droiture</l>
+                     <l>Par quoy aucuns qui ont <choice>
+                           <orig>entẽdement</orig>
+                           <reg>entendement</reg>
+                        </choice>
+                     </l>
+                     <l>Les <choice>
+                           <orig>trouuẽt</orig>
+                           <reg>trouvent</reg>
+                        </choice> 
+                        <choice>
+                           <orig>biẽ</orig>
+                           <reg>bien</reg>
+                        </choice> aultres nen ont cure</l>
+                     <l>Et ne <choice>
+                           <orig>serchẽt</orig>
+                           <reg>serchent</reg>
+                        </choice> tant que largent leur dure</l>
+                     <l>Mais font du leur si grant destrution</l>
+                     <l>Quilz en entrent en la <choice>
+                           <orig>subiectiõ</orig>
+                           <reg>subjection</reg>
+                        </choice>
+                     </l>
+                     <l>De faire aux dens larquemye <choice>
+                           <orig>sãs</orig>
+                           <reg>sans</reg>
+                        </choice> faillir.</l>
+                     <l>En <choice>
+                           <orig>attẽdãt</orig>
+                           <reg>attendant</reg>
+                        </choice> pour tout production</l>
+                     <l>Que les repeues les <choice>
+                           <orig>viẽdront</orig>
+                           <reg>viendront</reg>
+                        </choice> secourir</l>
+                     <l/>
+                     <l>Ien ay congneu qui largement</l>
+                     <l>Donnoyent ato<hi rend="sup">9</hi> repeues oultre mesure</l>
+                     <l>Qui de puys ont <choice>
+                           <orig>ↄtinuellemẽt</orig>
+                           <reg>continuellement</reg>
+                        </choice>
+                     </l>
+                     <l>S<corr>[e]</corr>ruy le pont a billon par droicture</l>
+                     <l>Dont la facon a este a maint dure</l>
+                     <l>En leur grant dueil <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> tribulacion</l>
+                     <l>Mais lors <choice>
+                           <orig>nauoit</orig>
+                           <reg>navoit</reg>
+                        </choice> nulle remission</l>
+                     <l>
+                        <choice>
+                           <orig>Combiẽ</orig>
+                           <reg>Combien</reg>
+                        </choice> 
+                        <choice>
+                           <orig>q̃</orig>
+                           <reg>que</reg>
+                        </choice> ce leur fist le cueur fremir</l>
+                     <l>Il <choice>
+                           <orig>nattẽdoint</orig>
+                           <reg>nattendoint</reg>
+                        </choice> autre sucession</l>
+                     <l>Que les repeues les <choice>
+                           <orig>viẽdrõt</orig>
+                           <reg>viendront</reg>
+                        </choice> secourir</l>
+                     <l/>
+                     <l>Prince pource que ne me puis tenir</l>
+                     <l>Que de telz faitz ne face mencion</l>
+                     <l>Puys <choice>
+                           <orig>q̃</orig>
+                           <reg>que</reg>
+                        </choice> a <choice>
+                           <orig>mõ</orig>
+                           <reg>mon</reg>
+                        </choice> 
+                        <choice>
+                           <orig>tẽps</orig>
+                           <reg>temps</reg>
+                        </choice> les ay veu <choice>
+                           <orig>auenir</orig>
+                           <reg>avenir</reg>
+                        </choice>
+                     </l>
+                     <pb n="f. a3r"/>
+                     <l>Ien veuil faire <choice>
+                           <orig>quelq̃</orig>
+                            <reg>quelque</reg>
+                        </choice> 
+                        <choice>
+                           <orig>narrassiõ</orig>
+                           <reg>narrassion</reg>
+                        </choice>
+                     </l>
+                     <l>Et en escripre soubz la correction</l>
+                     <l>Des <choice>
+                           <orig>escoutãs</orig>
+                           <reg>escoutans</reg>
+                        </choice> affin den <choice>
+                           <orig>souuenir</orig>
+                           <reg>souvenir</reg>
+                        </choice>
+                     </l>
+                     <l>Ceste presente <choice>
+                           <orig>nouuelle</orig>
+                           <reg>nouvelle</reg>
+                        </choice> 
+                        <choice>
+                           <orig>inuẽciõ</orig>
+                           <reg>inuencion</reg>
+                        </choice>
+                     </l>
+                     <l>Que les repeues les <choice>
+                           <orig>viẽdrõt</orig>
+                           <reg>viendront</reg>
+                        </choice> secourir</l>
+                  </sp>
+               </div>
+               <div>
+                  <head>                   La balade des
+<lb/>                   escoutans</head>
+                  <l>Qui en a il est bien venu.</l>
+                  <l>Qui nen a point len nen tient conte</l>
+                  <l>Celluy qui en a est congneu</l>
+                  <l>Et cil qui na rien vit a honte</l>
+                  <l>Et qui paye len lessausse <choice>
+                        <orig>ꝛ</orig>
+                        <reg>et</reg>
+                     </choice> monte</l>
+                  <l>
+                     <choice>
+                        <orig>Iusques</orig>
+                        <reg>Jusques</reg>
+                     </choice> au tiers ciel pour en pester</l>
+                  <l>Son honneur tout autre surmonte</l>
+                  <l>Par force de bien caquester</l>
+                  <l/>
+                  <l>Quant entendismes les estatz</l>
+                  <l>De telz dissimulations</l>
+                  <l>Congnoissans les haulx et les bas</l>
+                  <l>Pour tous <choice>
+                        <orig>abreuiations</orig>
+                        <reg>abreviations</reg>
+                     </choice>
+                  </l>
+                  <l>Nous <choice>
+                        <orig>vnismes</orig>
+                        <reg>unismes</reg>
+                     </choice> sans <choice>
+                        <orig>sõmassions</orig>
+                        <reg>sommassions</reg>
+                     </choice>
+                  </l>
+                  <l>Aux champs par boys et par larris</l>
+                  <l>Pour congnoistre les fictions</l>
+                  <l>Qui se font <choice>
+                        <orig>souuent</orig>
+                        <reg>souvent</reg>
+                     </choice> a paris</l>
+                  <l>Pour ce que chascun maintenoit</l>
+                  <l>Que cestoit la ville du monde</l>
+                  <l>Qui plus de peuple soustenoit</l>
+                  <l>Et ou maint estrangier abonde</l>
+                  <l>Pour la grant science parfonde</l>
+                  <l>Renommee en icelle ville</l>
+                  <l>
+                     <choice>
+                        <orig>Ie</orig>
+                        <reg>Je</reg>
+                     </choice> partis et veulx quon me tendre</l>
+                  <l>Sa lentree <choice>
+                        <orig>auois</orig>
+                        <reg>avois</reg>
+                     </choice> croix ne ylle</l>
+                  <l/>
+                  <l>Il estoit temps de ce coucher</l>
+                  <l>Et ne <choice>
+                        <orig>scauoye</orig>
+                        <reg>scavoye</reg>
+                     </choice> ou heberger</l>
+                  <l>Dun logis me vins aprocher</l>
+                  <l>
+                     <choice>
+                        <orig>Sauoir</orig>
+                        <reg>Savoir</reg>
+                     </choice> son my vouldroit loger</l>
+                  <l>En disant <choice>
+                        <orig>aues</orig>
+                        <reg>aves</reg>
+                     </choice> vous a menger</l>
+                  <l>Loste me respons sy ay :</l>
+                  <l>f. a3v</l>
+                  <l>Lors luy priay pour abreger</l>
+                  <l>Apportes le dont <choice>
+                        <orig>deuant</orig>
+                        <reg>devant</reg>
+                     </choice> moy</l>
+                  <l/>
+                  <l>
+                     <choice>
+                        <orig>Ie</orig>
+                        <reg>Je</reg>
+                     </choice> fus <choice>
+                        <orig>seruy</orig>
+                        <reg>servy</reg>
+                     </choice> passablement</l>
+                  <l>Selon mon estat et ma sorte</l>
+                  <l>En pensant a parmoy comment</l>
+                  <l>
+                     <choice>
+                        <orig>Ie</orig>
+                        <reg>Je</reg>
+                     </choice> 
+                     <choice>
+                        <orig>cheuiroye</orig>
+                        <reg>cheviroye</reg>
+                     </choice> 
+                     <choice>
+                        <orig>auecques</orig>
+                        <reg>avecques</reg>
+                     </choice> loste</l>
+                  <l>
+                     <choice>
+                        <orig>Ie</orig>
+                        <reg>Je</reg>
+                     </choice> me <choice>
+                        <orig>aduise</orig>
+                        <reg>advise</reg>
+                     </choice> que soubz ma coste</l>
+                  <l>
+                     <choice>
+                        <orig>Auoit</orig>
+                        <reg>Avoit</reg>
+                     </choice> 
+                     <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> espee qui bien trenche.</l>
+                  <l>
+                     <choice>
+                        <orig>Ie</orig>
+                        <reg>Je</reg>
+                     </choice> la lerray quon ne me loste</l>
+                  <l>En gaige de la repeue franche</l>
+                  <l/>
+                  <l>Lespee estoit toute dacier</l>
+                  <l>Il ne <choice>
+                        <orig>sẽ</orig>
+                        <reg>sen</reg>
+                     </choice> failloit que le fer</l>
+                  <l>Mais loste la me fist machier</l>
+                  <l>Fourreau <choice>
+                        <orig>ꝛ</orig>
+                        <reg>et</reg>
+                     </choice> tout sans fricasser</l>
+                  <l>Puis apres me <choice>
+                        <orig>conuier</orig>
+                        <reg>convier</reg>
+                     </choice> penser</l>
+                  <l>De repaistre se fain <choice>
+                        <orig>auoye</orig>
+                        <reg>avoye</reg>
+                     </choice>
+                  </l>
+                  <l>Rien ny eut valu le tenser</l>
+                  <l>De leans party sans monnoye</l>
+                  <l/>
+                  <sp who="acteur">
+                     <speaker>                                Lacteur</speaker>
+                     <l>
+                        <choice>
+                           <orig>Lẽdemain</orig>
+                           <reg>Lendemain</reg>
+                        </choice> maloye enquerant</l>
+                     <l>Pour rencontrer martin garant</l>
+                     <l>Droit en la salle du pallais</l>
+                     <l>
+                        <choice>
+                           <orig>Rẽcontray</orig>
+                           <reg>Rencontray</reg>
+                        </choice> pour <choice>
+                           <orig>mõ</orig>
+                           <reg>mon</reg>
+                        </choice> p̃mier mais</l>
+                     <l>Tout droit soubz la premiere porte</l>
+                     <l>Plusieurs <choice>
+                           <orig>mygnõs</orig>
+                           <reg>mygnons</reg>
+                        </choice> 
+                        <choice>
+                           <orig>destrãge</orig>
+                           <reg>destrange</reg>
+                        </choice> sorte</l>
+                     <l>Qui <choice>
+                           <orig>sẽbloient</orig>
+                           <reg>sembloient</reg>
+                        </choice> bien a leur habit</l>
+                     <l>Quilz fussent gens de grant acquit</l>
+                     <l>Lors vins pour entrer en la salle</l>
+                     <l>Lan y monte lautre <choice>
+                           <orig>deualle</orig>
+                           <reg>devalle</reg>
+                        </choice>
+                     </l>
+                     <l>La me pourmenay de par dieu</l>
+                     <l>Regardant lestat de ce lieu</l>
+                     <l>Et quant <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> leuz bien regardee</l>
+                     <l>Tant plus la vois <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                     </choice> mie<choice>
+                        <sic>lu</sic>
+                        <corr>[ul]</corr>
+                     </choice>x magree</l>
+                     <l>
+                        <choice>
+                           <orig>Ie</orig>
+                           <reg>Je</reg>
+                        </choice> vis la tant de mirelificques</l>
+                     <l>Tant damecons <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> tant dafficques</l>
+                     <pb n="f. a4r"/>
+                     <l>Pour atraper les plus huppez</l>
+                     <l>Les plus rouges y sont happez</l>
+                     <l>A lun <choice>
+                           <orig>conuiẽt</orig>
+                           <reg>convient</reg>
+                        </choice> 
+                        <choice>
+                           <orig>vẽdre</orig>
+                           <reg>vendre</reg>
+                        </choice> sa terre</l>
+                     <l>Maint sans santir la se desterre</l>
+                     <l>Partie ou peu en demourra</l>
+                     <l>De tout ce que vaillant aura</l>
+                     <l>Cuidant destruyre son voisin</l>
+                     <l>De poitu ou de lymosin</l>
+                     <l>Ou de quelque aultre nassion</l>
+                     <l>Mainct en est a destruction</l>
+                     <l>Et fault ains partir de leans</l>
+                     <l>Quilz facent larquemie aux <choice>
+                           <orig>dẽs</orig>
+                           <reg>dens</reg>
+                        </choice>
+                     </l>
+                     <l>Ou <choice>
+                           <orig>ẽprunter</orig>
+                           <reg>emprunter</reg>
+                        </choice> qui a credit</l>
+                     <l>Tout ainsi <choice>
+                           <orig>q̃</orig>
+                           <reg>que</reg>
+                        </choice> 
+                        <choice>
+                           <orig>deuãt</orig>
+                           <reg>devant</reg>
+                        </choice> 
+                        <choice>
+                           <orig>iay</orig>
+                           <reg>jay</reg>
+                        </choice> dit</l>
+                     <l>Quant leur <choice>
+                           <orig>argẽt</orig>
+                           <reg>argent</reg>
+                        </choice> fort sappetisse</l>
+                     <l>Lors leur est la repeue propice</l>
+                     <l>Et le <choice>
+                           <orig>sergẽt</orig>
+                           <reg>sergent</reg>
+                        </choice> plus <choice>
+                           <orig>nẽ</orig>
+                           <reg>nen</reg>
+                        </choice> doubtez</l>
+                     <l>Hault <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> bas <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> de tous costes</l>
+                     <l>Comme on verra par demonstrances</l>
+                     <l>En ce traicte des repeues franches</l>
+                     <l>Et quant au regart de plusieurs</l>
+                     <l>Autres <choice>
+                           <orig>repeuez</orig>
+                           <reg>repevez</reg>
+                        </choice> assez escriptez</l>
+                     <l>Affin quon <choice>
+                           <orig>prẽgne</orig>
+                           <reg>prengne</reg>
+                        </choice> les meilleurs</l>
+                     <l>En lisant grandes ou petites</l>
+                     <l>
+                        <choice>
+                           <orig>Uous</orig>
+                           <reg>Vous</reg>
+                        </choice> orrez mains <choice>
+                           <orig>moyẽs</orig>
+                           <reg>moyens</reg>
+                        </choice> licites</l>
+                     <l>Comment il ont este happez</l>
+                     <l>Hault <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> bas par bonnes conduictes</l>
+                     <l>De ceulx qui les ont attrappez</l>
+                  </sp>
+               </div>
+               <div>
+                  <head>                    La repeue de villon
+<lb/>                    et de ses compaignons</head>
+                  <l>Qui na or ny argent ne gaige</l>
+                  <l>Comment peult il faire grant chiere</l>
+                  <l>Il fault quil <choice>
+                        <orig>viue</orig>
+                        <reg>vive</reg>
+                     </choice> 
+                     <choice>
+                        <orig>dauantaige</orig>
+                        <reg>davantaige</reg>
+                     </choice>
+                  </l>
+                  <l>La facon est coustumiere</l>
+                  <l>Saurion nous <choice>
+                        <orig>trouuer</orig>
+                        <reg>trouver</reg>
+                     </choice> maniere</l>
+                  <l>De tromper quelcun pour repaistre</l>
+                  <l>Qui le fera sera son maistre</l>
+                  <l>Ainsi parloyent les compaignons</l>
+                  <pb n="f. a4v"/>
+                  <l>Du bon maistre francoys villon</l>
+                  <l>Qui <choice>
+                        <orig>nauoient</orig>
+                        <reg>navoient</reg>
+                     </choice> vaillant deux oygnons</l>
+                  <l>Tente tapis ne <choice>
+                        <orig>pauillon</orig>
+                        <reg>pavillon</reg>
+                     </choice>
+                  </l>
+                  <l>Il leur dist ne nous soucion</l>
+                  <l>Car <choice>
+                        <orig>auiourduy</orig>
+                        <reg>aujourduy</reg>
+                     </choice> sans nul deffault</l>
+                  <l>Pain vin viande a grant foyson</l>
+                  <l>Aurez <choice>
+                        <orig>auec</orig>
+                        <reg>avec</reg>
+                     </choice> du rost tout chault</l>
+                  <div>
+                     <head>                       La maniere da/
+<lb/>                       <choice>
+                           <orig>uoir</orig>
+                           <reg>voir</reg>
+                        </choice> du poysson</head>
+                     <l>    Adoncques il leur demanda</l>
+                     <l>Quelz viandes vouloyent macher</l>
+                     <l>Lun de bon poisson souhaita</l>
+                     <l>lautre demanda de la cher</l>
+                     <l>Maistre francoys ce bon archer</l>
+                     <l>Leur dist ne vous souciez</l>
+                     <l>Il vous fault vos pourpoins lacher</l>
+                     <l>Car nous aurons viandes assez</l>
+                     <l/>
+                     <l>Lors partit de ses compaignons</l>
+                     <l>Et vint a la poissonnerie</l>
+                     <l>Et les laissa de la les pons</l>
+                     <l>Quasi plains de merencolie</l>
+                     <l>Il marchanda a cherette</l>
+                     <l>
+                        <choice>
+                           <orig>Vng</orig>
+                           <reg>Ung</reg>
+                        </choice> panier tout plain de poisson</l>
+                     <l>Et sembloit <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> vous certifie.</l>
+                     <l>Quil fust homme de frant facon</l>
+                     <l/>
+                     <l>Maistre francoys fut diligent</l>
+                     <l>Dachetter non pas de payer</l>
+                     <l>Et dist quil bailleroit largent</l>
+                     <l>Tout comptant au porte panier</l>
+                     <l>Ilz partent sans plus plaidier</l>
+                     <l>Et passerent par nostre dame</l>
+                     <l>La ou il vit le penancier</l>
+                     <l>Qui confessoit ou homme ou femme</l>
+                     <l/>
+                     <l>Quant il le vit a peu de plet</l>
+                     <l>Il luy dist monseigneur <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> vous prie</l>
+                     <pb n="f. a5r"/>
+                     <l>Que vous despechez sil vous plaist</l>
+                     <l>Mon <choice>
+                           <orig>nepueu</orig>
+                           <reg>nepveu</reg>
+                        </choice> car <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> vous affie</l>
+                     <l>Quil est en si grant <choice>
+                           <orig>reuerie</orig>
+                           <reg>reverie</reg>
+                        </choice>
+                     </l>
+                     <l>vers dieu il est fort negligent</l>
+                     <l>Il est en telle meroncolie</l>
+                     <l>Quil ne parle riens que dargent</l>
+                     <l/>
+                     <l>vrayement se dist le penancier</l>
+                     <l>Tresvoulentiers on le fera</l>
+                     <l>Maistre francoys print le panier</l>
+                     <l>Et dist mon amy venes ca</l>
+                     <l>vela qui vous despechera</l>
+                     <l>Incontinent quil aura fait</l>
+                     <l>Adonc maistre francoys sen va</l>
+                     <l>A tout le panier en effect</l>
+                     <l/>
+                     <l>Quant le penancier eust parfait</l>
+                     <l>De confesser la creature</l>
+                     <l>Saigne denier par dit et fait</l>
+                     <l>Acourut vers luy bonne aleure</l>
+                     <l>Disant monseigneur <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> vous asseure</l>
+                     <l>Sil vous plaisoit prendre loysir</l>
+                     <l>De me despecher a ceste heure</l>
+                     <l>vous me feries grant plaisir</l>
+                     <l/>
+                     <l>Je le vueil bien en verite</l>
+                     <l>Dist le penancier par ma foy</l>
+                     <l>Or dictes benedicite</l>
+                     <l>Et puis <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> vous confesseray</l>
+                     <l>et en apres vous assouldray</l>
+                     <l>Ainsi comme <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> le doy faire</l>
+                     <l>Puis penitance vous bauldray</l>
+                     <l>Qui vous sera bien necessaire</l>
+                     <l/>
+                     <l>Quel confesser dist le <choice>
+                           <orig>poure</orig>
+                           <reg>povre</reg>
+                        </choice> homme</l>
+                     <l>Fus <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> pas a pasques absoulz</l>
+                     <l>que bon gre saint pierre de romme</l>
+                     <l>Je demande cinquante soubz</l>
+                     <pb n="f. a5v"/>
+                     <l>Quelle si a qui sommes nous</l>
+                     <l>Ma maistresse et bien <choice>
+                           <orig>arriuee</orig>
+                           <reg>arrivee</reg>
+                        </choice>
+                     </l>
+                     <l>A coup a coup despesches vous</l>
+                     <l>Payes mon panier de maree</l>
+                     <l/>
+                     <l>Ha mon amy ce nest pas <choice>
+                           <orig>ieu</orig>
+                           <reg>jeu</reg>
+                        </choice>
+                     </l>
+                     <l>Dist le penancier seurement</l>
+                     <l>Il vous fault bien penser a dieu</l>
+                     <l>Et le supplier humblement</l>
+                     <l>Que bon gre en ait mon serment</l>
+                     <l>Dist cest homme sans contredit</l>
+                     <l>Despeches moy legierement</l>
+                     <l>Ainsi que se seigneur a dit</l>
+                     <l/>
+                     <l>Adonc le penancier vit bien</l>
+                     <l>Quil y eut quelque tromperie</l>
+                     <l>Quant il entendit le moyen</l>
+                     <l>Il congneut bien la <choice>
+                           <orig>ioncherie</orig>
+                           <reg>joncherie</reg>
+                        </choice>
+                     </l>
+                     <l>Le <choice>
+                           <orig>poure</orig>
+                           <reg>povre</reg>
+                        </choice> homme <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> vous affie</l>
+                     <l>Ne prisa pas bien la facon</l>
+                     <l>Car il neust <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> vous sertiffie</l>
+                     <l>Or ne argent de son poisson</l>
+                     <l/>
+                     <l>Maistre francoys par son blason</l>
+                     <l>
+                        <choice>
+                           <orig>Trouua</orig>
+                           <reg>Trouva</reg>
+                        </choice> la facon et maniere</l>
+                     <l>
+                        <choice>
+                           <orig>Dauoir</orig>
+                           <reg>Davoir</reg>
+                        </choice> maree grant foison</l>
+                     <l>Pour gaudir et faire grant chiere</l>
+                     <l>Cestoit la mere nourrissiere</l>
+                     <l>De ceulx qui <choice>
+                           <orig>nauoient</orig>
+                           <reg>navoient</reg>
+                        </choice> point dargent</l>
+                     <l>A tromper <choice>
+                           <orig>deuant</orig>
+                           <reg>devant</reg>
+                        </choice> et derriere</l>
+                     <l>Estoit <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> homme diligent</l>
+                     <l/>
+                  </div>
+                  <div>
+                     <head>        La maniere <choice>
+                           <orig>dauoir</orig>
+                           <reg>davoir</reg>
+                        </choice> des trippes pour
+<lb/>        disner</head>
+                     <l>Que fist il a bien peu de plet</l>
+                     <l>
+                        <choice>
+                           <orig>Sauisa</orig>
+                           <reg>Savisa</reg>
+                        </choice> de grant <choice>
+                           <orig>ioncherie</orig>
+                           <reg>joncherie</reg>
+                        </choice>
+                     </l>
+                     <l>Et fist <choice>
+                           <orig>lauer</orig>
+                           <reg>laver</reg>
+                        </choice> le cul bien net</l>
+                     <l>A <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> gallant <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> vous affie</l>
+                     <pb n="f. a6r"/>
+                     <l>Disant il <choice>
+                           <orig>conuient</orig>
+                           <reg>convient</reg>
+                        </choice> quon espie</l>
+                     <l>Quant seray <choice>
+                           <orig>deuant</orig>
+                           <reg>devant</reg>
+                        </choice> la tripiere</l>
+                     <l>Monstre ton cul par raillerie</l>
+                     <l>Puis apres nous ferons grand chiere</l>
+                     <l/>
+                     <l>Le compaignon point ne faillit</l>
+                     <l>Foy que doy saint remy de rains</l>
+                     <l>A petit pont vint par compas</l>
+                     <l>Son cul <choice>
+                           <orig>descouuert</orig>
+                           <reg>descouvert</reg>
+                        </choice> 
+                        <choice>
+                           <orig>iusques</orig>
+                           <reg>jusques</reg>
+                        </choice> aux rains</l>
+                     <l>Quant maistre francoys vist le train</l>
+                     <l>Dieu scet si fist piteuses lippes</l>
+                     <l>Car il tenoit entre ses mains</l>
+                     <l>Du foye du poummon et des tripes</l>
+                     <l/>
+                     <l>Comme sil fust plain de despit</l>
+                     <l>Et courrouce amerement</l>
+                     <l>Il haussa la main <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> petit</l>
+                     <l>Et le frappa bien rudement</l>
+                     <l>Des trippes par le fondement</l>
+                     <l>Puis sans faire plus long caquet</l>
+                     <l>Les voulut tout incontinent</l>
+                     <l>Remettre dedens le baquet</l>
+                     <l/>
+                     <l>La tripiere fut fort courroucee</l>
+                     <l>Et ne les voulut pas reprendre</l>
+                     <l>Maistre francoys sans demouree</l>
+                     <l>Sen alla sans compte luy <choice>
+                           <orig>rẽdre</orig>
+                           <reg>rendre</reg>
+                        </choice>
+                     </l>
+                     <l>Par ainsi vous pouez entendre</l>
+                     <l>Quilz eurent tripes et maree</l>
+                     <l>Mais apres fault du pain tendre</l>
+                     <l>Pour ce disner de grant facon</l>
+                     <l/>
+                  </div>
+                  <div>
+                     <head>        La maniere <choice>
+                           <orig>dauoir</orig>
+                           <reg>davoir</reg>
+                        </choice> du pain</head>
+                     <l/>
+                     <l>Il sen vint chez <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> boullenger.</l>
+                     <l>Affin de mieulx fournir son train</l>
+                     <l>Contre faisant de lescuyer</l>
+                     <l>Affin de mieulx fornir son train</l>
+                     <pb n="f. a6v"/>
+                     <l>Cy pris cy mys on chapellast</l>
+                     <l>Cinq ou six douzaines de pain</l>
+                     <l>Et que bien tost on le hatast</l>
+                     <l/>
+                     <l>Quant la moytie fut chapelle</l>
+                     <l>En <choice>
+                           <orig>vne</orig>
+                           <reg>une</reg>
+                        </choice> hoste le fist mettre</l>
+                     <l>
+                        <choice>
+                           <orig>Cõme</orig>
+                           <reg>Comme</reg>
+                        </choice> cil fut de pres haste</l>
+                     <l>Il pria et requist au maistre</l>
+                     <l>Quaucun se voulsist entremettre</l>
+                     <l>Dapporter apres luy courant</l>
+                     <l>Le pain chappelle en son estre</l>
+                     <l>Tandis quon fist le demourant</l>
+                     <l/>
+                     <l>Le varlet le mist sur col</l>
+                     <l>Apres maistre francoys le porte</l>
+                     <l>Et <choice>
+                           <orig>arriua</orig>
+                           <reg>arriva</reg>
+                        </choice> soit dur ou mol</l>
+                     <l>Empres <choice>
+                           <orig>vne</orig>
+                           <reg>une</reg>
+                        </choice> grant vielle porte</l>
+                     <l>Le varlet descharga sa hoste</l>
+                     <l>Et fut <choice>
+                           <orig>renuoye</orig>
+                           <reg>renvoye</reg>
+                        </choice> tout courant</l>
+                     <l>
+                        <choice>
+                           <orig>Hastiuement</orig>
+                           <reg>Hastivement</reg>
+                        </choice> traynant sa hoste</l>
+                     <l>Pour requerir le demourant</l>
+                     <l/>
+                     <l>Maistre francoys sans contredit</l>
+                     <l>Natendit pas la <choice>
+                           <orig>reuenue</orig>
+                           <reg>revenue</reg>
+                        </choice>
+                     </l>
+                     <l>Il eut du pain par son edit</l>
+                     <l>Pour fournir sa franche repeue</l>
+                     <l>Le boulengier sans attendue</l>
+                     <l>
+                        <choice>
+                           <orig>Reuint</orig>
+                           <reg>Revint</reg>
+                        </choice> mais il ne <choice>
+                           <orig>trouua</orig>
+                           <reg>trouva</reg>
+                        </choice> point</l>
+                     <l>Son maistre dostel de dueil</l>
+                     <l>Quon <choice>
+                           <orig>lauoit</orig>
+                           <reg>lavoit</reg>
+                        </choice> trompe en ce point</l>
+                  </div>
+                  <div>
+                     <head>                        La manière
+<lb/>                        <choice>
+                           <orig>dauoir</orig>
+                           <reg>davoir</reg>
+                        </choice> du vin</head>
+                     <l>Apres quil fut fourny de <choice>
+                           <orig>viures</orig>
+                           <reg>vivres</reg>
+                        </choice>
+                     </l>
+                     <l>Il fault bien <choice>
+                           <orig>auoir</orig>
+                           <reg>avoir</reg>
+                        </choice> le memoyre</l>
+                     <l>Que silz voulaient se <choice>
+                           <orig>iour</orig>
+                           <reg>jour</reg>
+                        </choice> estre <choice>
+                           <orig>yures</orig>
+                           <reg>yvres</reg>
+                        </choice>
+                     </l>
+                     <l>Il faillot quilz eussent a boyre</l>
+                     <l>Maistre <choice>
+                           <orig>frãcoys</orig>
+                           <reg>francoys</reg>
+                        </choice> deues croire</l>
+                     <l>Emprunta deux grans bros de boys</l>
+                     <pb n="f. b1r"/>
+                     <l/>
+                     <l>
+                        <choice>
+                           <orig>Disãt</orig>
+                           <reg>Disant</reg>
+                        </choice> quil estoit necessaire</l>
+                     <l>
+                        <choice>
+                           <orig>Dauoir</orig>
+                           <reg>Davoir</reg>
+                        </choice> du vin par ambagois</l>
+                     <l>Lun fist emplir de belle <choice>
+                           <orig>caue</orig>
+                           <reg>cave</reg>
+                        </choice> clere</l>
+                     <l>Et vint ala pomme de pin</l>
+                     <l>A tous ses deux bros sans renchere</l>
+                     <l>
+                        <choice>
+                           <orig>Demãdant</orig>
+                           <reg>Demandant</reg>
+                        </choice> sil <choice>
+                           <orig>auoit</orig>
+                           <reg>avoit</reg>
+                        </choice> bon vin</l>
+                     <l>Et quon luy emplit du plus fin</l>
+                     <l>Mais quil fust blanc <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> amoureux</l>
+                     <l>On luy emplit pour faire fin</l>
+                     <l>Dun tresbon vin blanc de baigneux</l>
+                     <l>Maistre francoys print les deux brocz</l>
+                     <l>Lun empres lautre les bouta</l>
+                     <l>Incontinent <choice>
+                           <orig>ꝑ</orig>
+                           <reg>par</reg>
+                        </choice> bon propos</l>
+                     <l>Sans se haster il demāda</l>
+                     <l>Au varlet quel vin esse la</l>
+                     <l>Il luy dist du vin de baigneux</l>
+                     <l>Ostez ostez ostez cella</l>
+                     <l>Car <choice>
+                           <orig>ꝑ</orig>
+                           <reg>par</reg>
+                        </choice> mafoy point <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> nen veux</l>
+                     <l>Quesse cy estes vo<hi rend="sup">9</hi> beiaune</l>
+                     <l>
+                        <choice>
+                           <orig>Uuidez</orig>
+                           <reg>Vuidez</reg>
+                        </choice> moy <choice>
+                           <orig>mõ</orig>
+                           <reg>mon</reg>
+                        </choice> broc vitement</l>
+                     <l>
+                        <choice>
+                           <orig>Ie</orig>
+                           <reg>Je</reg>
+                        </choice> 
+                        <choice>
+                           <orig>demãde</orig>
+                           <reg>demande</reg>
+                        </choice> du vin de beaune</l>
+                     <l>Qui soit bon <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> non autrement</l>
+                     <l>Et en <choice>
+                           <orig>parlãt</orig>
+                           <reg>parlant</reg>
+                        </choice> subtillement</l>
+                     <l>Le broc qui estoit de au plain</l>
+                     <l>Luy <choice>
+                           <orig>chãgea</orig>
+                           <reg>changea</reg>
+                        </choice> a pur <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> a plain</l>
+                     <l><choice>
+                        <orig>¶</orig>
+                        <reg>##</reg>
+                     </choice> Par ce point ilz eurent du vin</l>
+                     <l>Par fine force de tromper</l>
+                     <l>Sans aller parler au devin</l>
+                     <l>Ilz repeurent per ou nomper</l>
+                     <l>Mais le beau <choice>
+                           <orig>ieu</orig>
+                           <reg>jeu</reg>
+                        </choice> fut au souper</l>
+                     <l>Car maistre francoys a bref mot</l>
+                     <l>Leur dist <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> me vueil occuper</l>
+                     <l>Que nous <choice>
+                           <orig>mẽgerõs</orig>
+                           <reg>mengerons</reg>
+                        </choice> 
+                        <choice>
+                           <orig>ẽnuyt</orig>
+                           <reg>ennuyt</reg>
+                        </choice> du rost</l>
+                  </div>
+                  <div>
+                     <head>          <choice>
+                        <orig>¶</orig>
+                        <reg>##</reg>
+                        </choice> La maniere <choice>
+                           <orig>dauoir</orig>
+                           <reg>davoir</reg>
+                        </choice> du rost</head>
+                     <l>Il fut appointe quil yroit</l>
+                     <l>
+                        <choice>
+                           <orig>Deuant</orig>
+                           <reg>Devant</reg>
+                        </choice> lestal dun rotisseur</l>
+                     <l>Et de la chair marchanderoit</l>
+                     <l>
+                        <choice>
+                           <orig>Contrefaisãt</orig>
+                           <reg>Contrefaisant</reg>
+                        </choice> du gaudisseur</l>
+                     <l>Et pour <choice>
+                           <orig>trouuer</orig>
+                           <reg>trouver</reg>
+                        </choice> moyen meilleur</l>
+                     <l>Faignant que point on ne se <choice>
+                           <orig>ioue</orig>
+                           <reg>joue</reg>
+                        </choice>
+                     </l>
+                     <pb n="f. b1v"/>
+                     <l>Il <choice>
+                           <orig>viẽdroit</orig>
+                           <reg>viendroit</reg>
+                        </choice> 
+                        <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> entrepreneur</l>
+                     <l>Qui luy bailleroit sur la <choice>
+                           <orig>ioue</orig>
+                           <reg>joue</reg>
+                        </choice>
+                     </l>
+                     <l><choice>
+                           <orig>¶</orig>
+                           <reg>##</reg>
+                        </choice> Il vint a la rotisserie</l>
+                     <l>Et <choice>
+                           <orig>marchãda</orig>
+                           <reg>marchanda</reg>
+                        </choice> de la viande</l>
+                     <l>Lautre vint de chiere marrie</l>
+                     <l>Quesse que ce paillart <choice>
+                           <orig>demãde</orig>
+                           <reg>demande</reg>
+                        </choice>
+                     </l>
+                     <l>Luy <choice>
+                           <orig>baillãt</orig>
+                           <reg>baillant</reg>
+                        </choice> 
+                        <choice>
+                           <orig>vne</orig>
+                           <reg>une</reg>
+                        </choice> buffe grande</l>
+                     <l>En luy <choice>
+                           <orig>dissãt</orig>
+                           <reg>dissant</reg>
+                        </choice> mainte reproche</l>
+                     <l>
+                        <choice>
+                           <orig>Quãt</orig>
+                           <reg>Quant</reg>
+                        </choice> il vit quil eut ceste offrande</l>
+                     <l>Empoigna de rost plaine broche</l>
+                     <l><choice>
+                           <orig>¶</orig>
+                           <reg>##</reg>
+                        </choice> Celluy qui bailla le soufflet</l>
+                     <l>Fuit <choice>
+                           <orig>biẽ</orig>
+                           <reg>bien</reg>
+                        </choice> tost a mos expres</l>
+                     <l>Maitre <choice>
+                           <orig>frãcoys</orig>
+                           <reg>francoys</reg>
+                        </choice> sans plus deplet</l>
+                     <l>A tout son rost courant apres</l>
+                     <l>Ainsi sans faire long proces</l>
+                     <l>Ilz repeureut de cueur de <choice>
+                           <orig>uot</orig>
+                           <reg>vot</reg>
+                        </choice>
+                     </l>
+                     <l>Et eurent <choice>
+                           <orig>ꝑ</orig>
+                           <reg>par</reg>
+                        </choice> leur grant exces</l>
+                     <l>Pain vin chex poisson <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> rost</l>
+                     <l><choice>
+                           <orig>¶</orig>
+                           <reg>##</reg>
+                        </choice> Et pour la premiere repeue</l>
+                     <l>Dont apres sera mencion</l>
+                     <l>Bien digne destre <choice>
+                           <orig>ramẽtue</orig>
+                           <reg>ramentue</reg>
+                        </choice>
+                     </l>
+                     <l>Et mise en <choice>
+                           <orig>reuelation</orig>
+                           <reg>revelation</reg>
+                        </choice>
+                     </l>
+                     <l>Et <choice>
+                           <orig>pourtãt</orig>
+                           <reg>pourtant</reg>
+                        </choice> soubz corretion</l>
+                     <l>Affin que len parle encore</l>
+                     <l>Comme <choice>
+                           <orig>nouuelle</orig>
+                           <reg>nouvelle</reg>
+                        </choice> 
+                        <choice>
+                           <orig>invẽcion</orig>
+                           <reg>invencion</reg>
+                        </choice>
+                     </l>
+                     <l>Redigee sera pour mem<corr>[o]</corr>ire</l>
+                     <l><choice>
+                           <orig>¶</orig>
+                           <reg>##</reg>
+                        </choice> Or <choice>
+                           <orig>aduint</orig>
+                           <reg>advint</reg>
+                        </choice> de coup <choice>
+                           <orig>dauẽture</orig>
+                           <reg>daventure</reg>
+                        </choice>
+                     </l>
+                     <l>Que les suppoz <choice>
+                           <orig>deuãt</orig>
+                           <reg>devant</reg>
+                        </choice> nommez</l>
+                     <l>Ne serchoit riens par droictu<corr>[r]</corr>e</l>
+                     <l>Que gens en richesse <choice>
+                           <orig>renõmez</orig>
+                           <reg>renommez</reg>
+                        </choice>
+                     </l>
+                     <l>Ung <choice>
+                           <orig>iour</orig>
+                           <reg>jour</reg>
+                        </choice> quilz estoient affames</l>
+                     <l>En la porte dun bon logis</l>
+                     <l>virent entrer <choice>
+                           <orig>sãs</orig>
+                           <reg>sans</reg>
+                        </choice> estre armez</l>
+                     <l>Ambassadeurs de long pays</l>
+                     <l><choice>
+                           <orig>¶</orig>
+                           <reg>##</reg>
+                        </choice> Si <choice>
+                           <orig>pẽserent</orig>
+                           <reg>penserent</reg>
+                        </choice> entre eulx <choice>
+                           <orig>commẽt</orig>
+                           <reg>comment</reg>
+                        </choice>
+                     </l>
+                     <l>Ilz pourroient <choice>
+                           <orig>leure</orig>
+                           <reg>levre</reg>
+                        </choice> repaistre</l>
+                     <l>Et selon <choice>
+                           <orig>entendemẽt</orig>
+                           <reg>entendement</reg>
+                        </choice>
+                     </l>
+                     <l>Lun diceulx saprocha du maitre</l>
+                     <pb n="f. b2r"/>
+                     <l>Dostel <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> si fist a congnoistre</l>
+                     <l>
+                        <choice>
+                           <orig>Disãt</orig>
+                           <reg>Disant</reg>
+                        </choice> qui luy enseigneroit</l>
+                     <l>Le hault le bas marche pour estre</l>
+                     <l>Par luy <choice>
+                           <orig>ↄduyt</orig>
+                           <reg>conduyt</reg>
+                        </choice> si luy plaisoyt</l>
+                     <l/>
+                     <l>Je croy <choice>
+                           <orig>biẽ</orig>
+                           <reg>bien</reg>
+                        </choice> 
+                        <choice>
+                           <orig>q̃</orig>
+                           <reg>que</reg>
+                        </choice> 
+                        <choice>
+                           <orig>mõseigneur</orig>
+                           <reg>monseigneur</reg>
+                        </choice> le maistre</l>
+                     <l>Qui du bas mestier estoit tendre</l>
+                     <l>Fist se <choice>
+                           <orig>gallãt</orig>
+                           <reg>gallant</reg>
+                        </choice> 
+                        <choice>
+                           <orig>tresbiẽ</orig>
+                           <reg>tresbien</reg>
+                        </choice> repaistre</l>
+                     <l>Et luy <choice>
+                           <orig>ↄmãda</orig>
+                           <reg>commanda</reg>
+                        </choice> charge prendre</l>
+                     <l>De la cuisine <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> dy entendre</l>
+                     <l>Tant que leur train de partira</l>
+                     <l>Et <choice>
+                           <orig>biẽ</orig>
+                           <reg>bien</reg>
+                        </choice> le payer sans <choice>
+                           <orig>attẽdre</orig>
+                           <reg>attendre</reg>
+                        </choice>
+                     </l>
+                     <l>A son gre quant il sen yra</l>
+                     <l/>
+                     <l>Lors sen vint ses <choice>
+                           <orig>ↄpaignons</orig>
+                           <reg>compaignons</reg>
+                        </choice>
+                     </l>
+                     <l>Dire nostre estre paye</l>
+                     <l>Je suis <choice>
+                           <orig>ia</orig>
+                           <reg>ja</reg>
+                        </choice> lun des grans mignons</l>
+                     <l>De leans <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> myeulx <choice>
+                           <orig>auoye</orig>
+                           <reg>avoye</reg>
+                        </choice>
+                     </l>
+                     <l>Car le maistre ma <choice>
+                           <orig>enuoye</orig>
+                           <reg>envoye</reg>
+                        </choice>
+                     </l>
+                     <l>Par la ville pour sen sortir</l>
+                     <l>Mais se mon sens nest <choice>
+                           <orig>desuoye</orig>
+                           <reg>desvoye</reg>
+                        </choice>
+                     </l>
+                     <l>Bien bref sen fera repentir</l>
+                     <l>
+                        <choice>
+                           <orig>Ua</orig>
+                           <reg>Va</reg>
+                        </choice> luy dyrent ses <choice>
+                           <orig>ↄpaignons</orig>
+                           <reg>compaignons</reg>
+                        </choice>
+                     </l>
+                     <l>Et esguise tout ton engin</l>
+                     <l>A nous rechauffer les <choice>
+                           <orig>reignõs</orig>
+                           <reg>reignons</reg>
+                        </choice>
+                     </l>
+                     <l>Et nous faitz boire de bon vin</l>
+                     <l>Passe to<hi rend="sup">9</hi> les sens patelin</l>
+                     <l>De villon <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> pauque <choice>
+                           <orig>dẽ</orig>
+                           <reg>den</reg>
+                        </choice> nayre</l>
+                     <l>Car se venir peux en la <choice>
+                           <orig>fĩ</orig>
+                           <reg>fin</reg>
+                        </choice>
+                     </l>
+                     <l>Passe seras maistre ordinaire</l>
+                     <l/>
+                     <l>Le gallant vint a la mason</l>
+                     <l>Ou estoit loge <choice>
+                           <orig>lãbassade</orig>
+                           <reg>lambassade</reg>
+                        </choice>
+                     </l>
+                     <l>Ou les seigneurs <choice>
+                           <orig>ꝑ</orig>
+                           <reg>par</reg>
+                        </choice> beau blason</l>
+                     <l>
+                        <choice>
+                           <orig>Deuisoyent</orig>
+                           <reg>Devisoyent</reg>
+                        </choice> 
+                        <choice>
+                           <orig>rõdeau</orig>
+                           <reg>rondeau</reg>
+                        </choice> ou balade</l>
+                     <l>il estoit miste gent <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> saige</l>
+                     <l>Bien a bitue bien en point</l>
+                     <l>Robe fourree pourpoint dostade</l>
+                     <l>Il entendoit son <choice>
+                           <orig>cõtrepoint</orig>
+                           <reg>contrepoint</reg>
+                        </choice>
+                     </l>
+                     <pb n="f. b2v"/>
+                     <l>Le principal embassadeur</l>
+                     <l>Aymoit <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> peu le bas mestier</l>
+                     <l>Dont gallant fut a honneur</l>
+                     <l>Car cestoit quasi son mestier</l>
+                     <l>Et luy compta que a son quartier</l>
+                     <l>
+                        <choice>
+                           <orig>Auoit</orig>
+                           <reg>Avoit</reg>
+                        </choice> des femmes largement</l>
+                     <l>Qui estoient sil estoit mestier</l>
+                     <l>A son <choice>
+                           <orig>iolis</orig>
+                           <reg>jolis</reg>
+                        </choice> commandement</l>
+                     <l/>
+                     <l>Le gallant fut entretenu</l>
+                     <l>Par ce seigneur venu <choice>
+                           <orig>nouueau</orig>
+                           <reg>nouveau</reg>
+                        </choice>
+                     </l>
+                     <l>Et leans il fut retenu</l>
+                     <l>Pour estre fin franc macquereau</l>
+                     <l>Le <choice>
+                           <orig>ieu</orig>
+                           <reg>jeu</reg>
+                        </choice> leur sembla si tresbeau</l>
+                     <l>Aussi il fist si bonne myne</l>
+                     <l>Quil fut esleu sans nul appeau</l>
+                     <l>Pour estre varlet de cuisine</l>
+                     <l/>
+                     <l>Les ambassadeurs <choice>
+                           <orig>conuoyerent</orig>
+                           <reg>convoyerent</reg>
+                        </choice>
+                     </l>
+                     <l>Seigneurs et bourgois a disner</l>
+                     <l>Lesquelz voulentiers y allerent</l>
+                     <l>Passer temps point nen fault doubter</l>
+                     <l>Toutesfoys vous <choice>
+                           <orig>deuez</orig>
+                           <reg>devez</reg>
+                        </choice> 
+                        <choice>
+                           <orig>scauoir</orig>
+                           <reg>scavoir</reg>
+                        </choice>
+                     </l>
+                     <l>Quelque chose que <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> vous die</l>
+                     <l>Que lembassadeur pour tout veoir</l>
+                     <l>Craignoit tresfort lespydimie</l>
+                     <l/>
+                     <l>Ce gallant en fut <choice>
+                           <orig>aduerti</orig>
+                           <reg>adverti</reg>
+                        </choice>
+                     </l>
+                     <l>Qui nonobstant fist bonne myne</l>
+                     <l>Et quant il fut pres de myoy</l>
+                     <l>A <choice>
+                           <orig>leure</orig>
+                           <reg>levre</reg>
+                        </choice> quil est temps quon dysgne</l>
+                     <l>Il entra dedens la cuisine</l>
+                     <l>Maintenant toute la viande</l>
+                     <l>Comme docteur en medicine</l>
+                     <l>Qui tient malades en commande</l>
+                     <l/>
+                     <l>Tous les seigneurs le regarderent</l>
+                     <pb n="f. b3r"/>
+                     <l>Son train ses facons ses manieres</l>
+                     <l>Mais pas apres luy ne tasterent</l>
+                     <l>Aussi ne luy challoit il gueres</l>
+                     <l>Apres il print les esguieres</l>
+                     <l>Le vin le claire lypocras</l>
+                     <l>Dariolles tartres entieres</l>
+                     <l>Il tata par tout par compas</l>
+                     <l>Et pour bien entendre son cas</l>
+                     <l>Quant il veit quil estoit saison</l>
+                     <l>A bien <choice>
+                           <orig>iouer</orig>
+                           <reg>jouer</reg>
+                        </choice> ne faillit pas</l>
+                     <l>Pour faire aux seigneurs la raison</l>
+                     <l>Si bien que dedens la maison</l>
+                     <l>Demoura tout seul pour repaistre</l>
+                     <l>Soustenant par finie achoison</l>
+                     <l>Quil se douloit du coste destre</l>
+                     <l/>
+                     <l>Lors y <choice>
+                           <orig>auoit</orig>
+                           <reg>avoit</reg>
+                        </choice> vue couchette</l>
+                     <l>Ou il failloit la feste faire</l>
+                     <l>Et na dent qui ne luy cliquette</l>
+                     <l>La se mist <choice>
+                           <orig>cõmencant</orig>
+                           <reg>commencant</reg>
+                        </choice> a braire</l>
+                     <l>Que len fuist au presbitaire</l>
+                     <l>Pour faire le prestre acourir</l>
+                     <l>A tout dieu <choice>
+                           <orig>ꝛ</orig>
+                           <reg>et</reg>
+                        </choice> lautre ordinaire</l>
+                     <l>Qui fault pour <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> qui veult mourir</l>
+                     <l/>
+                     <l>Quant les seigneurs veirent le prestre</l>
+                     <l>
+                        <choice>
+                           <orig>Auec</orig>
+                           <reg>Avec</reg>
+                        </choice> les sacremens venir</l>
+                     <l>Chascun deux eust bien voulu estre</l>
+                     <l>Dehors <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> nen vueil point mentir</l>
+                     <l>Si grant haste eurent den sortir</l>
+                     <l>Que la demourerent les <choice>
+                           <orig>viures</orig>
+                           <reg>vivres</reg>
+                        </choice>
+                     </l>
+                     <l>Dont les compaignons du martir</l>
+                     <l>Furent troys <choice>
+                           <orig>iours</orig>
+                           <reg>jours</reg>
+                        </choice> et troys nuytz <choice>
+                           <orig>yures</orig>
+                           <reg>yvres</reg>
+                        </choice>.</l>
+                     <l/>
+                     <l>Par ce point eurent la repeue</l>
+                     <l>Franche chascun des compaignons</l>
+                     <l>La finesse le prestre le teue</l>
+                     <pb n="f. b3v"/>
+                     <l>Affin de complaire aux mignons</l>
+                     <l>Mais les seigneurs dont len parlons</l>
+                     <l>Eurent tous pour ce coup laubade</l>
+                     <l>Chascun deux fut quon nen faillons</l>
+                     <l>De la grant peur troys <choice>
+                           <orig>iours</orig>
+                           <reg>jours</reg>
+                        </choice> malades</l>
+                  </div>
+               </div>
+               <div>
+                  <head>                        La seconde
+<lb/>                        repeue franche</head>
+                  <l>Ung lymosin vint a paris</l>
+                  <l>Pour aucun proces quil <choice>
+                        <orig>auoit</orig>
+                        <reg>avoit</reg>
+                     </choice>
+                  </l>
+                  <l>Quant il partit de son pays</l>
+                  <l>Pas gramment dargent il <choice>
+                        <orig>nauoit</orig>
+                        <reg>navoit</reg>
+                     </choice>
+                  </l>
+                  <l>Et toutesfoys il entendoit</l>
+                  <l>Son fait et <choice>
+                        <orig>auoit</orig>
+                        <reg>avoit</reg>
+                     </choice> 
+                     <choice>
+                        <orig>souuenance</orig>
+                        <reg>souvenance</reg>
+                     </choice>
+                  </l>
+                  <l>Que son cas mal se porteroit</l>
+                  <l>Sil <choice>
+                        <orig>nauoit</orig>
+                        <reg>navoit</reg>
+                     </choice> 
+                     <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> repeue franche</l>
+                  <l/>
+                  <l>Le lymosin cest chose vraye</l>
+                  <l>Qui <choice>
+                        <orig>nauoit</orig>
+                        <reg>navoit</reg>
+                     </choice> vaillant <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                     </choice> patac</l>
+                  <l>Sappeloit <choice>
+                        <orig>mõseigeur</orig>
+                        <reg>monseigeur</reg>
+                     </choice> de combraye</l>
+                  <l>Sans quon le <choice>
+                        <orig>suyuist</orig>
+                        <reg>suyvist</reg>
+                     </choice> a son trac</l>
+                  <l>Plus ruse estoit que patac</l>
+                  <l>Et affame comme <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                     </choice> vieil loup</l>
+                  <l>Avec monseigneur de pennesac</l>
+                  <l>Et le seigneur de lameson</l>
+                  <l/>
+                  <l>Ses troys seigneurs <choice>
+                        <orig>sentretrouuerent</orig>
+                        <reg>sentretrouverent</reg>
+                     </choice>
+                  </l>
+                  <l>Car ilz estoient tout dun quartier</l>
+                  <l>Et dieu scait silz se saluerent</l>
+                  <l>Ainsi quil en estoit mestier</l>
+                  <l>Toutesfoys ce bon escuier</l>
+                  <l>De combraye propos final</l>
+                  <l>Fut esleu leur grant conseiller</l>
+                  <l>Et le <choice>
+                        <orig>gouuerneur</orig>
+                        <reg>gouverneur</reg>
+                     </choice> principal</l>
+                  <l/>
+                  <l>Ilz conclurent pour le meilleur</l>
+                  <l>Que ce bon notable seigneur</l>
+                  <l>yroit veoir sil pourroit <choice>
+                        <orig>trouuer</orig>
+                        <reg>trouver</reg>
+                     </choice>
+                  </l>
+                  <pb n="f. b4r"/>
+                  <l>quelque bon lieu pour se logier</l>
+                  <l>et scelon ce quil <choice>
+                        <orig>trouueroit</orig>
+                        <reg>trouveroit</reg>
+                     </choice>
+                  </l>
+                  <l>aux autres le racompteroit</l>
+                  <l>Or <choice>
+                        <orig>aduint</orig>
+                        <reg>advint</reg>
+                     </choice> que <choice>
+                        <orig>enuiron</orig>
+                        <reg>environ</reg>
+                     </choice> mydy</l>
+                  <l>Il estoit de fain estourdy</l>
+                  <l>Sen vint en <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> hostellerie</l>
+                  <l>En la rue de la mortellerie</l>
+                  <l>ou peut lenseigne du pestel</l>
+                  <l>a bon logis et bon hostel</l>
+                  <l>demandant son a que repaistre</l>
+                  <l>Ouy vrayement se dist le maistre</l>
+                  <l>Ne soyes de rien en soucy</l>
+                  <l>Car vous serez tresbien <choice>
+                        <orig>seruy</orig>
+                        <reg>servy</reg>
+                     </choice>
+                  </l>
+                  <l>De pain de vin et de viande</l>
+                  <l>Pas grant chose <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> ne demande</l>
+                  <l>Dist le bon seigneur de combraye</l>
+                  <l>Il ny a gueres que <choice>
+                        <orig>iauoye</orig>
+                        <reg>javoye</reg>
+                     </choice>
+                  </l>
+                  <l>Desiune mais toutesfoys</l>
+                  <l>Si ay <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> disne maintesfoys</l>
+                  <l>Que <choice>
+                        <orig>nauoye</orig>
+                        <reg>navoye</reg>
+                     </choice> pas tel appetit</l>
+                  <l>Le seigneur menga <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                     </choice> petit</l>
+                  <l>Car il <choice>
+                        <orig>nauoit</orig>
+                        <reg>navoit</reg>
+                     </choice> gueres dargent</l>
+                  <l>Commandant Quon fust diligent</l>
+                  <l>
+                     <choice>
+                        <orig>Dauoir</orig>
+                        <reg>Davoir</reg>
+                     </choice> quelque chose de bon</l>
+                  <l>Pour son souper <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                     </choice> gras chapon</l>
+                  <l>Car il pensoit bien que se soyr</l>
+                  <l>Il <choice>
+                        <orig>deuoit</orig>
+                        <reg>devoit</reg>
+                     </choice> 
+                     <choice>
+                        <orig>auec</orig>
+                        <reg>avec</reg>
+                     </choice> luy soupper</l>
+                  <l>Des gentilz hommes de la court</l>
+                  <l>Lostesse fut bien a son gourt</l>
+                  <l>Car quant vint a compter lescot</l>
+                  <l>Le seigneur ne dit oncques mot</l>
+                  <l>Mais tout ce quelle demande</l>
+                  <l>Le gentil homme luy bailla</l>
+                  <l>Disant vous comptez par raison</l>
+                  <l>Boutant son sac soubz son esselle</l>
+                  <l>Et vint racompter la <choice>
+                        <orig>nouuelle</orig>
+                        <reg>nouvelle</reg>
+                     </choice>
+                  </l>
+                  <pb n="f. b4v"/>
+                  <l>A ses compaignons <choice>
+                        <orig>ꝛ</orig>
+                        <reg>et</reg>
+                     </choice> comment</l>
+                  <l>Il failloit faire sagement</l>
+                  <l>Et fut dit a peu de ꝑolles</l>
+                  <l>Pour <choice>
+                        <orig>euiter</orig>
+                        <reg>eviter</reg>
+                     </choice> grans monopoles</l>
+                  <l>Que le seigneur de penneesac</l>
+                  <l>yroit <choice>
+                        <orig>deuãt</orig>
+                        <reg>devant</reg>
+                     </choice> louer lestat</l>
+                  <l>Et blasonner la suffisance</l>
+                  <l>De ce seigneur car <choice>
+                        <orig>sã</orig>
+                        <reg>san</reg>
+                     </choice> 
+                     <choice>
+                        <orig>doubtãce</orig>
+                        <reg>doubtance</reg>
+                     </choice>
+                  </l>
+                  <l>La chose le valloit tresbien</l>
+                  <l>Et pour <choice>
+                        <orig>trouuer</orig>
+                        <reg>trouver</reg>
+                     </choice> meilleur moyen</l>
+                  <l>Il merroit a sa <choice>
+                        <orig>ↄpaignie</orig>
+                        <reg>compaignie</reg>
+                     </choice>
+                  </l>
+                  <l>La meson il ne faillit mye</l>
+                  <l>Et <choice>
+                        <orig>vĩt</orig>
+                        <reg>vint</reg>
+                     </choice> demander a lostesse</l>
+                  <l>Son seigneur rempli de noblesse</l>
+                  <l>Estoit loge en la maison</l>
+                  <l>Lostesse <choice>
+                        <orig>respõdit</orig>
+                        <reg>respondit</reg>
+                     </choice> que nom</l>
+                  <l>Et que vrayement il ny <choice>
+                        <orig>auoyt</orig>
+                        <reg>avoyt</reg>
+                     </choice>
+                  </l>
+                  <l>Qun limosin lequel <choice>
+                        <orig>debuoit</orig>
+                        <reg>debvoit</reg>
+                     </choice>
+                  </l>
+                  <l>
+                     <choice>
+                        <orig>Uenir</orig>
+                        <reg>Venir</reg>
+                     </choice> souper au soir leans</l>
+                  <l>A dist il dame de ceans</l>
+                  <l>Cest celluy <choice>
+                        <orig>q̃</orig>
+                        <reg>qui</reg>
+                     </choice> no<hi rend="sup">9</hi> demandon</l>
+                  <l>Par mafoy cest ce grant baron</l>
+                  <l>Qui est <choice>
+                        <orig>arriue</orig>
+                        <reg>arrive</reg>
+                     </choice> au matin</l>
+                  <l>
+                     <choice>
+                        <orig>Ie</orig>
+                        <reg>Je</reg>
+                     </choice> 
+                     <choice>
+                        <orig>nẽtens</orig>
+                        <reg>nentens</reg>
+                     </choice> point vostre latin</l>
+                  <l>Dist lostesse vo<hi rend="sup">9</hi> ꝑlez mal</l>
+                  <l>Il na ne <choice>
+                        <orig>iument</orig>
+                        <reg>jument</reg>
+                     </choice> ne <choice>
+                        <orig>cheual</orig>
+                        <reg>cheval</reg>
+                     </choice>
+                  </l>
+                  <l>Et va a pie ꝑfaulte dasne</l>
+                  <l>Lors pennessac respondit dame</l>
+                  <l>Il vient icy pour <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                     </choice> proces</l>
+                  <l>Et est <choice>
+                        <orig>appellãt</orig>
+                        <reg>appellant</reg>
+                     </choice> de lexces</l>
+                  <l>Quon luy a fait en lymosin</l>
+                  <l>Et va ainsi de pie affin</l>
+                  <l>Que son proces soit plus tost fait</l>
+                  <l>Lostesse le creut en effet</l>
+                  <l/>
+                  <l>Alors le seigneur de combraye</l>
+                  <l>
+                     <choice>
+                        <orig>Arriua</orig>
+                        <reg>Arriva</reg>
+                     </choice> 
+                     <choice>
+                        <orig>ꝛ</orig>
+                        <reg>et</reg>
+                     </choice> dieu scet quel <choice>
+                        <orig>ioye</orig>
+                        <reg>joye</reg>
+                     </choice>
+                  </l>
+                  <l>Ses deux autres seigneurs luy firent</l>
+                  <pb n="f. b5r"/>
+                  <l>Et le genoul en bas <choice>
+                        <orig>tendirẽt</orig>
+                        <reg>tendirent</reg>
+                     </choice>
+                  </l>
+                  <l>Aussi tost comme il fut venu</l>
+                  <l>Et <choice>
+                        <orig>ꝑ</orig>
+                        <reg>par</reg>
+                     </choice> ce point il fut congneu</l>
+                  <l>Quil estoit seigneur <choice>
+                        <orig>hõnorable</orig>
+                        <reg>honnorable</reg>
+                     </choice>
+                  </l>
+                  <l>Ce bon seigneur se sist a table</l>
+                  <l>En <choice>
+                        <orig>tenãt</orig>
+                        <reg>tenant</reg>
+                     </choice> bonne <choice>
+                        <orig>grauite</orig>
+                        <reg>gravite</reg>
+                     </choice>
+                  </l>
+                  <l>vis avis de lautre coste</l>
+                  <l>Sassist le seigneur de lostel</l>
+                  <l>Et eurent du vin dieu scait quel</l>
+                  <l>Il ne le fault point demander</l>
+                  <l>
+                     <choice>
+                        <orig>Quãt</orig>
+                        <reg>Quant</reg>
+                     </choice> ce vint a lescot compter</l>
+                  <l>Lostesse asses hault comptoit</l>
+                  <l>Mais au seigneur il nen chaloit</l>
+                  <l>Faignant qu<corr>[i]</corr>l fut tout plaint dargent</l>
+                  <l>Lors il dist quon sust diligent</l>
+                  <l>De <choice>
+                        <orig>pẽser</orig>
+                        <reg>penser</reg>
+                     </choice> de faire les lis</l>
+                  <l>Car il vouloit en ce logis</l>
+                  <l>coucher / puis apres par expres</l>
+                  <l>Il print son sac a ces proces</l>
+                  <l>Et le bailla leans en garde</l>
+                  <l>En disant quon le contregardast</l>
+                  <l>Se de largent voulez <choice>
+                        <orig>auoir</orig>
+                        <reg>avoir</reg>
+                     </choice>.</l>
+                  <l>Il ne fault que demander</l>
+                  <l>Lostesse ne fut pas ingrate</l>
+                  <l>En disant <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> nen ay pas haste</l>
+                  <l>Nespargnes riens qui soit ceans</l>
+                  <l>Ses seigneurs coucherent leans</l>
+                  <l>Lespace de cinq ou de six moys</l>
+                  <l>Sans payer argent toutesfoys</l>
+                  <l>Nonobstant ce quil demandoit</l>
+                  <l>A son hostesse selle voloit</l>
+                  <l>
+                     <choice>
+                        <orig>auoir</orig>
+                        <reg>avoir</reg>
+                     </choice> de largent bien <choice>
+                        <orig>souuent</orig>
+                        <reg>souvent</reg>
+                     </choice>
+                  </l>
+                  <l>Mais il nestoit point bien content</l>
+                  <l>De me<choice>
+                     <sic>c</sic>
+                     <corr>[t]</corr>
+                  </choice>tre <choice>
+                        <orig>souuent</orig>
+                        <reg>souvent</reg>
+                     </choice> main a bource</l>
+                  <l>Lostesse nestoit point rebource</l>
+                  <l>Et dist ne vo<hi rend="sup">9</hi> en soucies</l>
+                  <l>Dieu mercy <choice>
+                        <orig>iay</orig>
+                        <reg>jay</reg>
+                     </choice> argent asses</l>
+                  <l>A vostre bon commandement</l>
+                  <pb n="f. b5v"/>
+                  <l>Ses mignons <choice>
+                        <orig>pẽserẽt</orig>
+                        <reg>penserent</reg>
+                     </choice> comment</l>
+                  <l>ilz pourroient retirer leur sac</l>
+                  <l>Et lors monseigneur de pennesac</l>
+                  <l>Dist a ce baron de combraye</l>
+                  <l>Quil se boutast <choice>
+                        <orig>biẽ</orig>
+                        <reg>bien</reg>
+                     </choice> tost en voye</l>
+                  <l>
+                     <choice>
+                        <orig>Faignãt</orig>
+                        <reg>Faignant</reg>
+                     </choice> qui fust embesoigne</l>
+                  <l>Ce seigneur vint tout reffrongne</l>
+                  <l>vers lostesse <choice>
+                        <orig>ꝑ</orig>
+                        <reg>par</reg>
+                     </choice> bon moyen</l>
+                  <l>Et luy dist mon cas va tresbien</l>
+                  <l>Mon proces est ennuyt <choice>
+                        <orig>iuge</orig>
+                        <reg>juge</reg>
+                     </choice>
+                  </l>
+                  <l>Bailles moy mon sac <choice>
+                        <orig>sõme</orig>
+                        <reg>somme</reg>
+                     </choice> toute</l>
+                  <l>Car <choice>
+                        <orig>iay</orig>
+                        <reg>jay</reg>
+                     </choice> peur <choice>
+                        <orig>ꝛ</orig>
+                        <reg>et</reg>
+                     </choice> si fais grant doute</l>
+                  <l>Que les seigneurs soyent de partis</l>
+                  <l>Il print son sac a dieu vo<hi rend="sup">9</hi> dis</l>
+                  <l>
+                     <choice>
+                        <orig>Ie</orig>
+                        <reg>Je</reg>
+                     </choice> 
+                     <choice>
+                        <orig>reuiẽdray</orig>
+                        <reg>reviendray</reg>
+                     </choice> tout maintenat</l>
+                  <l>Il sen alla diligemment</l>
+                  <l>Atout ses proces <choice>
+                        <orig>ꝛ</orig>
+                        <reg>et</reg>
+                     </choice> son sac</l>
+                  <l>Et le seigneur de pennesac</l>
+                  <l>Et de lameson latendoient</l>
+                  <l>Lesquelz deux seigneurs sesbatoient</l>
+                  <l>A recuillir les torchecuz</l>
+                  <l>Des seigneurs qui estoient ven<hi rend="sup">9</hi>
+                  </l>
+                  <l>Aux chambres et <choice>
+                        <orig>biẽ</orig>
+                        <reg>bien</reg>
+                     </choice> se <choice>
+                        <orig>pensoiẽt</orig>
+                        <reg>pensoient</reg>
+                     </choice>
+                  </l>
+                  <l>Qua <choice>
+                        <orig>quelq̃</orig>
+                        <reg>quelque</reg>
+                     </choice> chose <choice>
+                        <orig>seruoient</orig>
+                        <reg>servoient</reg>
+                     </choice>
+                  </l>
+                  <l>Ilz osterent to<hi rend="sup">9</hi> ces proces</l>
+                  <l>De ce sac <choice>
+                        <orig>ꝛ</orig>
+                        <reg>et</reg>
+                     </choice> par motz expres</l>
+                  <l>Lemplirent desditz torchecuz</l>
+                  <l>Puys au soir <choice>
+                        <orig>quãt</orig>
+                        <reg>quant</reg>
+                     </choice> furent ven<hi rend="sup">9</hi>
+                  </l>
+                  <l>A leur logis fut mys en garde</l>
+                  <l>Et pour myeulx estre en <choice>
+                        <orig>sauue</orig>
+                        <reg>sauve</reg>
+                     </choice> garde</l>
+                  <l>Il fut boute <choice>
+                        <orig>ꝑ</orig>
+                        <reg>par</reg>
+                     </choice> grant humblesse</l>
+                  <l>
+                     <choice>
+                        <orig>Auec</orig>
+                        <reg>Avec</reg>
+                     </choice> les robes de lostesse</l>
+                  <l>Qui sentoient le muguelias</l>
+                  <l>Au soir firent grant ralias</l>
+                  <l>Le lendemain il fut saison</l>
+                  <l>De departir il fut saison</l>
+                  <pb n="f. b6r, f. b6v et f. c1r manquants ?"/>
+                  <l>
+                     <choice>
+                        <orig>Auoir</orig>
+                        <reg>Avoir</reg>
+                     </choice> 
+                     <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                     </choice> morceau de fromaige</l>
+                  <sp who="clerc">
+                     <speaker>                      Le clerc</speaker>
+                     <l>Adoncdit le clerc mon amy</l>
+                     <l>Il fault compter car vous <choice>
+                           <orig>deuez</orig>
+                           <reg>devez</reg>
+                        </choice>
+                     </l>
+                     <l>Tout par tout sept soubz et demy</l>
+                     <l>Et convient que les me payes</l>
+                  </sp>
+                  <sp who="galant">
+                     <speaker>                     Le gallant</speaker>
+                     <l>Je ne scay comment les aurez</l>
+                     <l>Dist la gallant par saint gille</l>
+                     <l>Je vueil bien que vous le sachez</l>
+                     <l>Je ne sache ne croix ne pile</l>
+                  </sp>
+                  <sp who="clerc">
+                     <speaker>                            Le clerc</speaker>
+                     <l>Qui na argent si laisse gaige</l>
+                     <l>Se nest que le fait droicturier</l>
+                     <l>
+                        <choice>
+                           <orig>Uoulez</orig>
+                           <reg>Voulez</reg>
+                        </choice> vous <choice>
+                           <orig>viure</orig>
+                           <reg>vivre</reg>
+                        </choice> 
+                        <choice>
+                           <orig>dauantaige</orig>
+                           <reg>davantaige</reg>
+                        </choice>
+                     </l>
+                     <l>Et <choice>
+                           <orig>nauez</orig>
+                           <reg>navez</reg>
+                        </choice> maille ne denier</l>
+                     <l>Estes vous larron ou murdrier</l>
+                     <l>Par dieu ains que dicy <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> hobe</l>
+                     <l>
+                        <choice>
+                           <orig>Uous</orig>
+                           <reg>Vous</reg>
+                        </choice> me payerez pour abreger</l>
+                     <l>Ou vous y laisserez la robe</l>
+                  </sp>
+                  <sp who="gallant">
+                     <speaker>                     Le gallant</speaker>
+                     <l>Quant est dargent <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> nen ay point</l>
+                     <l>Affin de le dire tout hault</l>
+                     <l>Comment men iray <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> en pourpoint</l>
+                     <l>Desnue comment <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> marault</l>
+                     <l>Dieu mercy <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> nay pas trop chault</l>
+                     <l>Mais sil vous plaisoit menployer</l>
+                     <l>Je vous <choice>
+                           <orig>seruiroye</orig>
+                           <reg>serviroye</reg>
+                        </choice> sans deffault</l>
+                     <l>Jusques a mon escot payer</l>
+                  </sp>
+                  <sp who="clerc">
+                     <speaker>                            Le clerc</speaker>
+                     <l>Et comment que <choice>
+                           <orig>scauez</orig>
+                           <reg>scavez</reg>
+                        </choice> vous faire</l>
+                     <l>Dictes le moy tout plainement</l>
+                  </sp>
+                  <sp who="gallant">
+                     <speaker>                             Le gallant</speaker>
+                     <l>Quoy toute chose necessaire</l>
+                     <l>Point ne fault demander comment</l>
+                     <l>Je gaige que tout maintenant</l>
+                     <l>Que <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> chanteray <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> couplet</l>
+                     <pb n="f. c1v"/>
+                     <l>Si hault et si cler <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> me vante</l>
+                     <l>Que vous direz ce la me plaist</l>
+                  </sp>
+                  <sp who="acteur">
+                     <speaker>                         Lacteur</speaker>
+                     <l>Lors le varlet voyant cecy</l>
+                     <l>Fut content de ceste gageure</l>
+                     <l>Et pensa a luy mesme ainsy</l>
+                     <l>Quil attendroit ceste <choice>
+                           <orig>aduenture</orig>
+                           <reg>adventure</reg>
+                        </choice>
+                     </l>
+                     <l>Et sil chantoit bien <choice>
+                           <orig>dauenture</orig>
+                           <reg>daventure</reg>
+                        </choice>
+                     </l>
+                     <l>Il luy diroit pour tous bebas</l>
+                     <l>Quil payast lescot bonne alleure</l>
+                     <l>Car son chant ne luy plaisoit pas</l>
+                     <l/>
+                     <l>Lacord fut dit lacord fut fait</l>
+                     <l>
+                        <choice>
+                           <orig>Deuant</orig>
+                           <reg>Devant</reg>
+                        </choice> tous non pas en derriere</l>
+                     <l>Lors le gallant tira de fait</l>
+                     <l>De dedens sa gibeciere</l>
+                     <l>Une bource dargent legiere</l>
+                     <l>Qui estoit plaine de mereaulx</l>
+                     <l>Et chanta par bonne maniere</l>
+                     <l>Haultement ses motz <choice>
+                           <orig>nouueaulx</orig>
+                           <reg>nouveaulx</reg>
+                        </choice>
+                     </l>
+                     <l/>
+                     <l>De sa bource dessus la table</l>
+                     <l>Frappa affin que <choice>
+                           <orig>ie</orig>
+                           <reg>je</reg>
+                        </choice> le note</l>
+                     <l>Et comme chose <choice>
+                           <orig>conuenable</orig>
+                           <reg>convenable</reg>
+                        </choice>
+                     </l>
+                     <l>Chanta ainsy a haulte note</l>
+                     <l>Il fault payer <choice>
+                           <orig>tõ</orig>
+                           <reg>ton</reg>
+                        </choice> hoste <choice>
+                           <orig>tõ</orig>
+                           <reg>ton</reg>
+                        </choice> hoste ton hoste</l>
+                     <l>Tout au long chanta ce couplet</l>
+                     <l>Le varlet estant coste a coste</l>
+                     <l>Respondit cela bien me plaist</l>
+                     <l/>
+                     <l>Touteffoys il natendoit pas</l>
+                     <l>Quil ne fut de lescot paye</l>
+                     <l>Parquoy il failloit sur ce pas</l>
+                     <l>De son sens il fut <choice>
+                           <orig>desuoye</orig>
+                           <reg>desvoye</reg>
+                        </choice>
+                     </l>
+                     <l>Et <choice>
+                           <orig>deuant</orig>
+                           <reg>devant</reg>
+                        </choice> tous fut notifie</l>
+                     <l>Quil estoit gentil compaignon</l>
+                     <l>Et quil <choice>
+                           <orig>auoit</orig>
+                           <reg>avoit</reg>
+                        </choice> par son traicte</l>
+                     <l>Bien disne pour <choice>
+                           <orig>vne</orig>
+                           <reg>une</reg>
+                        </choice> chanson</l>
+                     <pb n="f. c2r"/>
+                     <l>Cest bien disne quant on eschappe</l>
+                     <l>Sans debourcer pas <choice>
+                           <orig>vng</orig>
+                           <reg>ung</reg>
+                        </choice> denier</l>
+                     <l>Et dire a dieu au <choice>
+                           <orig>tauernier</orig>
+                           <reg>tavernier</reg>
+                        </choice>
+                     </l>
+                     <l>En torchant son nez a la nappe</l>
+                  </sp>
+               </div>
+               <div>
+                  <head>                 La repeue
+<lb/>                  du peletier</head>
+                  <l>Ung <choice>
+                        <orig>iour</orig>
+                        <reg>jour</reg>
+                     </choice> 
+                     <choice>
+                        <orig>aduint</orig>
+                        <reg>advint</reg>
+                     </choice> qun peletier</l>
+                  <l>Espousa <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> belle femme</l>
+                  <l>Qui appetoit le bas mestier</l>
+                  <l>En faisant recorder sa game</l>
+                  <l>Ce peletier sans penser blasme</l>
+                  <l>Ne sen soucioit qun petit.</l>
+                  <l>Mieulx aymoit de vin <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> drame</l>
+                  <l>Que coucher dedens <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                     </choice> beau lit</l>
+                  <l>Ung cure voyant cest affaire</l>
+                  <l>De la femme fut amoureux</l>
+                  <l>Et pensa qua son presbitaire</l>
+                  <l>Il meneroit ce maistre gueux</l>
+                  <l>Il sen vint a luy tout <choice>
+                        <orig>ioyeux</orig>
+                        <reg>joyeux</reg>
+                     </choice>
+                  </l>
+                  <l>A celle fin de le tromper</l>
+                  <l>En disant mon voisin <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> veulx</l>
+                  <l>Vous donner ennuyt a soupper</l>
+                  <l/>
+                  <l>Le pelletier en fut content</l>
+                  <l>Car il ne vouloit que repaistre</l>
+                  <l>Et alla tout incontinent</l>
+                  <l>Faire grant chiere <choice>
+                        <orig>auec</orig>
+                        <reg>avec</reg>
+                     </choice> le prestre</l>
+                  <l>Qui luy <choice>
+                        <orig>ioua</orig>
+                        <reg>joua</reg>
+                     </choice> dun tour de maistre</l>
+                  <l>Disant ma robe est deffourree</l>
+                  <l>Il vous y <choice>
+                        <orig>conuient</orig>
+                        <reg>convient</reg>
+                     </choice> la main mettre</l>
+                  <l>Affin quelle soit refourree</l>
+                  <l/>
+                  <l>Et bien se dist le pelletier</l>
+                  <l>Monseigneur ien suis bien content</l>
+                  <l>Mais que vous men vueilles payer</l>
+                  <l>Je suis tout vostre seurement</l>
+                  <l>Ilz firent leur appointement</l>
+                  <l>Quil auroit pour tout <choice>
+                        <orig>inuentoire</orig>
+                        <reg>inventoire</reg>
+                     </choice>
+                  </l>
+                  <pb n="f. c2v"/>
+                  <l>Dix soubz tournois entierement</l>
+                  <l>Et du vin largement pour boyre</l>
+                  <l/>
+                  <l>
+                     <choice>
+                        <orig>Pourueu</orig>
+                        <reg>Pourveu</reg>
+                     </choice> quil la despecheroit</l>
+                  <l>Car il luy estoit necessaire</l>
+                  <l>Et que toute nuyt veilleroit</l>
+                  <l>
+                     <choice>
+                        <orig>Auec</orig>
+                        <reg>Avec</reg>
+                     </choice> son clerc au presbitaire</l>
+                  <l>Il fut content de cest affaire</l>
+                  <l>Mais le cure les enferma</l>
+                  <l>Soubz la clef sans grant noyse faire</l>
+                  <l>Puis hors la maison sen alla</l>
+                  <l/>
+                  <l>Le cure vint en la maison</l>
+                  <l>Du pelletier par ses sornettes</l>
+                  <l>Et <choice>
+                        <orig>trouua</orig>
+                        <reg>trouva</reg>
+                     </choice> si bonne achoison</l>
+                  <l>Quil fist tresbien ses besongnettes</l>
+                  <l>Ilz firent cent mille chosettes</l>
+                  <l>Car ainsy comme il me semble</l>
+                  <l/>
+                  <l>Ce fourreur pour la repeue franche</l>
+                  <l>Fut fait coqu bien fermement</l>
+                  <l>Et luy chargea la dame blanche</l>
+                  <l>Quil luy retournast hardiment</l>
+                  <l>Et que par son sainct sacrement</l>
+                  <l>Jamais nul <choice>
+                        <orig>iour</orig>
+                        <reg>jour</reg>
+                     </choice> ne loublira</l>
+                  <l>Mais luy fera hebergement</l>
+                  <l>Toutes les foys quil luy plaira</l>
+                  <l/>
+                  <l>Et pourtant donne soy de garde</l>
+                  <l>Chascun qui aura belle femme</l>
+                  <l>Quon ne luy <choice>
+                        <orig>ioue</orig>
+                        <reg>joue</reg>
+                     </choice> de telle aubade</l>
+                  <l>Pour la repeue cest grant diffame</l>
+                  <l>Quant il est sceu ce nest que blasme</l>
+                  <l>Et reproche au temps <choice>
+                        <orig>aduenir</orig>
+                        <reg>advenir</reg>
+                     </choice>
+                  </l>
+                  <l>Dela des repeues la grant gaigne</l>
+                  <l>Pourtant ayes en <choice>
+                        <orig>souuenir</orig>
+                        <reg>souvenir</reg>
+                     </choice>
+                  </l>
+               </div>
+               <div>
+                  <head>               La repeue franche des
+<lb/>               gallans sans soucy</head>
+                  <pb n="f. c3r"/>
+                  <l>
+                     <choice>
+                        <orig>Vne</orig>
+                        <reg>Une</reg>
+                     </choice> assemblee de compaignons</l>
+                  <l>Nommez les gallans sans soucy</l>
+                  <l>Se <choice>
+                        <orig>trouuerent</orig>
+                        <reg>trouverent</reg>
+                     </choice> entre deux pons</l>
+                  <l>Pres le palais il est ainsi</l>
+                  <l>Dautres y en <choice>
+                        <orig>auoit</orig>
+                        <reg>avoit</reg>
+                     </choice> aussy</l>
+                  <l>Qui aymoient bien besongne faicte</l>
+                  <l>Et estoient de franct cueur transsys</l>
+                  <l>Alabbe de saincte souffrette</l>
+                  <l/>
+                  <l>Ses mygnons ainsi assembles</l>
+                  <l>Ne demanderent que repos</l>
+                  <l>Dargent ilz nestoient pas comblez</l>
+                  <l>Nonpourtant ne faillirent pas</l>
+                  <l>Ilz se bo<choice>
+                     <sic>n</sic>
+                     <corr>[u]</corr>
+                  </choice>terent cest le cas</l>
+                  <l>A <choice>
+                     <sic>s</sic>
+                     <corr>[l]</corr>
+                  </choice>enseigne du plat destain</l>
+                  <l>Ou ilz repeurent par compas</l>
+                  <l>Car ilz en <choice>
+                        <orig>auoient</orig>
+                        <reg>avoient</reg>
+                     </choice> bien besoing</l>
+                  <l/>
+                  <l>Quant ce vint a lescot compter</l>
+                  <l>Je croy que nul ne sen courrouce</l>
+                  <l>Mais le beau <choice>
+                        <orig>ieu</orig>
+                        <reg>jeu</reg>
+                     </choice> est au payer</l>
+                  <l>Quant il ny a denier en bource</l>
+                  <l>Nul deulx <choice>
+                        <orig>nauoit</orig>
+                        <reg>navoit</reg>
+                     </choice> chiere rebourcee</l>
+                  <l>Pour de lescot venir au bout</l>
+                  <l>Dist <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                  </choice> gallant de plaine sourc<choice>
+                     <sic>t</sic>
+                     <corr>[e]</corr>
+                  </choice>e</l>
+                  <l>In nen fault qun pour payer tout</l>
+                  <l/>
+                  <l>Ilz appointerent tous ensemble</l>
+                  <l>Que lun diceux on benderoit</l>
+                  <l>Par ainsi scelon quil me semble</l>
+                  <l>Le premier q̃l empoigneroit</l>
+                  <l>Estoit dit que lescot payeroit</l>
+                  <l>Mais ilz en eurent grant discort</l>
+                  <l>Chascun bande estre vouloit</l>
+                  <l>Dont ne peurent estre dacord</l>
+                  <l/>
+                  <l>Le varlet voyant ses debas</l>
+                  <l>Leur dist nul de vous ne sesmoye</l>
+                  <pb n="f. c3v"/>
+                  <l>Je suis content que par compas</l>
+                  <l>Tout maintenant bande <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> soye</l>
+                  <l>Les gallans en eurent grant <choice>
+                        <orig>ioye</orig>
+                        <reg>joye</reg>
+                     </choice>
+                  </l>
+                  <l>Et le banderent en ce lieu</l>
+                  <l>Puis chascun deux si print la voye</l>
+                  <l>Pour sen aller sans dire a dieu</l>
+                  <l/>
+                  <l>Ce varlet qui estoit bande</l>
+                  <l>Tournoyoit parmy la maison</l>
+                  <l>Il fut de lescot prebende</l>
+                  <l>Par ceste subtille choyson</l>
+                  <l>Affin <choice>
+                        <orig>dauoir</orig>
+                        <reg>davoir</reg>
+                     </choice> 
+                     <choice>
+                        <orig>prouision</orig>
+                        <reg>provision</reg>
+                     </choice>
+                  </l>
+                  <l>De lescot loste monte en hault</l>
+                  <l>Quant il veit ceste <choice>
+                        <orig>inuention</orig>
+                        <reg>invention</reg>
+                     </choice>
+                  </l>
+                  <l>A peu que le cueur ne luy fault</l>
+                  <l>En montant loste fut happe</l>
+                  <l>Par son varlet sans dire mot</l>
+                  <l>Disant <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> vous ay attrappe</l>
+                  <l>Il faut que vous payes lescot</l>
+                  <l>Ou que vous laissez la robe</l>
+                  <l>De quoy il ne fut pas <choice>
+                        <orig>ioyeulx</orig>
+                        <reg>joyeulx</reg>
+                     </choice>
+                  </l>
+                  <l>Cuidant quil fut mathelineulx</l>
+                  <l/>
+                  <l>Quant le varlet se desbanda</l>
+                  <l>La tromperie peult congnoistre</l>
+                  <l>Fut estonne quant regarda</l>
+                  <l>Et veit bien que cestoit son maistre</l>
+                  <l>Pensez quil en eut belle lettre</l>
+                  <l>Car ilz parla lors a baston</l>
+                  <l>Et pour sa peine sans riens mettre</l>
+                  <l>Il eust quattre coups de baston</l>
+                  <l/>
+                  <l>Ainsy furent sans rien payer</l>
+                  <l>Les <choice>
+                        <orig>poures</orig>
+                        <reg>povres</reg>
+                     </choice> gallans <choice>
+                        <orig>deliurez</orig>
+                        <reg>delivrez</reg>
+                     </choice>
+                  </l>
+                  <l>De la maison du <choice>
+                        <orig>tauernier</orig>
+                        <reg>tavernier</reg>
+                     </choice>
+                  </l>
+                  <l>Ou ilz cestoient pres que <choice>
+                        <orig>enyurez</orig>
+                        <reg>enyvrez</reg>
+                     </choice>
+                  </l>
+                  <l>Des vins quon leur <choice>
+                        <orig>auoit</orig>
+                        <reg>avoit</reg>
+                     </choice> 
+                     <choice>
+                        <orig>liurez</orig>
+                        <reg>livrez</reg>
+                     </choice>
+                  </l>
+                  <l>Pour boyre a plain gobelet</l>
+                  <l>Que paya le <choice>
+                        <orig>poure</orig>
+                        <reg>povre</reg>
+                     </choice> varlet</l>
+                  <pb n="f. c4r"/>
+                  <l>Et que se soit vray certain</l>
+                  <l>Ainsy que mont dit cinq ou six</l>
+                  <l>Le cas <choice>
+                        <orig>aduint</orig>
+                        <reg>advint</reg>
+                     </choice> au plau destain</l>
+                  <l>Pres saint pierre des arsis</l>
+                  <l>Bien eschoit <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                     </choice> grant mercys</l>
+                  <l>A tout le moins pour ce repas</l>
+                  <l>Et si ne le payerent pas</l>
+                  <l/>
+                  <l>Aussy fut si bien <choice>
+                        <orig>aueugle</orig>
+                        <reg>aveugle</reg>
+                     </choice>
+                  </l>
+                  <l>Le <choice>
+                        <orig>poure</orig>
+                        <reg>povre</reg>
+                     </choice> varlet maleureux</l>
+                  <l>Quil fut de tout lescot sengle</l>
+                  <l>Et faillut quil payast pour eulx</l>
+                  <l>Et sen allerent tous <choice>
+                        <orig>ioyeulx</orig>
+                        <reg>joyeulx</reg>
+                     </choice>
+                  </l>
+                  <l>Les mygnons torchant leur visaige</l>
+                  <l>Qui <choice>
+                        <orig>auoient</orig>
+                        <reg>avoient</reg>
+                     </choice> disne <choice>
+                        <orig>dauantaige</orig>
+                        <reg>davantaige</reg>
+                     </choice>
+                  </l>
+                  <l/>
+                  <l>Pour passer temps <choice>
+                        <orig>ioyeusement</orig>
+                        <reg>joyeusement</reg>
+                     </choice>
+                  </l>
+                  <l>Racompter vueil <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> repeue</l>
+                  <l>Qui fut faicte subtillement</l>
+                  <l>Pres montfaucon cest chose seue</l>
+                  <l>Et diray la <choice>
+                        <orig>desconuenue</orig>
+                        <reg>desconvenue</reg>
+                     </choice>
+                  </l>
+                  <l>Quil <choice>
+                        <orig>aduint</orig>
+                        <reg>advint</reg>
+                     </choice> a de fins <choice>
+                        <orig>ouuriers</orig>
+                        <reg>ouvriers</reg>
+                     </choice>
+                  </l>
+                  <l>Aussy y sera ramentue</l>
+                  <l>La finesse des escolliers</l>
+                  <l/>
+                  <l>Quant compaignons sont desbauchez</l>
+                  <l>Ilz ne serchent que compaignie</l>
+                  <l>Plusieurs ont les vins vendengez</l>
+                  <l>Et beuz quasi <choice>
+                        <orig>iusque</orig>
+                        <reg>jusque</reg>
+                     </choice> a la lye</l>
+                  <l>Or <choice>
+                        <orig>aduint</orig>
+                        <reg>advint</reg>
+                     </choice> que grande mesgnye</l>
+                  <l>De compaignons sentrecontrerent</l>
+                  <l>Et sans <choice>
+                        <orig>trouuer</orig>
+                        <reg>trouver</reg>
+                     </choice> la saison chiere</l>
+                  <l>Chascun deulx se <choice>
+                        <orig>resiouysoit</orig>
+                        <reg>resjouysoit</reg>
+                     </choice>
+                  </l>
+                  <l>Disans bons motz faisans grant chiere</l>
+                  <l>Par ce point le temps se passoit</l>
+                  <l>Mais lun diceulx promis <choice>
+                        <orig>auoit</orig>
+                        <reg>avoit</reg>
+                     </choice>
+                  </l>
+                  <l>A coucher <choice>
+                        <orig>auec</orig>
+                        <reg>avec</reg>
+                     </choice> 
+                     <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> garce</l>
+                  <pb n="f. c4v"/>
+                  <l>Et aux autres le racomptoit</l>
+                  <l>Par <choice>
+                        <orig>ieu</orig>
+                        <reg>jeu</reg>
+                     </choice> en maniere de farce</l>
+                  <l/>
+                  <l>Tant parlerent du bas mestier</l>
+                  <l>Quil fut conclu par leur facon</l>
+                  <l>Quilz yroient ce soir la coucher</l>
+                  <l>Pres le gibet de montfaucon</l>
+                  <l>Et auroient pour <choice>
+                        <orig>prouision</orig>
+                        <reg>provision</reg>
+                     </choice>
+                  </l>
+                  <l>Ung paste de facon subtille</l>
+                  <l>Et merroient en conclusion</l>
+                  <l>
+                     <choice>
+                        <orig>Auec</orig>
+                        <reg>Avec</reg>
+                     </choice> eulx chascun <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> fille</l>
+                  <l/>
+                  <l>Cest paste <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> vous en respons</l>
+                  <l>Fut fait sans demander quil couste</l>
+                  <l>Car il y <choice>
+                        <orig>auoit</orig>
+                        <reg>avoit</reg>
+                     </choice> six chappons</l>
+                  <l>Sans la chair que point <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> ny bout</l>
+                  <l>On y eut bien tourne le coute</l>
+                  <l>Tant estoit grant point nen doubtez</l>
+                  <l>Le prince des sotz et sa route</l>
+                  <l>En eussent bien este souppez</l>
+                  <l/>
+                  <l>Deux escoliers voyans le cas</l>
+                  <l>Qui ne <choice>
+                        <orig>scayuent</orig>
+                        <reg>scayvent</reg>
+                     </choice> rien de tromper</l>
+                  <l>Sans prendre conseil <choice>
+                        <orig>dauocas</orig>
+                        <reg>davocas</reg>
+                     </choice>
+                  </l>
+                  <l>Ilz si voulurent occuper</l>
+                  <l>Pensant a eulx comme attraper</l>
+                  <l>Les pourroient destoc ou de hanche</l>
+                  <l>Car ilz vouloient ce soyr soupper</l>
+                  <l>Et <choice>
+                        <orig>auoir</orig>
+                        <reg>avoir</reg>
+                     </choice> 
+                     <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> repeue franche</l>
+                  <l/>
+                  <l>Sans aller parler au <choice>
+                        <orig>deuin</orig>
+                        <reg>devin</reg>
+                     </choice>
+                  </l>
+                  <l>Lun print ce paste de facon</l>
+                  <l>Lautre empongna <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                     </choice> broc de vin</l>
+                  <l>Du pain assez selon raison</l>
+                  <l>Et allerent vers monfaucon</l>
+                  <l>Ou estoit toute lassemblee</l>
+                  <l>Filles y <choice>
+                        <orig>auoit</orig>
+                        <reg>avoit</reg>
+                     </choice> a foyson</l>
+                  <l>Faisans chiere desmesuree</l>
+                  <pb n="f. c5r"/>
+                  <l>Aussy <choice>
+                        <orig>iuste</orig>
+                        <reg>juste</reg>
+                     </choice> comme lorloge</l>
+                  <l>Par <choice>
+                        <orig>deuis</orig>
+                        <reg>devis</reg>
+                     </choice> et bonne maniere</l>
+                  <l>Ilz entrerent dedens leur loge</l>
+                  <l>Esperant de faire grant chiere</l>
+                  <l>Et tastoient <choice>
+                        <orig>deuant</orig>
+                        <reg>devant</reg>
+                     </choice> et derriere</l>
+                  <l>Ses <choice>
+                        <orig>poures</orig>
+                        <reg>povres</reg>
+                     </choice> filles hault et bas</l>
+                  <l/>
+                  <l>Les escoliers sans nulles fables</l>
+                  <l>Voyant ceste <choice>
+                        <orig>desconuenue</orig>
+                        <reg>desconvenue</reg>
+                     </choice>
+                  </l>
+                  <l>Vestirent des abbis de dyables</l>
+                  <l>Et vindrent la sans attendue</l>
+                  <l>Lun <choice>
+                        <orig>vng</orig>
+                        <reg>ung</reg>
+                     </choice> croc lautre <choice>
+                        <orig>vne</orig>
+                        <reg>une</reg>
+                     </choice> massue</l>
+                  <l>Pour <choice>
+                        <orig>auoyr</orig>
+                        <reg>avoyr</reg>
+                     </choice> la franche repeue</l>
+                  <l>Vindrent assaillir les gallans</l>
+                  <l/>
+                  <l>Disant a mort a mort a mort</l>
+                  <l>Prenez ses chaines de fer</l>
+                  <l>Ribaulx putains par desconfort</l>
+                  <l>Et les admenez en enfer</l>
+                  <l>Mis seront <choice>
+                        <orig>auec</orig>
+                        <reg>avec</reg>
+                     </choice> lucifer</l>
+                  <l>Au plus parfont de la chaudiere</l>
+                  <l>Et puis pour mieulx les eschauffer</l>
+                  <l>Gettez seront en la <choice>
+                        <orig>riuiere</orig>
+                        <reg>riviere</reg>
+                     </choice>
+                  </l>
+                  <l/>
+                  <l>Lun des gallans pour abreger</l>
+                  <l>Respondit ma vie est finee</l>
+                  <l>En enfer me fault heberger</l>
+                  <l>Decy ma derniere <choice>
+                        <orig>iournee</orig>
+                        <reg>journee</reg>
+                     </choice>
+                  </l>
+                  <l>Or suis <choice>
+                        <orig>ie</orig>
+                        <reg>je</reg>
+                     </choice> bien ame damnee</l>
+                  <l>Nostre peche nous a attains</l>
+                  <l>Car nous yrons sans demeuree</l>
+                  <l>En enfer <choice>
+                        <orig>auec</orig>
+                        <reg>avec</reg>
+                     </choice> ses putains</l>
+                  <l/>
+                  <l>Se vous les eussies veu fouyr</l>
+                  <l>Jamais ne vites plus beau <choice>
+                        <orig>ieu</orig>
+                        <reg>jeu</reg>
+                     </choice>
+                  </l>
+                  <l>Lun amont lautre <choice>
+                        <orig>aual</orig>
+                        <reg>aval</reg>
+                     </choice> courir</l>
+                  <l>Chascun deulx ne pensoit que a dieu</l>
+                  <l>Ilz sen fouyrent de ce lieu</l>
+                  <pb n="f. c5v"/>
+                  <l>Et laisserent pain vin viande</l>
+                  <l>Criant saint <choice>
+                        <orig>iehan</orig>
+                        <reg>jehan</reg>
+                     </choice> et saint mathieu</l>
+                  <l>A qui ilz faisoient leur offrende</l>
+                  <l/>
+                  <l>Les escoliers voyans cecy</l>
+                  <l>Nonobstant leur abbit de dyable</l>
+                  <l>Furent alors hors de soucy</l>
+                  <l>Et sassirent trestous a table</l>
+                  <l>Et dieu scet silz firent la galle</l>
+                  <l>Entour le vin et le paste</l>
+                  <l>Et repeurent pour fin finalle</l>
+                  <l>De ce qui estoit apreste</l>
+                  <l/>
+                  <l>Cest bien trompe qui rien ne paye</l>
+                  <l>Et qui peut <choice>
+                        <orig>viure</orig>
+                        <reg>vivre</reg>
+                     </choice> 
+                     <choice>
+                        <orig>dauantaige</orig>
+                        <reg>davantaige</reg>
+                     </choice>
+                  </l>
+                  <l>Sans debourcer or ne monnoye</l>
+                  <l>En <choice>
+                        <orig>vsant</orig>
+                        <reg>usant</reg>
+                     </choice> de <choice>
+                        <orig>ioyeux</orig>
+                        <reg>joyeux</reg>
+                     </choice> langaige</l>
+                  <l>Ses escoliers de bon couraige</l>
+                  <l>Passerent temps <choice>
+                        <orig>ioyeusement</orig>
+                        <reg>joyeusement</reg>
+                     </choice>
+                  </l>
+                  <l>Sans bailler ny argent ne gaige</l>
+                  <l>Et si repeurent franchement</l>
+                  <l/>
+                  <l>    Se vous voulez <choice>
+                        <orig>suyuir</orig>
+                        <reg>suyvir</reg>
+                     </choice> lescole</l>
+                  <l>De ceulx qui <choice>
+                        <orig>viuent</orig>
+                        <reg>vivent</reg>
+                     </choice> franchement</l>
+                  <l>Lisez en cestuy protocole</l>
+                  <l>Et voyez la facon comment</l>
+                  <l>Mettez y vostre entendement</l>
+                  <l>A faire comment il faisoient</l>
+                  <l>Et sil ny a empechement</l>
+                  <l>Vous <choice>
+                        <orig>viures</orig>
+                        <reg>vivres</reg>
+                     </choice> comment ilz <choice>
+                        <orig>viuoyent</orig>
+                        <reg>vivoyent</reg>
+                     </choice>
+                  </l>
+                  <l/>
+                  <l>Cy finist le <choice>
+                        <orig>liure</orig>
+                        <reg>livre</reg>
+                     </choice> des repeues franchez.</l>
+               </div>
+            </div>
+         </div>
+      </body>
+  </text>
+</TEI>

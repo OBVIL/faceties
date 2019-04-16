@@ -117,6 +117,15 @@
        <reg><xsl:value-of select="substring-before(.,'cõseruatiõ')"/>conservation<xsl:value-of select="substring-after(.,'cõseruatiõ')"/></reg></choice>
            </xsl:when>    
            <!--nécessiterait 3 passages des règles sans cette exception-->
+           <xsl:when test="matches(.,'^(\w*)ↄtinuellemẽt(\w*)$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <reg><xsl:value-of select="substring-before(.,'ↄtinuellemẽt')"/>continuellement<xsl:value-of select="substring-after(.,'ↄtinuellemẽt')"/></reg></choice>
+           </xsl:when>
+           <xsl:when test="matches(.,'^(\w*)ↄmãda(\w*)$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <reg><xsl:value-of select="substring-before(.,'ↄmãda')"/>commanda<xsl:value-of select="substring-after(.,'ↄmãda')"/></reg></choice>
+           </xsl:when>
+           <!--nécessiterait 3 passages des règles sans cette exception-->
 <xsl:when test="matches(.,'^(\w*)cõdãnerẽt(\w*)$')">
               <choice><orig><xsl:value-of select="."/></orig>
        <reg><xsl:value-of select="substring-before(.,'cõdãnerẽt')"/>condamnerent<xsl:value-of select="substring-after(.,'cõdãnerẽt')"/></reg></choice>
@@ -254,13 +263,69 @@
                  <reg><xsl:value-of select="substring-before(.,'ꝑ')"/>par</reg></choice>
            </xsl:when>
            
-           <!--pour signaler la présence du q tildé, dont la résolution dépend du contexte ("que" ou "qui")-->
+           <!--pour signaler la présence du q tildé, dont la résolution dépendra du contexte ("que" ou "qui")-->
            
            <xsl:when test="matches(.,'^(\w*)q̃$')">
               <choice><orig><xsl:value-of select="."/></orig>
                  <gap><desc><reg><xsl:text>#</xsl:text><xsl:value-of select="substring-before(.,'q̃')"/><xsl:text>#</xsl:text></reg></desc></gap>
               </choice>
            </xsl:when>
+           
+           <!--pour signaler la présence du p tildé, dont la résolution dépendra du contexte ("par" ou "pre")-->
+           
+           <xsl:when test="matches(.,'^(\w*)p̃$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <gap><desc><reg><xsl:text>#</xsl:text><xsl:value-of select="substring-before(.,'p̃')"/><xsl:text>#</xsl:text></reg></desc></gap>
+              </choice>
+           </xsl:when>
+           
+           <!--pour résoudre les "r rotunda" en "et"-->
+           
+           <xsl:when test="matches(.,'^(\w*)ꝛ$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <reg><xsl:value-of select="substring-before(.,'ꝛ')"/>et</reg></choice>
+           </xsl:when>
+                  
+           <!--pour résoudre les "capitum" en espaces insécables) EN COURS...-->
+          
+           <!--<xsl:when test="matches(.,'^(\w*)¶$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <gap><desc><reg><xsl:text>#</xsl:text><xsl:value-of select="substring-before(.,'¶')"/><xsl:text>#</xsl:text></reg></desc></gap>
+              </choice>
+           </xsl:when>-->
+           
+         <!-- <xsl:when test="matches(.,'^(\w*)¶(\w*)$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <gap><desc><reg><xsl:text>#</xsl:text><xsl:value-of select="substring-before(.,'¶')"/><xsl:text>#</xsl:text></reg></desc></gap>
+              </choice>
+           </xsl:when>-->
+           
+         
+          <!--pour résoudre les "com/con" suivis d'une consonne-->
+           
+           <xsl:when test="matches(.,'^(\w*)ↄ$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <reg><xsl:value-of select="substring-before(.,'ↄ')"/>com</reg></choice>
+           </xsl:when>
+           
+           <xsl:when test="matches(.,'^(\w*)ↄp(\w*)$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <reg><xsl:value-of select="substring-before(.,'ↄp')"/>comp<xsl:value-of select="substring-after(.,'ↄp')"/></reg></choice>
+           </xsl:when>
+           <xsl:when test="matches(.,'^(\w*)ↄm(\w*)$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <reg><xsl:value-of select="substring-before(.,'ↄm')"/>comm<xsl:value-of select="substring-after(.,'ↄm')"/></reg></choice>
+           </xsl:when>
+           <xsl:when test="matches(.,'^(\w*)ↄd(\w*)$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <reg><xsl:value-of select="substring-before(.,'ↄd')"/>cond<xsl:value-of select="substring-after(.,'ↄd')"/></reg></choice>
+           </xsl:when>
+           <xsl:when test="matches(.,'^(\w*)ↄt(\w*)$')">
+              <choice><orig><xsl:value-of select="."/></orig>
+                 <reg><xsl:value-of select="substring-before(.,'ↄt')"/>cont<xsl:value-of select="substring-after(.,'ↄt')"/></reg></choice>
+           </xsl:when>
+           
+           
            
            
            
@@ -270,6 +335,7 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
+   
     
     <!--    3°)Dissimilation application de règle pour chaque w (ici dès qu'un règle est appliquée, 
         les autres ne le sont pas et plus de <w> mais du choice-->
