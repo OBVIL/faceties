@@ -14,10 +14,10 @@
       </editionStmt>
       <publicationStmt>
         <publisher>Sorbonne Université LABEX OBVIL</publisher>
-        <date>2019</date>
-        <idno>
+        <date when="2019"/>
+       <!-- <idno>
           <ref target="http://http://obvil.sorbonne-universite.site/corpus/faceties/anonyme_avantures-ioyeuses-et-faitz-merveilleux-de-Tiel-Ulespiegle_1559">http://http://obvil.sorbonne-universite.site/corpus/faceties/anonyme_avantures-ioyeuses-et-faitz-merveilleux-de-Tiel-Ulespiegle_1559</ref>
-        </idno>
+        </idno>-->
         <availability status="restricted">
           <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
             <p>Cette ressource électronique protégée par le code de la propriété intellectuelle sur les bases de données (L341-1) est mise à disposition de la communauté scientifique internationale par l’OBVIL, selon les termes de la licence Creative Commons : 	« Attribution - Pas d’Utilisation Commerciale - Pas de Modification 3.0 France (CCBY-NC-ND 3.0 FR) ».</p>
@@ -42,10 +42,14 @@
   </teiHeader>
   <text>
     <body>
+            <div>
       <p rend="noindent">
         <pb n="f. 3"/>
       </p>
-            <div>
+             </div>
+      
+<div>
+        
       <head>LES AVANTVRES
 <lb/>IOYEVSES ET
 <lb/>faitz merueilleux de
@@ -657,7 +661,7 @@
         <head>Comment Vlespiegle fist chier vn
 <lb/>enfant malade comme il disoit
 <lb/>dont il eut grans pris.</head>
-        <p rend="noindent"><hi rend="sc">BOns maistres laisse on sou2010
+              <p rend="noindent"><hi rend="sc">BOns</hi> maistres laisse on sou2010
 <lb/>uentesfois derriere pour peu
 <lb/>d’argent mais l’on croit ceux
 <lb/>qui courent par les païs, &amp; à
@@ -699,10 +703,11 @@
 <lb/>la, &amp; n’aprint point à l’hostesse sa science.
 <lb/></p>
       </div>
+                
       <div>
         <head>Comment Vlespiegle guarist tous les
 <lb/>malades en vn iour qui furent à
-<lb/>Lhospital de Norembergue.</head>
+                <lb/>Lhospital de Norembergue.</head>
         <p rend="noindent">IL aduint vn iour que Vle2010
 <lb/>spiegle vint à Norember2010
 <lb/>gue mettãt des lettres aux
@@ -916,7 +921,7 @@
 <lb/>tresioyeux : 
           car il luy des2010
         </p>
-        <p rend="center noindent bg_ffff00">pleut d’ainsi courir
+        <p rend="center">pleut d’ainsi courir
 <lb/>sur les enne2010</p>
         <p rend="center noindent">
           mys.
@@ -926,8 +931,8 @@
       </div>
       <div>
         <head>Comment vlespiegle vainquit le fol
-<lb/>de poloigne par follies.</head>
-        <p rend="noindent"><hi rend="sc">CAsmiry le Roy de Poloi2010
+                <lb/>de poloigne par follies.</head>
+        <p rend="noindent"><hi rend="sc">CAsmiry </hi>le Roy de Poloi2010
 <lb/>gne auoit vn fol, lequel il ay2010
 <lb/>moit fort, lequel iouoit tres2010
 <lb/>bien sur la <del>q</del>[g]uiterne, &amp; le Roy
@@ -968,6 +973,7 @@
 <lb/>fort en la grace du Roy.
 <lb/></p>
       </div>
+      
       <div>
         <head>Comment le Duc de lunemborch
 <lb/>deffendit à Vlespiegle son païs.</head>
@@ -1047,7 +1053,7 @@
 <lb/>dist. Cher maistre souffres que nous pouons
 <lb/>regarder si louurage est bon, bien dist il ie
 <lb/>vous diray, deuant que vous verrez mon ou2010
-<lb/>urage. <hi rend="u">Qui n’est point legitime ne peut
+                <lb/>urage. <hi rend="u">Qui</hi> n’est point legitime ne peut
 <lb/>veoir ma painture, le conte dist. Ce seroit
 <lb/>vne moult merueilleuse chose, &amp; lors il s’en
 <lb/>alla auec Vlespiegle en la sale ou il auoit
@@ -1156,7 +1162,7 @@
 <lb/>à tout vne longue corde, &amp; s’il y faut la lar2010
 <lb/>geur d’vne paille i’auray tort. Mais ain2010
 <lb/>çoys que le recteur le laissast mesurer il
-<lb/>luy donna raison. <hi rend="u">Quartement demanda
+                <lb/>luy donna raison. <hi rend="u">Quartement</hi> demanda
 <lb/>le Recteur. Combien y a il de la ter2010
 <lb/>re iusques au Ciel ? Vlespiegle dist, c’est
 <lb/>bien pres dic<del>v</del>[y]. Car quand on chante icy
@@ -1711,7 +1717,7 @@
       <div>
         <head>Comment Vlespiegle vendit de la
 <lb/>merde pour graisse.</head>
-        <p rend="noindent"><hi rend="sc">QVand Vlespiegle eut gasté
+              <p rend="noindent"><hi rend="sc">QVand</hi> Vlespiegle eut gasté
 <lb/>au cordonnier beaucoup de
 <lb/>cuyr, le maistre quand il ap2010
 <lb/>perceut fut mout triste &amp; do2010
@@ -1750,7 +1756,7 @@
 <lb/>plusieurs compagnons pour engresser
 <lb/>beaucoup de cuyr, lesquelz y vindrent
 <lb/>tous pour ayder au cordonnier, &amp; vou2010
-<lb/>loient fondre la gresse en apportant vn<hi rend="sup">;
+                <lb/>loient fondre la gresse en apportant vn<hi rend="sup">;</hi>
 <lb/>tonneau aupres du feu. Et quand la merde
 <lb/>fut eschauffee elle commença à puir &amp; di2010
 <lb/>soient l’vn à l’autre qu’ilz auoient chié
@@ -1886,7 +1892,7 @@
 <lb/>car nul n’est si sage qu’il ne se laisse bien
 <lb/>aucunesfois tromper des folz, combien
 <lb/>que vous soyez vn tauernier de vin. Et
-<lb/>Vlespiegle se partit de la <hi rend="i">&amp; emporta le
+                <lb/>Vlespiegle se partit de la <hi rend="i">&amp;</hi> emporta le
 <lb/>pot auec le vin dessouz son manteau &amp; le
 <lb/>tauernier attira à soy les parolles &amp; appel%
 <lb/>la vn sergent &amp; couroient apres Vlespie2010
@@ -1964,7 +1970,7 @@
       <div>
         <head>Comment Vlespiegle deuint vn
 <lb/>faiseur de lunettes.</head>
-        <p rend="noindent"><hi rend="sc">SVr vn iour les electeurs furent
+              <p rend="noindent"><hi rend="sc">SVr</hi> vn iour les electeurs furent
 <lb/>discors qui seroit empereur de
 <lb/>Romme si fut le conte de sup2010
 <lb/>pellẽbourg à ce esleu, si estoient
@@ -2164,7 +2170,7 @@
       <div>
         <head>Comment Vlespiegle fut prie
 <lb/>&amp; inuité de dehors.</head>
-        <p rend="noindent"><hi rend="b">A Lunembourg demouroit vn faiseur
+              <p rend="noindent"><hi rend="b">A</hi> Lunembourg demouroit vn faiseur
 <lb/>de fluttes qui auoit couru &amp; truandé
 <lb/>par les païs, si qu’il sauoit de toute finesse &amp;
 <lb/><pb n="f. 73"/></p>
@@ -2282,7 +2288,7 @@
 <lb/>que vous en mentez, &amp; que vous estes tous
 <lb/>trois malicieux coquins, mais pource que
 <lb/>vous estes vn prestre il le me conuient croi2010</p>
-        <p rend="center noindent bg_ffff00">CDLre. Et il laissa le drap auec ses compai2010
+        <p rend="center">CDLre. Et il laissa le drap auec ses compai2010
 <lb/>gnons de quoy ilz s’en habille2010
 <lb/>rent pour lyuer, &amp; il con2010
 <lb/>uint au païsant auoir
@@ -2421,7 +2427,7 @@
 <lb/>esprit vous le saurez incontinent. Et elle
 <lb/>courut à la maison &amp; se complaignyt de
 <lb/>ce que le curé auoit dist. L'hoste se cour2010
-<lb/>rouca <hi rend="i">&amp; print la broche auec le rost qui
+                <lb/>rouca <hi rend="i">&amp;</hi> print la broche auec le rost qui
 <lb/>gisoit au pres du feu &amp; courut à la maison
 <lb/>du curé. Ce voyant le curé appella ses voi2010
 <lb/>sins pour ayde &amp; fist vne croix deuant luy
@@ -2444,11 +2450,11 @@
 <lb/>vesquiren
           t.
         </p>
-        <p rend="center noindent color_402707 bg_ffff00">**</p>
-        <p rend="center noindent color_402707 bg_ffff00">*</p>
-        <p rend="noindent">
+        <p rend="center">**</p>
+        <p rend="center">*</p>
+      
           <pb n="f. 82"/>
-        </p>
+        
       </div>
       <div>
         <head>Comment Vlespiegle espouuenta &amp;
@@ -2469,11 +2475,11 @@
 <lb/>vn loup nous à fait grand ennuy &amp; desplai2010
 <lb/>sir auec la neige &amp; ne scauions estre de2010
 <lb/>liurez de luy, cela nous à fait demeurer si
-<lb/>longuement. <hi rend="u">Quand l’hoste ouyt ce parla
+                <lb/>longuement. <hi rend="u">Quand</hi> l’hoste ouyt ce parla
 <lb/>plus fierement que deuant dirant comment
 <lb/>ilz se laissoiẽt eux troys chasser d’vn loup si
 <lb/>[b]ien rencontroys dix au champs ie les comba%
-<lb/>troys <hi rend="i">&amp; enchasseroys, ainsi se mocqua l’hoste
+                <lb/>troys <hi rend="i">&amp;</hi> enchasseroys, ainsi se mocqua l’hoste
 <lb/>desditz marchans iusques à ce qu’ilz allerent
 <lb/>coucher &amp; Vlespiegle estoit aupres deux
 <lb/>oyant les moqueries. Quand ilz alloiẽt cou2010
@@ -2671,7 +2677,7 @@
         <head>Comment Vlespiegle disoit à la mes2010
 <lb/>me hostesse vn iour que Vlespie2010
 <lb/>gle gisoit sur vne roue.</head>
-        <p rend="noindent"><hi rend="sc">APres Vlespiegle vint en
+              <p rend="noindent"><hi rend="sc">APres</hi> Vlespiegle vint en
 <lb/>vn village pres de Staffurt
 <lb/>&amp; laissa son cheual en vn lo%
 <lb/>gis : &amp; vestit des autres ha2010
@@ -2710,7 +2716,7 @@
         <head>Comment Vlespiegle mist vne ho2010
 <lb/>stesse à tout les fesses nues dessus
 <lb/>les cendres chaudes.</head>
-        <p rend="noindent"><hi rend="sc">QVand Vlespiegle fut venu
+              <p rend="noindent"><hi rend="sc">QVand</hi> Vlespiegle fut venu
 <lb/>de Romme, il vint loger en vn
 <lb/>logis ou l’hoste n’estoit pas à
 <lb/>la maison &amp; demanda à l’ho2010
@@ -2749,11 +2755,11 @@
           veu ne fait
           <lb/>nul mal.
         </p>
-        <p rend="center noindent bg_ffff00">**</p>
-        <p rend="center noindent bg_ffff00">*</p>
-        <p rend="noindent">
+        <p rend="center">**</p>
+        <p rend="center">*</p>
+      
           <pb n="f. 92"/>
-        </p>
+        
       </div>
       <div>
         <head>Comment Vlespiegle deceut vn Hol2010
@@ -3284,23 +3290,24 @@
 <lb/>droit au sepulchre &amp; le couurirent, mettant
 <lb/>sus le sepulchre vne pierre en laquelle estoit
 <lb/>sculpté vn chauan ayant vn miroir dessoubz</p>
-        <p rend="center noindent bg_ffff00">ses ongles. Et dessus la pierre estoit
+        <p rend="center">ses ongles. Et dessus la pierre estoit
 <lb/>escriture taillée ainsi. Ceste pier2010
 <lb/>re ne changera nully, car
 <lb/>dessoubz icelle est
 <lb/>enterré Vles2010
 <lb/>piegle.</p>
-        <p rend="center noindent bg_ffff00">*</p>
-        <p rend="center noindent"><hi rend="sc">fin.</p>
+        <p rend="center">*</p>
+              <p rend="center"><hi rend="sc">fin.</hi></p>
         <p rend="noindent">
           <pb n="f. 110"/>
         </p>
         <p rend="center noindent i">A LYON,</p>
         <p rend="center noindent">Par Iean D’ogerolles,</p>
-        <p rend="center noindent bg_ffff00">_______</p>
-        <p rend="center noindent"><hi rend="i">1559.</p>
+        <p rend="center">_______</p>
+              <p rend="center noindent"><hi rend="i">1559.</hi></p>
       </div>
             </div>
+            
     </body>
   </text>
 </TEI>
