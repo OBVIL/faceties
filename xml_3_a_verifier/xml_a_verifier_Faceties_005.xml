@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../schema/BVH_Epistemon.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
   <teiHeader>
       <fileDesc>
@@ -14,7 +13,7 @@
             <publisher>Sorbonne Université LABEX OBVIL</publisher>
             <date when="2019"/>
             <idno>http://http://obvil.sorbonne-universite.site/corpus/faceties/cote_iii-f-019</idno>
-            <availability>
+            <availability status="restricted">
                <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
                   <p>Cette ressource électronique protégée par le code de la propriété intellectuelle sur les bases de données (L341-1) est mise à disposition de la communauté scientifique internationale par l’OBVIL, selon les termes de la licence Creative Commons : 	« Attribution - Pas d’Utilisation Commerciale - Pas de Modification 3.0 France (CCBY-NC-ND 3.0 FR) ».</p>
                   <p>Attribution : afin de référencer la source, toute utilisation ou publication dérivée de cette ressource électroniques comportera le nom de l’OBVIL et surtout l’adresse Internet de la ressource.</p>
@@ -43,7 +42,7 @@
             <castList>
                <castItem xml:id="acteur"/>
                <castItem xml:id="clerc"/>
-               <castItem xml:id="gallant"/>
+               <castItem xml:id="galant"/>
             </castList>
             <index>
                <term type="lieu">[premier lieu où se passe la narration]</term>
@@ -547,7 +546,11 @@
                         </choice> 
                         <choice>
                            <orig>q̃</orig>
-                           <reg>que</reg>
+                           
+                              
+                                 <reg>que</reg>
+                              
+                           
                         </choice> ce leur fist le cueur fremir</l>
                      <l>Il <choice>
                            <orig>nattẽdoint</orig>
@@ -562,7 +565,11 @@
                      <l>Que de telz faitz ne face mencion</l>
                      <l>Puys <choice>
                            <orig>q̃</orig>
-                           <reg>que</reg>
+                           
+                              
+                                 <reg>que</reg>
+                              
+                           
                         </choice> a <choice>
                            <orig>mõ</orig>
                            <reg>mon</reg>
@@ -578,7 +585,11 @@
                      <pb n="f. a3r"/>
                      <l>Ien veuil faire <choice>
                            <orig>quelq̃</orig>
-                            <reg>quelque</reg>
+                           
+                              
+                                 <reg>quelque</reg>
+                              
+                           
                         </choice> 
                         <choice>
                            <orig>narrassiõ</orig>
@@ -804,10 +815,7 @@
                      <l>Tant plus la vois <choice>
                            <orig>ꝛ</orig>
                            <reg>et</reg>
-                     </choice> mie<choice>
-                        <sic>lu</sic>
-                        <corr>[ul]</corr>
-                     </choice>x magree</l>
+                     </choice> mie<choice><sic>lu</sic><corr>[ul]</corr></choice>x magree</l>
                      <l>
                         <choice>
                            <orig>Ie</orig>
@@ -847,7 +855,11 @@
                         </choice> qui a credit</l>
                      <l>Tout ainsi <choice>
                            <orig>q̃</orig>
-                           <reg>que</reg>
+                           
+                              
+                                 <reg>que</reg>
+                              
+                           
                         </choice> 
                         <choice>
                            <orig>deuãt</orig>
@@ -1401,10 +1413,11 @@
                            <orig>ꝛ</orig>
                            <reg>et</reg>
                         </choice> a plain</l>
-                     <l><choice>
-                        <orig>¶</orig>
-                        <reg>##</reg>
-                     </choice> Par ce point ilz eurent du vin</l>
+                     <l>
+                        <choice>
+                           <orig>¶</orig>
+                           <reg>   </reg>
+                        </choice> Par ce point ilz eurent du vin</l>
                      <l>Par fine force de tromper</l>
                      <l>Sans aller parler au devin</l>
                      <l>Ilz repeurent per ou nomper</l>
@@ -1428,8 +1441,8 @@
                   </div>
                   <div>
                      <head>          <choice>
-                        <orig>¶</orig>
-                        <reg>##</reg>
+                           <orig>¶</orig>
+                           <reg>   </reg>
                         </choice> La maniere <choice>
                            <orig>dauoir</orig>
                            <reg>davoir</reg>
@@ -1469,9 +1482,10 @@
                            <reg>joue</reg>
                         </choice>
                      </l>
-                     <l><choice>
+                     <l>
+                        <choice>
                            <orig>¶</orig>
-                           <reg>##</reg>
+                           <reg>   </reg>
                         </choice> Il vint a la rotisserie</l>
                      <l>Et <choice>
                            <orig>marchãda</orig>
@@ -1501,9 +1515,10 @@
                            <reg>Quant</reg>
                         </choice> il vit quil eut ceste offrande</l>
                      <l>Empoigna de rost plaine broche</l>
-                     <l><choice>
+                     <l>
+                        <choice>
                            <orig>¶</orig>
-                           <reg>##</reg>
+                           <reg>   </reg>
                         </choice> Celluy qui bailla le soufflet</l>
                      <l>Fuit <choice>
                            <orig>biẽ</orig>
@@ -1528,9 +1543,10 @@
                            <orig>ꝛ</orig>
                            <reg>et</reg>
                         </choice> rost</l>
-                     <l><choice>
+                     <l>
+                        <choice>
                            <orig>¶</orig>
-                           <reg>##</reg>
+                           <reg>   </reg>
                         </choice> Et pour la premiere repeue</l>
                      <l>Dont apres sera mencion</l>
                      <l>Bien digne destre <choice>
@@ -1558,9 +1574,10 @@
                         </choice>
                      </l>
                      <l>Redigee sera pour mem<corr>[o]</corr>ire</l>
-                     <l><choice>
+                     <l>
+                        <choice>
                            <orig>¶</orig>
-                           <reg>##</reg>
+                           <reg>   </reg>
                         </choice> Or <choice>
                            <orig>aduint</orig>
                            <reg>advint</reg>
@@ -1589,9 +1606,10 @@
                            <reg>sans</reg>
                         </choice> estre armez</l>
                      <l>Ambassadeurs de long pays</l>
-                     <l><choice>
+                     <l>
+                        <choice>
                            <orig>¶</orig>
-                           <reg>##</reg>
+                           <reg>   </reg>
                         </choice> Si <choice>
                            <orig>pẽserent</orig>
                            <reg>penserent</reg>
@@ -1632,7 +1650,11 @@
                         </choice> 
                         <choice>
                            <orig>q̃</orig>
-                           <reg>que</reg>
+                           
+                              
+                                 <reg>que</reg>
+                              
+                           
                         </choice> 
                         <choice>
                            <orig>mõseigneur</orig>
@@ -2153,7 +2175,11 @@
                   <l>A dist il dame de ceans</l>
                   <l>Cest celluy <choice>
                         <orig>q̃</orig>
-                        <reg>qui</reg>
+                        
+                           
+                              <reg>que</reg>
+                           
+                        
                      </choice> no<hi rend="sup">9</hi> demandon</l>
                   <l>Par mafoy cest ce grant baron</l>
                   <l>Qui est <choice>
@@ -2281,10 +2307,7 @@
                      </choice>
                   </l>
                   <l>Mais il nestoit point bien content</l>
-                  <l>De me<choice>
-                     <sic>c</sic>
-                     <corr>[t]</corr>
-                  </choice>tre <choice>
+                  <l>De me<choice><sic>c</sic><corr>[t]</corr></choice>tre <choice>
                         <orig>souuent</orig>
                         <reg>souvent</reg>
                      </choice> main a bource</l>
@@ -2367,6 +2390,8 @@
                   <l>Qua <choice>
                         <orig>quelq̃</orig>
                         <reg>quelque</reg>
+                           
+                        
                      </choice> chose <choice>
                         <orig>seruoient</orig>
                         <reg>servoient</reg>
@@ -2462,7 +2487,7 @@
                         </choice> me payerez pour abreger</l>
                      <l>Ou vous y laisserez la robe</l>
                   </sp>
-                  <sp who="gallant">
+                  <sp who="galant">
                      <speaker>                     Le gallant</speaker>
                      <l>Quant est dargent <choice>
                            <orig>ie</orig>
@@ -2496,7 +2521,7 @@
                         </choice> vous faire</l>
                      <l>Dictes le moy tout plainement</l>
                   </sp>
-                  <sp who="gallant">
+                  <sp who="galant">
                      <speaker>                             Le gallant</speaker>
                      <l>Quoy toute chose necessaire</l>
                      <l>Point ne fault demander comment</l>
@@ -2769,14 +2794,8 @@
                   <l>Ne demanderent que repos</l>
                   <l>Dargent ilz nestoient pas comblez</l>
                   <l>Nonpourtant ne faillirent pas</l>
-                  <l>Ilz se bo<choice>
-                     <sic>n</sic>
-                     <corr>[u]</corr>
-                  </choice>terent cest le cas</l>
-                  <l>A <choice>
-                     <sic>s</sic>
-                     <corr>[l]</corr>
-                  </choice>enseigne du plat destain</l>
+                  <l>Ilz se bo<choice><sic>n</sic><corr>[u]</corr></choice>terent cest le cas</l>
+                  <l>A <choice><sic>s</sic><corr>[l]</corr></choice>enseigne du plat destain</l>
                   <l>Ou ilz repeurent par compas</l>
                   <l>Car ilz en <choice>
                         <orig>auoient</orig>
@@ -2798,10 +2817,7 @@
                   <l>Dist <choice>
                         <orig>vng</orig>
                         <reg>ung</reg>
-                  </choice> gallant de plaine sourc<choice>
-                     <sic>t</sic>
-                     <corr>[e]</corr>
-                  </choice>e</l>
+                  </choice> gallant de plaine sourc<choice><sic>t</sic><corr>[e]</corr></choice>e</l>
                   <l>In nen fault qun pour payer tout</l>
                   <l/>
                   <l>Ilz appointerent tous ensemble</l>

@@ -505,18 +505,19 @@
                      /><xsl:value-of select="substring-after(., 'Ĝ')"/></corr>
             </choice>
          </xsl:when>
+         
+         <xsl:when test="matches(., '^(\w*)Ñ$')">
+                  <xsl:value-of select="substring-before(., 'Ñ')"/><xsl:text>-</xsl:text>
+            <lb rend="hyphen"/>     
+         </xsl:when>
+ 
 
-         <!-- <xsl:when test="matches(.,'^(\w*)Ĝ$')">
-              <choice><sic><xsl:value-of select="substring-before(.,'Ĝ')"/></sic>
-                 <corr><xsl:value-of select="substring-before(.,'Ĝ')"/>-<lb rend="hyphen"/><xsl:value-of select="substring-after(.,'Ĝ')"/></corr>
+         <xsl:when test="matches(.,'^(\w*)¥$')">
+            <choice>
+               <orig>¶</orig>
+               <reg><xsl:value-of select="substring-before(.,'¥')"/><xsl:text>&#160;</xsl:text></reg>
               </choice>
-           </xsl:when>-->
-
-         <!-- <xsl:when test="matches(.,'^(\w*)¶(\w*)$')">
-              <choice><orig><xsl:value-of select="."/></orig>
-                 <gap><desc><reg><xsl:text>#</xsl:text><xsl:value-of select="substring-before(.,'¶')"/><xsl:text>#</xsl:text></reg></desc></gap>
-              </choice>
-           </xsl:when>-->
+           </xsl:when>
 
 
          <!--pour résoudre les "com/con" suivis d'une consonne-->
@@ -584,11 +585,8 @@
    <!--    3°)Dissimilation application de règle pour chaque w (ici dès qu'un règle est appliquée, 
         les autres ne le sont pas et plus de <w> mais du choice-->
 
-
    <xsl:template match="tei:w" mode="pass3">
       <xsl:choose>
-
-
 
 
          <!--[DISSIMILATION]-->
