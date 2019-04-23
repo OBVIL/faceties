@@ -95,9 +95,6 @@ TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.0.0/
    <define name="att.ascribed.attributes">
       <ref name="att.ascribed.attribute.who"/>
    </define>
-   <define name="licence">
-     <ref name="licence"/>
-   </define>
    <define name="att.ascribed.attribute.who">
       <optional>
          <attribute name="who">
@@ -3374,15 +3371,6 @@ Elements]</a:documentation>
          </optional>
          <empty/>
       </element>
-   </define>
-   <define name="licence">
-      <element name="licence">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">licence</a:documentation>
-         <ref name="p"/>
-      </element>
-      <optional>
-         <attribute name="target"></attribute>
-      </optional>
    </define>
    <define name="pb">
       <element name="pb">
@@ -7523,7 +7511,7 @@ Suggested values include: 1] Arret; 2] Art_poetique; 3] Chroniques; 4] Discours;
          <empty/>
       </element>
    </define>
-   <define name="div">
+   <!--<define name="div">
       <element name="div">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text division) contains a subdivision of the front, body, or back of a text. [4.1. Divisions of the Body]</a:documentation>
          <group>
@@ -7823,7 +7811,7 @@ Suggested values include: 1] arret; 2] acte; 3] adresse; 4] ajout_ms; 5] alphabe
          </optional>
          <empty/>
       </element>
-   </define>
+   </define>-->
    <define name="trailer">
       <element name="trailer">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a closing title or footer appearing at the end of a division of a text. [4.2.4. Content of Textual Divisions 4.2. Elements Common to All Divisions]</a:documentation>
