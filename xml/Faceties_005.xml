@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../schema/BVH_Epistemon.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.bvh.univ-tours.fr/XML-TEI/schema/BVH_Epistemon.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:lang="en">
-  <teiHeader>
+   <teiHeader>
       <fileDesc>
          <titleStmt>
             <title>Le recueil des hystoires des repeus franches</title>
@@ -15,15 +17,26 @@
             <idno>http://http://obvil.sorbonne-universite.site/corpus/faceties/cote_iii-f-019</idno>
             <availability status="restricted">
                <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
-                  <p>Cette ressource électronique protégée par le code de la propriété intellectuelle sur les bases de données (L341-1) est mise à disposition de la communauté scientifique internationale par l’OBVIL, selon les termes de la licence Creative Commons : 	« Attribution - Pas d’Utilisation Commerciale - Pas de Modification 3.0 France (CCBY-NC-ND 3.0 FR) ».</p>
-                  <p>Attribution : afin de référencer la source, toute utilisation ou publication dérivée de cette ressource électroniques comportera le nom de l’OBVIL et surtout l’adresse Internet de la ressource.</p>
-                  <p>Pas d’Utilisation Commerciale : dans l’intérêt de la communauté scientifique, toute utilisation commerciale est interdite.</p>
-                  <p>Pas de Modification : l’OBVIL s’engage à améliorer et à corriger cette ressource électronique, notamment en intégrant toutes les contributions extérieures, la diffusion de versions modifiées de cette ressource n’est pas souhaitable.</p>
+                  <p>Cette ressource électronique protégée par le code de la propriété
+                     intellectuelle sur les bases de données (L341-1) est mise à disposition de la
+                     communauté scientifique internationale par l’OBVIL, selon les termes de la
+                     licence Creative Commons : « Attribution - Pas d’Utilisation Commerciale - Pas
+                     de Modification 3.0 France (CCBY-NC-ND 3.0 FR) ».</p>
+                  <p>Attribution : afin de référencer la source, toute utilisation ou publication
+                     dérivée de cette ressource électroniques comportera le nom de l’OBVIL et
+                     surtout l’adresse Internet de la ressource.</p>
+                  <p>Pas d’Utilisation Commerciale : dans l’intérêt de la communauté scientifique,
+                     toute utilisation commerciale est interdite.</p>
+                  <p>Pas de Modification : l’OBVIL s’engage à améliorer et à corriger cette
+                     ressource électronique, notamment en intégrant toutes les contributions
+                     extérieures, la diffusion de versions modifiées de cette ressource n’est pas
+                     souhaitable.</p>
                </licence>
             </availability>
          </publicationStmt>
          <sourceDesc>
-            <bibl>Anonyme, Le recueil des hystoires des repeus franches, Paris, Denis Meslier, 1490, Bibliothèque du château de Chantilly, Cabinet des livres, III-F-019.</bibl>
+            <bibl>Anonyme, Le recueil des hystoires des repeus franches, Paris, Denis Meslier, 1490,
+               Bibliothèque du château de Chantilly, Cabinet des livres, III-F-019.</bibl>
          </sourceDesc>
       </fileDesc>
       <profileDesc>
@@ -34,8 +47,8 @@
             <language ident="fr"/>
          </langUsage>
       </profileDesc>
-  </teiHeader>
-  <text>
+   </teiHeader>
+   <text>
       <body>
          <div>
             <head>Le recueil des hystoires des repeus franches</head>
@@ -47,7 +60,8 @@
             <index>
                <term type="lieu">[premier lieu où se passe la narration]</term>
                <term type="lieu">[deuxième lieu etc.]</term>
-               <term type="personnage">[premier personnage, soit nom + fonction, soit nom, soit fonction (drapière, bourgeois, curé)]</term>
+               <term type="personnage">[premier personnage, soit nom + fonction, soit nom, soit
+                  fonction (drapière, bourgeois, curé)]</term>
                <term type="personnage">[deuxième personnage,etc.]</term>
             </index>
             <div>
@@ -72,7 +86,7 @@
                   <l>Et tant <choice>
                         <orig>iours</orig>
                         <reg>jours</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>ouuriers</orig>
                         <reg>ouvriers</reg>
@@ -95,7 +109,7 @@
                      </choice> vous au <choice>
                         <orig>sermõ</orig>
                         <reg>sermon</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>trouuer</orig>
                         <reg>trouver</reg>
@@ -114,7 +128,7 @@
                   <l>procureurs <choice>
                         <orig>nouueaulx</orig>
                         <reg>nouveaulx</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>aduocatz</orig>
                         <reg>advocatz</reg>
@@ -138,11 +152,11 @@
                   <l>qui <choice>
                         <orig>saues</orig>
                         <reg>saves</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>iargon</orig>
                         <reg>jargon</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>iobelin</orig>
                         <reg>jobelin</reg>
@@ -159,7 +173,7 @@
                   <l>Tous gallans a pourpoings <choice>
                         <orig>sãs</orig>
                         <reg>sans</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>mãches</orig>
                         <reg>manches</reg>
@@ -262,7 +276,7 @@
                      <choice>
                         <orig>Auez</orig>
                         <reg>Avez</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>tousiours</orig>
                         <reg>tousjours</reg>
@@ -274,7 +288,7 @@
                   <l>Tant aux <choice>
                         <orig>iours</orig>
                         <reg>jours</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>ouuriers</orig>
                         <reg>ouvriers</reg>
@@ -439,7 +453,7 @@
                      <l>De my <choice>
                            <orig>trouuer</orig>
                            <reg>trouver</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>ꝛ</orig>
                            <reg>et</reg>
@@ -461,7 +475,7 @@
                         </choice> chascun pour le <choice>
                            <orig>tẽps</orig>
                            <reg>temps</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>auenir</orig>
                            <reg>avenir</reg>
@@ -494,7 +508,7 @@
                      <l>Les <choice>
                            <orig>trouuẽt</orig>
                            <reg>trouvent</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>biẽ</orig>
                            <reg>bien</reg>
@@ -543,15 +557,9 @@
                         <choice>
                            <orig>Combiẽ</orig>
                            <reg>Combien</reg>
-                        </choice> 
+                        </choice>
                         <choice>
-                           <orig>q̃</orig>
-                           
-                              
-                                 <reg>que</reg>
-                              
-                           
-                        </choice> ce leur fist le cueur fremir</l>
+                           <orig>q̃</orig> <reg>que</reg> </choice> ce leur fist le cueur fremir</l>
                      <l>Il <choice>
                            <orig>nattẽdoint</orig>
                            <reg>nattendoint</reg>
@@ -564,16 +572,10 @@
                      <l>Prince pource que ne me puis tenir</l>
                      <l>Que de telz faitz ne face mencion</l>
                      <l>Puys <choice>
-                           <orig>q̃</orig>
-                           
-                              
-                                 <reg>que</reg>
-                              
-                           
-                        </choice> a <choice>
+                           <orig>q̃</orig> <reg>que</reg> </choice> a <choice>
                            <orig>mõ</orig>
                            <reg>mon</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>tẽps</orig>
                            <reg>temps</reg>
@@ -584,13 +586,7 @@
                      </l>
                      <pb n="f. a3r"/>
                      <l>Ien veuil faire <choice>
-                           <orig>quelq̃</orig>
-                           
-                              
-                                 <reg>quelque</reg>
-                              
-                           
-                        </choice> 
+                           <orig>quelq̃</orig> <reg>quelque</reg> </choice>
                         <choice>
                            <orig>narrassiõ</orig>
                            <reg>narrassion</reg>
@@ -608,7 +604,7 @@
                      <l>Ceste presente <choice>
                            <orig>nouuelle</orig>
                            <reg>nouvelle</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>inuẽciõ</orig>
                            <reg>inuencion</reg>
@@ -621,8 +617,7 @@
                   </sp>
                </div>
                <div>
-                  <head>                   La balade des
-<lb/>                   escoutans</head>
+                  <head>                   La balade des <lb/>                   escoutans</head>
                   <l>Qui en a il est bien venu.</l>
                   <l>Qui nen a point len nen tient conte</l>
                   <l>Celluy qui en a est congneu</l>
@@ -714,11 +709,11 @@
                      <choice>
                         <orig>Ie</orig>
                         <reg>Je</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>cheuiroye</orig>
                         <reg>cheviroye</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>auecques</orig>
                         <reg>avecques</reg>
@@ -735,7 +730,7 @@
                      <choice>
                         <orig>Auoit</orig>
                         <reg>Avoit</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>vne</orig>
                         <reg>une</reg>
@@ -790,7 +785,7 @@
                      <l>Plusieurs <choice>
                            <orig>mygnõs</orig>
                            <reg>mygnons</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>destrãge</orig>
                            <reg>destrange</reg>
@@ -815,7 +810,7 @@
                      <l>Tant plus la vois <choice>
                            <orig>ꝛ</orig>
                            <reg>et</reg>
-                     </choice> mie<choice><sic>lu</sic><corr>[ul]</corr></choice>x magree</l>
+                        </choice> mie<choice><sic>lu</sic><corr>[ul]</corr></choice>x magree</l>
                      <l>
                         <choice>
                            <orig>Ie</orig>
@@ -831,7 +826,7 @@
                      <l>A lun <choice>
                            <orig>conuiẽt</orig>
                            <reg>convient</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>vẽdre</orig>
                            <reg>vendre</reg>
@@ -854,17 +849,11 @@
                            <reg>emprunter</reg>
                         </choice> qui a credit</l>
                      <l>Tout ainsi <choice>
-                           <orig>q̃</orig>
-                           
-                              
-                                 <reg>que</reg>
-                              
-                           
-                        </choice> 
+                           <orig>q̃</orig> <reg>que</reg> </choice>
                         <choice>
                            <orig>deuãt</orig>
                            <reg>devant</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>iay</orig>
                            <reg>jay</reg>
@@ -917,14 +906,14 @@
                   </sp>
                </div>
                <div>
-                  <head>                    La repeue de villon
-<lb/>                    et de ses compaignons</head>
+                  <head>                    La repeue de villon <lb/>                    et de ses
+                     compaignons</head>
                   <l>Qui na or ny argent ne gaige</l>
                   <l>Comment peult il faire grant chiere</l>
                   <l>Il fault quil <choice>
                         <orig>viue</orig>
                         <reg>vive</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>dauantaige</orig>
                         <reg>davantaige</reg>
@@ -960,8 +949,7 @@
                         <reg>avec</reg>
                      </choice> du rost tout chault</l>
                   <div>
-                     <head>                       La maniere da/
-<lb/>                       <choice>
+                     <head>                       La maniere da/ <lb/>                       <choice>
                            <orig>uoir</orig>
                            <reg>voir</reg>
                         </choice> du poysson</head>
@@ -1144,8 +1132,7 @@
                      <head>        La maniere <choice>
                            <orig>dauoir</orig>
                            <reg>davoir</reg>
-                        </choice> des trippes pour
-<lb/>        disner</head>
+                        </choice> des trippes pour <lb/>        disner</head>
                      <l>Que fist il a bien peu de plet</l>
                      <l>
                         <choice>
@@ -1185,7 +1172,7 @@
                      <l>Son cul <choice>
                            <orig>descouuert</orig>
                            <reg>descouvert</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>iusques</orig>
                            <reg>jusques</reg>
@@ -1301,8 +1288,7 @@
                         </choice> trompe en ce point</l>
                   </div>
                   <div>
-                     <head>                        La manière
-<lb/>                        <choice>
+                     <head>                        La manière <lb/>                        <choice>
                            <orig>dauoir</orig>
                            <reg>davoir</reg>
                         </choice> du vin</head>
@@ -1392,7 +1378,7 @@
                         <choice>
                            <orig>Ie</orig>
                            <reg>Je</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>demãde</orig>
                            <reg>demande</reg>
@@ -1433,7 +1419,7 @@
                      <l>Que nous <choice>
                            <orig>mẽgerõs</orig>
                            <reg>mengerons</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>ẽnuyt</orig>
                            <reg>ennuyt</reg>
@@ -1472,7 +1458,7 @@
                      <l>Il <choice>
                            <orig>viẽdroit</orig>
                            <reg>viendroit</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>vng</orig>
                            <reg>ung</reg>
@@ -1500,7 +1486,7 @@
                      <l>Luy <choice>
                            <orig>baillãt</orig>
                            <reg>baillant</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>vne</orig>
                            <reg>une</reg>
@@ -1567,7 +1553,7 @@
                      <l>Comme <choice>
                            <orig>nouuelle</orig>
                            <reg>nouvelle</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>invẽcion</orig>
                            <reg>invencion</reg>
@@ -1647,15 +1633,9 @@
                      <l>Je croy <choice>
                            <orig>biẽ</orig>
                            <reg>bien</reg>
-                        </choice> 
+                        </choice>
                         <choice>
-                           <orig>q̃</orig>
-                           
-                              
-                                 <reg>que</reg>
-                              
-                           
-                        </choice> 
+                           <orig>q̃</orig> <reg>que</reg> </choice>
                         <choice>
                            <orig>mõseigneur</orig>
                            <reg>monseigneur</reg>
@@ -1664,7 +1644,7 @@
                      <l>Fist se <choice>
                            <orig>gallãt</orig>
                            <reg>gallant</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>tresbiẽ</orig>
                            <reg>tresbien</reg>
@@ -1763,7 +1743,7 @@
                         <choice>
                            <orig>Deuisoyent</orig>
                            <reg>Devisoyent</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>rõdeau</orig>
                            <reg>rondeau</reg>
@@ -1826,7 +1806,7 @@
                      <l>Toutesfoys vous <choice>
                            <orig>deuez</orig>
                            <reg>devez</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>scauoir</orig>
                            <reg>scavoir</reg>
@@ -1938,8 +1918,8 @@
                   </div>
                </div>
                <div>
-                  <head>                        La seconde
-<lb/>                        repeue franche</head>
+                  <head>                        La seconde <lb/>                        repeue
+                     franche</head>
                   <l>Ung lymosin vint a paris</l>
                   <l>Pour aucun proces quil <choice>
                         <orig>auoit</orig>
@@ -1956,7 +1936,7 @@
                   <l>Son fait et <choice>
                         <orig>auoit</orig>
                         <reg>avoit</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>souuenance</orig>
                         <reg>souvenance</reg>
@@ -1966,7 +1946,7 @@
                   <l>Sil <choice>
                         <orig>nauoit</orig>
                         <reg>navoit</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>vne</orig>
                         <reg>une</reg>
@@ -2092,7 +2072,7 @@
                   <l>Il <choice>
                         <orig>deuoit</orig>
                         <reg>devoit</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>auec</orig>
                         <reg>avec</reg>
@@ -2130,7 +2110,7 @@
                   <l>De ce seigneur car <choice>
                         <orig>sã</orig>
                         <reg>san</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>doubtãce</orig>
                         <reg>doubtance</reg>
@@ -2174,13 +2154,8 @@
                      </choice> souper au soir leans</l>
                   <l>A dist il dame de ceans</l>
                   <l>Cest celluy <choice>
-                        <orig>q̃</orig>
-                        
-                           
-                              <reg>que</reg>
-                           
-                        
-                     </choice> no<hi rend="sup">9</hi> demandon</l>
+                        <orig>q̃</orig> <reg>que</reg> </choice> no<hi rend="sup">9</hi>
+                     demandon</l>
                   <l>Par mafoy cest ce grant baron</l>
                   <l>Qui est <choice>
                         <orig>arriue</orig>
@@ -2190,7 +2165,7 @@
                      <choice>
                         <orig>Ie</orig>
                         <reg>Je</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>nẽtens</orig>
                         <reg>nentens</reg>
@@ -2224,7 +2199,7 @@
                      <choice>
                         <orig>Arriua</orig>
                         <reg>Arriva</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>ꝛ</orig>
                         <reg>et</reg>
@@ -2363,7 +2338,7 @@
                      <choice>
                         <orig>Ie</orig>
                         <reg>Je</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>reuiẽdray</orig>
                         <reg>reviendray</reg>
@@ -2389,10 +2364,7 @@
                   </l>
                   <l>Qua <choice>
                         <orig>quelq̃</orig>
-                        <reg>quelque</reg>
-                           
-                        
-                     </choice> chose <choice>
+                        <reg>quelque</reg> </choice> chose <choice>
                         <orig>seruoient</orig>
                         <reg>servoient</reg>
                      </choice>
@@ -2431,7 +2403,7 @@
                      <choice>
                         <orig>Auoir</orig>
                         <reg>Avoir</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>vng</orig>
                         <reg>ung</reg>
@@ -2465,7 +2437,7 @@
                         </choice> vous <choice>
                            <orig>viure</orig>
                            <reg>vivre</reg>
-                        </choice> 
+                        </choice>
                         <choice>
                            <orig>dauantaige</orig>
                            <reg>davantaige</reg>
@@ -2634,12 +2606,11 @@
                   </sp>
                </div>
                <div>
-                  <head>                 La repeue
-<lb/>                  du peletier</head>
+                  <head>                 La repeue <lb/>                  du peletier</head>
                   <l>Ung <choice>
                         <orig>iour</orig>
                         <reg>jour</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>aduint</orig>
                         <reg>advint</reg>
@@ -2768,8 +2739,8 @@
                   </l>
                </div>
                <div>
-                  <head>               La repeue franche des
-<lb/>               gallans sans soucy</head>
+                  <head>               La repeue franche des <lb/>               gallans sans
+                     soucy</head>
                   <pb n="f. c3r"/>
                   <l>
                      <choice>
@@ -2817,7 +2788,8 @@
                   <l>Dist <choice>
                         <orig>vng</orig>
                         <reg>ung</reg>
-                  </choice> gallant de plaine sourc<choice><sic>t</sic><corr>[e]</corr></choice>e</l>
+                     </choice> gallant de plaine
+                     sourc<choice><sic>t</sic><corr>[e]</corr></choice>e</l>
                   <l>In nen fault qun pour payer tout</l>
                   <l/>
                   <l>Ilz appointerent tous ensemble</l>
@@ -2853,7 +2825,7 @@
                   <l>Affin <choice>
                         <orig>dauoir</orig>
                         <reg>davoir</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>prouision</orig>
                         <reg>provision</reg>
@@ -2912,7 +2884,7 @@
                   <l>Des vins quon leur <choice>
                         <orig>auoit</orig>
                         <reg>avoit</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>liurez</orig>
                         <reg>livrez</reg>
@@ -3022,7 +2994,7 @@
                   <l>A coucher <choice>
                         <orig>auec</orig>
                         <reg>avec</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>vne</orig>
                         <reg>une</reg>
@@ -3089,7 +3061,7 @@
                   <l>Et <choice>
                         <orig>auoir</orig>
                         <reg>avoir</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>vne</orig>
                         <reg>une</reg>
@@ -3222,7 +3194,7 @@
                   <l>Et qui peut <choice>
                         <orig>viure</orig>
                         <reg>vivre</reg>
-                     </choice> 
+                     </choice>
                      <choice>
                         <orig>dauantaige</orig>
                         <reg>davantaige</reg>
@@ -3275,5 +3247,5 @@
             </div>
          </div>
       </body>
-  </text>
+   </text>
 </TEI>
