@@ -4,8 +4,6 @@ README.md
 
 # Projet facétie - documentation
 
-## Le corpus Facéties
-
 ## Présentation du projet 
 
 « Facéties » est un projet coordonné par Louise Amazan et Marie-Claire Thomine et soutenu par le labex Obvil (Sorbonne Universités) visant à la numérisation, la transcription et l’encodage d’un échantillon représentatif de la littérature facétieuse telle qu’elle se développe en France entre le XVe et le XVIIe siècle. 
@@ -39,6 +37,46 @@ README.md
    - http://obvil.sorbonne-universite.site/projets/faceties
    - http://obvil.sorbonne-universite.site/actualite/facetie-et-humanites-numeriques/mar-19022019-0000
 
+
+## Le corpus Facéties
+
+Le corpus est constitué de dix ouvrages prioritaires dans leur transcription. 
+
+- **Auteurs représentés** :
+
+   - ANONYME, Le recueil des hystoires des repeus franches III-F-019
+   - ANONYME, Les avantures ioyeuses et faitz merveilleux de Tiel Ulespiegle.
+Ensemble, les grandes fortunes à luy avenues en diverses regions, lequel par
+falace ne se laissoit aucunement tromper. Le tout traduit d’Allemant en
+Françoys XI-D-033
+   - ANONYME, Les cent nouvelles. S’ensuyvent les cent nouvelles contenant cent
+hystoires ou nouveaulx comptes plaisans a deviser en toutes bonnes
+compaignies par matiere de ioyeusete IV-E-026
+   - A.D.S.D., Les comptes du monde adventureux. Où sont recitees plusieurs
+belles Histoires memorables; & propres pour resiouir la compagnie, & éviter
+mélancholie XII-B-059
+   - BOCCACE, Boccace des cent nouvelles XVIII-C-013
+   - BOCCACE, Le Decameron de Messire Iehan Bocace Florentin, nouvellement
+traduict d’Italien en Françoys par Maistre Anthoine le Macon conseiller du Roy
+& tresorier de lextraordinaire de ses guerres, trad. Antoine Le Maçon IV-H-038
+   - CHAPPUYS, Gabriel, Les facetieuses iournees, contenans cent certaines et
+agreables Nouvelles la plus part advenuës de nostre temps, les autres recueillies
+& choisies de tous les plus excellents autheurs estrangers qui en ont escrit. Par
+G.C.D.T. Gabriel Chappuis tourangeau III-D-006
+   - MOTTE ROULLANT, LA, Les Fascetieux devitz des cent nouvelles,
+nouvelles, tres récréatives et fort exemplaires pour resveiller les bons espritz
+Francoys, veuz et remis en leur naturel, par le seigneur de la Motte Roullant
+Lyonnois, homme tresdocte & bien renommé V-C-005
+   - POGGE, Le, VALLA, Lorenzo et PÉTRARQUE, Pogii florentini oratoris
+clarissimi facetiarum liber incipit feliciter ; Facetie morales Laurentii vallensis
+alias esopus grecus per dictum Laurentium translatus incipiunt feliciter ;
+Francisci petrarche de salibus virorum illustrium ac facetiis. Tractatus incipit
+feliciter VIII-F-042
+   - POGGE, Le, S’ensuyvent les facecies de Poge translatees de latin en francoys
+qui traitent de plusieurs nouvelles choses moralles III-F-116 
+
+- **Voir aussi** : voir la liste des dix ouvrages
+
 ## Outils utilisés 
 
 **dossier** : faceties
@@ -61,11 +99,25 @@ _[transformation `xsl` récupérées du projet Epistemon des BVH, avec quelques 
 - _work_ : dossier servant d'espace test, pour les fichiers en cours de traitement (qu'il s'agisse de relecture ou d'`xml`)
 
 ## Schèma epistemon
-## Transformation XSL
+
+Schéma pris du projet "Epistemon", développé par les BVH
+
+- **Voir aussi** :https://sourceforge.net/projects/bvh/files/BVH-ODD/BVH_Epistemon.rng/download
+
+
+[problème des balises "licence" et "creation"]
 
 ## Particularités d'encodage
 
 #### `xsl`
+
+## Transformation 
+
+**AVANT LA TRANSFORMATION** 
+
+- suppression des <lb/> qui seront répétés après la passage de la transformation xsl
+pour chaque : 
+rechercher "`Ñ(\s*]<lb/>`" => remplacer "`Ñ$1`"
 
 ###### Résolution d'abréviations - Ajout de conditions 
 [mode="pass2"]
@@ -73,7 +125,34 @@ _[transformation `xsl` récupérées du projet Epistemon des BVH, avec quelques 
 - exception comportant plusieurs exceptions (à oompléter selon les cas)
 
    - exemple : 
+   
+   Les abréviations "simples" 
+   - "" par "par"
+   - "
 
+- Pour les abréviations dont la résolution varient selon le contexte
+
+-> insertion de balises <gap> et <desc>, ainsi que de "#", pour pouvoir repérer facilement ces abréviations pour les résoudres localement selon le contexte 
+
+```xml
+<xsl:when test="matches(., '^(\w*)p̃$')">
+            <choice>
+               <orig>
+                  <xsl:value-of select="."/>
+               </orig>
+               <gap>
+                  <desc>
+                     <reg>
+                        <xsl:text>#</xsl:text>
+                        <xsl:value-of select="substring-before(., 'p̃')"/>
+                        <xsl:text>#</xsl:text>
+                     </reg>
+                  </desc>
+               </gap>
+            </choice>
+         </xsl:when>
+```
+		 
 ```xml
 
  <xsl:when test="matches(., '^(\w*)ↄtinuellemẽt(\w*)$')">
@@ -88,7 +167,7 @@ _[transformation `xsl` récupérées du projet Epistemon des BVH, avec quelques 
          </xsl:when>
 ```
 
-- 
+- résolution  
    - "r rotunda" (orig) = "et" (reg)
    
  - selon le contexte, repérable par des "#" : 
@@ -103,3 +182,7 @@ les césures
 
 - faire un `rechercher/remplacer`
 `Ñ(\s*]<lb/>` => `Ñ$1`
+
+
+
+avan

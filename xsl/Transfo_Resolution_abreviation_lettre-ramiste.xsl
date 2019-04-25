@@ -22,7 +22,6 @@
     4 : dissimilation : ajout d'orig/reg pour le contenu ciblé des <w> en supprimant <w>. suppression des <w>
     3 : gestion de ceux ayant déjà été concernés par une 1ère règle en modifiant le contenu des <reg>.
     -->
-   
    <xsl:template match="/">
       <xsl:variable name="pass1">
          <xsl:apply-templates/>
@@ -41,19 +40,16 @@
          <xsl:apply-templates mode="pass4"/>
       </xsl:for-each>
    </xsl:template>
-   
-<!--copie 1 : tout contenu et balisage-->
+   <!--copie 1 : tout contenu et balisage-->
    <xsl:template match="tei:*">
       <xsl:copy>
          <xsl:apply-templates select="@*"/>
          <xsl:apply-templates select="tei:* | comment() | text()"/>
       </xsl:copy>
    </xsl:template>
-   
    <xsl:template match="@* | processing-instruction() | comment()">
       <xsl:copy/>
    </xsl:template>
-   
    <!--copie 2 : tout contenu et balisage-->
    <xsl:template match="tei:*" mode="pass2">
       <xsl:copy>
@@ -62,7 +58,6 @@
             mode="pass2"/>
       </xsl:copy>
    </xsl:template>
-   
    <!--copie 3 : tout contenu et balisage-->
    <xsl:template match="tei:*" mode="pass3">
       <xsl:copy>
@@ -71,7 +66,6 @@
             mode="pass3"/>
       </xsl:copy>
    </xsl:template>
-   
    <!--copie 4 : tout contenu et balisage-->
    <xsl:template match="tei:*" mode="pass4">
       <xsl:copy>
@@ -80,7 +74,6 @@
             mode="pass4"/>
       </xsl:copy>
    </xsl:template>
-   
    <!--1°) tokenisation : chaque mot mis dans une balise <w>, sauf si ce mot est contenu dans :
         - une balise ayant un @xml:lang, un @type="sig" 
         - ou bien dans un sic, corr ou orig (NB : les <reg> seront concernés dans le 2ème passage donc à supprimer avant passage de la feuille)-->
@@ -104,9 +97,9 @@
    <!--2°) Détildage application de règle pour chaque w (ici dès qu'un règle est appliquée, 
         les autres ne le sont pas et plus de <w> mais du choice    -->
 
-   <xsl:template match="tei:w" mode="pass2">
+   <xsl:template match="tei:w" mode="pass2" name="test">
       <xsl:choose>
-<!--[DETILDAGE]-->
+         <!--[DETILDAGE]-->
          <!--nécessiterait 3 passages des règles sans cette exception-->
          <xsl:when test="matches(., '^(\w*)cõmãderẽt$')">
             <choice>
@@ -441,9 +434,8 @@
             </choice>
          </xsl:when>
 
-<!--AJOUT PROJET FACETIES OBVIL-->
-
          <!--pour résoudre l'abréviation du p barré, remplacé par "par" en reg-->
+
          <xsl:when test="matches(., '^(\w*)ꝑ$')">
             <choice>
                <orig>
@@ -454,24 +446,21 @@
          </xsl:when>
 
          <!--pour signaler la présence du q tildé, dont la résolution dépendra du contexte ("que" ou "qui")-->
+
          <xsl:when test="matches(., '^(\w*)q̃$')">
             <choice>
                <orig>
                   <xsl:value-of select="."/>
                </orig>
-               <gap>
-                  <desc>
                      <reg>
-                        <xsl:text>#</xsl:text>
-                        <xsl:value-of select="substring-before(., 'q̃')"/>
-                        <xsl:text>#</xsl:text>
-                     </reg>
-                  </desc>
-               </gap>
+ 
+                        <xsl:value-of select="substring-before(., 'q̃')"/>que <xsl:value-of
+                           select="substring-after(., 'ũ')"/></reg>
             </choice>
          </xsl:when>
 
          <!--pour signaler la présence du p tildé, dont la résolution dépendra du contexte ("par" ou "pre")-->
+
          <xsl:when test="matches(., '^(\w*)p̃$')">
             <choice>
                <orig>
@@ -490,6 +479,7 @@
          </xsl:when>
 
          <!--pour résoudre les "r rotunda" en "et"-->
+
          <xsl:when test="matches(., '^(\w*)ꝛ$')">
             <choice>
                <orig>
@@ -500,6 +490,7 @@
          </xsl:when>
 
          <!--pour résoudre les "capitum" en espaces insécables) EN COURS...-->
+
          <xsl:when test="matches(., '^(\w*)Ĝ$')">
             <choice>
                <sic>
@@ -513,8 +504,9 @@
          <xsl:when test="matches(., '^(\w*)Ñ$')">
                   <xsl:value-of select="substring-before(., 'Ñ')"/><xsl:text>-</xsl:text>
             <lb rend="hyphen"/>     
-          </xsl:when>
+         </xsl:when>
  
+
          <xsl:when test="matches(.,'^(\w*)¥$')">
             <choice>
                <orig>¶</orig>
@@ -583,6 +575,44 @@
          </xsl:otherwise>
       </xsl:choose>
    </xsl:template>
+   
+   <xsl:template match="body">
+      
+      
+      <xsl:for-each select=".">
+         <xsl:element name="test">
+            <xsl:value-of select="descendant::choice"/>
+         </xsl:element>
+         <xsl:variable name="conserveOrig" select="substring-after(descendant::orig/text(), '/')"/>
+         <xsl:variable name="conserveReg" select="substring-after(descendant::reg/text(), '/')"/>
+         <xsl:element name="conserveOrig">
+         <xsl:choose>
+         <xsl:when test="matches(., '^(\w*)Ĝ$')">
+            <choice>
+            <sic>
+               <orig>
+                  <xsl:value-of select="substring-before($conserveOrig,'/')"/>
+               </orig>
+               <reg>
+                  <xsl:value-of select="substring-before($conserveReg, '/')"/>
+               </reg>
+            </sic>
+            <corr>
+               <xsl:value-of select="substring-before($conserveReg, '/')"/>-<lb rend="hyphen"/>
+            </corr>
+         </choice>
+         </xsl:when>
+         <xsl:otherwise>
+            <w>
+               <xsl:value-of select="."/>
+            </w>
+         </xsl:otherwise>
+         </xsl:choose>
+         </xsl:element>
+      </xsl:for-each>
+   </xsl:template>
+            
+  
 
 
    <!--    3°)Dissimilation application de règle pour chaque w (ici dès qu'un règle est appliquée, 
@@ -592,7 +622,7 @@
       <xsl:choose>
 
 
-<!--[DISSIMILATION]-->
+         <!--[DISSIMILATION]-->
          <xsl:when test="matches(., '^i$', 'i')">
             <choice>
                <orig>
