@@ -1938,7 +1938,10 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
       </choice>
    </define>
    <define name="model.availabilityPart">
-      <notAllowed/>
+      <choice>
+         <ref name="licence"/>
+         <ref name="p"/>
+      </choice>
    </define>
    <define name="model.certLike">
       <notAllowed/>
@@ -2361,6 +2364,7 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
       <choice>
          <ref name="langUsage"/>
          <ref name="textClass"/>
+         <ref name="creation"/>
       </choice>
    </define>
    <define name="att.source.attributes">
@@ -5297,13 +5301,24 @@ Sample values include: 1] text; 2] corpus</a:documentation>
          <empty/>
       </element>
    </define>
+   <define name="licence">
+      <element name="licence">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+            contains information about a licence or other legal agreement applicable to the text. [2.2.4 Publication, Distribution, Licensing, etc.]
+         </a:documentation>
+         <oneOrMore>
+            <ref name="model.availabilityPart"/>
+            <ref name="model.pLike"/>
+         </oneOrMore>
+         <ref name="att.pointing.attributes"/>
+      </element>
+   </define>
    <define name="availability">
       <element name="availability">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">supplies information about the availability of a text, for example any restrictions on its use or distribution, its copyright status, any licence applying to it, etc. [2.2.4. Publication, Distribution, Licensing, etc.]</a:documentation>
          <oneOrMore>
             <choice>
                <ref name="model.availabilityPart"/>
-               <ref name="model.pLike"/>
             </choice>
          </oneOrMore>
          <ref name="att.global.attribute.xmlid"/>
@@ -5315,6 +5330,7 @@ Sample values include: 1] text; 2] corpus</a:documentation>
          <ref name="att.global.rendition.attribute.style"/>
          <ref name="att.global.rendition.attribute.rendition"/>
          <ref name="att.global.change.attribute.change"/>
+         <ref name="att.docStatus.attribute.status"/>
          <empty/>
       </element>
    </define>
@@ -5644,6 +5660,12 @@ Sample values include: 1] text; 2] corpus</a:documentation>
          <ref name="att.global.rendition.attribute.rendition"/>
          <ref name="att.global.change.attribute.change"/>
          <empty/>
+      </element>
+   </define>
+   <define name="creation">
+      <element name="creation">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"> contains information about the creation of a text. [2.4.1 Creation 2.4 The Profile Description]</a:documentation>
+      <ref name="date"/>
       </element>
    </define>
    <define name="handNote">
@@ -7511,7 +7533,7 @@ Suggested values include: 1] Arret; 2] Art_poetique; 3] Chroniques; 4] Discours;
          <empty/>
       </element>
    </define>
-   <!--<define name="div">
+   <define name="div">
       <element name="div">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text division) contains a subdivision of the front, body, or back of a text. [4.1. Divisions of the Body]</a:documentation>
          <group>
@@ -7811,7 +7833,7 @@ Suggested values include: 1] arret; 2] acte; 3] adresse; 4] ajout_ms; 5] alphabe
          </optional>
          <empty/>
       </element>
-   </define>-->
+   </define>
    <define name="trailer">
       <element name="trailer">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a closing title or footer appearing at the end of a division of a text. [4.2.4. Content of Textual Divisions 4.2. Elements Common to All Divisions]</a:documentation>
