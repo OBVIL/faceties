@@ -11,8 +11,6 @@
         </text>
     </xsl:template>
     
-   
-    
     <xsl:template match="*">
         <xsl:element name="{name()}">
             <xsl:for-each select="./@*">
@@ -31,35 +29,49 @@
         <xsl:apply-templates/>
     </xsl:template>
     
-    <!-- élément text:p -->
-    <xsl:template match="text:p">
-        <xsl:text>
-</xsl:text>
-        <!--<xsl:variable name="StyleEnCours" select="./@text:style-name"/>-->
-        <xsl:variable name="StyP" select="./@text:style-name"/>
-        <xsl:variable name="StyleEnCours">
-            <xsl:choose>
-                <xsl:when test="contains($StyP, '_5f_')">
-                    <xsl:value-of select="substring-before($StyP, '_5f_')"/>
-                    <xsl:text>_</xsl:text>
-                    <xsl:value-of select="substring-after($StyP, '_5f_')"/>
-                </xsl:when>
-                <xsl:otherwise><xsl:value-of select="$StyP"/></xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        
-        <xsl:variable name="Balise">
-            <xsl:choose>
-                <xsl:when test="/office:document-content/office:automatic-styles/style:style/@style:name = ./@text:style-name">
-                    <xsl:value-of select="/office:document-content/office:automatic-styles/style:style[@style:name = $StyleEnCours]/@style:parent-style-name"/>
-                </xsl:when>
-                <xsl:otherwise><xsl:value-of select="./@text:style-name"/></xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-        
-        <xsl:element name="{$Balise}">
+    <xsl:template match="text:h">
+        <xsl:element name="h">
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>
+    
+    <!-- élément text:p -->
+    <xsl:template match="text:p">
+        <xsl:choose>
+            <xsl:when test="contains(., 'front')">
+                <xsl:value-of select="." disable-output-escaping="yes"/>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:text>
+</xsl:text>
+                <!--<xsl:variable name="StyleEnCours" select="./@text:style-name"/>-->
+                <xsl:variable name="StyP" select="./@text:style-name"/>
+                <xsl:variable name="StyleEnCours">
+                    <xsl:choose>
+                        <xsl:when test="contains($StyP, '_5f_')">
+                            <xsl:value-of select="substring-before($StyP, '_5f_')"/>
+                            <xsl:text>_</xsl:text>
+                            <xsl:value-of select="substring-after($StyP, '_5f_')"/>
+                        </xsl:when>
+                        <xsl:otherwise><xsl:value-of select="$StyP"/></xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                
+                <xsl:variable name="Balise">
+                    <xsl:choose>
+                        <xsl:when test="/office:document-content/office:automatic-styles/style:style/@style:name = ./@text:style-name">
+                            <xsl:value-of select="/office:document-content/office:automatic-styles/style:style[@style:name = $StyleEnCours]/@style:parent-style-name"/>
+                        </xsl:when>
+                        <xsl:otherwise><xsl:value-of select="./@text:style-name"/></xsl:otherwise>
+                    </xsl:choose>
+                </xsl:variable>
+                
+                <xsl:element name="{$Balise}">
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
+        
     </xsl:template>
     
     
