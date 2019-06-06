@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet exclude-result-prefixes="form fo svg text style office" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" ><!-- xmlns:dc="http://purl.org/dc/elements/1.1/"-->
-    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no" doctype-system="§3_DTD_de_XML1_2018-03-12.dtd"/>
+    <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="no"/>
     <xsl:template match="/">
         <xsl:text>
 </xsl:text>
