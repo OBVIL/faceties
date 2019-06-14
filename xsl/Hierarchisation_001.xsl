@@ -186,12 +186,7 @@
         <xsl:element name="titre">
             <xsl:attribute name="niv">3</xsl:attribute>
             <xsl:element name="speaker">
-                <xsl:attribute name="who">
-                    <xsl:value-of select="translate(., $ABC, $abc)"/>
-                </xsl:attribute>
-                <xsl:element name="speaker">
-                    <xsl:apply-templates/>
-                </xsl:element>
+                <xsl:apply-templates/>
             </xsl:element>
         </xsl:element>
     </xsl:template>
@@ -447,17 +442,17 @@
     
     <!-- <corr> / <sic> -->
     
-    <xsl:template match="erreurTypo">
+    <!--<xsl:template match="erreurTypo">
         <xsl:choose>
-            <xsl:when test="following-sibling::node()[1][local-name() = 'correctionTypo']">
+            <xsl:when test="following-sibling::node()[2][local-name() = 'correctionTypo']">
                 <xsl:element name="choice">
                     <xsl:element name="sic">
                         <xsl:apply-templates/>
                     </xsl:element>
-                    <xsl:if test="following-sibling::node()[1][local-name() = 'correctionTypo']">
+                    <xsl:if test="following-sibling::node()[2][local-name() = 'correctionTypo']">
                         <xsl:element name="corr">
                             <xsl:value-of
-                                select="translate(normalize-space(following-sibling::correctionTypo[1]), '[]', '')"
+                                select="translate(following-sibling::correctionTypo[2], '[]', '')"
                             />
                         </xsl:element>
                     </xsl:if>
@@ -476,7 +471,7 @@
     
     <xsl:template match="correctionTypo">
         <xsl:choose>
-            <xsl:when test="preceding-sibling::node()[1][local-name() = 'erreurTypo']"/>
+            <xsl:when test="preceding-sibling::node()[2][local-name() = 'erreurTypo']"/>
             <xsl:otherwise>
                 <xsl:element name="choice">
                     <xsl:element name="sic"/>
@@ -486,7 +481,22 @@
                 </xsl:element>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>-->
+    
+    <!--<xsl:template match="erreurTypo">
+        <xsl:element name="choice">
+            <xsl:element name="sic">
+                <xsl:value-of select="normalize-space()"/>
+            </xsl:element>
+            <xsl:if test="following-sibling::node()[2][local-name()='correctionTypo']">
+                <xsl:element name="corr">
+                    <xsl:value-of select="normalize-space(following-sibling::correctionTypo[2])"/>
+                </xsl:element>
+            </xsl:if>
+        </xsl:element>
     </xsl:template>
+    
+    <xsl:template match="correctionTypo[preceding-sibling::node()[2][local-name()='erreurTypo']]"/>-->
     
     <!-- Majuscules et petites majuscules -->
     
