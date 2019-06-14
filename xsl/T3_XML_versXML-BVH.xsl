@@ -249,10 +249,10 @@
         </xsl:choose>
     </xsl:template>
 
-    <!--<xsl:template match="_3c_l_3e_">
+    <xsl:template match="_3c_l_3e_">
         <xsl:choose>
             <xsl:when test="contains(., '(C)')">
-                <!-\- l > Gestion des alinéas -\->
+                <!-- l > Gestion des alinéas -->
                 <xsl:choose>
                     <xsl:when test="contains(., '(C) ')">
                         <xsl:element name="l">
@@ -270,7 +270,7 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="contains(., '(D)')">
-                <!-\- l > Gestion des alinéas -\->
+                <!-- l > Gestion des alinéas -->
                 <xsl:choose>
                     <xsl:when test="contains(., '(D) ')">
                         <xsl:element name="l">
@@ -287,7 +287,7 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test=".[@rend = 'center']">
-                <!-\- l > Gestion des cul de lampe -\->
+                <!-- l > Gestion des cul de lampe -->
                 <xsl:element name="l">
                     <xsl:attribute name="style">cul_de_lampe</xsl:attribute>
                     <xsl:apply-templates/>
@@ -310,7 +310,7 @@
     <xsl:template match="p">
         <xsl:choose>
             <xsl:when test="contains(., '(C)')">
-                <!-\- p > Gestion des alinéas -\->
+                <!-- p > Gestion des alinéas -->
                 <xsl:choose>
                     <xsl:when test="contains(., '(C) ')">
                         <xsl:element name="p">
@@ -328,7 +328,7 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test="contains(., '(D)')">
-                <!-\- p > Gestion des alinéas -\->
+                <!-- p > Gestion des alinéas -->
                 <xsl:choose>
                     <xsl:when test="contains(., '(D) ')">
                         <xsl:element name="p">
@@ -345,7 +345,7 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:when test=".[@rend = 'center']">
-                <!-\- p > Gestion des cul de lampe -\->
+                <!-- p > Gestion des cul de lampe -->
                 <xsl:element name="p">
                     <xsl:attribute name="rend">cul_de_lampe</xsl:attribute>
                     <xsl:apply-templates/>
@@ -385,15 +385,15 @@
                 <xsl:value-of select="substring-before(substring-after(., '['), ']')"/>
             </xsl:attribute>
         </xsl:element>
-    </xsl:template>-->
+    </xsl:template>
 
-    <!--<!-\- STYLE DE CARACTERES -\->
+    <!-- STYLE DE CARACTERES -->
     
-    <!-\- Désagglutination -\->
+    <!-- Désagglutination -->
     
     <xsl:template match="orig">
         <xsl:choose>
-            <!-\- Désagglutination -\->
+            <!-- Désagglutination -->
             <xsl:when test="matches(., ' ')">
                 <xsl:choose>
                     <xsl:when test="following-sibling::node()[1][local-name() = 'reg']">
@@ -422,7 +422,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <!-\- Autre -\->
+            <!-- Autre -->
             <xsl:otherwise>
                 <xsl:choose>
                     <xsl:when test="following-sibling::node()[1][local-name() = 'reg']">
@@ -455,7 +455,7 @@
     
     <xsl:template match="reg">
         <xsl:choose>
-            <!-\- Désagglutination -\->
+            <!-- Désagglutination -->
             <xsl:when test="matches(., ' ')">
                 <xsl:choose>
                     <xsl:when test="preceding-sibling::node()[1][local-name() = 'orig']"/>
@@ -470,7 +470,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <!-\- Autre -\->
+            <!-- Autre -->
             <xsl:otherwise>
                 <xsl:choose>
                     <xsl:when test="preceding-sibling::node()[1][local-name() = 'orig']"/>
@@ -487,7 +487,7 @@
         </xsl:choose>
     </xsl:template>
 
-    <!-\- <corr> / <sic> -\->
+    <!-- <corr> / <sic> -->
 
     <xsl:template match="erreurTypo">
         <xsl:choose>
@@ -530,12 +530,12 @@
         </xsl:choose>
     </xsl:template>
 
-    <!-\- Majuscules et petites majuscules -\->
+    <!-- Majuscules et petites majuscules -->
 
     <xsl:template match="Majuscule">
         <xsl:element name="hi">
             <xsl:attribute name="rend">uc</xsl:attribute>
-            <!-\- (Note) (uppercase : majuscule) -\->
+            <!-- (Note) (uppercase : majuscule) -->
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -543,12 +543,12 @@
     <xsl:template match="PetiteMajuscule">
         <xsl:element name="hi">
             <xsl:attribute name="rend">sc</xsl:attribute>
-            <!-\- (Note) (small-caps : petites majuscules) -\->
+            <!-- (Note) (small-caps : petites majuscules) -->
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
     
-    <!-\- Italique -\->
+    <!-- Italique -->
     
     <xsl:template match="italique">
         <xsl:element name="hi">
@@ -557,18 +557,18 @@
         </xsl:element>
     </xsl:template>
     
-    <!-\- IMAGES -\->
+    <!-- IMAGES -->
     
     <xsl:template match="figure">
         <xsl:element name="figure">
             <xsl:element name="graphic">
                 <xsl:attribute name="target">
                     <xsl:value-of select="./text()"/>
-                    <!-\-<xsl:text>.jpg</xsl:text>-\->
+                    <!--<xsl:text>.jpg</xsl:text>-->
                 </xsl:attribute>
             </xsl:element>
         </xsl:element>
-    </xsl:template>-->
+    </xsl:template>
 
     <!--======================================================
                             NORMALISATION

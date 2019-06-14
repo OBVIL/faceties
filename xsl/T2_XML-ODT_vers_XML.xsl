@@ -23,46 +23,46 @@
                 <xsl:apply-templates select="descendant::_3c_term_3e_"/>
             </teiHeader>
             <xsl:apply-templates select="descendant::front"/>
-            <xsl:apply-templates select="descendant::h1"/>
+            <xsl:apply-templates select="descendant::_3c_Pagedetitre_5f_sous-titre_3e_"/>
         </body> 
     </xsl:template>
 
-    <xsl:template match="h1">
+    <xsl:template match="_3c_Pagedetitre_5f_sous-titre_3e_">
         <div1>
             <xsl:element name="head">
                 <xsl:apply-templates/>
             </xsl:element>
             <xsl:variable name="gid" select="generate-id()" />
-            <xsl:apply-templates select="following-sibling::*[1][name()!='h2' 
-                and generate-id(preceding-sibling::h1[1])=$gid]"
+            <xsl:apply-templates select="following-sibling::*[1][name()!='h' 
+                and generate-id(preceding-sibling::_3c_Pagedetitre_5f_sous-titre_3e_[1])=$gid]"
                 mode="pas"
             />
-            <xsl:apply-templates select="following-sibling::h[generate-id(preceding-sibling::h1[1])=$gid]" mode="pas">
+            <xsl:apply-templates select="following-sibling::h[generate-id(preceding-sibling::_3c_Pagedetitre_5f_sous-titre_3e_[1])=$gid]" mode="pas">
                 <xsl:with-param name="gid" select="$gid" />
             </xsl:apply-templates>
         </div1>
     </xsl:template>
     
-    <xsl:template match="*[name()!='h2']" mode="pas">
+    <xsl:template match="*[name()!='h']" mode="pas">
         <xsl:copy-of select="." />
-        <xsl:if test="name(following-sibling::*[1])!='h2' and name(following-sibling::*[1])!='h1'">
+        <xsl:if test="name(following-sibling::*[1])!='h' and name(following-sibling::*[1])!='_3c_Pagedetitre_5f_sous-titre_3e_'">
             <xsl:apply-templates select="following-sibling::*[1]" mode="pas"/>
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="h2" mode="pas">
+    <xsl:template match="h" mode="pas">
         <div2>
             <xsl:element name="head">
                 <xsl:apply-templates/>
             </xsl:element>
-            <xsl:apply-templates select="following-sibling::*[1][name()!='h2'
-                and name()!='h1']"
+            <xsl:apply-templates select="following-sibling::*[1][name()!='h'
+                and name()!='_3c_Pagedetitre_5f_sous-titre_3e_']"
                 mode="pas"
             />
         </div2>
     </xsl:template>
     
-    <xsl:template match="h3" mode="pas">
+    <xsl:template match="_3c_speaker_3e_" mode="pas">
         <xsl:element name="sp">
             <xsl:attribute name="who">
                 <xsl:value-of select="translate(., $ABC, $abc)"/>
@@ -70,8 +70,8 @@
             <xsl:element name="speaker">
                 <xsl:apply-templates/>
             </xsl:element>
-            <xsl:apply-templates select="following-sibling::*[1][name()!='h3'
-                and name()!='h1']"
+            <xsl:apply-templates select="following-sibling::*[1][name()!='_3c_speaker_3e_'
+                and name()!='_3c_Pagedetitre_5f_sous-titre_3e_']"
                 mode="pas"
             />
         </xsl:element>
@@ -172,7 +172,7 @@
         </xsl:element>
     </xsl:template>
     
-    <xsl:template match="h1" mode="front">
+    <xsl:template match="_3c_Pagedetitre_5f_sous-titre_3e_" mode="front">
         <xsl:element name="head">
             <xsl:apply-templates/>
         </xsl:element>
