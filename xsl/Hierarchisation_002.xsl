@@ -3,6 +3,8 @@
     
     <!-- Sépare les différentes parties du texte -->
 
+    <xsl:strip-space elements="*"/>
+    
     <xsl:template match="meta">
         <xsl:element name="meta">
             <xsl:apply-templates mode="avant"/>
@@ -22,7 +24,7 @@
                     <xsl:value-of select="."/>
                 </xsl:attribute>
             </xsl:for-each>
-            <xsl:apply-templates/>
+            <xsl:apply-templates mode="avant"/>
         </xsl:element>
     </xsl:template>
     

@@ -26,7 +26,7 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-    
+
     <xsl:template match="*">
         <xsl:element name="{local-name()}">
             <xsl:for-each select="attribute::*">
