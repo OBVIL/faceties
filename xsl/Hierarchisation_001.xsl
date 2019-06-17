@@ -4,11 +4,20 @@
     exclude-result-prefixes="xs"
     version="2.0">
     
-   <!--  Prépare les titres pour la hierarchisation -->
+    <!-- Cette transformation prend en charge :
+        - le nettoyage des balises parasites
+        - le nettoyage du balisage du frontiespiece et header
+        - la préparation des titres pour la hierarchisation
+        - nettoyage des <l>, <p> et des <pb>
+        - les désagglutinations
+        - les <hi>
+        - les images -->
     
     <xsl:strip-space elements="*"/>
     
     <xsl:template match="/">
+        <xsl:comment>OBVIL, CHEVALIER Nolwenn. Projet Facéties. </xsl:comment>
+        <xsl:comment>(T2.A) Transformation XML-ODT vers XML : <xsl:value-of  select="format-date(current-date(), '[M01]/[D01]/[Y0001]')"/> à <xsl:value-of select="format-dateTime(current-dateTime(), '[H01]:[m01]')"/>. </xsl:comment>
         <body>
             <!-- Regroupement des meta pour faciliter leur appel plus tard. -->
             <meta>
@@ -28,9 +37,9 @@
         <xsl:apply-templates/>
     </xsl:template>
     
+    <!-- Nettoyage des balises parasites -->
     <xsl:template match="*">
         <xsl:choose>
-            <!-- (Note) On s'occupe des éventuels parasites-->
             <xsl:when test="matches(local-name(), '^T[0-9]+$')">
                 <xsl:apply-templates/>
             </xsl:when>
@@ -40,7 +49,6 @@
             <xsl:when test="contains(local-name(), 'Police')">
                 <xsl:apply-templates/>
             </xsl:when>
-            <!-- (Note) Le reste des éléments et leurs attributs sont matchés à l'identique -->
             <xsl:otherwise>
                 <xsl:element name="{local-name()}">
                     <xsl:for-each select="attribute::*">
@@ -168,6 +176,10 @@
     =======================================
     -->
     
+    <xsl:variable name="ABC">ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÈÉÊËÌÍÎÏÐÑÒÓÔÕÖŒÙÚÛÜÝ </xsl:variable>
+    <xsl:variable name="abc">abcdefghijklmnopqrstuvwxyzaaaaaaeeeeeiiiidnoooooœuuuuy_</xsl:variable>
+    
+   <!--  Niveau 1 -->
     <xsl:template match="_3c_Pagedetitre_5f_sous-titre_3e_">
         <xsl:element name="titre">
             <xsl:attribute name="niv">1</xsl:attribute>
@@ -175,6 +187,7 @@
         </xsl:element>
     </xsl:template>
     
+    <!--  Niveau 2 -->
     <xsl:template match="h">
         <xsl:element name="titre">
             <xsl:attribute name="niv">2</xsl:attribute>
@@ -182,6 +195,7 @@
         </xsl:element>
     </xsl:template>
     
+    <!--  Niveau 3 -->
     <xsl:template match="_3c_speaker_3e_">
         <xsl:element name="titre">
             <xsl:attribute name="niv">3</xsl:attribute>
@@ -190,9 +204,6 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-    
-    <xsl:variable name="ABC">ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÈÉÊËÌÍÎÏÐÑÒÓÔÕÖŒÙÚÛÜÝ </xsl:variable>
-    <xsl:variable name="abc">abcdefghijklmnopqrstuvwxyzaaaaaaeeeeeiiiidnoooooœuuuuy_</xsl:variable>
 
     <!--
     =======================================
@@ -439,64 +450,6 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
-    <!-- <corr> / <sic> -->
-    
-    <!--<xsl:template match="erreurTypo">
-        <xsl:choose>
-            <xsl:when test="following-sibling::node()[2][local-name() = 'correctionTypo']">
-                <xsl:element name="choice">
-                    <xsl:element name="sic">
-                        <xsl:apply-templates/>
-                    </xsl:element>
-                    <xsl:if test="following-sibling::node()[2][local-name() = 'correctionTypo']">
-                        <xsl:element name="corr">
-                            <xsl:value-of
-                                select="translate(following-sibling::correctionTypo[2], '[]', '')"
-                            />
-                        </xsl:element>
-                    </xsl:if>
-                </xsl:element>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:element name="choice">
-                    <xsl:element name="sic">
-                        <xsl:apply-templates/>
-                    </xsl:element>
-                    <xsl:element name="corr"/>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    
-    <xsl:template match="correctionTypo">
-        <xsl:choose>
-            <xsl:when test="preceding-sibling::node()[2][local-name() = 'erreurTypo']"/>
-            <xsl:otherwise>
-                <xsl:element name="choice">
-                    <xsl:element name="sic"/>
-                    <xsl:element name="corr">
-                        <xsl:value-of select="translate(., '[]', '')"/>
-                    </xsl:element>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>-->
-    
-    <!--<xsl:template match="erreurTypo">
-        <xsl:element name="choice">
-            <xsl:element name="sic">
-                <xsl:value-of select="normalize-space()"/>
-            </xsl:element>
-            <xsl:if test="following-sibling::node()[2][local-name()='correctionTypo']">
-                <xsl:element name="corr">
-                    <xsl:value-of select="normalize-space(following-sibling::correctionTypo[2])"/>
-                </xsl:element>
-            </xsl:if>
-        </xsl:element>
-    </xsl:template>
-    
-    <xsl:template match="correctionTypo[preceding-sibling::node()[2][local-name()='erreurTypo']]"/>-->
     
     <!-- Majuscules et petites majuscules -->
     
