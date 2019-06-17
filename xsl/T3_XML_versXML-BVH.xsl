@@ -32,9 +32,11 @@
         </xsl:if>
     </xsl:template>
 
-    <!--======================================================
+    <!-- 
+    ======================================================
                         STRUCTURE / HEADER
-    ======================================================-->
+    ======================================================
+    -->
 
     <!-- (Note) Élément racine matché : création du <teiHeader> et de la structure appelant le texte -->
     <xsl:template match="/">
@@ -128,36 +130,23 @@
         <xsl:apply-templates/>
     </xsl:template>
 
-    <!--======================================================
-                               CONTENU
-    ======================================================-->
+    <!-- 
+    =======================================
+                    CONTENU
+    =======================================
+    -->
 
     <!-- STYLE DE PARAGRAPHES -->
 
     <xsl:template match="*">
-        <xsl:choose>
-            <!-- (Note) On s'occupe des éventuels parasites-->
-            <xsl:when test="matches(local-name(), '^T[0-9]+$')">
-                <xsl:apply-templates/>
-            </xsl:when>
-            <xsl:when test="matches(local-name(), '^T$')">
-                <xsl:apply-templates/>
-            </xsl:when>
-            <xsl:when test="contains(local-name(), 'Police')">
-                <xsl:apply-templates/>
-            </xsl:when>
-            <!-- (Note) Le reste des éléments et leurs attributs sont matchés à l'identique -->
-            <xsl:otherwise>
-                <xsl:element name="{local-name()}">
-                    <xsl:for-each select="attribute::*">
-                        <xsl:attribute name="{local-name()}">
-                            <xsl:value-of select="."/>
-                        </xsl:attribute>
-                    </xsl:for-each>
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
+        <xsl:element name="{local-name()}">
+            <xsl:for-each select="attribute::*">
+                <xsl:attribute name="{local-name()}">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>
+            </xsl:for-each>
+            <xsl:apply-templates/>
+        </xsl:element>
     </xsl:template>
 
     <!-- <frontiespiece> -->
@@ -276,287 +265,7 @@
         </xsl:choose>
     </xsl:template>
 
-    <!--<xsl:template match="_3c_l_3e_">
-        <xsl:choose>
-            <xsl:when test="contains(., '(C)')">
-                <!-\- l > Gestion des alinéas -\->
-                <xsl:choose>
-                    <xsl:when test="contains(., '(C) ')">
-                        <xsl:element name="l">
-                            <xsl:attribute name="rend">indent</xsl:attribute>
-                            <orig>⸿</orig>
-                            <xsl:value-of select="substring-after(., '(C) ')"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:element name="l">
-                            <xsl:attribute name="rend">indent</xsl:attribute>
-                            <xsl:value-of select="substring-after(., '(C)')"/>
-                        </xsl:element>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
-            <xsl:when test="contains(., '(D)')">
-                <!-\- l > Gestion des alinéas -\->
-                <xsl:choose>
-                    <xsl:when test="contains(., '(D) ')">
-                        <xsl:element name="l">
-                            <xsl:attribute name="rend">indent</xsl:attribute>
-                            <xsl:value-of select="substring-after(., '(D) ')"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:element name="l">
-                            <xsl:attribute name="rend">indent</xsl:attribute>
-                            <xsl:value-of select="substring-after(., '(D)')"/>
-                        </xsl:element>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
-            <xsl:when test=".[@rend = 'center']">
-                <!-\- l > Gestion des cul de lampe -\->
-                <xsl:element name="l">
-                    <xsl:attribute name="style">cul_de_lampe</xsl:attribute>
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:when>
-            <xsl:when test="./descendant::_3c_pb_3e_">
-                <xsl:apply-templates/>
-            </xsl:when>
-            <xsl:when test="contains(., '£')">
-                <space quantity="1" unit="lignes"/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:element name="l">
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <xsl:template match="p">
-        <xsl:choose>
-            <xsl:when test="contains(., '(C)')">
-                <!-\- p > Gestion des alinéas -\->
-                <xsl:choose>
-                    <xsl:when test="contains(., '(C) ')">
-                        <xsl:element name="p">
-                            <xsl:attribute name="rend">indent</xsl:attribute>
-                            <orig>⸿</orig>
-                            <xsl:value-of select="substring-after(., '(C) ')"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:element name="p">
-                            <xsl:attribute name="rend">indent</xsl:attribute>
-                            <xsl:value-of select="substring-after(., '(C)')"/>
-                        </xsl:element>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
-            <xsl:when test="contains(., '(D)')">
-                <!-\- p > Gestion des alinéas -\->
-                <xsl:choose>
-                    <xsl:when test="contains(., '(D) ')">
-                        <xsl:element name="p">
-                            <xsl:attribute name="rend">indent</xsl:attribute>
-                            <xsl:value-of select="substring-after(., '(D) ')"/>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:element name="p">
-                            <xsl:attribute name="rend">indent</xsl:attribute>
-                            <xsl:value-of select="substring-after(., '(D)')"/>
-                        </xsl:element>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
-            <xsl:when test=".[@rend = 'center']">
-                <!-\- p > Gestion des cul de lampe -\->
-                <xsl:element name="p">
-                    <xsl:attribute name="rend">cul_de_lampe</xsl:attribute>
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:element name="p">
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    
-    <xsl:template match="quote">
-        <xsl:element name="quote">
-            <xsl:element name="choice">
-                <xsl:attribute name="style">ponctuation</xsl:attribute>
-                <xsl:element name="orig"/>
-                <xsl:element name="reg">
-                    <xsl:text>« </xsl:text>
-                </xsl:element>
-            </xsl:element>
-            <xsl:value-of select="substring-before(substring-after(., '« '), ' »')"/>
-            <xsl:element name="choice">
-                <xsl:attribute name="style">ponctuation</xsl:attribute>
-                <xsl:element name="orig"/>
-                <xsl:element name="reg">
-                    <xsl:text> »</xsl:text>
-                </xsl:element>
-            </xsl:element>
-        </xsl:element>
-    </xsl:template>
-
-    <xsl:template match="_3c_pb_3e_">
-        <xsl:element name="pb">
-            <xsl:attribute name="n">
-                <xsl:value-of select="substring-before(substring-after(., '['), ']')"/>
-            </xsl:attribute>
-        </xsl:element>
-    </xsl:template>-->
-
-    <!--<!-\- STYLE DE CARACTERES -\->
-    
-    <!-\- Désagglutination -\->
-    
-    <xsl:template match="orig">
-        <xsl:choose>
-            <!-\- Désagglutination -\->
-            <xsl:when test="matches(., ' ')">
-                <xsl:choose>
-                    <xsl:when test="following-sibling::node()[1][local-name() = 'reg']">
-                        <xsl:element name="choice">
-                            <xsl:attribute name="style">désagglutination</xsl:attribute>
-                            <xsl:element name="orig">
-                                <xsl:apply-templates/>
-                            </xsl:element>
-                            <xsl:if test="following-sibling::node()[1][local-name() = 'reg']">
-                                <xsl:element name="reg">
-                                    <xsl:value-of
-                                        select="following-sibling::reg[1]"
-                                    />
-                                </xsl:element>
-                            </xsl:if>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:element name="choice">
-                            <xsl:attribute name="style">désagglutination</xsl:attribute>
-                            <xsl:element name="orig">
-                                <xsl:apply-templates/>
-                            </xsl:element>
-                            <xsl:element name="reg"/>
-                        </xsl:element>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
-            <!-\- Autre -\->
-            <xsl:otherwise>
-                <xsl:choose>
-                    <xsl:when test="following-sibling::node()[1][local-name() = 'reg']">
-                        <xsl:element name="choice">
-                            <xsl:element name="orig">
-                                <xsl:apply-templates/>
-                            </xsl:element>
-                            <xsl:if test="following-sibling::node()[1][local-name() = 'reg']">
-                                <xsl:element name="reg">
-                                    <xsl:value-of
-                                        select="following-sibling::reg[1]"
-                                    />
-                                </xsl:element>
-                            </xsl:if>
-                        </xsl:element>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:element name="choice">
-                            <xsl:attribute name="style">désagglutination</xsl:attribute>
-                            <xsl:element name="orig">
-                                <xsl:apply-templates/>
-                            </xsl:element>
-                            <xsl:element name="reg"/>
-                        </xsl:element>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    
-    <xsl:template match="reg">
-        <xsl:choose>
-            <!-\- Désagglutination -\->
-            <xsl:when test="matches(., ' ')">
-                <xsl:choose>
-                    <xsl:when test="preceding-sibling::node()[1][local-name() = 'orig']"/>
-                    <xsl:otherwise>
-                        <xsl:element name="choice">
-                            <xsl:attribute name="style">désagglutination</xsl:attribute>
-                            <xsl:element name="orig"/>
-                            <xsl:element name="reg">
-                                <xsl:value-of select="."/>
-                            </xsl:element>
-                        </xsl:element>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
-            <!-\- Autre -\->
-            <xsl:otherwise>
-                <xsl:choose>
-                    <xsl:when test="preceding-sibling::node()[1][local-name() = 'orig']"/>
-                    <xsl:otherwise>
-                        <xsl:element name="choice">
-                            <xsl:element name="orig"/>
-                            <xsl:element name="reg">
-                                <xsl:value-of select="."/>
-                            </xsl:element>
-                        </xsl:element>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-
-    <!-\- <corr> / <sic> -\->
-
-    
-
-    <!-\- Majuscules et petites majuscules -\->
-
-    <xsl:template match="Majuscule">
-        <xsl:element name="hi">
-            <xsl:attribute name="rend">uc</xsl:attribute>
-            <!-\- (Note) (uppercase : majuscule) -\->
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-
-    <xsl:template match="PetiteMajuscule">
-        <xsl:element name="hi">
-            <xsl:attribute name="rend">sc</xsl:attribute>
-            <!-\- (Note) (small-caps : petites majuscules) -\->
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    
-    <!-\- Italique -\->
-    
-    <xsl:template match="italique">
-        <xsl:element name="hi">
-            <xsl:attribute name="rend">i</xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    
-    <!-\- IMAGES -\->
-    
-    <xsl:template match="figure">
-        <xsl:element name="figure">
-            <xsl:element name="graphic">
-                <xsl:attribute name="target">
-                    <xsl:value-of select="./text()"/>
-                    <!-\-<xsl:text>.jpg</xsl:text>-\->
-                </xsl:attribute>
-            </xsl:element>
-        </xsl:element>
-    </xsl:template>-->
+    <!-- <corr> / <sic> -->
     
     <xsl:template match="erreurTypo">
         <xsl:choose>
@@ -599,9 +308,11 @@
         </xsl:choose>
     </xsl:template>
 
-    <!--======================================================
-                            NORMALISATION
-    ======================================================-->
+    <!-- 
+    ===========================================
+                   NORMALISATION
+    ===========================================
+    -->
 
     <!-- Documentation : 
          1. Le troisième argument, 'i' (flags, signifie que l'expression n'est pas sensible à la case (https://www.w3.org/TR/xpath-functions-31/#flags)
@@ -609,16 +320,16 @@
          2. Les caractères spéciaux : sont à ajouter dans le <xsl:analyze-string> (afin de les matcher par la suite). 
      -->
 
-    <!--<xsl:template match="div1//*/text()">
+    <xsl:template match="div1//*/text()">
         <xsl:analyze-string select="."
             regex="[A-ZÑĜÀÁÂÃÄÅÆÈÉÊËÌÍÎÏÐÒÓÔÕÖŒÙÚÛÜÝa-zàáâãäåçẽèéêëĩìíîïðõòóôõöùúũûüýÿp̃ꝛꝑq̃9()]+">
             <xsl:matching-substring>
                 <xsl:choose>
 
-                    <!-\- Traitement des signes spéciaux : les CESURES -\->
+                    <!-- Traitement des signes spéciaux : les CESURES -->
 
                     <xsl:when test="matches(., '(\w*)[^(ã|ẽ|ĩ|õ|ũ)]Ĝ(\w*)', 'i')">
-                        <!-\- les CESURES > implicite -\->
+                        <!-- les CESURES > implicite -->
                         <xsl:value-of select="substring-before(., 'Ĝ')"/>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -630,7 +341,7 @@
                         <xsl:value-of select="substring-after(., 'Ĝ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '(\w*)[^(ã|ẽ|ĩ|õ|ũ)]Ñ(\w*)', 'i')">
-                        <!-\- les CESURES > explicite -\->
+                        <!-- les CESURES > explicite -->
                         <xsl:value-of select="substring-before(., 'Ñ')"/>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -639,7 +350,7 @@
                         <xsl:value-of select="substring-after(., 'Ñ')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des abreviations : LES VOYELLES -\->
+                    <!-- Résolution des abreviations : LES VOYELLES -->
 
                     <xsl:when test="matches(., '(\w*)ãm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãm')"/>
@@ -1109,7 +820,7 @@
                         <xsl:value-of select="substring-after(., 'ũ')"/>
                     </xsl:when>
 
-                    <!-\-  Avec les abreviations implicites : Ĝ -\->
+                    <!--  Avec les abreviations implicites : Ĝ -->
 
                     <xsl:when test="matches(., '(\w*)ãĜm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãĜm')"/>
@@ -1686,7 +1397,7 @@
                         <xsl:value-of select="substring-after(., 'ũĜ')"/>
                     </xsl:when>
 
-                    <!-\- Avec les abbréviations explicites : Ñ -\->
+                    <!-- Avec les abbréviations explicites : Ñ -->
 
                     <xsl:when test="matches(., '(\w*)ãÑm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãÑm')"/>
@@ -2136,7 +1847,7 @@
                         <xsl:value-of select="substring-after(., 'ũÑ')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des abreviations : CAS PARTICULIERS -\->
+                    <!-- Résolution des abreviations : CAS PARTICULIERS -->
 
                     <xsl:when test="matches(., '^(\w*)cõmãderẽt(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'õmãderẽ')"/>
@@ -2313,11 +2024,11 @@
                     </xsl:when>
 
 
-                    <!-\- Résolution des abreviations : LES CONSONNES -\->
+                    <!-- Résolution des abreviations : LES CONSONNES -->
 
-                    <!-\- LES CONSONNES > Q tildé -\->
+                    <!-- LES CONSONNES > Q tildé -->
 
-                    <!-\- (Note) Mettre un <desc><gap> permet de générer des erreurs : ces erreurs permettent de repérer la partie du texte où un choix est à faire selon le contexte. -\->
+                    <!-- (Note) Mettre un <desc><gap> permet de générer des erreurs : ces erreurs permettent de repérer la partie du texte où un choix est à faire selon le contexte. -->
                     <xsl:when test="matches(., '^(\w*)q̃$', 'i')">
                         <xsl:value-of select="substring-before(., 'q̃')"/>
                         <desc>
@@ -2334,7 +2045,7 @@
                         </desc>
                         <xsl:value-of select="substring-after(., 'q̃')"/>
                     </xsl:when>
-                    <!-\- LES CONSONNES > P tildé -\->
+                    <!-- LES CONSONNES > P tildé -->
                     <xsl:when test="matches(., '^(\w*)p̃$', 'i')">
                         <xsl:value-of select="substring-before(., 'p̃')"/>
                         <desc>
@@ -2351,7 +2062,7 @@
                         </desc>
                         <xsl:value-of select="substring-after(., 'p̃')"/>
                     </xsl:when>
-                    <!-\- LES CONSONNES > P barré -\->
+                    <!-- LES CONSONNES > P barré -->
                     <xsl:when test="matches(., '^(\w*)ꝑ$', 'i')">
                         <xsl:value-of select="substring-before(., 'ꝑ')"/>
                         <desc>
@@ -2395,7 +2106,7 @@
                         <xsl:value-of select="substring-after(., '9')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des abreviations : LES CONSONNES > ↄ (com/con) -\->
+                    <!-- Résolution des abreviations : LES CONSONNES > ↄ (com/con) -->
 
                     <xsl:when test="matches(., '^(\w*)ↄ$', 'i')">
                         <xsl:value-of select="substring-before(., 'ↄ')"/>
@@ -2462,7 +2173,7 @@
                         <xsl:value-of select="substring-after(., 'ↄt')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > A > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > A > u/v -->
 
                     <xsl:when test="matches(., '^(\w*[^e])aue(\w*)$', 'i')">
                         <xsl:if test="matches(., '^(\w*[^e])aue(\w*)$')">
@@ -2573,7 +2284,7 @@
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > A > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > A > i/j -->
 
                     <xsl:when test="matches(., '^i$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
@@ -2685,7 +2396,7 @@
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > B > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > B > u/v -->
 
                     <xsl:when test="matches(., '^bouvrevil(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ev')"/>
@@ -2725,7 +2436,7 @@
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > C > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > C > u/v -->
 
                     <xsl:when test="matches(., '^(chevrevil|cerfevil)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
@@ -2946,7 +2657,7 @@
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > C/D > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > C/D > i/j -->
 
                     <xsl:when test="matches(., '^coni(oi|ur)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
@@ -2973,7 +2684,7 @@
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > D > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > D > u/v -->
 
                     <xsl:when test="matches(., '^(deur|déur)(a|o|i)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
@@ -3076,7 +2787,7 @@
                         <xsl:value-of select="substring-after(., 'vc')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > E > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > E > u/v -->
 
                     <xsl:when test="matches(., '^(\w+)edvi(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'edv')"/>
@@ -3402,7 +3113,7 @@
                         <xsl:value-of select="substring-after(., 'uesq')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > E > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > E > i/j -->
 
                     <xsl:when test="matches(., '^(\w+)ei(et|o)(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ei')"/>
@@ -3444,7 +3155,7 @@
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > F > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > F > u/v -->
 
                     <xsl:when test="matches(., '^(fautevil|flevr|feville)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
@@ -3495,7 +3206,7 @@
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > G > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > G > u/v -->
 
                     <xsl:when test="matches(., '^(\w*)gnevr(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'nevr')"/>
@@ -3566,7 +3277,7 @@
                         <xsl:value-of select="substring-after(., 'raue')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > H > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > H > u/v -->
 
                     <xsl:when test="matches(., '^hvm(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
@@ -3581,7 +3292,7 @@
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > I > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > I > u/v -->
 
                     <xsl:when test="matches(., '^(\w*)inv(s|t)i(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'nv')"/>
@@ -3775,7 +3486,7 @@
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > I > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > I > i/j -->
 
                     <xsl:when test="matches(., '^ie$', 'i')">
                         <xsl:if test="matches(., '^ie$')">
@@ -4222,7 +3933,7 @@
                         </xsl:if>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > J > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > J > u/v -->
 
                     <xsl:when test="matches(., '^janui(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
@@ -4237,7 +3948,7 @@
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > L > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > L > u/v -->
 
                     <xsl:when test="matches(., '^levrs?$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
@@ -4341,7 +4052,7 @@
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > M > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > M > u/v -->
 
                     <xsl:when test="matches(., '^(\w*)mvn(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'vn')"/>
@@ -4397,7 +4108,7 @@
                         <xsl:value-of select="substring-after(., 'urier')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > M > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > M > i/j -->
 
                     <xsl:when test="matches(., '^maie(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
@@ -4425,7 +4136,7 @@
                         <xsl:value-of select="substring-after(., 'inv')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > N > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > N > u/v -->
 
                     <xsl:when test="matches(., '^(\w*)nevf(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'evf')"/>
@@ -4493,7 +4204,7 @@
                         <xsl:value-of select="substring-after(., 'nua')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > N > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > N > i/j -->
 
                     <xsl:when test="matches(., '^(\w+)niur(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'niur')"/>
@@ -4510,7 +4221,7 @@
                         <xsl:value-of select="substring-after(., 'niur')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > O > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > O > u/v -->
 
                     <xsl:when test="matches(., '^(\w+)ouveve(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ouveve')"/>
@@ -4619,7 +4330,7 @@
                         <xsl:value-of select="substring-after(., 'uu')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > P > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > P > u/v -->
 
                     <xsl:when test="matches(., '^povr$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
@@ -4721,7 +4432,7 @@
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > P > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > P > i/j -->
 
                     <xsl:when test="matches(., '^pjece(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'j')"/>
@@ -4748,7 +4459,7 @@
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > Q > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > Q > u/v -->
 
                     <xsl:when test="matches(., '^(\w*)qv(e|i|a|o)(\w*)$', 'i')">
                         <xsl:if test="matches(., '^(\w*)qv(e|i|a|o)(\w*)$')">
@@ -4792,7 +4503,7 @@
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > R > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > R > u/v -->
 
                     <xsl:when test="matches(., '^(\w*)radv(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'adv')"/>
@@ -4865,7 +4576,7 @@
                         <xsl:value-of select="substring-after(., 'euiu')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > R > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > R > i/j -->
 
                     <xsl:when test="matches(., '^(\w*)rajon(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ajon')"/>
@@ -4910,7 +4621,7 @@
                         <xsl:value-of select="substring-after(., 'sio')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > S > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > S > u/v -->
 
                     <xsl:when test="matches(., '^svr$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
@@ -4991,7 +4702,7 @@
                         <xsl:value-of select="substring-after(., 'uiu')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > S > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > S > i/j -->
 
                     <xsl:when test="matches(., '^sjec(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'j')"/>
@@ -5034,7 +4745,7 @@
                         <xsl:value-of select="substring-after(., 'uiet')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > T > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > T > u/v -->
 
                     <xsl:when test="matches(., '^(\w*)trv(\w*)$', 'i')">
                         <xsl:if test="matches(., '^(\w*)trv(\w*)$')">
@@ -5137,7 +4848,7 @@
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > T > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > T > i/j -->
 
                     <xsl:when test="matches(., '^(tousiours|touiours|tresiust)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
@@ -5152,7 +4863,7 @@
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > U > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > U > u/v -->
 
                     <xsl:when test="matches(., '^u(a|e|i|o|u|ra|re|ri|ro|ru|ul)(\w*)$', 'i')">
                         <xsl:if test="matches(., '^u(a|e|i|o|u|ra|re|ri|ro|ru|ul)(\w*)$')">
@@ -5259,7 +4970,7 @@
                         <xsl:value-of select="substring-after(., 'uyu')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > V > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > V > u/v -->
 
                     <xsl:when test="matches(., '^(\w*)vev(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ev')"/>
@@ -5544,9 +5255,9 @@
                         <xsl:value-of select="substring-after(., 'tvn')"/>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > V > i/j -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > V > i/j -->
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > Y > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > Y > u/v -->
 
                     <xsl:when test="matches(., '^(\w*)yu(e|ro|oi)(\w*)$', 'i')">
                         <xsl:if test="matches(., '^(\w*)yu(e|ro|oi)(\w*)$')">
@@ -5667,7 +5378,7 @@
                         </xsl:if>
                     </xsl:when>
 
-                    <!-\- Résolution des dissiminlations : LES LETTRES RAMISTES > Z > u/v -\->
+                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > Z > u/v -->
 
                     <xsl:when test="matches(., '^(\w*)(z|x)uing(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'uing')"/>
@@ -5693,6 +5404,6 @@
             </xsl:non-matching-substring>
         </xsl:analyze-string>
 
-    </xsl:template>-->
+    </xsl:template>
 
 </xsl:stylesheet>

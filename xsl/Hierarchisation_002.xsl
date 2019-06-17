@@ -1,7 +1,8 @@
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
     
-    <!-- Sépare les différentes parties du texte -->
+    <!-- Cette transformation prend en charge :
+        - la séparations des différentes parties en div (première étape de la hierarchisation) -->
 
     <xsl:strip-space elements="*"/>
     
@@ -27,6 +28,12 @@
             <xsl:apply-templates mode="avant"/>
         </xsl:element>
     </xsl:template>
+    
+    <!--
+    ====================================
+                REGROUPEMENT
+    ====================================
+    -->
     
     <xsl:key name="fils" match="*" use="generate-id(preceding-sibling::titre[1])"/>
     
