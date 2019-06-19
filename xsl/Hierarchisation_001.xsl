@@ -478,6 +478,44 @@
         </xsl:element>
     </xsl:template>
     
+    <!-- Lettrines -->
+    
+    <xsl:template match="node()[starts-with(name(), 'lettrine')]">
+        <xsl:for-each select=".">
+            <xsl:element name="c">
+                <xsl:attribute name="rend">lettrine</xsl:attribute>
+                <xsl:attribute name="style">
+                    <xsl:text>font-size:</xsl:text>
+                    <xsl:value-of select="substring-after(name(),'lettrine')"/>
+                    <xsl:text>em</xsl:text>
+                </xsl:attribute>
+                <xsl:apply-templates/>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <!-- Restitution (pour les lettres un peu effacées) -->
+    
+    <xsl:template match="restitution">
+        <xsl:element name="damage">
+            <xsl:attribute name="type">efface</xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+    <!-- Citation étrangère -->
+    
+    <xsl:template match="node()[starts-with(name(), 'foreign')]">
+        <xsl:for-each select=".">
+            <xsl:element name="foreign">
+                <xsl:attribute name="xml:lang">
+                    <xsl:value-of select="substring-after(name(),'foreign_5f_')"/>
+                </xsl:attribute>
+                <xsl:apply-templates/>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+        
     <!-- IMAGES -->
     
     <xsl:template match="figure">
