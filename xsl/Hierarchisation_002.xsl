@@ -29,6 +29,17 @@
         </xsl:element>
     </xsl:template>
     
+    <xsl:template match="term" mode="avant">
+        <xsl:element name="{local-name()}">
+            <xsl:for-each select="attribute::*">
+                <xsl:attribute name="n">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>
+            </xsl:for-each>
+            <xsl:apply-templates mode="avant"/>
+        </xsl:element>
+    </xsl:template>
+    
     <!--
     ====================================
                 REGROUPEMENT

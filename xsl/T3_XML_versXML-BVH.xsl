@@ -1,20 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/rng" href="BVH_Epistemon.rng"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="xml" encoding="utf-8" omit-xml-declaration="no" indent="yes" />
+
+    <!--<xd:doc type="stylesheet">
+        <xd:short>Transformation XML vers XML-BVH avec dissimilation/détildage</xd:short>
+        <xd:detail>OBVIL, Projet Facéties.</xd:detail>
+        <xd:author>CHEVALIER Nolwenn</xd:author>
+    </xd:doc>-->
 
     <!-- READ-ME ! Cette transformation prend en charge :
         - le changement/nettoyage du balisage conformement au modèle BVH 
         - la première vague de normalisation (normalise tous les mots ne contenant qu'un élément à normaliser) -->
-    
+
     <!--AFFICHER LE "SOMMAIRE" : 
         - Ctrl+F > rechercher : .* / Options : Expression régulière / Activer les options de recherche XML : Commentaires-->
 
     <!-- Agis de telle sorte que ta transformation XSLT puisse être érigée en loi universelle.-->
 
+    <xsl:strip-space elements="*"/>
+    
     <xsl:variable name="ABC">ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÈÉÊËÌÍÎÏÐÑÒÓÔÕÖŒÙÚÛÜÝ </xsl:variable>
     <xsl:variable name="abc">abcdefghijklmnopqrstuvwxyzaaaaaaeeeeeiiiidnoooooœuuuuy_</xsl:variable>
-    
+
     <xsl:template name="substring-before-last">
         <xsl:param name="string1" select="''"/>
         <xsl:param name="string2" select="''"/>
@@ -40,9 +47,10 @@
 
     <!-- (Note) Élément racine matché : création du <teiHeader> et de la structure appelant le texte -->
     <xsl:template match="/">
-        <xsl:comment>OBVIL, CHEVALIER Nolwenn. Projet Facéties. </xsl:comment>
-        <xsl:comment>(T3) Transformation XML vers XML-BVH : <xsl:value-of select="format-date(current-date(), '[D01]/[M01]/[Y0001]')"/> à <xsl:value-of select="format-dateTime(current-dateTime(), '[H01]:[m01]')"/>. </xsl:comment>
-        <TEI>
+        <xsl:processing-instruction name="xml-model">
+            <xsl:text>href="../schema/BVH_Epistemon.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:text>
+        </xsl:processing-instruction>
+        <TEI> 
             <teiHeader>
                 <fileDesc>
                     <titleStmt>
@@ -78,39 +86,48 @@
                         </availability>
                     </publicationStmt>
                     <sourceDesc>
-                        <xsl:variable name="bibl-new">
-                            <xsl:variable name="bibl-orig" select="descendant::bibl"/>
-                            <xsl:variable name="cut" select="descendant::title"/>
-                            <xsl:value-of select="substring-after($bibl-orig, $cut)"/>
-                        </xsl:variable>
-                        <xsl:variable name="pubPlace">
-                            <xsl:value-of
-                                select="substring-before(substring-after($bibl-new, ', '), ',')"/>
-                        </xsl:variable>
-                        <xsl:variable name="publisher">
-                            <xsl:variable name="publisher_01"
-                                select="substring-after(substring-before(substring-after($bibl-new, $pubPlace), descendant::creation/date/@when), ',')"/>
-                            <xsl:call-template name="substring-before-last">
-                                <xsl:with-param name="string1" select="$publisher_01"/>
-                                <xsl:with-param name="string2" select="', '"/>
-                            </xsl:call-template>
-                        </xsl:variable>
-                        <xsl:variable name="biblScope">
-                            <xsl:value-of
-                                select="substring-before(substring-after(substring-after($bibl-new, descendant::creation/date/@when), ', '), '.')"
-                            />
-                        </xsl:variable>
-                        <xsl:value-of select="descendant::author"/>, <xsl:element name="hi"
-                                ><xsl:attribute name="rend">i</xsl:attribute><xsl:value-of
-                                select="descendant::title"/></xsl:element>, <pubPlace><xsl:value-of
-                                select="$pubPlace"/></pubPlace>, <publisher><xsl:value-of
-                                select="$publisher"/></publisher>, <xsl:value-of
-                            select="descendant::creation/date/@when"/>, <biblScope><xsl:value-of
-                                select="$biblScope"/></biblScope>. </sourceDesc>
+                        <bibl>
+                            <xsl:variable name="bibl-new">
+                                <xsl:variable name="bibl-orig" select="descendant::bibl"/>
+                                <xsl:variable name="cut" select="descendant::title"/>
+                                <xsl:value-of select="substring-after($bibl-orig, $cut)"/>
+                            </xsl:variable>
+                            <xsl:variable name="pubPlace">
+                                <xsl:value-of
+                                    select="substring-before(substring-after($bibl-new, ', '), ',')"
+                                />
+                            </xsl:variable>
+                            <xsl:variable name="publisher">
+                                <xsl:variable name="publisher_01"
+                                    select="substring-after(substring-before(substring-after($bibl-new, $pubPlace), descendant::creation/date/@when), ',')"/>
+                                <xsl:call-template name="substring-before-last">
+                                    <xsl:with-param name="string1" select="$publisher_01"/>
+                                    <xsl:with-param name="string2" select="', '"/>
+                                </xsl:call-template>
+                            </xsl:variable>
+                            <xsl:variable name="biblScope">
+                                <xsl:value-of
+                                    select="substring-before(substring-after(substring-after($bibl-new, descendant::creation/date/@when), ', '), '.')"
+                                />
+                            </xsl:variable>
+                            <xsl:value-of select="descendant::author"/>, <xsl:element name="hi"
+                                    ><xsl:attribute name="rend">i</xsl:attribute><xsl:value-of
+                                    select="descendant::title"/></xsl:element>,
+                                    <pubPlace><xsl:value-of select="$pubPlace"/></pubPlace>,
+                                    <publisher><xsl:value-of select="$publisher"/></publisher>,
+                                    <date><xsl:value-of select="descendant::creation/date/@when"
+                                /></date>, <biblScope><xsl:value-of select="$biblScope"
+                                /></biblScope>.</bibl>
+                    </sourceDesc>
                 </fileDesc>
                 <profileDesc>
                     <xsl:copy-of select="descendant::creation"/>
                     <xsl:copy-of select="descendant::langUsage"/>
+                    <textClass>
+                        <keywords>
+                            <xsl:copy-of select="descendant::term"/>
+                        </keywords>
+                    </textClass>
                 </profileDesc>
             </teiHeader>
             <text>
@@ -126,7 +143,7 @@
     <xsl:template match="teiHeader"/>
 
     <!-- (Note) Éléments matchés mais pas leur balise car elles sont déjà introduites dans <xsl:template match="/"> -->
-    <xsl:template match="body | TEI">
+    <xsl:template match="body | TEI | text">
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -155,10 +172,7 @@
 
     <xsl:template match="frontiespiece">
         <xsl:element name="castList">
-            <xsl:apply-templates select=".//ancestor::body//descendant::speaker" mode="index"/>
-        </xsl:element>
-        <xsl:element name="index">
-            <xsl:apply-templates select=".//ancestor::body//descendant::term"/>
+            <xsl:apply-templates select=".//following::div//descendant::speaker" mode="index"/>
         </xsl:element>
         <xsl:apply-templates/>
     </xsl:template>
@@ -175,7 +189,7 @@
             <xsl:for-each select="$unique">
                 <xsl:element name="castItem">
                     <xsl:attribute name="xml:id">
-                        <xsl:value-of select="$unique"/>
+                        <xsl:value-of select="replace($unique, ' ', '_')"/>
                     </xsl:attribute>
                 </xsl:element>
             </xsl:for-each>
@@ -195,32 +209,32 @@
                 </xsl:element>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:element name="{local-name()}">
-                    <xsl:for-each select="attribute::*">
-                        <xsl:attribute name="{local-name()}">
-                            <xsl:value-of select="."/>
-                        </xsl:attribute>
-                    </xsl:for-each>
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    
-    <xsl:template match="titre">
-        <xsl:choose>
-            <xsl:when test="descendant::speaker">
-                <xsl:apply-templates/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:element name="head">
+                <xsl:variable name="level">
+                    <xsl:text>div</xsl:text><xsl:value-of select="attribute::*"/>
+                </xsl:variable>
+                <xsl:element name="{$level}">
                     <xsl:apply-templates/>
                 </xsl:element>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 
-    <xsl:template match="head">
+    <xsl:template match="titre">
+        <xsl:choose>
+            <xsl:when test="descendant::speaker">
+                <xsl:element name="speaker">
+                    <xsl:apply-templates mode="titre"/>
+                </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:element name="head">
+                    <xsl:apply-templates mode="titre"/>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template match="titre" mode="titre">
         <xsl:choose>
             <xsl:when test="contains(., '(C)')">
                 <!-- Gestion des alinéas explicites -->
@@ -228,7 +242,8 @@
                     <xsl:when test="contains(., '(C) ')">
                         <xsl:element name="head">
                             <xsl:attribute name="rend">indent</xsl:attribute>
-                            <orig>⸿ </orig>
+                            <g type="pied_de_mouche">⸿</g>
+                            <xsl:text> </xsl:text>
                             <xsl:value-of select="substring-after(., '(C) ')"/>
                         </xsl:element>
                     </xsl:when>
@@ -265,20 +280,40 @@
         </xsl:choose>
     </xsl:template>
 
+    <xsl:template match="pb">
+        <xsl:element name="pb">
+            <xsl:variable name="number">
+                <xsl:variable name="pipou" select="substring-before(substring-after(., 'n='), 'facs=')"/>
+                <xsl:value-of select="replace($pipou,' ', '')"/>
+            </xsl:variable>
+            <xsl:variable name="lien">
+                <xsl:variable name="pipou" select="substring-before(substring-after(., 'facs='), ']')"/>
+                <xsl:value-of select="replace($pipou,' ', '')"/>
+            </xsl:variable>
+            <xsl:attribute name="n">
+                <xsl:value-of select="$number"/>
+            </xsl:attribute>
+            <xsl:attribute name="xml:id">
+                <xsl:value-of select="$number"/>
+            </xsl:attribute>
+            <xsl:attribute name="facs">
+                <xsl:value-of select="$lien"/>
+            </xsl:attribute>
+        </xsl:element>
+    </xsl:template>
+
     <!-- <corr> / <sic> -->
-    
-    <xsl:template match="erreurTypo">
+
+    <xsl:template match="typo_orig">
         <xsl:choose>
-            <xsl:when test="following-sibling::node()[1][local-name() = 'correctionTypo']">
+            <xsl:when test="following-sibling::typo_reg">
                 <xsl:element name="choice">
                     <xsl:element name="sic">
                         <xsl:apply-templates/>
                     </xsl:element>
-                    <xsl:if test="following-sibling::node()[1][local-name() = 'correctionTypo']">
+                    <xsl:if test="following-sibling::typo_reg">
                         <xsl:element name="corr">
-                            <xsl:value-of
-                                select="translate(normalize-space(following-sibling::correctionTypo[1]), '[]', '')"
-                            />
+                            <xsl:value-of select="following-sibling::typo_reg"/>
                         </xsl:element>
                     </xsl:if>
                 </xsl:element>
@@ -293,15 +328,15 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    
-    <xsl:template match="correctionTypo">
+
+    <xsl:template match="typo_reg">
         <xsl:choose>
-            <xsl:when test="preceding-sibling::node()[1][local-name() = 'erreurTypo']"/>
+            <xsl:when test="preceding-sibling::typo_orig"/>
             <xsl:otherwise>
                 <xsl:element name="choice">
                     <xsl:element name="sic"/>
                     <xsl:element name="corr">
-                        <xsl:value-of select="translate(., '[]', '')"/>
+                        <xsl:value-of select="."/>
                     </xsl:element>
                 </xsl:element>
             </xsl:otherwise>
@@ -320,7 +355,7 @@
          2. Les caractères spéciaux : sont à ajouter dans le <xsl:analyze-string> (afin de les matcher par la suite). 
      -->
 
-    <xsl:template match="div1//*/text()">
+    <xsl:template match="body//*/text()">
         <xsl:analyze-string select="."
             regex="[A-ZÑĜÀÁÂÃÄÅÆÈÉÊËÌÍÎÏÐÒÓÔÕÖŒÙÚÛÜÝa-zàáâãäåçẽèéêëĩìíîïðõòóôõöùúũûüýÿp̃ꝛꝑq̃9()]+">
             <xsl:matching-substring>
@@ -3906,8 +3941,8 @@
                     <xsl:when test="matches(., '^(\w+)iu(e|i|o|a|é|y|ÿ)(\w*)$', 'i')">
                         <xsl:if test="matches(., '^(\w+)iu(e|i|o|a|é|y|ÿ)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'iu')"/>
+                            <xsl:text>i</xsl:text>
                             <choice change="lettre_ramiste">
-                                <xsl:text>i</xsl:text>
                                 <orig>
                                     <xsl:text>u</xsl:text>
                                 </orig>
