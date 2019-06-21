@@ -3274,7 +3274,6 @@ Suggested values include: 1] bottom; 2] bot-left; 3] bot-right; 4] bot-center; 5
          <ref name="att.global.rendition.attribute.rendition"/>
          <ref name="att.global.change.attribute.change"/>
          <optional>
-            <ref name="c"/>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes the element in some sense, using any convenient classification scheme or typology.</a:documentation>
                <choice>
@@ -3285,6 +3284,10 @@ Suggested values include: 1] bottom; 2] bot-left; 3] bot-right; 4] bot-center; 5
                   <value>titlePage</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                   <value>titre</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>main</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>s</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                </choice>
             </attribute>
@@ -7045,6 +7048,8 @@ Suggested values include: 1] brulure; 2] efface; 3] tache</a:documentation>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                   <value>mm</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>line</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                </choice>
             </attribute>
          </optional>
@@ -8402,6 +8407,8 @@ Suggested values include: 1] D_inverse; 2] Q_inverse; 3] lettre_fantastique; 4] 
                   <value>liaison</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                   <value>pied_de_mouche</value>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
+                  <value>fleuron</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
                   <data type="token">
                      <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>

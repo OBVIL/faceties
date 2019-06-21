@@ -46,6 +46,9 @@
             <xsl:when test="matches(local-name(), '^T$')">
                 <xsl:apply-templates/>
             </xsl:when>
+            <xsl:when test="matches(local-name(), '^Normal$')">
+                <xsl:apply-templates/>
+            </xsl:when>
             <xsl:when test="contains(local-name(), 'Police')">
                 <xsl:apply-templates/>
             </xsl:when>
@@ -112,7 +115,7 @@
                 </xsl:element>
             </xsl:element>
         </xsl:if>
-        <xsl:if test="starts-with(., 'language')">
+        <xsl:if test="starts-with(., 'langue')">
             <xsl:element name="langUsage">
                 <xsl:element name="language">
                     <xsl:attribute name="ident">
@@ -143,32 +146,54 @@
     
     <xsl:template match="front">
         <xsl:element name="frontiespiece">
-            <xsl:apply-templates mode="front"/>
-        </xsl:element>
-    </xsl:template>
-    
-    <xsl:template match="_3c_Pagedetitre_5f_titre_3e_" mode="front">
-        <xsl:element name="head">
-            <xsl:attribute name="type">main</xsl:attribute>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
     
-    <xsl:template match="_3c_Pagedetitre_5f_sous-titre_3e_" mode="front">
-        <xsl:element name="head">
-            <xsl:attribute name="type">sub</xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:element>
+    <xsl:template match="node()[starts-with(name(), 'front_')]">
+        <xsl:for-each select=".">
+            <xsl:element name="titre">
+                <xsl:attribute name="niv">
+                    <xsl:value-of select="substring-after(name(),'front_5f_')"/>
+                </xsl:attribute>
+                <xsl:apply-templates/>
+            </xsl:element>
+        </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="_3c_figure_3e_" mode="front">
-        <xsl:element name="div">
-            <xsl:element name="p">
-                <xsl:attribute name="rend">center</xsl:attribute>
-                <xsl:value-of select=".//text()"></xsl:value-of>
+    <xsl:template match="_3c_figure_3e_">
+        <xsl:element name="figure">
+            <xsl:element name="graphic">
+                <xsl:attribute name="url">
+                    <xsl:value-of select="./text()"/>
+                    <!--<xsl:text>.jpg</xsl:text>-->
+                </xsl:attribute>
             </xsl:element>
         </xsl:element>
     </xsl:template>
+    
+    <xsl:template match="node()[starts-with(name(), 'epigraph_')]">
+        <xsl:for-each select=".">
+            <xsl:element name="titre">
+                <xsl:attribute name="type">
+                    <xsl:value-of select="substring-after(name(),'epigraph_5f_')"/>
+                </xsl:attribute>
+                <xsl:apply-templates/>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="node()[starts-with(name(), 'docImprint_')]">
+        <xsl:for-each select=".">
+            <xsl:element name="titre">
+                <xsl:attribute name="niv">
+                    <xsl:value-of select="substring-after(name(),'docImprint_5f_')"/>
+                </xsl:attribute>
+                <xsl:apply-templates/>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+    
     
     <!--
     =======================================
@@ -179,26 +204,27 @@
     <xsl:variable name="ABC">ABCDEFGHIJKLMNOPQRSTUVWXYZÀÁÂÃÄÅÆÈÉÊËÌÍÎÏÐÑÒÓÔÕÖŒÙÚÛÜÝ </xsl:variable>
     <xsl:variable name="abc">abcdefghijklmnopqrstuvwxyzaaaaaaeeeeeiiiidnoooooœuuuuy_</xsl:variable>
     
-   <!--  Niveau 1 -->
-    <xsl:template match="_3c_Pagedetitre_5f_sous-titre_3e_">
-        <xsl:element name="titre">
-            <xsl:attribute name="niv">1</xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:element>
+    <xsl:template match="node()[starts-with(name(), 'titre')]">
+        <xsl:for-each select=".">
+            <xsl:element name="titre">
+                <xsl:attribute name="niv">
+                    <xsl:value-of select="substring-after(name(),'titre')"/>
+                </xsl:attribute>
+                <xsl:apply-templates/>
+            </xsl:element>
+        </xsl:for-each>
     </xsl:template>
     
-    <!--  Niveau 2 -->
-    <xsl:template match="h">
-        <xsl:element name="titre">
-            <xsl:attribute name="niv">2</xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    
-    <!--  Niveau 3 -->
+    <!--  Niveau ? : les speaker sont un peu différent, on ne peut pas leur attribuer un niveau fixe puisqu'on pourrait tout aussi bien les retrouver dans une div1 ou div2, etc. C'est pourquoi le template suivant permet de leur attribuer un niveau en fonction du titre qui les précède (ex. : derrière un titre 2, on aura un speaker de niveau 3) -->
     <xsl:template match="_3c_speaker_3e_">
         <xsl:element name="titre">
-            <xsl:attribute name="niv">3</xsl:attribute>
+            <xsl:attribute name="niv">
+                <xsl:variable name="pere">
+                    <xsl:variable name="element" select="preceding::node()[starts-with(name(), 'titre')][1]/name()"/>
+                    <xsl:value-of select="number(substring-after($element,'titre'))"/>
+                </xsl:variable>
+                <xsl:value-of select="$pere + 1"/>
+            </xsl:attribute>
             <xsl:element name="speaker">
                 <xsl:apply-templates/>
             </xsl:element>
@@ -220,8 +246,9 @@
                 <xsl:choose>
                     <xsl:when test="contains(., '(C) ')">
                         <xsl:element name="l">
-                            <xsl:attribute name="rend">indent</xsl:attribute>
-                            <orig>⸿</orig>
+                           <xsl:attribute name="rend">indent</xsl:attribute>
+                            <g type="pied_de_mouche">⸿</g>
+                            <xsl:text> </xsl:text>
                             <xsl:value-of select="substring-after(., '(C) ')"/>
                         </xsl:element>
                     </xsl:when>
@@ -261,7 +288,7 @@
                 <xsl:apply-templates/>
             </xsl:when>
             <xsl:when test="contains(., '£')">
-                <space quantity="1" unit="lignes"/>
+                <space quantity="1" unit="line"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="l">
@@ -279,7 +306,8 @@
                     <xsl:when test="contains(., '(C) ')">
                         <xsl:element name="p">
                             <xsl:attribute name="rend">indent</xsl:attribute>
-                            <orig>⸿</orig>
+                            <g type="pied_de_mouche">⸿</g>
+                            <xsl:text> </xsl:text>
                             <xsl:value-of select="substring-after(., '(C) ')"/>
                         </xsl:element>
                     </xsl:when>
@@ -323,34 +351,34 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="quote">
-        <xsl:element name="quote">
+    <xsl:template match="pc">
+        <xsl:element name="pc">
             <xsl:element name="choice">
                 <xsl:attribute name="style">ponctuation</xsl:attribute>
                 <xsl:element name="orig"/>
                 <xsl:element name="reg">
-                    <xsl:text>« </xsl:text>
-                </xsl:element>
-            </xsl:element>
-            <xsl:value-of select="substring-before(substring-after(., '« '), ' »')"/>
-            <xsl:element name="choice">
-                <xsl:attribute name="style">ponctuation</xsl:attribute>
-                <xsl:element name="orig"/>
-                <xsl:element name="reg">
-                    <xsl:text> »</xsl:text>
+                    <xsl:apply-templates/>
                 </xsl:element>
             </xsl:element>
         </xsl:element>
     </xsl:template>
     
-    <xsl:template match="_3c_pb_3e_">
-        <xsl:element name="pb">
-            <xsl:attribute name="n">
-                <xsl:value-of select="substring-before(substring-after(., '['), ']')"/>
-            </xsl:attribute>
-        </xsl:element>
+    <xsl:template match="*/_3c_pb_3e_[1]">
+            <xsl:choose>
+                <xsl:when test="following-sibling::_3c_pb_3e_">
+                    <xsl:element name="pb">
+                           <xsl:apply-templates/>
+                        <xsl:if test="following-sibling::_3c_pb_3e_">
+                           <xsl:value-of select="following-sibling::_3c_pb_3e_"/>
+                        </xsl:if>
+                    </xsl:element>
+                </xsl:when>
+                <xsl:when test="preceding-sibling::_3c_pb_3e_"/>
+            </xsl:choose>
     </xsl:template>
     
+    <xsl:template match="_3c_pb_3e_"/>
+
     <!-- STYLE DE CARACTERES -->
     
     <!-- Désagglutination -->
@@ -451,31 +479,17 @@
         </xsl:choose>
     </xsl:template>
     
-    <!-- Majuscules et petites majuscules -->
+    <!-- Majuscules, petites majuscules, italique, etc -->
     
-    <xsl:template match="Majuscule">
-        <xsl:element name="hi">
-            <xsl:attribute name="rend">uc</xsl:attribute>
-            <!-- (Note) (uppercase : majuscule) -->
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    
-    <xsl:template match="PetiteMajuscule">
-        <xsl:element name="hi">
-            <xsl:attribute name="rend">sc</xsl:attribute>
-            <!-- (Note) (small-caps : petites majuscules) -->
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    
-    <!-- Italique -->
-    
-    <xsl:template match="italique">
-        <xsl:element name="hi">
-            <xsl:attribute name="rend">i</xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:element>
+    <xsl:template match="node()[starts-with(name(), 'style_')]">
+        <xsl:for-each select=".">
+            <xsl:element name="hi">
+                <xsl:attribute name="rend">
+                    <xsl:value-of select="substring-after(name(),'style_5f_')"/>
+                </xsl:attribute>
+                <xsl:apply-templates/>
+            </xsl:element>
+        </xsl:for-each>
     </xsl:template>
     
     <!-- Lettrines -->
@@ -494,9 +508,22 @@
         </xsl:for-each>
     </xsl:template>
     
+    <!-- Ornement -->
+    
+    <xsl:template match="node()[starts-with(name(), 'orn_')]">
+        <xsl:for-each select=".">
+            <xsl:element name="g">
+                <xsl:attribute name="type">
+                    <xsl:value-of select="substring-after(name(),'orn_5f_')"/>
+                </xsl:attribute>
+                <xsl:apply-templates/>
+            </xsl:element>
+        </xsl:for-each>
+    </xsl:template>
+    
     <!-- Restitution (pour les lettres un peu effacées) -->
     
-    <xsl:template match="restitution">
+    <xsl:template match="damage">
         <xsl:element name="damage">
             <xsl:attribute name="type">efface</xsl:attribute>
             <xsl:apply-templates/>
@@ -521,7 +548,7 @@
     <xsl:template match="figure">
         <xsl:element name="figure">
             <xsl:element name="graphic">
-                <xsl:attribute name="target">
+                <xsl:attribute name="url">
                     <xsl:value-of select="./text()"/>
                     <!--<xsl:text>.jpg</xsl:text>-->
                 </xsl:attribute>
