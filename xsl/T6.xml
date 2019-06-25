@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><!--OBVIL, CHEVALIER Nolwenn. Projet Facéties. --><!--(T3bis) Transformation XML vers XML-BVH : 06/24/2019 à 17:23. --><TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Les Fascetieux devitz de cent nouvelles,
+                nouvelles, tres récréatives et frt exemplaires pour resveiller les bons espritz
+                Francoys, veuz et remis en leur naturel, par le seigneur de la Motte Roullant
+                Lyonnois, hommes tres docte &amp; bien renommé</title>
+            <author>La Motte Roullant (15..-15..)</author>
+         </titleStmt>
+         <editionStmt>
+            <edition>OBVIL</edition>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>Sorbonne Université LABEX OBVIL</publisher>
+            <date when="2019"/>
+            <idno/>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
+                  <p>Cette ressource électronique protégée par le code de la propriété
+                                    intellectuelle sur les bases de données (L341-1) est mise à
+                                    disposition de la communauté scientifique internationale par
+                                    l’OBVIL, selon les termes de la licence Creative Commons :
+                                    « Attribution - Pas d’Utilisation Commerciale - Pas de
+                                    Modification 3.0 France (CCBY-NC-ND 3.0 FR) ».</p>
+                  <p>Attribution : afin de référencer la source, toute utilisation ou
+                                    publication dérivée de cette ressource électroniques comportera
+                                    le nom de l’OBVIL et surtout l’adresse Internet de la
+                                    ressource.</p>
+                  <p>Pas d’Utilisation Commerciale : dans l’intérêt de la communauté
+                                    scientifique, toute utilisation commerciale est interdite.</p>
+                  <p>Pas de Modification : l’OBVIL s’engage à améliorer et à corriger
+                                    cette ressource électronique, notamment en intégrant toutes les
+                                    contributions extérieures, la diffusion de versions modifiées de
+                                    cette ressource n’est pas souhaitable.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>La Motte Roullant (15..-15..), <hi rend="i">Les Fascetieux devitz de cent nouvelles,
+                nouvelles, tres récréatives et frt exemplaires pour resveiller les bons espritz
+                Francoys, veuz et remis en leur naturel, par le seigneur de la Motte Roullant
+                Lyonnois, hommes tres docte &amp; bien renommé</hi>,
+                                    <pubPlace/>,
+                                    <publisher/>,
+                                    <date>1549</date>, <biblScope/>.</bibl>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <creation>
+            <date when="1549"/>
+         </creation>
+         <langUsage>
+            <language ident="frm"/>
+         </langUsage>
+         <textClass>
+            <keywords>
+               <term n="lieu">[premier lieu où se passe la narration]</term>
+               <term n="lieu">[deuxième lieu
+                    etc]</term>
+               <term n="personnage">[premier personnage, soit nom + fonction, soit
+                nom, soit fonction (drapière, bourgeois, curé)]</term>
+               <term n="personnage">[deuxième
+                    personnage, etc.]</term>
+            </keywords>
+         </textClass>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <castList/>
+         <Standard/>
+         <head>❧testtesttest</head>
+         <head>lalalalalalalalala</head>
+         <head/>
+         <figure>
+            <graphic url="&lt;ATTimage&gt;"/>
+         </figure>
+            front subfront sub
+            <div1>
+            <head>
+               <head>titre<lb/>TITRe<lb/>titre</head>
+            </head>
+         </div1>
+         <div1>
+            <head>
+               <head/>
+            </head>
+            <div2>
+               <head>
+                  <head>titre<lb/>TITRe<lb/>titre</head>
+               </head>
+            </div2>
+            <div2>
+               <head>
+                  <head/>
+               </head>
+               <div3>
+                  <head>
+                     <head>titre<lb/>
+                        <mevital>TITRe</mevital>
+                        <lb/>titre</head>
+                  </head>
+               </div3>
+               <div3>
+                  <head>
+                     <head/>
+                  </head>
+                  <l>vers</l>
+                  <l>vers</l>
+                  <l>vers</l>
+               </div3>
+               <div3>
+                  <head>
+                     <head/>
+                  </head>
+                  <p>prose<lb/>
+                     <mevital>prose</mevital>
+                     <lb/>pros<lb/>
+                  </p>
+                  <p/>
+                  <l>vers<lb/>
+                     <mevital>vers</mevital>
+                     <lb/>vers</l>
+               </div3>
+            </div2>
+         </div1>
+      </body>
+   </text>
+</TEI>

@@ -298,7 +298,7 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="p">
+    <xsl:template match="_3c_p_3e_">
         <xsl:choose>
             <xsl:when test="contains(., '(C)')">
                 <!-- p > Gestion des alinéas -->
@@ -485,7 +485,7 @@
         <xsl:for-each select=".">
             <xsl:element name="hi">
                 <xsl:attribute name="rend">
-                    <xsl:value-of select="substring-after(name(),'style_5f_')"/>
+                    <xsl:value-of select="substring-after(name(),'style_')"/>
                 </xsl:attribute>
                 <xsl:apply-templates/>
             </xsl:element>
@@ -514,7 +514,7 @@
         <xsl:for-each select=".">
             <xsl:element name="g">
                 <xsl:attribute name="type">
-                    <xsl:value-of select="substring-after(name(),'orn_5f_')"/>
+                    <xsl:value-of select="substring-after(name(),'orn_')"/>
                 </xsl:attribute>
                 <xsl:apply-templates/>
             </xsl:element>
@@ -536,7 +536,7 @@
         <xsl:for-each select=".">
             <xsl:element name="foreign">
                 <xsl:attribute name="xml:lang">
-                    <xsl:value-of select="substring-after(name(),'foreign_5f_')"/>
+                    <xsl:value-of select="substring-after(name(),'foreign_')"/>
                 </xsl:attribute>
                 <xsl:apply-templates/>
             </xsl:element>
