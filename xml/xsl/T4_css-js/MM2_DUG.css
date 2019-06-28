@@ -1,0 +1,286 @@
+/**************
+ * ZONE TEXTE *
+ **************/
+
+#texte_complet p {
+	 margin-top: 1px;
+	 margin-bottom: 8px;
+}
+
+#texte_complet > div > p {
+   padding-bottom: 10px;
+	 line-height: 150%;
+}
+
+h2 {
+    color: #7c795d;
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 28px; 
+    font-weight: 400;
+	  margin-top: 15px;
+		margin-bottom: 15px;
+}
+
+legend {
+    color: #7c795d;;
+	  font-family: 'Source Sans Pro', sans-serif; 
+    background-color: #b3b3b3;
+    padding: 3px 6px;
+}
+
+h3 {
+   color: #b99999; 
+   font-family: 'Source Sans Pro', sans-serif; 
+   font-size: 22px; 
+   font-weight: 400;
+	 margin-top: 1px;
+	 margin-bottom: 10px;
+}
+
+h3:after {
+  content: " :";
+  }
+
+h4 {
+	 margin-top: 1px;
+	 margin-bottom: 10px;
+	 text-indent: 3%;
+}
+
+h4:before {
+  content: "‣ ";
+  }
+
+h4:after {
+  content: " :";
+  }
+
+h5 {
+  font-weight: 500;
+  font-size: 16px;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  font-family: 'Source Sans Pro', sans-serif;
+	text-shadow: 0.1em 0.1em 0.1em #fefdd3;
+}
+
+/**********
+ *  BODY  *
+ **********/
+
+span.sic{
+text-decoration: line-through !important;
+color:#DCDCDC;
+}
+
+/* a {
+text-decoration: none;
+color: #778899;
+} */
+
+.body p {
+  font-size :16px;
+  line-height : 1.43em; 
+}
+
+.body a,.body a:link,.body a:hover {
+text-decoration: none;
+color: #997A8D;
+}
+
+.body a,.body a:visited,.body a:active {
+text-decoration: none;
+color: #91283B;
+}
+
+/***********
+ *  INDEX  *
+ ***********/
+
+.index h2 {
+font-family: 'Source Sans Pro', sans-serif; 
+color: #ffffff;
+text-align:center; 
+font-size: 20px;
+font-weight:100;
+background-color:#b3b3b3;
+width:100%;
+}
+
+div.index .index1 button {
+	  margin-left: 1%;
+    margin-bottom: 3%;
+	  width: 95%;
+}
+
+.index a, .index a:link, .index a:hover {
+text-decoration: none;
+color: #997A8D;
+}
+
+.index a, .index a:visited, .index a:active {
+text-decoration: none;
+color: #91283B;
+}
+
+.index {
+    position: fixed; 
+    width:20%;
+    top:0%;
+    height: 100%;
+    background-color:#ffffff;
+    border-color:#ccbca2;
+    border-width:0px 1px 0px 0px;
+    border-style:solid;
+    padding-right:1%;
+    padding-left: 0.2%;
+}
+
+.index a[href="#"]{
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     font-size:2em;
+     padding-left:0.5%;
+}
+
+/**************
+ * MENU CSS 1 *
+ **************/
+
+div.menu {
+	background:#F9F7F3;
+	line-height:normal;
+	border-bottom:1px solid #C2BDAE;
+	}
+
+ul#menuplus a i {
+	font-size: 150%;
+}
+
+ul#menuplus a {
+	color: #999;
+	text-decoration: none;
+	border-radius: 3px;
+	}
+
+ul#menuplus a:hover {
+	background: #900;
+	color:#CCAA7F;
+	}
+
+/* Root = Horizontal, Secondary = Vertical */
+ul#menuplus {
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+	/*! width: 500px; */ /*For KHTML*/
+	list-style: none;
+	height: 36px;
+	margin-left: 24%;
+	}
+
+ul#menuplus li {
+	/*! margin: 0; */
+	border: 0 none;
+	padding: 0;
+	float: left; /*For Gecko*/
+	display: inline;
+	list-style: none;
+	position: relative;
+	height: 24px;
+	margin-top:9.5px;
+	}
+
+ul#menuplus ul {
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+	width: 160px;
+	list-style: none;
+	display: none;
+	position: absolute;
+	top: 24px;
+	left: 0;
+	}
+
+ul#menuplus ul:after /*From IE 7 lack of compliance*/{
+	clear: both;
+	display: block;
+	font: 1px/0px serif;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+	}
+
+ul#menuplus ul li {
+	width: 160px;
+	float: left; /*For IE 7 lack of compliance*/
+	display: block !important;
+	display: inline; /*For IE*/
+	padding: 0.5px;
+	margin:3px 0px 0px 0px;
+	}
+
+/* Root Menu */
+ul#menuplus a {
+  border-right: 1px solid #999999;
+  border-left: 1px solid #999999;
+  border-top: 1px solid #999999;
+	border-radius: 4px 4px 0px 0px;
+	float: none !important;
+	display: block;
+	background-image:linear-gradient(#ffffff,#f8f8f8);
+	font: bold 11px/1.5em Verdana;
+	text-decoration: none;
+	height: auto !important;
+  padding: 4.5px 10px 4px 10px;
+	margin-left: 1px;
+	}
+
+/* Root Menu Hover Persistence */
+ul#menuplus a:hover,
+ul#menuplus li:hover a,
+ul#menuplus li.iehover a {
+  background-image:linear-gradient(#fefdfe,#FFFBF5);
+  border: 1px solid #ccbca2;
+	color:#CCAA7F;
+	}
+
+/* 2nd Menu */
+ul#menuplus li:hover li a,
+ul#menuplus li.iehover li a {
+	border-radius:3px;
+	float: none;
+	color: #999;
+	background-image:linear-gradient(#ffffff,#f8f8f8);
+  border: 1px solid #999999;
+	}
+
+/* 2nd Menu Hover Persistence */
+ul#menuplus li:hover li a:hover,
+ul#menuplus li:hover li:hover a,
+ul#menuplus li.iehover li a:hover,
+ul#menuplus li.iehover li.iehover a {
+  background-image:linear-gradient(#fefdfe,#FFFBF5);
+  border: 1px solid #ccbca2;
+	color:#CCAA7F;
+	}
+
+/* Do Not Move - Must Come Before display:block for Gecko */
+ul#menuplus li:hover ul ul,
+ul#menuplus li:hover ul ul ul,
+ul#menuplus li.iehover ul ul,
+ul#menuplus li.iehover ul ul ul {
+	display: none;
+	}
+
+ul#menuplus li:hover ul,
+ul#menuplus ul li:hover ul,
+ul#menuplus ul ul li:hover ul,
+ul#menuplus li.iehover ul,
+ul#menuplus ul li.iehover ul,
+ul#menuplus ul ul li.iehover ul {
+	display: block;
+	}
