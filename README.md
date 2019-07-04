@@ -100,9 +100,9 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
-- transformer l'`odt` corrigé en fichier `xml`
+- transforme l'`odt` corrigé en fichier `xml`
 
-- ne garder que les informations qui nous intéresse (le nom des balises obtenus par cette transformation ne sont pas définitives, ils changeront au passage de la deuxième transformation)
+- ne garde que les informations qui nous intéresse (le nom des balises obtenus par cette transformation ne sont pas définitives, ils changeront au passage de la deuxième transformation)
 
 #### Consignes : 
 
@@ -117,19 +117,10 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
-- nettoyer les balises parasites
+- hiérarchise les blocs d'informations avec des niveaux (`div1` ; `div2` ; `sp`)
 
-- nettoyer le balisage du frontiespiece et header
-
-- nettoyer les `<l>`, `<p>` et des `<pb>`
-
-- préparer les titres pour la hierarchisation
-
-- instaurer les désagglutinations
-
-- instaurer les `<hi>`
-
-- instaurer les images
+- `header` : premier passage
+- `front` : premier passage
 
 #### Consignes : 
 
@@ -142,7 +133,7 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
-- séparer les différentes parties en div (première étape de la hiérarchisation)
+??
 
 #### Consignes : 
 
@@ -155,7 +146,7 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
-- emboiter les différentes div (deuxième étape de la hiérarchisation)
+ ??
 
 #### Consignes : 
 
@@ -172,25 +163,24 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
-- changer / nettoyer le balisage conformément au modèle des BVH
+- met en place un `header` conforme aux normes de l'OVIL et de la TEI p5
 
-- normaliser tous les mots ne contenant qu'un élément à normaliser (premi-re vague de normalisation)
+- met en place un frontiespiece conformer (index, castList) avec la balise `front` (→ **Voir** : `faceties_guide_de_relecture.odt`)
 
-- mettre en place un `header` conforme aux normes de l'OVIL et de la TEI p5
+- mise en place de `<space quantity="1" unit="lignes"/>`
 
-- mettre en place un frontiespiece conformer (index, castList) avec la balise `front` (→ **Voir** : `faceties_guide_de_relecture.odt`)
+- gère les alinéas implicites et explicites (`(C)`,`(D)`) en `l` et `p`
 
-- mettre en place de `<space quantity="1" unit="lignes"/>`
+- gère les cul-de-lampes avec une balise `cul_de_lampe` en `l` et `p`
 
-- gérer les alinéas implicites et explicites (`(C)`,`(D)`) en `l` et `p`
+- entoure d'un `choice` les balises `corr` et`sic` qui servent pour l'insertion des interventions éditoriales (coquilles)
 
-- gérer les cul-de-lampes avec une balise `cul_de_lampe` en `l` et `p`
-
-- entourer d'un `choice` les balises `corr` et`sic` qui servent pour l'insertion des interventions éditoriales (coquilles)
-
-- différencier par un `choice change` les césures implictes `Ĝ` (`<choice change="cesure_implicite">`) des césures explicites `Ñ` (`<pc change="cesure_explicite">`)
+- différencie par un `choice change` les césures implictes `Ĝ` (`<choice change="cesure_implicite">`) des césures explicites `Ñ` (`<pc change="cesure_explicite">`)
 
 - résout les abréviations et les dissimulations
+  
+ - supprime les éventuelles parasites
+
  
 #### Consignes : 
 
@@ -203,9 +193,7 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
-- normaliser le deuxième élément dans les mot possédant deux éléments à normaliser
-
-- prendre en charge le troisième élément à normaliser si besoin : il suffit alors de repasser la transformation sur le texte
+- normalise le deuxième élément dans les mot possédant deux éléments à normaliser
 
 #### Consignes : 
 
