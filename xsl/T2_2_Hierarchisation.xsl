@@ -70,16 +70,14 @@
     <xsl:template match="titre">
         <div>
             <xsl:attribute name="niv" select="./@niv"/>
-                <xsl:copy>
-                    <xsl:choose>
-                        <xsl:when test="descendant::speaker">
-                            <xsl:copy-of select="./*"/>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:copy-of select="./text()"/>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:copy>
+            <xsl:choose>
+                <xsl:when test="descendant::speaker">
+                    <xsl:copy-of select="./*"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:copy-of select="."/>
+                </xsl:otherwise>
+            </xsl:choose>
             <xsl:apply-templates select="key('fils',generate-id())" mode="regrouper"/>
         </div>
     </xsl:template>

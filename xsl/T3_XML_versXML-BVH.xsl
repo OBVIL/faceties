@@ -132,7 +132,6 @@
             </teiHeader>
             <text>
                 <body>
-                    <xsl:copy-of select="descendant::frontiespiece/head"/>
                     <xsl:apply-templates/>
                 </body>
             </text>
@@ -168,14 +167,17 @@
 
     <!-- <frontiespiece> -->
 
-    <xsl:template match="frontiespiece/head"/>
-
     <xsl:template match="frontiespiece">
-        <xsl:element name="castList">
-            <xsl:apply-templates select=".//following::div//descendant::speaker" mode="index"/>
+        <xsl:element name="front">
+            <xsl:apply-templates select="./head"/>
+            <xsl:element name="castList">
+                <xsl:apply-templates select=".//following::div//descendant::speaker" mode="index"/>
+            </xsl:element>
+            <xsl:apply-templates/>
         </xsl:element>
-        <xsl:apply-templates/>
     </xsl:template>
+    
+    <xsl:template match="frontiespiece/head"/>
 
     <xsl:template match="speaker" mode="index">
         <xsl:variable name="item" select="."/>
@@ -208,6 +210,11 @@
                     <xsl:apply-templates/>
                 </xsl:element>
             </xsl:when>
+            <xsl:when test="./titre/contains(., 'back')">
+                <xsl:element name="back">
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:variable name="level">
                     <xsl:text>div</xsl:text><xsl:value-of select="attribute::*"/>
@@ -226,6 +233,7 @@
                     <xsl:apply-templates mode="titre"/>
                 </xsl:element>
             </xsl:when>
+            <xsl:when test="starts-with(., 'back')"/>
             <xsl:otherwise>
                 <xsl:element name="head">
                     <xsl:apply-templates mode="titre"/>
@@ -239,12 +247,12 @@
             <xsl:when test="contains(., '(C)')">
                 <!-- Gestion des alinéas explicites -->
                 <xsl:choose>
-                    <xsl:when test="contains(., '(C) ')">
+                    <xsl:when test="contains(., '(C)')">
                         <xsl:element name="head">
                             <xsl:attribute name="rend">indent</xsl:attribute>
                             <g type="pied_de_mouche">⸿</g>
                             <xsl:text> </xsl:text>
-                            <xsl:value-of select="substring-after(., '(C) ')"/>
+                            <xsl:value-of select="substring-after(., '(C)')"/>
                         </xsl:element>
                     </xsl:when>
                     <xsl:otherwise>
@@ -258,10 +266,10 @@
             <xsl:when test="contains(., '(D)')">
                 <!-- Gestion des alinéas implicites -->
                 <xsl:choose>
-                    <xsl:when test="contains(., '(D) ')">
+                    <xsl:when test="contains(., '(D)')">
                         <xsl:element name="head">
                             <xsl:attribute name="rend">indent</xsl:attribute>
-                            <xsl:value-of select="substring-after(., '(D) ')"/>
+                            <xsl:value-of select="substring-after(., '(D)')"/>
                         </xsl:element>
                     </xsl:when>
                     <xsl:otherwise>
@@ -273,32 +281,63 @@
                 </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:element name="head">
-                    <xsl:apply-templates/>
-                </xsl:element>
+                <xsl:choose>
+                    <xsl:when test="contains(., 'back')"/>
+                    <xsl:otherwise>
+                        <xsl:element name="head">
+                            <xsl:apply-templates/>
+                        </xsl:element>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template match="*" mode="titre">
+        <xsl:element name="{local-name()}">
+            <xsl:for-each select="attribute::*">
+                <xsl:attribute name="{local-name()}">
+                    <xsl:value-of select="."/>
+                </xsl:attribute>
+            </xsl:for-each>
+            <xsl:apply-templates/>
+        </xsl:element>
     </xsl:template>
 
     <xsl:template match="pb">
         <xsl:element name="pb">
-            <xsl:variable name="number">
-                <xsl:variable name="pipou" select="substring-before(substring-after(., 'n='), 'facs=')"/>
-                <xsl:value-of select="replace($pipou,' ', '')"/>
-            </xsl:variable>
-            <xsl:variable name="lien">
-                <xsl:variable name="pipou" select="substring-before(substring-after(., 'facs='), ']')"/>
-                <xsl:value-of select="replace($pipou,' ', '')"/>
-            </xsl:variable>
-            <xsl:attribute name="n">
-                <xsl:value-of select="$number"/>
-            </xsl:attribute>
-            <xsl:attribute name="xml:id">
-                <xsl:value-of select="$number"/>
-            </xsl:attribute>
-            <xsl:attribute name="facs">
-                <xsl:value-of select="$lien"/>
-            </xsl:attribute>
+            <xsl:choose>
+                <xsl:when test="contains(., 'facs=')">
+                    <xsl:variable name="number">
+                        <xsl:variable name="pipou" select="substring-before(substring-after(., 'n='), 'facs=')"/>
+                        <xsl:value-of select="replace($pipou,' ', '')"/>
+                    </xsl:variable>
+                    <xsl:variable name="lien">
+                        <xsl:variable name="pipou" select="substring-before(substring-after(., 'facs='), ']')"/>
+                        <xsl:value-of select="replace($pipou,' ', '')"/>
+                    </xsl:variable>
+                    <xsl:attribute name="n">
+                        <xsl:value-of select="$number"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="xml:id">
+                        <xsl:value-of select="$number"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="facs">
+                        <xsl:value-of select="$lien"/>
+                    </xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:variable name="number">
+                        <xsl:value-of select="replace(., '[^0-9]', '')"/>
+                    </xsl:variable>
+                    <xsl:attribute name="n">
+                        <xsl:value-of select="$number"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="xml:id">
+                        <xsl:value-of select="$number"/>
+                    </xsl:attribute>
+                </xsl:otherwise>
+            </xsl:choose>
         </xsl:element>
     </xsl:template>
 
@@ -2126,7 +2165,7 @@
                         </choice>
                         <xsl:value-of select="substring-after(., 'ꝛ')"/>
                     </xsl:when>
-                    <xsl:when test="matches(., '^(\w*)9(\w*)$', 'i')">
+                    <xsl:when test="matches(., '^(\w)9(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., '9')"/>
                         <choice change="abreviation">
                             <orig>

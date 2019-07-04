@@ -21,13 +21,13 @@
         <body>
             <!-- Regroupement des meta pour faciliter leur appel plus tard. -->
             <meta>
-                <xsl:apply-templates select="descendant::_3c_term_3e_" mode="meta"/>
+                <xsl:apply-templates select="descendant::term" mode="meta"/>
             </meta>
             <xsl:apply-templates/>
         </body>
     </xsl:template>
     
-    <xsl:template match="_3c_term_3e_"/>
+    <xsl:template match="term"/>
     
     <xsl:template match="body">
         <xsl:apply-templates/>
@@ -71,7 +71,7 @@
     ===================================
     -->
 
-    <xsl:template match="_3c_term_3e_" mode="meta">
+    <xsl:template match="term" mode="meta">
         <xsl:if test="starts-with(., 'titre')">
             <xsl:element name="title">
                 <xsl:value-of select="substring-after(., ': ')"/>
@@ -230,7 +230,15 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-
+    
+    <xsl:template match="back">
+            <xsl:element name="titre">
+                <xsl:attribute name="niv">1</xsl:attribute>
+                <xsl:text>back</xsl:text>
+            </xsl:element>
+            <xsl:apply-templates/>
+    </xsl:template>
+    
     <!--
     =======================================
                 CONTENU : CONTENU
@@ -244,12 +252,12 @@
             <xsl:when test="contains(., '(C)')">
                 <!-- l > Gestion des alinéas -->
                 <xsl:choose>
-                    <xsl:when test="contains(., '(C) ')">
+                    <xsl:when test="contains(., '(C)')">
                         <xsl:element name="l">
                            <xsl:attribute name="rend">indent</xsl:attribute>
                             <g type="pied_de_mouche">⸿</g>
                             <xsl:text> </xsl:text>
-                            <xsl:value-of select="substring-after(., '(C) ')"/>
+                            <xsl:value-of select="substring-after(., '(C)')"/>
                         </xsl:element>
                     </xsl:when>
                     <xsl:otherwise>
@@ -263,10 +271,10 @@
             <xsl:when test="contains(., '(D)')">
                 <!-- l > Gestion des alinéas -->
                 <xsl:choose>
-                    <xsl:when test="contains(., '(D) ')">
+                    <xsl:when test="contains(., '(D)')">
                         <xsl:element name="l">
                             <xsl:attribute name="rend">indent</xsl:attribute>
-                            <xsl:value-of select="substring-after(., '(D) ')"/>
+                            <xsl:value-of select="substring-after(., '(D)')"/>
                         </xsl:element>
                     </xsl:when>
                     <xsl:otherwise>
@@ -303,12 +311,12 @@
             <xsl:when test="contains(., '(C)')">
                 <!-- p > Gestion des alinéas -->
                 <xsl:choose>
-                    <xsl:when test="contains(., '(C) ')">
+                    <xsl:when test="contains(., '(C)')">
                         <xsl:element name="p">
                             <xsl:attribute name="rend">indent</xsl:attribute>
                             <g type="pied_de_mouche">⸿</g>
                             <xsl:text> </xsl:text>
-                            <xsl:value-of select="substring-after(., '(C) ')"/>
+                            <xsl:value-of select="substring-after(., '(C)')"/>
                         </xsl:element>
                     </xsl:when>
                     <xsl:otherwise>
@@ -322,10 +330,10 @@
             <xsl:when test="contains(., '(D)')">
                 <!-- p > Gestion des alinéas -->
                 <xsl:choose>
-                    <xsl:when test="contains(., '(D) ')">
+                    <xsl:when test="contains(., '(D)')">
                         <xsl:element name="p">
                             <xsl:attribute name="rend">indent</xsl:attribute>
-                            <xsl:value-of select="substring-after(., '(D) ')"/>
+                            <xsl:value-of select="substring-after(., '(D)')"/>
                         </xsl:element>
                     </xsl:when>
                     <xsl:otherwise>
@@ -360,6 +368,13 @@
                     <xsl:apply-templates/>
                 </xsl:element>
             </xsl:element>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="ab">
+        <xsl:element name="ab">
+            <xsl:attribute name="type">ornament</xsl:attribute>
+            <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
     
@@ -490,6 +505,20 @@
                 <xsl:apply-templates/>
             </xsl:element>
         </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="mevital">
+        <xsl:element name="hi">
+            <xsl:attribute name="rend">i</xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="mevgras">
+        <xsl:element name="hi">
+            <xsl:attribute name="rend">b</xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:element>
     </xsl:template>
     
     <!-- Lettrines -->

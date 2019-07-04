@@ -22,7 +22,7 @@
 
     
     <!-- élément supprimés -->
-    <xsl:template match="text:s | xlink | office:scripts | office:forms | office:font-face-decls | office:automatic-styles | text:sequence-decls | text:bookmark-start | text:tracked-changes | text:changed-region | text:deletion | text:change | text:change-start | text:change-end | text:soft-page-break | text:line-break"/> <!-- |  |  |  |  |  |  |  |  |  |  |  -->
+    <xsl:template match="text:s | office:scripts | office:forms | office:font-face-decls | office:automatic-styles | text:sequence-decls | text:bookmark-start | text:tracked-changes | text:changed-region | text:deletion | text:change | text:change-start | text:change-end | text:soft-page-break"/> <!-- |  |  |  |  |  |  |  |  |  |  |  -->
     
     <!-- balises englobantes supprimées -->
     <xsl:template match="office:document-content | office:body | office:text">
@@ -122,14 +122,13 @@
         </xsl:choose>
     </xsl:template>
     
+    <xsl:template match="text:line-break">
+        <xsl:element name="lb"></xsl:element>	
+    </xsl:template>
+    
     <!-- élément text:tab -->
     <xsl:template match="text:tab">
         <xsl:element name="tab"></xsl:element>	
     </xsl:template>
     
-    <!-- saut de ligne -->
-    <xsl:template match="text:line-break">
-        <xsl:element name="lb"></xsl:element>	
-    </xsl:template>
-      
 </xsl:stylesheet>
