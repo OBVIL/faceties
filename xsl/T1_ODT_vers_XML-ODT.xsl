@@ -22,7 +22,7 @@
 
     
     <!-- élément supprimés -->
-    <xsl:template match="text:s | office:scripts | office:forms | office:font-face-decls | office:automatic-styles | text:sequence-decls | text:bookmark-start | text:tracked-changes | text:changed-region | text:deletion | text:change | text:change-start | text:change-end | text:soft-page-break | text:line-break"/> <!-- |  |  |  |  |  |  |  |  |  |  |  -->
+    <xsl:template match="text:s | xlink | office:scripts | office:forms | office:font-face-decls | office:automatic-styles | text:sequence-decls | text:bookmark-start | text:tracked-changes | text:changed-region | text:deletion | text:change | text:change-start | text:change-end | text:soft-page-break | text:line-break"/> <!-- |  |  |  |  |  |  |  |  |  |  |  -->
     
     <!-- balises englobantes supprimées -->
     <xsl:template match="office:document-content | office:body | office:text">
