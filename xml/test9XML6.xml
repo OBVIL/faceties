@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../schema/BVH_Epistemon.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI>
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <author>La Motte Roullant (15..-15..)</author>
+         </titleStmt>
+         <editionStmt>
+            <edition>OBVIL</edition>
+         </editionStmt>
+         <publicationStmt>
+            <publisher>Sorbonne Université LABEX OBVIL</publisher>
+            <date when="2019"/>
+            <idno/>
+            <availability status="restricted">
+               <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
+                  <p>Cette ressource électronique protégée par le code de la propriété
+                                    intellectuelle sur les bases de données (L341-1) est mise à
+                                    disposition de la communauté scientifique internationale par
+                                    l’OBVIL, selon les termes de la licence Creative Commons :
+                                    « Attribution - Pas d’Utilisation Commerciale - Pas de
+                                    Modification 3.0 France (CCBY-NC-ND 3.0 FR) ».</p>
+                  <p>Attribution : afin de référencer la source, toute utilisation ou
+                                    publication dérivée de cette ressource électroniques comportera
+                                    le nom de l’OBVIL et surtout l’adresse Internet de la
+                                    ressource.</p>
+                  <p>Pas d’Utilisation Commerciale : dans l’intérêt de la communauté
+                                    scientifique, toute utilisation commerciale est interdite.</p>
+                  <p>Pas de Modification : l’OBVIL s’engage à améliorer et à corriger
+                                    cette ressource électronique, notamment en intégrant toutes les
+                                    contributions extérieures, la diffusion de versions modifiées de
+                                    cette ressource n’est pas souhaitable.</p>
+               </licence>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>La Motte Roullant (15..-15..), <hi rend="i"/>,
+                                    <pubPlace>Les Fascetieux devitz de cent
+            nouvelles</pubPlace>,
+                                    <publisher> nouvelles, tres récréatives et frt exemplaires pour resveiller les bons
+            espritz Francoys, veuz et remis en leur naturel, par le seigneur de la Motte Roullant
+            Lyonnois, hommes tres docte &amp; bien renommé, Paris</publisher>,
+                                    <date>1549</date>, <biblScope/>.</bibl>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <creation>
+            <date when="1549"/>
+         </creation>
+         <langUsage>
+            <language ident="moyen-français"/>
+         </langUsage>
+         <textClass>
+            <keywords>
+               <term n="lieu">[premier lieu où se passe la narration]</term>
+               <term n="lieu">[deuxième lieu etc]</term>
+               <term n="personnage">[premier personnage, soit nom + fonction, soit nom, soit fonction
+            (drapière, bourgeois, curé)]</term>
+               <term n="personnage">[deuxième personnage, etc.]</term>
+            </keywords>
+         </textClass>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <castList/>
+         <Standard/>
+         <head>❧ Les Fascetieux</head>
+         <head>devitz des cent novĜ</head>
+         <head>velles, novvelles, tres</head>
+         <head>recreatives et fort</head>
+         <head>exemÑplaires pour resueiller les bons espritz Francoys,veuz &amp; remis
+                en leur naturel, par le seigneur de laMotte Roullant Lyonnois, homme tresdocte &amp;
+                bienrenommé.</head>
+         <figure>
+            <graphic url="&lt;ATTimage&gt;"/>
+         </figure>
+         <head>Auec priuilege du Roy.</head>
+         <head>On les vend à Paris en la rue du Meurier à l'ymagesaincte Geneuiefue par
+                Ichan Real.</head>
+         <head>1549.</head>
+         <list id="list3010425578" style-name="L1">
+            <list-header>
+               <Standard/>
+            </list-header>
+         </list>
+         <div1>
+            <head/>
+            <div2>
+               <head> De la mere qui souuent disoit à son enÑfant qu'elle se
+            mouroit, &amp; de la resĜponce que lenfant luy faiÑsoit. llain de sa maison futmoult
+            amoureux, or aduint pour lagrande gayette d'elle, que le chappellain s'appriuoyÑsa,
+            &amp; s'aduentura de luy declarer son amour, dont labonne Damoyselle fut mal contente,
+            &amp; pource le reÑuella à son mary, lequel considerant la bonté &amp; preuĜdhomie
+            d'elle, luy dist qu'elle le fist languir sans luyaccorder sa demande iusques à quelque
+            temps, cequ'elle accorda. Et le chappellain tousiours poursuyĜuoit en se riant &amp;
+            deuisant familierement auecqueselle, se presentant pour faire chose agreable à sa daÑme,
+            à fin d'en auoir retribution. Aduint vn iour queledict gentil homme trouua que le
+            Chappellain seiouoit auecques la Damoyselle si fort prieuement quede prime face l'on
+            eust estimé autre chose. Adonc legentil homme luy dist qu'il sembloit qu'il fust
+            aÑmoureux de sa femme, &amp; qu'il sen gardast bien, carautrement il luy coupperoit les
+            couilles. Et le chapÑpellain s'excusa tres#bien, &amp; dist que pour la vie
+            il nevouldroit faire diffame en la maison, n'attenter l'honĜneur de la Damoyselle,
+            combien que le gentil homÑme sceust le contraire. Aduint depuis que de rechefledict
+            chappellain poursuyuit son entreprinse, &amp; reÑquist fort la damoyselle de le faire
+            iouir du plaisir degrace, ce que la dame ne luy reffusa totalement : maisluy tenoit le
+            bec en l'eaue &amp; luy promettoit qu'elleluy feroit quelquefois vne partie de son bõ
+                vouloir,dont le prebstre fut ioyeulx de la
+            responce, &amp; la nuictla Damoyselle racompta à son mary comment le chaĜpelain
+            perseueroit en ses folles entreprinses. Adoncle gentil homme dist à sa femme qu'elle luy
+            accorÑdast ce qu'il demandoit, à scauoir pour la nuict suyÑuant, &amp; qu'il se trouuast
+            en la ruelle de leur lict, &amp;puis dist il, « ie mettray vn laz entre voz iambes
+            &amp;faindray de dormir, &amp; quand ie sentiray qu'il seraprins au las alors ie
+            parleray. » Ces parolles furent reÑceues &amp; accordées par la Damoyselle, &amp; deux
+            ioursapres le chapellain pchassa de
+            rechef sa maistresÑse pour en auoir iouyssance, laquelle se fist longueÑment prier,
+            &amp; en fin luy dist, messire Iehan mon amy,il y à tant long temps que
+            vous me poursuyuez en aÑmour, &amp; mauez requise, dont i'ay esté fachée, toutesÑfois à
+            present par voz doulces parolles tant m'auezpersuadée que ie suis contente vous accorder
+            voz deÑmandes, mais vous cognoissez que ie ne puis faire ceque me demandez en lieu que
+            mon mary ne le scaÑche, car vous scauez qu'il est assez vmbrageux demoy, toutesfois i'ay
+            pensé qu'il vauldroit mieulx queceste nuict vous vinsiez en la ruelle de mon lict &amp;
+            ieferay tant que vous y aurez place, &amp; quand mon maÑry dormira, alors vous
+            acomplirez vostre souhait àvostre bon plaisir. » Ces parolles furent
+            tres#agreablesau chappelain. Et quand la nuict fut venue &amp; que legentil
+            homme &amp; la Damoyselle, furent couchez, leChappellain entra sans bruict dedans la
+            chambre, &amp;se retira en la ruelle &amp; esueilla sa Damoyselle, laquelÑle auoit
+            aduerty sn mary du faict </head>
+            </div2>
+         </div1>
+      </body>
+   </text>
+</TEI>
