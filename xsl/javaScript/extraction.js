@@ -14,6 +14,7 @@ var normalisation = [
   {"id": 'lettre_ramiste', "TextNode": 'Lettres ramistes', "color": '#ffe292'},
   {"id": 'abreviation', "TextNode": 'Abréviations', "color": '#fbd3d3'},
   {"id": 'sic', "TextNode": 'Coquilles', "color": '#c2e0ae'},
+  {"id": 'cesure_implicite', "TextNode": 'Césures Implicites', "color": '#adb9df'},
  ];
 
 function initialise_affichage () {

@@ -24,34 +24,33 @@
                     
                     <div class="index1">
                         <xsl:element name="a">
-                            <xsl:attribute name="href"><xsl:text>F5-REG.html</xsl:text></xsl:attribute>
+                            <xsl:attribute name="href"><xsl:text>version_normalisee.html</xsl:text></xsl:attribute>
                             <button type="button"><i class="fa">&#xf02d;</i> Version normalisée</button> 
                         </xsl:element>
                     </div>
-                    
                     <div id="definition">
                         <FORM>
                             <h2>Afficher les normalisations</h2>
                             <div><INPUT type="radio" name="norm" id="affiche_reg" value="affiche_reg" onclick="affiche_tout_reg();"/>Tout afficher</div>
                             <div><INPUT type="radio" name="norm" id="cache_reg" value="cache_reg" onclick="cache_tout_reg();"/>Tout cacher</div>
                             <hr/><div id="afficher">
-                            <div id="afficher">
                             </div>
                         </FORM>
                     </div>
                     
                     <div id="definition">
                         <FORM>
-                            <h2>Locuteurs</h2>
-                            <div><INPUT type="radio" name="norm"/>L'acteur</div>
-                            <div><INPUT type="radio" name="norm"/>Le galant</div>
-                            <div><INPUT type="radio" name="norm"/>Le clerc</div>
+                            <h2>Options de lecture</h2>
                             
+                            <div><input type="checkbox" name="lettre_ramiste" value="checkbox"/>Lettre ramiste</div>
+                            <div><input type="checkbox" name="abreviation" value="checkbox"/>Abréviation</div>
+                            <div><input type="checkbox" name="sic" value="checkbox"/>Coquilles</div>
+                            <div><input type="checkbox" name="cesure_implicite" value="checkbox"/>Césures implicites</div>
                             
                             <div id="afficher">
                             </div>
                         </FORM>
-                    </div
+                    </div>
                     
                 </div>
                 
