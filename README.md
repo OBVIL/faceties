@@ -50,11 +50,15 @@
 
 - **doc** : documentations complémentaires au projet facéties (colloque, journée d'étude, chartes graphiques des différents textes, liste des 10 ouvrages, etc...)
 
-	- _`faceties-guide_des_style.odt`_ : document `odt` qui reprend tous les styles utilisés dans la correction des textes et qui sont traités par les transformation `xml`
+	- _`faceties-guide_des_styles.odt`_ : document `odt` qui explique les différents styles utilisés dans la correction des textes et qui sont traités par les transformation `xml` 
 
-	- _`faceties-exemple_style.odt`_ : document "vide" comportant les styles à utilisés
+	- _`faceties-modèle_style.odt`_ : document "vide" comportant les styles à utilisés (il n'y a plus qu'à faire un copier-coller pour les dupliquer sur les autres textes à corriger)
+	
+	- _`faceties-guide_de_relecture.odt`_ : document reprenant les différents points auxquels faire attention lors de la relecture, se basant sur le protocole des l'Ecole des Chartes → **Voir** : http://theleme.enc.sorbonne.fr/cours/edition_epoque_moderne/edition_des_textes
 
 	- _`faceties-cahier_des_charges_2019.odt`_ : cahier des charges mis à jour figurant les attentes du projet
+	
+	- _`faceties-cahier_des_charges_2016.odt`_ : premier cahier des charges établis (qui n'est plus d'actualité)
 
 - **odt-corr** : fichiers `odt` déjà relus, en attente de traitement `xml`
 
@@ -62,7 +66,7 @@
 
 - **schema** : schéma utilisé, auquel se conforment les documents `xml` (schéma "Epistemon", développé par les BVH et adapté à notre projet "Facéties", dont le *header* a été adapté pour se conforter aux besoins du projet Facéties) → **Voir** : https://sourceforge.net/projects/bvh/files/BVH-ODD/BVH_Epistemon.rng/download
 
-- **xml** : fichiers `xml` finaux obtenus après les tranformations `xsl` (contient le fichier `faceties_001.xml`)
+- **xml** : fichiers `xml` finaux obtenus après les tranformations `xsl` (contient le fichier `faceties_011.xml` à retravailler avec les nouvelles transformations)
 
 - **xsl** : transformations utilisées 
 
@@ -71,13 +75,13 @@
 
 # <span style="color: #000080">III. Stylage du document</span>
 
-- pour récupérer les styles déjà utilisés : voir la fiche `faceties-guide_des_style.odt`.
+- pour récupérer les styles déjà utilisés : voir la fiche `faceties-guide_des_styles.odt`.
 
-Les styles du document .odt seront intégrés au document. 
+Les styles du document `.odt` seront intégrés au document. 
 
-- pour des questions sur le stylage des éléments textuels : voir le guide de relecture`faceties-cahier_des_charges_2019.odt`
+- pour des questions sur le stylage des éléments textuels : voir le guide de relecture`faceties-guide_de_relecture.odt`
 
-- pour remplacer les abréviations encodés par l'entreprise de transcription (par exemple "(e1)" en "ẽ") : voir les tableaux graphiques ou `faceties-cahier_des_charges_2019.odt`
+- pour remplacer les abréviations encodés par l'entreprise de transcription (par exemple "(e1)" en "ẽ") : voir les tableaux graphiques ou `faceties-guide_de_relecture.odt`
 
  
 - /!\ faire attention à la hiérarchisation des styles : voir `faceties-cahier_des_charges_2019.odt`, section `12. hiérarchisation`
@@ -93,16 +97,15 @@ Les styles du document .odt seront intégrés au document.
 - `T3bis_XML_versXML-BVH`
 - `T4_XML-TEI_vers_HTML_orig` / `T4_XML-TEI_vers_HTML_reg`
 
-Les trois transformations intitulées "hierarchisation" feront l'objet d'un assemblage futur. 
-
+Les quatre premières transformations dont celles qui sont du ressort de la hierarchisation seront l'objet d'un assemblage futur pour réduire les manipulations.
 
 ### <span style="color: #F81207">T1_ODT_vers_XML-ODT.xsl : content.xml > fichier XML</span>
 
 #### Objectifs de la transformation : 
 
-- transforme l'`odt` corrigé en fichier `xml`
+- transformer l'`odt` corrigé en fichier `xml`
 
-- ne garde que les informations qui nous intéresse (le nom des balises obtenus par cette transformation ne sont pas définitives, ils changeront au passage de la deuxième transformation)
+- ne garder que les informations qui nous intéresse (le nom des balises obtenus par cette transformation ne sont pas définitives, ils changeront au passage de la deuxième transformation)
 
 #### Consignes : 
 
@@ -117,10 +120,19 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
-- hiérarchise les blocs d'informations avec des niveaux (`div1` ; `div2` ; `sp`)
+- nettoyer les balises parasites
 
-- `header` : premier passage
-- `front` : premier passage
+- nettoyer le balisage du frontiespiece et du header
+
+- nettoyer les `<l>`, `<p>` et les `<pb>`
+
+- préparer les titres pour la hierarchisation
+
+- instaurer les désagglutinations
+
+- instaurer les `<hi>`
+
+- instaurer les images
 
 #### Consignes : 
 
@@ -133,7 +145,7 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
-??
+- séparer les différentes parties en div (première étape de la hiérarchisation)
 
 #### Consignes : 
 
@@ -146,7 +158,7 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
- ??
+- emboiter les différentes div (deuxième étape de la hiérarchisation)
 
 #### Consignes : 
 
@@ -156,31 +168,32 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Problèmes déjà rencontrés: 
 
-- les `&` de certaines nouvelles ne sont pas prises en compte automatiquement -> à remplacer par `&amp;`
+- les `&` de certaines nouvelles ne sont pas prises en compte automatiquement (notamment dans le document `faceties_009.odt`)-> à remplacer par `&amp;`
 
 
 ### <span style="color: #F81207">T3_XML_versXML-BVH.xsl : XML > XML conforme au schéma BVH</span>
 
 #### Objectifs de la transformation : 
 
-- met en place un `header` conforme aux normes de l'OVIL et de la TEI p5
+- changer / nettoyer le balisage conformément au modèle des BVH
 
-- met en place un frontiespiece conformer (index, castList) avec la balise `front` (→ **Voir** : `faceties_guide_de_relecture.odt`)
+- normaliser tous les mots ne contenant qu'un élément à normaliser (premi-re vague de normalisation)
 
-- mise en place de `<space quantity="1" unit="lignes"/>`
+- mettre en place un `header` conforme aux normes de l'OVIL et de la TEI p5
 
-- gère les alinéas implicites et explicites (`(C)`,`(D)`) en `l` et `p`
+- mettre en place un frontiespiece conforme (index, castList) avec la balise `front` (→ **Voir** : `faceties_guide_de_relecture.odt`)
 
-- gère les cul-de-lampes avec une balise `cul_de_lampe` en `l` et `p`
+- mettre en place de `<space quantity="1" unit="lignes"/>`
 
-- entoure d'un `choice` les balises `corr` et`sic` qui servent pour l'insertion des interventions éditoriales (coquilles)
+- gérer les alinéas implicites et explicites (`(C)`,`(D)`) en `l` et `p`
 
-- différencie par un `choice change` les césures implictes `Ĝ` (`<choice change="cesure_implicite">`) des césures explicites `Ñ` (`<pc change="cesure_explicite">`)
+- différencier par un `choice change` les césures implictes `Ĝ` (`<choice change="cesure_implicite">`) des césures explicites `Ñ` (`<pc change="cesure_explicite">`)
 
-- résout les abréviations et les dissimulations
-  
- - supprime les éventuelles parasites
+- gérer les cul-de-lampes avec une balise `cul_de_lampe` en `l` et `p`
 
+- entourer d'un `choice` les balises `corr` et`sic` qui servent pour l'insertion des interventions éditoriales (coquilles)
+
+- résoudre les abréviations et les dissimulations
  
 #### Consignes : 
 
@@ -193,7 +206,9 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
-- normalise le deuxième élément dans les mot possédant deux éléments à normaliser
+- normaliser le deuxième élément dans les mot possédant deux éléments à normaliser
+
+- prendre en charge le troisième élément à normaliser si besoin : il suffit alors de repasser la transformation sur le texte
 
 #### Consignes : 
 
@@ -206,7 +221,7 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 #### Objectifs de la transformation : 
 
-- création de deux transformations `xsl`, une dite "orig" qui désigne la version fac-similaire, et l'autre dite ".reg" pour la version normalisée
+- création de deux transformations `xsl`, une dite ".orig" qui désigne la version fac-similaire, et l'autre dite ".reg" pour la version normalisée
 
 - chaque transformation reprend les informations et les balises qui sont propres au rendu `html` que l'on souhaite obtenir (→ **Voir** : `faceties-cahier_des_charges.odt`)
 
@@ -218,13 +233,13 @@ Les trois transformations intitulées "hierarchisation" feront l'objet d'un asse
 
 - transformer le fichier `NOM_DU_DOCUMENT_xml_3_bis.xml` (étape précédente) avec `T4_XML-TEI_vers_HTML.orig.xsl`
 
-- enregistrer le résultat XML en spécifiant `NOM_DU_DOCUMENT_xml_4_orig.xml`
+- enregistrer le résultat XML en spécifiant `version_fac_similaire.html`
 
 ##### version normalisée
 
 - transformer le fichier `NOM_DU_DOCUMENT_xml_3_bis.xml` (étape précédente) avec `T4_XML-TEI_vers_HTML.reg.xsl`
 
-- enregistrer le résultat XML en spécifiant `NOM_DU_DOCUMENT_xml_4_reg.xml`
+- enregistrer le résultat XML en spécifiant `version_normalisee.html`
 
 
 ## <span style="color: #000080">V. Le corpus *Facéties* - Bibliographie</span>

@@ -27,6 +27,35 @@
     </xsl:template>
     
     <!--======================================================
+        ALINEAS
+    ======================================================-->
+    
+    
+    <xsl:template match="l">
+        <xsl:choose>
+            <xsl:when test="contains(., '(C)')">
+                <xsl:element name="l">
+                    <xsl:attribute name="rend">indent</xsl:attribute>
+                    <g type="pied_de_mouche">⸿</g>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="substring-after(., '(C)')"/>
+                </xsl:element>
+            </xsl:when>
+            <xsl:when test="contains(., '(D)')">
+                <xsl:element name="l">
+                    <xsl:attribute name="rend">indent</xsl:attribute>
+                    <xsl:value-of select="substring-after(., '(D)')"/>
+                </xsl:element>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:element name="l">
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <!--======================================================
         REPRISE pour les mots avec doubles normalisation
     ======================================================-->
 
@@ -1810,10 +1839,10 @@
                             <xsl:text>a</xsl:text>
                             <choice change="lettre_ramiste">
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:text>e</xsl:text>
@@ -1824,10 +1853,10 @@
                             <xsl:text>A</xsl:text>
                             <choice change="lettre_ramiste">
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:text>e</xsl:text>
@@ -1840,10 +1869,10 @@
                             <xsl:text>a</xsl:text>
                             <choice change="lettre_ramiste">
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'au')"/>
@@ -1853,10 +1882,10 @@
                             <xsl:text>A</xsl:text>
                             <choice change="lettre_ramiste">
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Au')"/>

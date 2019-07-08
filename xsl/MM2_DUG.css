@@ -2,14 +2,16 @@
  * ZONE TEXTE *
  **************/
 
-#texte_complet p {
-	 margin-top: 1px;
+#texte_complet l {
+	 margin-left: 50%;
 	 margin-bottom: 8px;
 }
 
 #texte_complet > div > p {
+margin-left:40px;
    padding-bottom: 10px;
 	 line-height: 150%;
+	 color: yellow;
 }
 
 h2 {
