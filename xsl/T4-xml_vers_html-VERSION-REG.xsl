@@ -30,18 +30,18 @@
                     </div>
                     
                     <div id="definition">
-                        <FORM>
-                            <h2>Afficher les normalisations</h2>
-                            <div><INPUT type="radio" name="norm" id="affiche_reg" value="affiche_reg" onclick="affiche_tout_reg();"/>Tout afficher</div>
-                            <div><INPUT type="radio" name="norm" id="cache_reg" value="cache_reg" onclick="cache_tout_reg();"/>Tout cacher</div>
-                                                       <hr/><div id="afficher">
+                        <form>
+                            <h3>Afficher les normalisations</h3>
+                            <div><input type="radio" name="norm" id="affiche_reg" value="affiche_reg" onclick="affiche_tout_reg();"/>Tout afficher</div>
+                            <div><input type="radio" name="norm" id="cache_reg" value="cache_reg" onclick="cache_tout_reg();"/>Tout cacher</div>
+                             <hr/><div id="afficher">
                             </div>
-                        </FORM>
+                        </form>
                     </div>
                     
                     <div id="definition">
-                        <FORM>
-                            <h2>Options de lecture</h2>
+                        <form>
+                            <h3>Options de lecture</h3>
                         
                             <div><input type="checkbox" name="lettre_ramiste" value="checkbox"/>Lettre ramiste</div>
                             <div><input type="checkbox" name="abreviation" value="checkbox"/>Abréviation</div>
@@ -50,7 +50,7 @@
                             
                             <div id="afficher">
                             </div>
-                        </FORM>
+                        </form>
                     </div>
                     
                 </div>
