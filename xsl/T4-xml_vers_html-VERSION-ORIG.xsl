@@ -4,7 +4,7 @@
     
     <!-- STRUCTURE GLOBALE -->
     
-    <!--    <xsl:strip-space elements="*"/>-->
+    <xsl:strip-space elements="choice"/>
     
     <xsl:template match="/">
         <html lang="fr">
