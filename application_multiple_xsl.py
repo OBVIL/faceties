@@ -4,11 +4,11 @@
     Arthur Provenier - OBVIL
     Projet Faceties
     
-    Script pour styliser des fichiers `odt` qui nécessitent plusieurs
-    applications de feuilles `xsl` à la suite
-    Pré-requis : SAXON-HE https://www.saxonica.com/download/java.xml
+    Script pour styliser des fichiers `odt` qui necessitent plusieurs
+    applications de feuilles `xsl` a la suite
+    Pre-requis : SAXON-HE https://www.saxonica.com/download/java.xml
     Modifier la liste `transformations` en y indiquant les feuilles `xsl`
-    Par défaut, le fichier créé sera sauvegardé dans 'transformation_result'
+    Par defaut, le fichier cree sera sauvegarde dans 'transformation_result'
 """
 
 import sys, os, argparse, re, zipfile, subprocess
