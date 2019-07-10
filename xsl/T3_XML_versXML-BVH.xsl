@@ -210,6 +210,14 @@
                     <xsl:apply-templates/>
                 </xsl:element>
             </xsl:when>
+            <xsl:when test="./speaker">
+                <xsl:element name="sp">
+                    <xsl:attribute name="who">
+                        <xsl:value-of select="translate(./speaker, $ABC, $abc)"/>
+                    </xsl:attribute>
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:when>
             <xsl:when test="./titre/contains(., 'back')">
                 <xsl:element name="back">
                     <xsl:apply-templates/>
@@ -331,7 +339,8 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:variable name="number">
-                        <xsl:value-of select="replace(., '[^0-9]', '')"/>
+                        <!--                        <xsl:value-of select="replace(., '[^0-9]', '')"/>-->
+                        <xsl:value-of select="."/>
                     </xsl:variable>
                     <xsl:attribute name="n">
                         <xsl:value-of select="$number"/>
@@ -397,7 +406,7 @@
          Exemple : <xsl:when test="matches(., '(\w*)ãm(\w*)', 'i')">
          2. Les caractères spéciaux : sont à ajouter dans le <xsl:analyze-string> (afin de les matcher par la suite). 
      -->
-    
+
     <xsl:template match="body//*/text()">
         <xsl:analyze-string select="."
             regex="[A-ZÑĜÀÁÂÃÄÅÆÈÉÊËÌÍÎÏÐÒÓÔÕÖŒÙÚÛÜÝa-zàáâãäåçẽèéêëĩìíîïðõòóôõöùúũûüýÿp̃ꝛꝑq̃9()]+">
@@ -411,7 +420,9 @@
                         <xsl:value-of select="substring-before(., 'Ĝ')"/>
                         <choice change="cesure_implicite">
                             <sic/>
-                            <corr><xsl:text>-</xsl:text></corr>
+                            <corr>
+                                <xsl:text>-</xsl:text>
+                            </corr>
                         </choice>
                         <lb rend="hyphen"/>
                         <xsl:value-of select="substring-after(., 'Ĝ')"/>
@@ -431,8 +442,12 @@
                     <xsl:when test="matches(., '(\w*)ãm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>am</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>am</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ãm')"/>
@@ -440,8 +455,12 @@
                     <xsl:when test="matches(., '(\w*)ãb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>am</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>am</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ãb')"/>
@@ -449,8 +468,12 @@
                     <xsl:when test="matches(., '(\w*)ãp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>am</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>am</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ãp')"/>
@@ -461,8 +484,12 @@
                                 <xsl:value-of select="substring-before(., 'dãn')"/>
                                 <xsl:text>d</xsl:text>
                                 <choice change="abreviation">
-                                    <orig><xsl:text>ã</xsl:text></orig>
-                                    <reg><xsl:text>am</xsl:text></reg>
+                                    <orig>
+                                        <xsl:text>ã</xsl:text>
+                                    </orig>
+                                    <reg>
+                                        <xsl:text>am</xsl:text>
+                                    </reg>
                                 </choice>
                                 <xsl:text>n</xsl:text>
                                 <xsl:value-of select="substring-after(., 'dãn')"/>
@@ -470,8 +497,12 @@
                             <xsl:otherwise>
                                 <xsl:value-of select="substring-before(., 'ãn')"/>
                                 <choice change="abreviation">
-                                    <orig><xsl:text>ã</xsl:text></orig>
-                                    <reg><xsl:text>am</xsl:text></reg>
+                                    <orig>
+                                        <xsl:text>ã</xsl:text>
+                                    </orig>
+                                    <reg>
+                                        <xsl:text>am</xsl:text>
+                                    </reg>
                                 </choice>
                                 <xsl:text>n</xsl:text>
                                 <xsl:value-of select="substring-after(., 'ãn')"/>
@@ -481,8 +512,12 @@
                     <xsl:when test="matches(., '^(\w*)ã[^(a|e|i|o|u|é|è|y|Ñ|Ĝ)](\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ã')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>an</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>an</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ã')"/>
                     </xsl:when>
@@ -490,16 +525,24 @@
                         <xsl:value-of select="substring-before(., 'nã')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>am</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>am</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'nã')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)[^n]ã$', 'i')">
                         <xsl:value-of select="substring-before(., 'ã')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>an</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>an</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ã')"/>
                     </xsl:when>
@@ -507,8 +550,12 @@
                     <xsl:when test="matches(., '(\w*)ẽm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽm')"/>
@@ -516,8 +563,12 @@
                     <xsl:when test="matches(., '(\w*)ẽb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽb')"/>
@@ -525,8 +576,12 @@
                     <xsl:when test="matches(., '(\w*)ẽp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽp')"/>
@@ -534,8 +589,12 @@
                     <xsl:when test="matches(., '(\w*)ẽn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽn')"/>
@@ -543,8 +602,12 @@
                     <xsl:when test="matches(., '^(\w*)ẽ[^(a|e|i|o|u|é|è|y|Ñ|Ĝ)](\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>en</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>en</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ẽ')"/>
                     </xsl:when>
@@ -552,16 +615,24 @@
                         <xsl:value-of select="substring-before(., 'nẽ')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'nẽ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)[^n]ẽ$', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>en</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>en</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ẽ')"/>
                     </xsl:when>
@@ -569,8 +640,12 @@
                     <xsl:when test="matches(., '(\w*)ĩm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩm')"/>
@@ -578,8 +653,12 @@
                     <xsl:when test="matches(., '(\w*)ĩb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩb')"/>
@@ -587,8 +666,12 @@
                     <xsl:when test="matches(., '(\w*)ĩp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩp')"/>
@@ -596,8 +679,12 @@
                     <xsl:when test="matches(., '(\w*)ĩn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩn')"/>
@@ -605,8 +692,12 @@
                     <xsl:when test="matches(., '^(\w*)ĩ[^(a|e|i|o|u|é|è|y|Ñ|Ĝ)](\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>in</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>in</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ĩ')"/>
                     </xsl:when>
@@ -614,16 +705,24 @@
                         <xsl:value-of select="substring-before(., 'nĩ')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'nõ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)[^n]ĩ$', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>in</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>in</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ĩ')"/>
                     </xsl:when>
@@ -631,8 +730,12 @@
                     <xsl:when test="matches(., '(\w*)õm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'õm')"/>
@@ -640,8 +743,12 @@
                     <xsl:when test="matches(., '(\w*)õb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'õb')"/>
@@ -649,8 +756,12 @@
                     <xsl:when test="matches(., '(\w*)õp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'õp')"/>
@@ -658,8 +769,12 @@
                     <xsl:when test="matches(., '(\w*)õn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'õn')"/>
@@ -667,8 +782,12 @@
                     <xsl:when test="matches(., '^(\w*)õ[^(a|e|i|o|u|é|è|y|Ñ|Ĝ)](\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'õ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>on</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>on</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'õ')"/>
                     </xsl:when>
@@ -676,16 +795,24 @@
                         <xsl:value-of select="substring-before(., 'nõ')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'nõ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)[^n]õ$', 'i')">
                         <xsl:value-of select="substring-before(., 'õ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>on</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>on</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'õ')"/>
                     </xsl:when>
@@ -693,8 +820,12 @@
                     <xsl:when test="matches(., '(\w*)ũm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũm')"/>
@@ -702,8 +833,12 @@
                     <xsl:when test="matches(., '(\w*)ũb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũb')"/>
@@ -711,8 +846,12 @@
                     <xsl:when test="matches(., '(\w*)ũp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũp')"/>
@@ -720,8 +859,12 @@
                     <xsl:when test="matches(., '(\w*)ũn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũn')"/>
@@ -729,8 +872,12 @@
                     <xsl:when test="matches(., '^(\w*)ũ[^(a|e|i|o|u|é|è|y|Ñ|Ĝ)](\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ũ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>un</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>un</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ũ')"/>
                     </xsl:when>
@@ -738,20 +885,28 @@
                         <xsl:value-of select="substring-before(., 'nũ')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'nũ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)[^n]ũ$', 'i')">
                         <xsl:value-of select="substring-before(., 'ũ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>un</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>un</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ũ')"/>
                     </xsl:when>
-                    
+
                     <!--Resolution du rotunda-->
                     <xsl:when test="matches(., '^(\w*)ꝛ$')">
                         <choice change="abreviation">
@@ -759,7 +914,7 @@
                                 <xsl:value-of select="."/>
                             </orig>
                             <reg><xsl:value-of select="substring-before(., 'ꝛ')"/>et<xsl:value-of
-                                select="substring-after(., 'ꝛ')"/></reg>
+                                    select="substring-after(., 'ꝛ')"/></reg>
                         </choice>
                     </xsl:when>
 
@@ -768,8 +923,12 @@
                     <xsl:when test="matches(., '(\w*)ãĜm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãĜm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>am</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>am</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -786,8 +945,12 @@
                     <xsl:when test="matches(., '(\w*)ãĜb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãĜb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>am</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>am</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -804,8 +967,12 @@
                     <xsl:when test="matches(., '(\w*)ãĜp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãĜp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>am</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>am</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -825,8 +992,12 @@
                                 <xsl:value-of select="substring-before(., 'dãĜn')"/>
                                 <xsl:text>d</xsl:text>
                                 <choice change="abreviation">
-                                    <orig><xsl:text>ã</xsl:text></orig>
-                                    <reg><xsl:text>am</xsl:text></reg>
+                                    <orig>
+                                        <xsl:text>ã</xsl:text>
+                                    </orig>
+                                    <reg>
+                                        <xsl:text>am</xsl:text>
+                                    </reg>
                                 </choice>
                                 <choice change="cesure_implicite">
                                     <sic/>
@@ -843,8 +1014,12 @@
                             <xsl:otherwise>
                                 <xsl:value-of select="substring-before(., 'ãĜn')"/>
                                 <choice change="abreviation">
-                                    <orig><xsl:text>ã</xsl:text></orig>
-                                    <reg><xsl:text>am</xsl:text></reg>
+                                    <orig>
+                                        <xsl:text>ã</xsl:text>
+                                    </orig>
+                                    <reg>
+                                        <xsl:text>am</xsl:text>
+                                    </reg>
                                 </choice>
                                 <choice change="cesure_implicite">
                                     <sic/>
@@ -863,8 +1038,12 @@
                     <xsl:when test="matches(., '^(\w*)ãĜ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ãĜ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>an</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>an</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -881,8 +1060,12 @@
                     <xsl:when test="matches(., '(\w*)ẽĜm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽĜm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -899,8 +1082,12 @@
                     <xsl:when test="matches(., '(\w*)ẽĜb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽĜb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -917,8 +1104,12 @@
                     <xsl:when test="matches(., '(\w*)ẽĜp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽĜp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -935,8 +1126,12 @@
                     <xsl:when test="matches(., '(\w*)ẽĜn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽĜn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -953,8 +1148,12 @@
                     <xsl:when test="matches(., '^(\w*)ẽĜ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽĜ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>en</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>en</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -971,8 +1170,12 @@
                     <xsl:when test="matches(., '(\w*)ĩĜm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩĜm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -989,8 +1192,12 @@
                     <xsl:when test="matches(., '(\w*)ĩĜb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩĜb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1007,8 +1214,12 @@
                     <xsl:when test="matches(., '(\w*)ĩĜp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩĜp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1025,8 +1236,12 @@
                     <xsl:when test="matches(., '(\w*)ĩĜn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩĜn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1043,8 +1258,12 @@
                     <xsl:when test="matches(., '^(\w*)ĩĜ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩĜ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>in</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>in</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1061,8 +1280,12 @@
                     <xsl:when test="matches(., '(\w*)õĜm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õĜm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1079,12 +1302,20 @@
                     <xsl:when test="matches(., '(\w*)õĜb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õĜb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
-                            <corr><pc><xsl:text>-</xsl:text></pc></corr>
+                            <corr>
+                                <pc>
+                                    <xsl:text>-</xsl:text>
+                                </pc>
+                            </corr>
                         </choice>
                         <lb rend="hyphen"/>
                         <xsl:text>b</xsl:text>
@@ -1093,8 +1324,12 @@
                     <xsl:when test="matches(., '(\w*)õĜp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õĜp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1111,8 +1346,12 @@
                     <xsl:when test="matches(., '(\w*)õĜn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õĜn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1127,8 +1366,12 @@
                     <xsl:when test="matches(., '^(\w*)õĜ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'õĜ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>on</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>on</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1145,8 +1388,12 @@
                     <xsl:when test="matches(., '(\w*)ũĜm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũĜm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1163,8 +1410,12 @@
                     <xsl:when test="matches(., '(\w*)ũĜb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũĜb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1181,8 +1432,12 @@
                     <xsl:when test="matches(., '(\w*)ũĜp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũĜp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1199,8 +1454,12 @@
                     <xsl:when test="matches(., '(\w*)ũĜn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũĜn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1217,8 +1476,12 @@
                     <xsl:when test="matches(., '^(\w*)ũĜ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ũĜ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>un</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>un</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="cesure_implicite">
                             <sic/>
@@ -1237,8 +1500,12 @@
                     <xsl:when test="matches(., '(\w*)ãÑm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãÑm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>am</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>am</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1251,8 +1518,12 @@
                     <xsl:when test="matches(., '(\w*)ãÑb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãÑb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>am</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>am</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1264,8 +1535,12 @@
                     <xsl:when test="matches(., '(\w*)ãÑp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ãÑp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>am</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>am</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1280,8 +1555,12 @@
                                 <xsl:value-of select="substring-before(., 'dãÑn')"/>
                                 <xsl:text>d</xsl:text>
                                 <choice change="abreviation">
-                                    <orig><xsl:text>ã</xsl:text></orig>
-                                    <reg><xsl:text>am</xsl:text></reg>
+                                    <orig>
+                                        <xsl:text>ã</xsl:text>
+                                    </orig>
+                                    <reg>
+                                        <xsl:text>am</xsl:text>
+                                    </reg>
                                 </choice>
                                 <pc change="cesure_explicite">
                                     <xsl:text>-</xsl:text>
@@ -1293,8 +1572,12 @@
                             <xsl:otherwise>
                                 <xsl:value-of select="substring-before(., 'ãÑn')"/>
                                 <choice change="abreviation">
-                                    <orig><xsl:text>ã</xsl:text></orig>
-                                    <reg><xsl:text>am</xsl:text></reg>
+                                    <orig>
+                                        <xsl:text>ã</xsl:text>
+                                    </orig>
+                                    <reg>
+                                        <xsl:text>am</xsl:text>
+                                    </reg>
                                 </choice>
                                 <pc change="cesure_explicite">
                                     <xsl:text>-</xsl:text>
@@ -1308,8 +1591,12 @@
                     <xsl:when test="matches(., '^(\w*)ãÑ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ãÑ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>an</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>an</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1321,8 +1608,12 @@
                     <xsl:when test="matches(., '(\w*)ẽÑm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽÑm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1334,8 +1625,12 @@
                     <xsl:when test="matches(., '(\w*)ẽÑb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽÑb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1347,8 +1642,12 @@
                     <xsl:when test="matches(., '(\w*)ẽÑp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽÑp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1360,8 +1659,12 @@
                     <xsl:when test="matches(., '(\w*)ẽÑn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽÑn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>em</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>em</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1373,8 +1676,12 @@
                     <xsl:when test="matches(., '^(\w*)ẽÑ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ẽÑ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>en</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>en</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1386,8 +1693,12 @@
                     <xsl:when test="matches(., '(\w*)ĩÑm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩÑm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1399,8 +1710,12 @@
                     <xsl:when test="matches(., '(\w*)ĩÑb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩÑb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1412,8 +1727,12 @@
                     <xsl:when test="matches(., '(\w*)ĩÑp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩÑp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1425,8 +1744,12 @@
                     <xsl:when test="matches(., '(\w*)ĩÑn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩÑn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>im</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>im</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1438,8 +1761,12 @@
                     <xsl:when test="matches(., '^(\w*)ĩÑ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ĩÑ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ĩ</xsl:text></orig>
-                            <reg><xsl:text>in</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ĩ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>in</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1451,8 +1778,12 @@
                     <xsl:when test="matches(., '(\w*)õÑm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õÑm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1464,8 +1795,12 @@
                     <xsl:when test="matches(., '(\w*)õÑb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õÑb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1477,8 +1812,12 @@
                     <xsl:when test="matches(., '(\w*)õÑp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õÑp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1490,8 +1829,12 @@
                     <xsl:when test="matches(., '(\w*)õÑn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'õÑn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>om</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>om</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1503,8 +1846,12 @@
                     <xsl:when test="matches(., '^(\w*)õÑ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'õÑ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>on</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>on</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1516,8 +1863,12 @@
                     <xsl:when test="matches(., '(\w*)ũÑm(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũÑm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1529,8 +1880,12 @@
                     <xsl:when test="matches(., '(\w*)ũÑb(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũÑb')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1542,8 +1897,12 @@
                     <xsl:when test="matches(., '(\w*)ũÑp(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũÑp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1555,8 +1914,12 @@
                     <xsl:when test="matches(., '(\w*)ũÑn(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., 'ũÑn')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>um</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>um</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1568,8 +1931,12 @@
                     <xsl:when test="matches(., '^(\w*)ũÑ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ũÑ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ũ</xsl:text></orig>
-                            <reg><xsl:text>un</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ũ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>un</xsl:text>
+                            </reg>
                         </choice>
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
@@ -1583,85 +1950,141 @@
                     <xsl:when test="matches(., '^(\w*)cõmãderẽt(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'õmãderẽ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>omm</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>omm</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>m</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>an</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>an</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>der</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>en</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>en</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'õmãderẽ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)cõmẽcemẽt(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'õmẽcemẽ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>omm</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>omm</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>m</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>en</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>en</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>cem</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>en</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>en</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'õmẽcemẽ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)cõseruatiõ(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'õseruatiõ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>on</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>on</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>ser</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>ati</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>on</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>on</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'õseruatiõ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)ↄtinuellemẽt(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'õseruatiõ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ↄ</xsl:text></orig>
-                            <reg><xsl:text>con</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ↄ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>con</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>ser</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>ati</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>on</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>on</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'õseruatiõ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)ↄmãda(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ↄmãda')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ↄ</xsl:text></orig>
-                            <reg><xsl:text>con</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ↄ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>con</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>m</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>an</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>an</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>da</xsl:text>
                         <xsl:value-of select="substring-after(., 'ↄmãda')"/>
@@ -1669,18 +2092,30 @@
                     <xsl:when test="matches(., '^(\w*)cõdãnerẽt(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'õdãnerẽt')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>õ</xsl:text></orig>
-                            <reg><xsl:text>on</xsl:text></reg>
+                            <orig>
+                                <xsl:text>õ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>on</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>d</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ã</xsl:text></orig>
-                            <reg><xsl:text>ãm</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ã</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>ãm</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>ner</xsl:text>
                         <choice change="abreviation">
-                            <orig><xsl:text>ẽ</xsl:text></orig>
-                            <reg><xsl:text>en</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ẽ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>en</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>t</xsl:text>
                         <xsl:value-of select="substring-after(., 'õdãnerẽt')"/>
@@ -1697,8 +2132,12 @@
                         <desc>
                             <gap>
                                 <choice change="abreviation">
-                                    <orig><xsl:text>q̃</xsl:text></orig>
-                                    <reg><xsl:text>qu#</xsl:text></reg>
+                                    <orig>
+                                        <xsl:text>q̃</xsl:text>
+                                    </orig>
+                                    <reg>
+                                        <xsl:text>qu#</xsl:text>
+                                    </reg>
                                 </choice>
                             </gap>
                         </desc>
@@ -1710,8 +2149,12 @@
                         <desc>
                             <gap>
                                 <choice change="abreviation">
-                                    <orig><xsl:text>p̃</xsl:text></orig>
-                                    <reg><xsl:text>par/pre</xsl:text></reg>
+                                    <orig>
+                                        <xsl:text>p̃</xsl:text>
+                                    </orig>
+                                    <reg>
+                                        <xsl:text>par/pre</xsl:text>
+                                    </reg>
                                 </choice>
                             </gap>
                         </desc>
@@ -1723,8 +2166,12 @@
                         <desc>
                             <gap>
                                 <choice change="abreviation">
-                                    <orig><xsl:text>ꝑ</xsl:text></orig>
-                                    <reg><xsl:text>par/pre</xsl:text></reg>
+                                    <orig>
+                                        <xsl:text>ꝑ</xsl:text>
+                                    </orig>
+                                    <reg>
+                                        <xsl:text>par/pre</xsl:text>
+                                    </reg>
                                 </choice>
                             </gap>
                         </desc>
@@ -1733,8 +2180,12 @@
                     <xsl:when test="matches(., '^(\w*)\(et\)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ꝛ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ꝛ</xsl:text></orig>
-                            <reg><xsl:text>et</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ꝛ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>et</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ꝛ')"/>
                     </xsl:when>
@@ -1746,7 +2197,9 @@
                                     <xsl:text>9</xsl:text>
                                 </hi>
                             </orig>
-                            <reg><xsl:text>us</xsl:text></reg>
+                            <reg>
+                                <xsl:text>us</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., '9')"/>
                     </xsl:when>
@@ -1756,16 +2209,24 @@
                     <xsl:when test="matches(., '^(\w*)ↄ$', 'i')">
                         <xsl:value-of select="substring-before(., 'ↄ')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ↄ</xsl:text></orig>
-                            <reg><xsl:text>com</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ↄ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>com</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ↄ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)ↄp(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ↄp')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ↄ</xsl:text></orig>
-                            <reg><xsl:text>com</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ↄ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>com</xsl:text>
+                            </reg>
                             <xsl:text>p</xsl:text>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ↄp')"/>
@@ -1773,8 +2234,12 @@
                     <xsl:when test="matches(., '^(\w*)ↄm(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ↄm')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ↄ</xsl:text></orig>
-                            <reg><xsl:text>com</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ↄ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>com</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ↄm')"/>
@@ -1782,8 +2247,12 @@
                     <xsl:when test="matches(., '^(\w*)ↄd(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ↄd')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ↄ</xsl:text></orig>
-                            <reg><xsl:text>con</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ↄ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>con</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>d</xsl:text>
                         <xsl:value-of select="substring-after(., 'ↄd')"/>
@@ -1791,8 +2260,12 @@
                     <xsl:when test="matches(., '^(\w*)ↄt(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ↄt')"/>
                         <choice change="abreviation">
-                            <orig><xsl:text>ↄ</xsl:text></orig>
-                            <reg><xsl:text>con</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ↄ</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>con</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>t</xsl:text>
                         <xsl:value-of select="substring-after(., 'ↄt')"/>
@@ -1805,8 +2278,12 @@
                             <xsl:value-of select="substring-before(., 'aue')"/>
                             <xsl:text>a</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>e</xsl:text>
                             <xsl:value-of select="substring-after(., 'aue')"/>
@@ -1815,8 +2292,12 @@
                             <xsl:value-of select="substring-before(., 'Aue')"/>
                             <xsl:text>A</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>e</xsl:text>
                             <xsl:value-of select="substring-after(., 'Aue')"/>
@@ -1827,8 +2308,12 @@
                             <xsl:value-of select="substring-before(., 'au')"/>
                             <xsl:text>a</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'au')"/>
                         </xsl:if>
@@ -1836,8 +2321,12 @@
                             <xsl:value-of select="substring-before(., 'Au')"/>
                             <xsl:text>A</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Au')"/>
                         </xsl:if>
@@ -1845,16 +2334,24 @@
                     <xsl:when test="matches(., '^adu(a|e|i|o)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^av$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
@@ -1862,8 +2359,12 @@
                         <xsl:value-of select="substring-before(., 'avme')"/>
                         <xsl:text>a</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>me</xsl:text>
                         <xsl:value-of select="substring-after(., 'avme')"/>
@@ -1871,8 +2372,12 @@
                     <xsl:when test="matches(., '^avt(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
@@ -1882,12 +2387,18 @@
                     <xsl:when test="matches(., '^i$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
                             <xsl:if test="matches(., '^i$')">
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </xsl:if>
                             <xsl:if test="matches(., '^I$')">
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </xsl:if>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
@@ -1895,8 +2406,12 @@
                     <xsl:when test="matches(., '^aiax$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
@@ -1905,8 +2420,12 @@
                             <xsl:value-of select="substring-before(., 'aio')"/>
                             <xsl:text>a</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>o</xsl:text>
                             <xsl:value-of select="substring-after(., 'aio')"/>
@@ -1915,8 +2434,12 @@
                             <xsl:value-of select="substring-before(., 'Aio')"/>
                             <xsl:text>A</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>o</xsl:text>
                             <xsl:value-of select="substring-after(., 'Aio')"/>
@@ -1925,32 +2448,48 @@
                     <xsl:when test="matches(., '^ajan(ts?|s)$', 'i')">
                         <xsl:value-of select="substring-before(., 'j')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>j</xsl:text></orig>
-                            <reg><xsl:text>i</xsl:text></reg>
+                            <orig>
+                                <xsl:text>j</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>i</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'j')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^auiour(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^abi(e|u)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(co)?adio?(u|i?n|a)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
@@ -1961,24 +2500,36 @@
                         <xsl:value-of select="substring-before(., 'ev')"/>
                         <xsl:text>e</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ev')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(brauerie|brieue)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^bienuu?eu?il(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -1988,8 +2539,12 @@
                     <xsl:when test="matches(., '^(chevrevil|cerfevil)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
@@ -1997,8 +2552,12 @@
                         <xsl:value-of select="substring-before(., 'onve')"/>
                         <xsl:text>on</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>e</xsl:text>
                         <xsl:value-of select="substring-after(., 'onve')"/>
@@ -2006,8 +2565,12 @@
                     <xsl:when test="matches(., '^cevl?x$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
@@ -2015,8 +2578,12 @@
                         <xsl:value-of select="substring-before(., 'ceve')"/>
                         <xsl:text>ce</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>e</xsl:text>
                         <xsl:value-of select="substring-after(., 'ceve')"/>
@@ -2025,8 +2592,12 @@
                         <xsl:value-of select="substring-before(., 'tinv')"/>
                         <xsl:text>tin</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'tinv')"/>
                     </xsl:when>
@@ -2034,8 +2605,12 @@
                         <xsl:value-of select="substring-before(., 'ovrs')"/>
                         <xsl:text>o</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>rs</xsl:text>
                         <xsl:value-of select="substring-after(., 'ovrs')"/>
@@ -2044,8 +2619,12 @@
                         <xsl:value-of select="substring-before(., 'tevr')"/>
                         <xsl:text>te</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>r</xsl:text>
                         <xsl:value-of select="substring-after(., 'tevr')"/>
@@ -2053,13 +2632,21 @@
                     <xsl:when test="matches(., '^(\w*)cvlev(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'vlev')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>le</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'vlev')"/>
                     </xsl:when>
@@ -2067,8 +2654,12 @@
                         <xsl:value-of select="substring-before(., 'ceur')"/>
                         <choice change="lettre_ramiste">
                             <xsl:text>ce</xsl:text>
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>r</xsl:text>
                         <xsl:value-of select="substring-after(., 'ceur')"/>
@@ -2076,16 +2667,24 @@
                     <xsl:when test="matches(., '^cheur(e|o)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(conui|conceuro)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -2093,8 +2692,12 @@
                         <xsl:value-of select="substring-before(., 'alui')"/>
                         <xsl:text>al</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>alui</xsl:text>
                         <xsl:value-of select="substring-after(., 'u')"/>
@@ -2103,8 +2706,12 @@
                         <xsl:value-of select="substring-before(., 'onu')"/>
                         <xsl:text>on</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'onu')"/>
                     </xsl:when>
@@ -2112,8 +2719,12 @@
                         <xsl:value-of select="substring-before(., 'erue')"/>
                         <xsl:text>er</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>e</xsl:text>
                         <xsl:value-of select="substring-after(., 'u')"/>
@@ -2121,8 +2732,12 @@
                     <xsl:when test="matches(., '^cuiur(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ur')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>r</xsl:text>
                         <xsl:value-of select="substring-after(., 'ur')"/>
@@ -2130,8 +2745,12 @@
                     <xsl:when test="matches(., '^creué(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -2141,16 +2760,24 @@
                     <xsl:when test="matches(., '^coni(oi|ur)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^desi(a|à)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
@@ -2160,24 +2787,36 @@
                     <xsl:when test="matches(., '^(deur|déur)(a|o|i)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^des?liur(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^desu(i|o)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -2185,8 +2824,12 @@
                         <xsl:value-of select="substring-before(., 'douic')"/>
                         <xsl:text>do</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>ic</xsl:text>
                         <xsl:value-of select="substring-after(., 'douic')"/>
@@ -2195,32 +2838,48 @@
                         <xsl:value-of select="substring-before(., 'ev')"/>
                         <xsl:text>e</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ev')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^diev(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^dv$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)(d|l)vc(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'vc')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>c</xsl:text>
                         <xsl:value-of select="substring-after(., 'vc')"/>
@@ -2232,8 +2891,12 @@
                         <xsl:value-of select="substring-before(., 'edv')"/>
                         <xsl:text>ed</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'edv')"/>
                     </xsl:when>
@@ -2241,13 +2904,21 @@
                         <xsl:value-of select="substring-before(., 'evnv')"/>
                         <xsl:text>e</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>n</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'evnv')"/>
                     </xsl:when>
@@ -2255,8 +2926,12 @@
                         <xsl:value-of select="substring-before(., 'ebu')"/>
                         <xsl:text>eb</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ebu')"/>
                     </xsl:when>
@@ -2264,8 +2939,12 @@
                         <xsl:if test="matches(., '^(\w*)es?ua(\w*)$')">
                             <xsl:value-of select="substring-before(., 'ua')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>a</xsl:text>
                             <xsl:value-of select="substring-after(., 'ua')"/>
@@ -2273,8 +2952,12 @@
                         <xsl:if test="matches(., '^(\w*)Es?ua(\w*)$')">
                             <xsl:value-of select="substring-before(., 'ua')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>a</xsl:text>
                             <xsl:value-of select="substring-after(., 'ua')"/>
@@ -2284,16 +2967,24 @@
                         <xsl:value-of select="substring-before(., 'eru')"/>
                         <xsl:text>eru</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'eru')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(eue|enuers)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -2301,8 +2992,12 @@
                         <xsl:value-of select="substring-before(., 'epu')"/>
                         <xsl:text>epu</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'epu')"/>
                     </xsl:when>
@@ -2310,8 +3005,12 @@
                         <xsl:value-of select="substring-before(., 'ipu')"/>
                         <xsl:text>ip</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ipu')"/>
                     </xsl:when>
@@ -2320,8 +3019,12 @@
                             <xsl:value-of select="substring-before(., 'eui')"/>
                             <xsl:text>e</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>i</xsl:text>
                             <xsl:value-of select="substring-after(., 'eui')"/>
@@ -2330,8 +3033,12 @@
                             <xsl:value-of select="substring-before(., 'Eui')"/>
                             <xsl:text>E</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>i</xsl:text>
                             <xsl:value-of select="substring-after(., 'Eui')"/>
@@ -2340,16 +3047,24 @@
                     <xsl:when test="matches(., '^(preuil|eue|enuelo)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w+)(e|l)ueu(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ueu')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>eu</xsl:text>
                         <xsl:value-of select="substring-after(., 'ueu')"/>
@@ -2357,8 +3072,12 @@
                     <xsl:when test="matches(., '^(\w*)[^d]euem(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'uem')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>em</xsl:text>
                         <xsl:value-of select="substring-after(., 'uem')"/>
@@ -2368,8 +3087,12 @@
                             <xsl:value-of select="substring-before(., 'eu')"/>
                             <xsl:text>e</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'eu')"/>
                         </xsl:if>
@@ -2377,8 +3100,12 @@
                             <xsl:value-of select="substring-before(., 'eu')"/>
                             <xsl:text>e</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'eu')"/>
                         </xsl:if>
@@ -2386,8 +3113,12 @@
                     <xsl:when test="matches(., '^(\w*)(e|é)s?uo(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'uo')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>o</xsl:text>
                         <xsl:value-of select="substring-after(., 'uo')"/>
@@ -2395,13 +3126,21 @@
                     <xsl:when test="matches(., '^(\w+)(e|r)uiur(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'uiur')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>i</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>r</xsl:text>
                         <xsl:value-of select="substring-after(., 'uiur')"/>
@@ -2409,16 +3148,24 @@
                     <xsl:when test="matches(., '^(r|al|bi)?enu(ie|ir|y|o|e)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)euei(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'uei')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>ei</xsl:text>
                         <xsl:value-of select="substring-after(., 'uei')"/>
@@ -2426,8 +3173,12 @@
                     <xsl:when test="matches(., '^(\w*)eue(e|l|n|r|z|st|t)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ue')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>e</xsl:text>
                         <xsl:value-of select="substring-after(., 'ue')"/>
@@ -2436,8 +3187,12 @@
                         <xsl:value-of select="substring-before(., 'sue')"/>
                         <xsl:text>s</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>e</xsl:text>
                         <xsl:value-of select="substring-after(., 'sue')"/>
@@ -2445,8 +3200,12 @@
                     <xsl:when test="matches(., '^(\w*)euesq(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'uesq')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>esq</xsl:text>
                         <xsl:value-of select="substring-after(., 'uesq')"/>
@@ -2458,8 +3217,12 @@
                         <xsl:value-of select="substring-before(., 'ei')"/>
                         <xsl:text>e</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ei')"/>
                     </xsl:when>
@@ -2467,8 +3230,12 @@
                         <xsl:value-of select="substring-before(., 'niam')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>am</xsl:text>
                         <xsl:value-of select="substring-after(., 'niam')"/>
@@ -2476,8 +3243,12 @@
                     <xsl:when test="matches(., '^(e|E|co|Co)nioi(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
@@ -2487,32 +3258,48 @@
                     <xsl:when test="matches(., '^(fautevil|flevr|feville)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(fev|fvt)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(f|F)i(e|é)ure(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^foruo(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -2523,8 +3310,12 @@
                         <xsl:value-of select="substring-before(., 'nevr')"/>
                         <xsl:text>ne</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>r</xsl:text>
                         <xsl:value-of select="substring-after(., 'nevr')"/>
@@ -2532,8 +3323,12 @@
                     <xsl:when test="matches(., '^(\w*)gv(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
@@ -2542,8 +3337,12 @@
                             <xsl:value-of select="substring-before(., 'gv')"/>
                             <xsl:text>g</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'gv')"/>
                         </xsl:if>
@@ -2551,8 +3350,12 @@
                             <xsl:value-of select="substring-before(., 'Gv')"/>
                             <xsl:text>g</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Gv')"/>
                         </xsl:if>
@@ -2561,8 +3364,12 @@
                         <xsl:value-of select="substring-before(., 'raue')"/>
                         <xsl:text>ra</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>e</xsl:text>
                         <xsl:value-of select="substring-after(., 'raue')"/>
@@ -2573,8 +3380,12 @@
                     <xsl:when test="matches(., '^hvm(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
@@ -2585,8 +3396,12 @@
                         <xsl:value-of select="substring-before(., 'nv')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'nv')"/>
                     </xsl:when>
@@ -2594,8 +3409,12 @@
                         <xsl:value-of select="substring-before(., 'oui')"/>
                         <xsl:text>o</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>i</xsl:text>
                         <xsl:value-of select="substring-after(., 'oui')"/>
@@ -2603,8 +3422,12 @@
                     <xsl:when test="matches(., '^iurog(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -2612,26 +3435,42 @@
                         <xsl:if test="matches(., '^uifue(\w+)$')">
                             <xsl:value-of select="substring-before(., 'uifu')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>if</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'uifu')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Uifue(\w+)$')">
                             <xsl:value-of select="substring-before(., 'Uifu')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>U</xsl:text></orig>
-                                <reg><xsl:text>V</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>U</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>V</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>if</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Uifu')"/>
                         </xsl:if>
@@ -2640,26 +3479,42 @@
                         <xsl:if test="matches(., '^uiur(\w+)$')">
                             <xsl:value-of select="substring-before(., 'uiu')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>i</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'uiu')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Uiur(\w+)$')">
                             <xsl:value-of select="substring-before(., 'Uiu')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>U</xsl:text></orig>
-                                <reg><xsl:text>V</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>U</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>V</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>i</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Uiu')"/>
                         </xsl:if>
@@ -2667,8 +3522,12 @@
                     <xsl:when test="matches(., '^innoü(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ü')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>ü</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>ü</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ü')"/>
                     </xsl:when>
@@ -2676,8 +3535,12 @@
                         <xsl:value-of select="substring-before(., 'fue')"/>
                         <xsl:text>f</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>e</xsl:text>
                         <xsl:value-of select="substring-after(., 'fue')"/>
@@ -2685,8 +3548,12 @@
                     <xsl:when test="matches(., '^inconu(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -2694,8 +3561,12 @@
                         <xsl:value-of select="substring-before(., 'uu')"/>
                         <xsl:text>u</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'uu')"/>
                     </xsl:when>
@@ -2703,8 +3574,12 @@
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <xsl:text>u</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -2715,16 +3590,24 @@
                         <xsl:if test="matches(., '^ie$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Ie$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2733,16 +3616,24 @@
                         <xsl:if test="matches(., '^ia(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Ia(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2751,16 +3642,24 @@
                         <xsl:if test="matches(., '^iehan(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Iehan(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2769,16 +3668,24 @@
                         <xsl:if test="matches(., '^iesu(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Iesu(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2787,16 +3694,24 @@
                         <xsl:if test="matches(., '^iett(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Iett(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2805,16 +3720,24 @@
                         <xsl:if test="matches(., '^(\w*)ieun(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^(\w*)Ieun(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2823,16 +3746,24 @@
                         <xsl:if test="matches(., '^ieux?$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Ieux?$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2841,16 +3772,24 @@
                         <xsl:if test="matches(., '^io[^n](\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Io[^n](\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2859,16 +3798,24 @@
                         <xsl:if test="matches(., '^ion(c|g)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Ion(c|g)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2877,16 +3824,24 @@
                         <xsl:if test="matches(., '^iu(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Iu(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2895,8 +3850,12 @@
                         <xsl:value-of select="substring-before(., 'niu')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>u</xsl:text>
                         <xsl:value-of select="substring-after(., 'niu')"/>
@@ -2905,12 +3864,20 @@
                         <xsl:value-of select="substring-before(., 'niv')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'niv')"/>
                     </xsl:when>
@@ -2918,16 +3885,24 @@
                         <xsl:if test="matches(., '^iu(r|s)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Iu(r|s)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2936,16 +3911,24 @@
                         <xsl:if test="matches(., '^(\w*)iect(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^(\w*)Iect(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2954,16 +3937,24 @@
                         <xsl:if test="matches(., '^(ieusn|inue)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^(Ieusn|Inue)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
@@ -2972,24 +3963,40 @@
                         <xsl:if test="matches(., '^ivnon?$')">
                             <xsl:value-of select="substring-before(., 'iv')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>i</xsl:text></orig>
-                                <reg><xsl:text>j</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
                             </choice>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'iv')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Ivnon?$')">
                             <xsl:value-of select="substring-before(., 'Iv')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Iv')"/>
                         </xsl:if>
@@ -2999,8 +4006,12 @@
                             <xsl:value-of select="substring-before(., 'iu')"/>
                             <xsl:text>i</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>u</xsl:text>
                             <xsl:value-of select="substring-after(., 'iu')"/>
@@ -3008,8 +4019,12 @@
                         <xsl:if test="matches(., '^(\w+)Iu(e|i|o|a|é|y|ÿ)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>I</xsl:text></orig>
-                                <reg><xsl:text>J</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>u</xsl:text>
                             <xsl:value-of select="substring-after(., 'Iu')"/>
@@ -3021,8 +4036,12 @@
                     <xsl:when test="matches(., '^janui(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -3032,16 +4051,24 @@
                     <xsl:when test="matches(., '^levrs?$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(l|pr)ova(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
@@ -3049,8 +4076,12 @@
                         <xsl:value-of select="substring-before(., 'lvs')"/>
                         <xsl:text>l</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>s</xsl:text>
                         <xsl:value-of select="substring-after(., 'lvs')"/>
@@ -3059,24 +4090,36 @@
                         <xsl:value-of select="substring-before(., 'leu')"/>
                         <xsl:text>le</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'leu')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(leu|liéu|lieu)(e|è|é|rau)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^l(e|è)ure(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -3084,8 +4127,12 @@
                         <xsl:value-of select="substring-before(., 'iur')"/>
                         <xsl:text>i</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>r</xsl:text>
                         <xsl:value-of select="substring-after(., 'iur')"/>
@@ -3093,8 +4140,12 @@
                     <xsl:when test="matches(., '^(oliu|oual)(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -3104,8 +4155,12 @@
                     <xsl:when test="matches(., '^(\w*)mvn(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'vn')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'vn')"/>
@@ -3113,8 +4168,12 @@
                     <xsl:when test="matches(., '^(\w*)mvr(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'vr')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>r</xsl:text>
                         <xsl:value-of select="substring-after(., 'vr')"/>
@@ -3123,8 +4182,12 @@
                         <xsl:value-of select="substring-before(., 'eruei')"/>
                         <xsl:text>er</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>ei</xsl:text>
                         <xsl:value-of select="substring-after(., 'eruei')"/>
@@ -3132,8 +4195,12 @@
                     <xsl:when test="matches(., '^(\w*[^(m|M)])eurier(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'urier')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>rier</xsl:text>
                         <xsl:value-of select="substring-after(., 'urier')"/>
@@ -3144,16 +4211,24 @@
                     <xsl:when test="matches(., '^maie(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)minv(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'inv')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>nv</xsl:text>
                         <xsl:value-of select="substring-after(., 'inv')"/>
@@ -3165,8 +4240,12 @@
                         <xsl:value-of select="substring-before(., 'evf')"/>
                         <xsl:text>e</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>f</xsl:text>
                         <xsl:value-of select="substring-after(., 'evf')"/>
@@ -3174,16 +4253,24 @@
                     <xsl:when test="matches(., '^nvag(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)[^e]nvel(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'vel')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>el</xsl:text>
                         <xsl:value-of select="substring-after(., 'vel')"/>
@@ -3191,8 +4278,12 @@
                     <xsl:when test="matches(., '^(nouic|naur|nepueu|nouembre)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -3200,8 +4291,12 @@
                         <xsl:value-of select="substring-before(., 'nua')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>a</xsl:text>
                         <xsl:value-of select="substring-after(., 'nua')"/>
@@ -3213,8 +4308,12 @@
                         <xsl:value-of select="substring-before(., 'niur')"/>
                         <xsl:text>n</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>ur</xsl:text>
                         <xsl:value-of select="substring-after(., 'niur')"/>
@@ -3226,8 +4325,12 @@
                         <xsl:value-of select="substring-before(., 'ouveve')"/>
                         <xsl:text>ouve</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>e</xsl:text>
                         <xsl:value-of select="substring-after(., 'ouveve')"/>
@@ -3235,16 +4338,24 @@
                     <xsl:when test="matches(., '^covar(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w*)ovf(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'vf')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>f</xsl:text>
                         <xsl:value-of select="substring-after(., 'vf')"/>
@@ -3252,8 +4363,12 @@
                     <xsl:when test="matches(., '^(\w*)ovz(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'vz')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>z</xsl:text>
                         <xsl:value-of select="substring-after(., 'vz')"/>
@@ -3262,8 +4377,12 @@
                         <xsl:value-of select="substring-before(., 'bui')"/>
                         <xsl:text>b</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>i</xsl:text>
                         <xsl:value-of select="substring-after(., 'bui')"/>
@@ -3272,8 +4391,12 @@
                         <xsl:value-of select="substring-before(., 'oiu')"/>
                         <xsl:text>oi</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'oiu')"/>
                     </xsl:when>
@@ -3281,8 +4404,12 @@
                         <xsl:value-of select="substring-before(., 'oibue')"/>
                         <xsl:text>oib</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>e</xsl:text>
                         <xsl:value-of select="substring-after(., 'u')"/>
@@ -3291,8 +4418,12 @@
                         <xsl:value-of select="substring-before(., 'uu')"/>
                         <xsl:text>u</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'uu')"/>
                     </xsl:when>
@@ -3302,16 +4433,24 @@
                     <xsl:when test="matches(., '^povr$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^pvb(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
@@ -3319,24 +4458,36 @@
                         <xsl:value-of select="substring-before(., 'mpv')"/>
                         <xsl:text>mp</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'mpv')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^prevx?$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^paru(e|i)n(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -3344,8 +4495,12 @@
                         <xsl:value-of select="substring-before(., 'oure')"/>
                         <xsl:text>o</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>re</xsl:text>
                         <xsl:value-of select="substring-after(., 'oure')"/>
@@ -3353,16 +4508,24 @@
                     <xsl:when test="matches(., '^(pouo|preiu)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^prou(en|i|o|eu|er)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -3372,16 +4535,24 @@
                     <xsl:when test="matches(., '^pjece(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'j')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>j</xsl:text></orig>
-                            <reg><xsl:text>i</xsl:text></reg>
+                            <orig>
+                                <xsl:text>j</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>i</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'j')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^p(a|e)riu(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
@@ -3393,8 +4564,12 @@
                             <xsl:value-of select="substring-before(., 'qv')"/>
                             <xsl:text>q</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'qv')"/>
                         </xsl:if>
@@ -3402,8 +4577,12 @@
                             <xsl:value-of select="substring-before(., 'Qv')"/>
                             <xsl:text>Q</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>V</xsl:text></orig>
-                                <reg><xsl:text>U</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>V</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>U</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Qv')"/>
                         </xsl:if>
@@ -3412,8 +4591,12 @@
                     <xsl:when test="matches(., '^queve(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
@@ -3424,45 +4607,69 @@
                         <xsl:value-of select="substring-before(., 'adv')"/>
                         <xsl:text>ad</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'adv')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^recev$', 'i')">
                         <xsl:value-of select="substring-before(., 'v')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'v')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^reu(e|u)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(renuer|réue)(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^reuiu(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'uiu')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>i</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'euiu')"/>
                     </xsl:when>
@@ -3473,8 +4680,12 @@
                         <xsl:value-of select="substring-before(., 'ajon')"/>
                         <xsl:text>a</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>j</xsl:text></orig>
-                            <reg><xsl:text>i</xsl:text></reg>
+                            <orig>
+                                <xsl:text>j</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>i</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>on</xsl:text>
                         <xsl:value-of select="substring-after(., 'ajon')"/>
@@ -3483,8 +4694,12 @@
                         <xsl:value-of select="substring-before(., 'eie')"/>
                         <xsl:text>e</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>e</xsl:text>
                         <xsl:value-of select="substring-after(., 'eie')"/>
@@ -3493,8 +4708,12 @@
                         <xsl:value-of select="substring-before(., 'sio')"/>
                         <xsl:text>s</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>o</xsl:text>
                         <xsl:value-of select="substring-after(., 'sio')"/>
@@ -3506,8 +4725,12 @@
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <xsl:text>ui</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -3515,8 +4738,12 @@
                         <xsl:value-of select="substring-before(., 'ulu')"/>
                         <xsl:text>ul</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ulu')"/>
                     </xsl:when>
@@ -3524,8 +4751,12 @@
                         <xsl:value-of select="substring-before(., 'eru')"/>
                         <xsl:text>er</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'eru')"/>
                     </xsl:when>
@@ -3533,8 +4764,12 @@
                         <xsl:value-of select="substring-before(., 'olu')"/>
                         <xsl:text>ol</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'olu')"/>
                     </xsl:when>
@@ -3542,8 +4777,12 @@
                         <xsl:value-of select="substring-before(., 'uru')"/>
                         <xsl:text>ur</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'uru')"/>
                     </xsl:when>
@@ -3551,8 +4790,12 @@
                         <xsl:value-of select="substring-before(., 'uiu')"/>
                         <xsl:text>ui</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'uiu')"/>
                     </xsl:when>
@@ -3563,8 +4806,12 @@
                         <xsl:value-of select="substring-before(., 'j')"/>
                         <xsl:text>s</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>j</xsl:text></orig>
-                            <reg><xsl:text>i</xsl:text></reg>
+                            <orig>
+                                <xsl:text>j</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>i</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>o</xsl:text>
                         <xsl:value-of select="substring-after(., 'j')"/>
@@ -3572,8 +4819,12 @@
                     <xsl:when test="matches(., '^(as)?subi(e|u)(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
@@ -3581,8 +4832,12 @@
                         <xsl:value-of select="substring-before(., 'uiet')"/>
                         <xsl:text>u</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>et</xsl:text>
                         <xsl:value-of select="substring-after(., 'uiet')"/>
@@ -3595,8 +4850,12 @@
                             <xsl:value-of select="substring-before(., 'trv')"/>
                             <xsl:text>tr</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'trv')"/>
                         </xsl:if>
@@ -3604,8 +4863,12 @@
                             <xsl:value-of select="substring-before(., 'Trv')"/>
                             <xsl:text>Tr</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Trv')"/>
                         </xsl:if>
@@ -3615,8 +4878,12 @@
                         <xsl:value-of select="substring-before(., 'tv')"/>
                         <xsl:text>t</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'tv')"/>
                     </xsl:when>
@@ -3624,20 +4891,32 @@
                         <xsl:value-of select="substring-before(., 'ov')"/>
                         <xsl:text>o</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ov')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^tresui(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'ui')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ui')"/>
                     </xsl:when>
@@ -3645,16 +4924,24 @@
                         <xsl:value-of select="substring-before(., 'rou')"/>
                         <xsl:text>ro</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'rou')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(g|t|p)reue(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'u')"/>
                     </xsl:when>
@@ -3664,8 +4951,12 @@
                     <xsl:when test="matches(., '^(tousiours|touiours|tresiust)$', 'i')">
                         <xsl:value-of select="substring-before(., 'i')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>i</xsl:text></orig>
-                            <reg><xsl:text>j</xsl:text></reg>
+                            <orig>
+                                <xsl:text>i</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>j</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'i')"/>
                     </xsl:when>
@@ -3676,16 +4967,24 @@
                         <xsl:if test="matches(., '^u(a|e|i|o|u|ra|re|ri|ro|ru|ul)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'u')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'u')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^U(a|e|i|o|u|ra|re|ri|ro|ru|ul)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'U')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>U</xsl:text></orig>
-                                <reg><xsl:text>V</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>U</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>V</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'U')"/>
                         </xsl:if>
@@ -3694,8 +4993,12 @@
                         <xsl:value-of select="substring-before(., 'ru')"/>
                         <xsl:text>r</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ru')"/>
                     </xsl:when>
@@ -3703,16 +5006,24 @@
                         <xsl:if test="matches(., '^(\w*)uul(\w*)$')">
                             <xsl:value-of select="substring-before(., 'u')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'u')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^(\w*)Uul(\w*)$')">
                             <xsl:value-of select="substring-before(., 'U')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>U</xsl:text></orig>
-                                <reg><xsl:text>V</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>U</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>V</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'U')"/>
                         </xsl:if>
@@ -3721,8 +5032,12 @@
                         <xsl:value-of select="substring-before(., 'uu')"/>
                         <xsl:text>u</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'uu')"/>
                     </xsl:when>
@@ -3730,8 +5045,12 @@
                         <xsl:value-of select="substring-before(., 'uu')"/>
                         <xsl:text>u</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'uu')"/>
                     </xsl:when>
@@ -3739,8 +5058,12 @@
                         <xsl:value-of select="substring-before(., 'uyu')"/>
                         <xsl:text>uy</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'uyu')"/>
                     </xsl:when>
@@ -3751,8 +5074,12 @@
                         <xsl:value-of select="substring-before(., 'ev')"/>
                         <xsl:text>e</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:value-of select="substring-after(., 'ev')"/>
                     </xsl:when>
@@ -3760,8 +5087,12 @@
                         <xsl:if test="matches(., '^(\w*)vti(\w+)$')">
                             <xsl:value-of select="substring-before(., 'vti')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>ti</xsl:text>
                             <xsl:value-of select="substring-after(., 'vti')"/>
@@ -3769,8 +5100,12 @@
                         <xsl:if test="matches(., '^(\w*)Vti(\w+)$')">
                             <xsl:value-of select="substring-before(., 'Vti')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>V</xsl:text></orig>
-                                <reg><xsl:text>U</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>V</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>U</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>ti</xsl:text>
                             <xsl:value-of select="substring-after(., 'Vti')"/>
@@ -3780,16 +5115,24 @@
                         <xsl:if test="matches(., '^vl(\w+)$')">
                             <xsl:value-of select="substring-before(., 'v')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'v')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Vl(\w+)$')">
                             <xsl:value-of select="substring-before(., 'V')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>V</xsl:text></orig>
-                                <reg><xsl:text>U</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>V</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>U</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'V')"/>
                         </xsl:if>
@@ -3798,8 +5141,12 @@
                         <xsl:if test="matches(., '^(\w*)vle(\w*)$')">
                             <xsl:value-of select="substring-before(., 'vle')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>le</xsl:text>
                             <xsl:value-of select="substring-after(., 'vle')"/>
@@ -3807,8 +5154,12 @@
                         <xsl:if test="matches(., '^(\w*)Vle(\w*)$')">
                             <xsl:value-of select="substring-before(., 'Vle')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>V</xsl:text></orig>
-                                <reg><xsl:text>U</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>V</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>U</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>le</xsl:text>
                             <xsl:value-of select="substring-after(., 'Vle')"/>
@@ -3818,16 +5169,24 @@
                         <xsl:if test="matches(., '^vn(\w*)$')">
                             <xsl:value-of select="substring-before(., 'v')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'v')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Vn(\w*)$')">
                             <xsl:value-of select="substring-before(., 'V')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>V</xsl:text></orig>
-                                <reg><xsl:text>U</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>V</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>U</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'V')"/>
                         </xsl:if>
@@ -3836,8 +5195,12 @@
                         <xsl:if test="matches(., '^(\w+)vp(\w+)$')">
                             <xsl:value-of select="substring-before(., 'vp')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>p</xsl:text>
                             <xsl:value-of select="substring-after(., 'vp')"/>
@@ -3845,8 +5208,12 @@
                         <xsl:if test="matches(., '^(\w+)Vp(\w+)$')">
                             <xsl:value-of select="substring-before(., 'Vp')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>V</xsl:text></orig>
-                                <reg><xsl:text>U</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>V</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>U</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>p</xsl:text>
                             <xsl:value-of select="substring-after(., 'Vp')"/>
@@ -3856,16 +5223,24 @@
                         <xsl:if test="matches(., '^vr(b|g|l|n|r|s)(\w+)$')">
                             <xsl:value-of select="substring-before(., 'v')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'v')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^Vr(b|g|l|n|r|s)(\w+)$')">
                             <xsl:value-of select="substring-before(., 'V')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>V</xsl:text></orig>
-                                <reg><xsl:text>U</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>V</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>U</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'V')"/>
                         </xsl:if>
@@ -3874,16 +5249,24 @@
                         <xsl:if test="matches(., '^v(b|s|t)(\w+)$')">
                             <xsl:value-of select="substring-before(., 'v')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>v</xsl:text></orig>
-                                <reg><xsl:text>u</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>v</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>u</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'v')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^V(b|s|t)(\w+)$')">
                             <xsl:value-of select="substring-before(., 'V')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>V</xsl:text></orig>
-                                <reg><xsl:text>U</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>V</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>U</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'V')"/>
                         </xsl:if>
@@ -3892,16 +5275,24 @@
                         <xsl:if test="matches(., '^(\w*)vmb(\w*)$')">
                             <xsl:value-of select="substring-before(., 'u')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'u')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^(\w*)Umb(\w*)$')">
                             <xsl:value-of select="substring-before(., 'U')"/>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>U</xsl:text></orig>
-                                <reg><xsl:text>V</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>U</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>V</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'U')"/>
                         </xsl:if>
@@ -3909,8 +5300,12 @@
                     <xsl:when test="matches(., '^(\w+)vlx$', 'i')">
                         <xsl:value-of select="substring-before(., 'vlx')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>lx</xsl:text>
                         <xsl:value-of select="substring-after(., 'vlx')"/>
@@ -3920,8 +5315,12 @@
                             <xsl:value-of select="substring-before(., 'viu')"/>
                             <xsl:text>vi</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'viu')"/>
                         </xsl:if>
@@ -3929,8 +5328,12 @@
                             <xsl:value-of select="substring-before(., 'Viu')"/>
                             <xsl:text>vi</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Viu')"/>
                         </xsl:if>
@@ -3939,8 +5342,12 @@
                         <xsl:value-of select="substring-before(., 'tvn')"/>
                         <xsl:text>t</xsl:text>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>v</xsl:text></orig>
-                            <reg><xsl:text>u</xsl:text></reg>
+                            <orig>
+                                <xsl:text>v</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>u</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'tvn')"/>
@@ -3955,8 +5362,12 @@
                             <xsl:value-of select="substring-before(., 'yu')"/>
                             <xsl:text>y</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'yu')"/>
                         </xsl:if>
@@ -3964,8 +5375,12 @@
                             <xsl:value-of select="substring-before(., 'Yu')"/>
                             <xsl:text>Y</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Yu')"/>
                         </xsl:if>
@@ -3975,8 +5390,12 @@
                             <xsl:value-of select="substring-before(., 'yur')"/>
                             <xsl:text>y</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>r</xsl:text>
                             <xsl:value-of select="substring-after(., 'yur')"/>
@@ -3985,8 +5404,12 @@
                             <xsl:value-of select="substring-before(., 'Yur')"/>
                             <xsl:text>Y</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>r</xsl:text>
                             <xsl:value-of select="substring-after(., 'Yur')"/>
@@ -3997,8 +5420,12 @@
                             <xsl:value-of select="substring-before(., 'ÿur')"/>
                             <xsl:text>y</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>r</xsl:text>
                             <xsl:value-of select="substring-after(., 'ÿur')"/>
@@ -4007,8 +5434,12 @@
                             <xsl:value-of select="substring-before(., 'Ÿur')"/>
                             <xsl:text>Ÿ</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>r</xsl:text>
                             <xsl:value-of select="substring-after(., 'Ÿur')"/>
@@ -4019,8 +5450,12 @@
                             <xsl:value-of select="substring-before(., 'ÿuer')"/>
                             <xsl:text>y</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>er</xsl:text>
                             <xsl:value-of select="substring-after(., 'ÿuer')"/>
@@ -4029,8 +5464,12 @@
                             <xsl:value-of select="substring-before(., 'Ÿuer')"/>
                             <xsl:text>Ÿ</xsl:text>
                             <choice change="lettre_ramiste">
-                                <orig><xsl:text>u</xsl:text></orig>
-                                <reg><xsl:text>v</xsl:text></reg>
+                                <orig>
+                                    <xsl:text>u</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>v</xsl:text>
+                                </reg>
                             </choice>
                             <xsl:text>er</xsl:text>
                             <xsl:value-of select="substring-after(., 'Ÿuer')"/>
@@ -4042,8 +5481,12 @@
                     <xsl:when test="matches(., '^(\w*)(z|x)uing(\w+)$', 'i')">
                         <xsl:value-of select="substring-before(., 'uing')"/>
                         <choice change="lettre_ramiste">
-                            <orig><xsl:text>u</xsl:text></orig>
-                            <reg><xsl:text>v</xsl:text></reg>
+                            <orig>
+                                <xsl:text>u</xsl:text>
+                            </orig>
+                            <reg>
+                                <xsl:text>v</xsl:text>
+                            </reg>
                         </choice>
                         <xsl:text>ing</xsl:text>
                         <xsl:value-of select="substring-after(., 'uing')"/>

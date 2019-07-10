@@ -161,7 +161,7 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="_3c_figure_3e_">
+    <xsl:template match="figure_">
         <xsl:element name="figure">
             <xsl:element name="graphic">
                 <xsl:attribute name="url">
@@ -216,7 +216,7 @@
     </xsl:template>
     
     <!--  Niveau ? : les speaker sont un peu différent, on ne peut pas leur attribuer un niveau fixe puisqu'on pourrait tout aussi bien les retrouver dans une div1 ou div2, etc. C'est pourquoi le template suivant permet de leur attribuer un niveau en fonction du titre qui les précède (ex. : derrière un titre 2, on aura un speaker de niveau 3) -->
-    <xsl:template match="_3c_speaker_3e_">
+    <xsl:template match="speaker">
         <xsl:element name="titre">
             <xsl:attribute name="niv">
                 <xsl:variable name="pere">
@@ -292,7 +292,7 @@
                     <xsl:apply-templates/>
                 </xsl:element>
             </xsl:when>
-            <xsl:when test="./descendant::_3c_pb_3e_">
+            <xsl:when test="./descendant::pb">
                 <xsl:apply-templates/>
             </xsl:when>
             <xsl:when test="contains(., '£')">
@@ -306,7 +306,7 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="_3c_p_3e_">
+    <xsl:template match="p">
         <xsl:choose>
             <xsl:when test="contains(., '(C)')">
                 <!-- p > Gestion des alinéas -->
@@ -378,21 +378,21 @@
         </xsl:element>
     </xsl:template>
     
-    <xsl:template match="*/_3c_pb_3e_[1]">
+    <xsl:template match="*/pb[1]">
             <xsl:choose>
-                <xsl:when test="following-sibling::_3c_pb_3e_">
+                <xsl:when test="following-sibling::pb">
                     <xsl:element name="pb">
                            <xsl:apply-templates/>
-                        <xsl:if test="following-sibling::_3c_pb_3e_">
-                           <xsl:value-of select="following-sibling::_3c_pb_3e_"/>
+                        <xsl:if test="following-sibling::pb">
+                           <xsl:value-of select="following-sibling::pb"/>
                         </xsl:if>
                     </xsl:element>
                 </xsl:when>
-                <xsl:when test="preceding-sibling::_3c_pb_3e_"/>
+                <xsl:when test="preceding-sibling::pb"/>
             </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="_3c_pb_3e_"/>
+    <xsl:template match="pb"/>
 
     <!-- STYLE DE CARACTERES -->
     
