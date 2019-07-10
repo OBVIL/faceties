@@ -147,6 +147,15 @@
         <br/>
     </xsl:template>
     
+    
+    <!-- Remplacement des <space quantity=""> correspondant aux £ dans le fichier `odt` pour les line breaks.
+        Ajoute le même nombre de <br/> que la valeur de @quantity
+    -->
+    <xsl:template match="space">
+        <xsl:param name="count" select="./@quantity"/>
+        <xsl:for-each select="1 to $count"><br/></xsl:for-each>
+    </xsl:template>
+    
     <xsl:template match="pb">
         <xsl:element name="span">
             <xsl:attribute name="class">pb</xsl:attribute>
