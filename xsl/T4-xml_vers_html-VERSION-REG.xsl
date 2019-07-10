@@ -39,7 +39,7 @@
                         </form>
                     </div>
                     
-                    <div id="definition">
+<!--                    <div id="definition">
                         <form>
                             <h3>Options de lecture</h3>
                         
@@ -51,7 +51,7 @@
                             <div id="afficher">
                             </div>
                         </form>
-                    </div>
+                    </div>-->
                     
                 </div>
                 
