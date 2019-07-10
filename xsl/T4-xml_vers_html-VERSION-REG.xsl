@@ -156,13 +156,17 @@
         <xsl:for-each select="1 to $count"><br/></xsl:for-each>
     </xsl:template>
     
+    <!-- Modification de l'affichage des folio -->
     <xsl:template match="pb">
+        <xsl:element name="l">
         <xsl:element name="span">
             <xsl:attribute name="class">pb</xsl:attribute>
-            <xsl:text>[p.</xsl:text>
-            <xsl:value-of select="@n"/>
-            <xsl:text>]</xsl:text>
+            <xsl:attribute name="n"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
+            <xsl:attribute name="xml:id"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
+            <xsl:attribute name="facs"></xsl:attribute>
+            <xsl:value-of select="replace(@n, ' \]', ']')"/>
         </xsl:element>
+        </xsl:element><br/>
     </xsl:template>
     
     <xsl:template match="orig"/>

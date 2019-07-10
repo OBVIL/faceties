@@ -331,7 +331,8 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:variable name="number">
-                        <xsl:value-of select="replace(., '[^0-9]', '')"/>
+<!--                        <xsl:value-of select="replace(., '[^0-9]', '')"/>-->
+                        <xsl:value-of select="."/>
                     </xsl:variable>
                     <xsl:attribute name="n">
                         <xsl:value-of select="$number"/>
