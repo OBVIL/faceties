@@ -1,5 +1,16 @@
 #!/usr/bin/env python
 
+"""
+    Arthur Provenier - OBVIL
+    Projet Faceties
+    
+    Script pour styliser des fichiers `odt` qui nécessitent plusieurs
+    applications de feuilles `xsl` à la suite
+    Pré-requis : SAXON-HE https://www.saxonica.com/download/java.xml
+    Modifier la liste `transformations` en y indiquant les feuilles `xsl`
+    Par défaut, le fichier créé sera sauvegardé dans 'transformation_result'
+"""
+
 import sys, os, argparse, re, zipfile, subprocess
 
 parser = argparse.ArgumentParser(description="Running multiple xsl sheets on an odt file")
