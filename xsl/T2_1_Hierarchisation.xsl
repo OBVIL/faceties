@@ -306,7 +306,7 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="_3c_p_3e_">
+    <xsl:template match="p">
         <xsl:choose>
             <xsl:when test="contains(., '(C)')">
                 <!-- p > Gestion des alinéas -->
