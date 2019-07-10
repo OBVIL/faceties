@@ -247,7 +247,7 @@
     
     <!-- Structure du texte -->
     
-    <xsl:template match="_3c_l_3e_">
+    <xsl:template match="l">
         <xsl:choose>
             <xsl:when test="contains(., '(C)')">
                 <!-- l > Gestion des alinéas -->
