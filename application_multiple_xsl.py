@@ -11,6 +11,7 @@
     Par defaut, le fichier cree sera sauvegarde dans 'transformation_result'
 """
 
+from __future__ import print_function, with_statement
 import sys, os, argparse, re, zipfile, subprocess
 
 parser = argparse.ArgumentParser(description="Running multiple xsl sheets on an odt file")
@@ -30,19 +31,19 @@ if args.input:
     input_dir = args.input
 else:
     input_dir = "odt_corr"
-    print "Using default path to input directory : odt_corr/"
+    print("Using default path to input directory : odt_corr/")
 
 if args.output:
     output_dir = args.output
 else:
     output_dir = "transformation_result"
-    print "Using default path to output directory : transformation_result/"
+    print("Using default path to output directory : transformation_result/")
 
 if args.xsl:
     xsl_dir = args.xsl
 else:
     xsl_dir = "xsl"
-    print "Using default path to xsl directory : xsl/"
+    print("Using default path to xsl directory : xsl/")
 
 # Apply xsl transformations from top to bottom
 transformations = [
@@ -57,7 +58,7 @@ transformations = [
 
 # Creating output directory
 if not os.path.isdir(output_dir):
-    print "Creating output directory : %s" %output_dir
+    print("Creating output directory : %s" %output_dir)
     os.makedirs(output_dir)
 
 re_valid_file = re.compile(r'^[^.~]\w+\.odt$')
@@ -79,7 +80,7 @@ for odt_file in os.listdir(input_dir):
         tmp_output = "%s_%s_output_tmp.xml" %(path_odt_file, i)
 
         transformation_path = os.path.join(xsl_dir, transformation)
-        print "Processing %s with %s" %(odt_file, transformation)
+        print("Processing %s with %s" %(odt_file, transformation))
 
         command = ["java",
                    "-cp",
