@@ -22,6 +22,8 @@ parser.add_argument("-o", "--output", nargs="?",
                     help="Path to output directory where the result will be store")
 parser.add_argument("-x", "--xsl", nargs="?",
                     help="Path to xsl directory")
+parser.add_argument("-d", "--delete", action="store_true",
+                    help="Delete tempory files")
 args = parser.parse_args()
 
 if args.input:
@@ -95,11 +97,12 @@ for odt_file in os.listdir(input_dir):
         tmp_file_to_delete.append(content)
 
     # Cleaning tmp files and renaming result file
-    for tmpfile in tmp_file_to_delete[:-1]:
-        try:
-            os.remove(tmpfile) 
-        except OSError:
-            pass
+    if args.delete:
+        for tmpfile in tmp_file_to_delete[:-1]:
+            try:
+                os.remove(tmpfile) 
+            except OSError:
+                pass
     try:
         os.rename(tmp_file_to_delete[-1],
                  os.path.join(input_dir, odt_file.replace('.odt', '-result.xml')))
