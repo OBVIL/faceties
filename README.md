@@ -25,10 +25,11 @@ Elsa Kammerer (Université de Lille)
 Anne Boutet (CESR, Tours)  
 
 ### Ingénierie
-Arthur Provenier, ingénieur (Labex Obvil)  
+
 Anne-Laure Huet, ingénieure (Labex Obvil)  
-Jeanne Bineau, stage de fin d'étude  
-Nolwenn Chevalier, stage de fin d'étude  
+Arthur Provenier, ingénieur (Labex Obvil)  
+Jeanne Bineau, stage de fin d'études  
+Nolwenn Chevalier, stage de fin d'études  
 
 ### Partenaires
 
