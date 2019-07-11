@@ -16,9 +16,9 @@
     </xsl:template>
     
     <xsl:template match="*">
-        <xsl:element name="{local-name()}">
+        <xsl:element name="{name()}">
             <xsl:for-each select="attribute::*">
-                <xsl:attribute name="{local-name()}">
+                <xsl:attribute name="{name()}">
                     <xsl:value-of select="."/>
                 </xsl:attribute>
             </xsl:for-each>
