@@ -1,266 +1,117 @@
 
-# README.md
+# Labex Obvil - Projet Facéties
 
-# Projet facétie - documentation
+## Présentation du projet
 
-## <span style="color: #000080">Sommaire</span>
+« Facéties » est un projet coordonné par Louise Amazan et Marie-Claire Thomine, soutenu par le [Labex Obvil](https://obvil.sorbonne-universite.fr/obvil/presentation) (Sorbonne Université) visant à la numérisation, la transcription et l’encodage d’un échantillon représentatif de la littérature facétieuse telle qu’elle se développe en France entre le XVe et le XVIIe siècle.
 
-	 I. Présentation du projet
-	 II. Le dossier "faceties" (Github)
-	 III. Stylage du document
-	 IV. Les transformations XSL
-	 V. Le corpus *Facéties* - Bibliographie
+[Voir plus d'informations sur le projet](http://obvil.sorbonne-universite.fr/projets/faceties)
 
-## <span style="color: #000080">I. Présentation du projet</span>
+### Equipe scientifique du projet
 
-« Facéties » est un projet coordonné par Louise Amazan et Marie-Claire Thomine, soutenu par le labex Obvil (Sorbonne Universités) visant à la numérisation, la transcription et l’encodage d’un échantillon représentatif de la littérature facétieuse telle qu’elle se développe en France entre le XVe et le XVIIe siècle. 
+Louise Amazan-Comberousse (Université Paris-Sorbonne et BNF)  
+Marie-Claire Thomine (Université Charles-de-Gaulle, Lille )  
+Tiphaine Rolland (Université Paris-Sorbonne)  
+Dominique Bertrand (Université Clermont Auvergne)  
+Nora Viet (Université Clermont Auvergne)  
+Vincent Dupuis (Montréal) (†)  
+Marine Gaulin et Julie Monsterlet (Université de Lille)  
+Nicolas Kiès (Classes préparatoires, Fontainebleau)  
+Katell Lavéant (Université d’Utrecht)  
+Romain Weber (Bibliothèque historique de la ville de Paris)  
+Anne Réach-Ngô (Université de Haute Alsace)  
+Florence Bistagne (Université d’Avignon)  
+Elsa Kammerer (Université de Lille)  
+Anne Boutet (CESR, Tours)  
 
-- **Equipe**
+### Ingénierie
+Arthur Provenier, ingénieur (Labex Obvil)  
+Anne-Laure Huet, ingénieure (Labex Obvil)  
+Jeanne Bineau, stage de fin d'étude  
+Nolwenn Chevalier, stage de fin d'étude  
 
-   - Louise Amazan-Comberousse (Université Paris-Sorbonne et BNF)
-   - Marie-Claire Thomine (Université Charles-de-Gaulle, Lille )
-   - Tiphaine Rolland (Université Paris-Sorbonne)
-   - Dominique Bertrand (Université Clermont Auvergne)
-   - Nora Viet (Université Clermont Auvergne)
-   - Vincent Dupuis (Montréal) (†)
-   - Marine Gaulin et Julie Monsterlet (Université de Lille)
-   - Nicolas Kiès (Classes préparatoires, Fontainebleau)
-   - Katell Lavéant (Université d’Utrecht)
-   - Romain Weber (Bibliothèque historique de la ville de Paris)
-   - Anne Réach-Ngô (Université de Haute Alsace)
-   - Florence Bistagne (Université d’Avignon)
-   - Elsa Kammerer (Université de Lille)
-   - Anne Boutet (CESR, Tours)
-   
-- **Partenaires**
+### Partenaires
 
-   - Paris-Sorbonne (Paris IV)
-   - CELLF et Centre Saulnier
-   - Domaine de Chantilly
-   - Université de Lille (ALITHILA).
+Paris-Sorbonne (Paris IV)  
+CELLF et Centre Saulnier  
+Domaine de Chantilly  
+Université de Lille (ALITHILA)  
 
+## Normes de transcription   
 
-- **Voir aussi** : 
-   - http://obvil.sorbonne-universite.site/projets/faceties
-   - http://obvil.sorbonne-universite.site/actualite/facetie-et-humanites-numeriques/mar-19022019-0000
+- pour les informations concernant les normes de transcription des ouvrages voir le fichier `doc/faceties-guide_de_relecture.odt`
+- pour que les transformations soient correctement effectuées les fichiers .odt doivent appliquer les styles définis dans `doc/faceties-guide_des_styles.odt`
 
-## <span style="color: #000080">II. Le dossier "faceties" (Github)</span>
+## Informations techniques
 
-**Documents par ordre d'apparition :**
-
-- **doc** : documentations complémentaires au projet facéties (colloque, journée d'étude, chartes graphiques des différents textes, liste des 10 ouvrages, etc...)
-
-	- _`faceties-guide_des_styles.odt`_ : document `odt` qui explique les différents styles utilisés dans la correction des textes et qui sont traités par les transformation `xml` 
-
-	- _`faceties-modèle_style.odt`_ : document "vide" comportant les styles à utilisés (il n'y a plus qu'à faire un copier-coller pour les dupliquer sur les autres textes à corriger)
-	
-	- _`faceties-guide_de_relecture.odt`_ : document reprenant les différents points auxquels faire attention lors de la relecture, se basant sur le protocole des l'Ecole des Chartes → **Voir** : http://theleme.enc.sorbonne.fr/cours/edition_epoque_moderne/edition_des_textes
-
-	- _`faceties-cahier_des_charges_2019.odt`_ : cahier des charges mis à jour figurant les attentes du projet
-	
-	- _`faceties-cahier_des_charges_2016.odt`_ : premier cahier des charges établis (qui n'est plus d'actualité)
-
-- **odt-corr** : fichiers `odt` déjà relus, en attente de traitement `xml`
-
-- **odt_orig** : les 10 fichiers `odt` à relire qui ont été transcrits par les entreprises (infoscribe, etc.)
-
-- **schema** : schéma utilisé, auquel se conforment les documents `xml` (schéma "Epistemon", développé par les BVH et adapté à notre projet "Facéties", dont le *header* a été adapté pour se conforter aux besoins du projet Facéties) → **Voir** : https://sourceforge.net/projects/bvh/files/BVH-ODD/BVH_Epistemon.rng/download
-
-- **xml** : fichiers `xml` finaux obtenus après les tranformations `xsl` (contient le fichier `faceties_011.xml` à retravailler avec les nouvelles transformations)
-
-- **xsl** : transformations utilisées 
-
-- _`README.md`_ : documentation sur le projet
+- Le balisage des fichiers XML-TEI respecte le [schéma](https://sourceforge.net/projects/bvh/) défini par Les Bibliothèques Virtuelles Humanistes
+- Les [transformations XSL](https://sourceforge.net/projects/bvh/files/Modernisation%20et%20Regularisation/) pour la modernisation et la dissimilation ont également été basées sur le travail effectué par Les Bibliothèques Virtuelles Humanistes
 
 
-# <span style="color: #000080">III. Stylage du document</span>
+### Application : transformation .odt vers XML-TEI
 
-- pour récupérer les styles déjà utilisés : voir la fiche `faceties-guide_des_styles.odt`.
 
-Les styles du document `.odt` seront intégrés au document. 
+#### Les transformations XSL
 
-- pour des questions sur le stylage des éléments textuels : voir le guide de relecture`faceties-guide_de_relecture.odt`
+L'ensemble de ces transformations prennent en charge : la résolution des abréviations, la dissimilation, les coquilles d'auteurs.  
+Ces transformations sont à appliquer à partir du fichier `content.xml` contenu dans l'`.odt`. Pour le récupérer : ouvrir le .odt dans un logiciel comme Oxygen // ou changer l'extension du fichier `.odt` en `.zip`.  
+Sept transformations sont à exécuter dans l'ordre pour transformer l'`.odt` en `.html`:  
 
-- pour remplacer les abréviations encodés par l'entreprise de transcription (par exemple "(e1)" en "ẽ") : voir les tableaux graphiques ou `faceties-guide_de_relecture.odt`
-
- 
-- /!\ faire attention à la hiérarchisation des styles : voir `faceties-cahier_des_charges_2019.odt`, section `12. hiérarchisation`
-
-## <span style="color: #000080">IV. Les transformations XSL</span>
-
-7 transformations à exécuter dans l'ordre pour transformer l'`.odt` en `.html`
 - `T1_ODT_vers_XML-ODT`
+	- transforme le fichier `content.xml`
 - `T2_1_hierarchisation`
+	- nettoyer les balises parasites
+	- nettoyer le balisage du frontiespiece et du header
+	- nettoyer les `<l>`, `<p>` et les `<pb>`
+	- préparer les titres pour la hierarchisation
+	- instaurer les désagglutinations
+	- instaurer les `<hi>`
+	- instaurer les images
+
 - `T2_2_hierarchisation`
+	- repére les divisions du texte (`<div>`) et précise leur niveau (première étape de la hiérarchisation)
 - `T2_3_hierarchisation`
+	- assemble les différentes div (deuxième étape de la hiérarchisation)
 - `T3_XML_vers_XML-BVH`
-- `T3bis_XML_versXML-BVH`
-- `T4_XML-TEI_vers_HTML_orig` / `T4_XML-TEI_vers_HTML_reg`
-
-Les quatre premières transformations dont celles qui sont du ressort de la hierarchisation seront l'objet d'un assemblage futur pour réduire les manipulations.
-
-### <span style="color: #F81207">T1_ODT_vers_XML-ODT.xsl : content.xml > fichier XML</span>
-
-#### Objectifs de la transformation : 
-
-- transformer l'`odt` corrigé en fichier `xml`
-
-- ne garder que les informations qui nous intéresse (le nom des balises obtenus par cette transformation ne sont pas définitives, ils changeront au passage de la deuxième transformation)
-
-#### Consignes : 
-
-- faire glisser l'`odt` du texte corrigé et stylé dans oxygen pour en extraire le `content.xml`
-
-- débogeur xslt : XML `content.xml` vers XSL : `T1_ODT_vers_XML-ODT.xsl` en `saxon-PE 9.8.0.12`
-
-- enregistrer le premier XML en spécifiant `NOM_DU_DOCUMENT_xml_1.xml`
-
-
-### <span style="color: #F81207">T2_1_hierarchisation.xsl : XML > XML hiérarchisé</span>
-
-#### Objectifs de la transformation : 
-
-- nettoyer les balises parasites
-
-- nettoyer le balisage du frontiespiece et du header
-
-- nettoyer les `<l>`, `<p>` et les `<pb>`
-
-- préparer les titres pour la hierarchisation
-
-- instaurer les désagglutinations
-
-- instaurer les `<hi>`
-
-- instaurer les images
-
-#### Consignes : 
-
-- transformer le fichier `NOM_DU_DOCUMENT_xml_1.xml` (étape précédente) avec `T2_1_hierarchisation.xsl`
-
-- enregistrer le résultat XML en spécifiant `NOM_DU_DOCUMENT_xml_2_1.xml`
-
-
-### <span style="color: #F81207">T2_2_hierarchisation.xsl : XML > XML hiérarchisé</span>
-
-#### Objectifs de la transformation : 
-
-- séparer les différentes parties en div (première étape de la hiérarchisation)
-
-#### Consignes : 
-
-- transformer le fichier `NOM_DU_DOCUMENT_xml_1.xml` (étape précédente) avec `T2_2_hierarchisation.xsl`
-
-- enregistrer le résultat XML en spécifiant `NOM_DU_DOCUMENT_xml_2_2.xml`
-
-
-### <span style="color: #F81207">T2_3_hierarchisation.xsl : XML > XML hiérarchisé</span>
-
-#### Objectifs de la transformation : 
-
-- emboiter les différentes div (deuxième étape de la hiérarchisation)
-
-#### Consignes : 
-
-- transformer le fichier `NOM_DU_DOCUMENT_xml_1.xml` (étape précédente) avec `T2_3_hierarchisation.xsl`
-
-- enregistrer le résultat XML en spécifiant `NOM_DU_DOCUMENT_xml_2_3.xml`
-
-#### Problèmes déjà rencontrés: 
-
-- les `&` de certaines nouvelles ne sont pas prises en compte automatiquement (notamment dans le document `faceties_009.odt`)-> à remplacer par `&amp;`
-
-
-### <span style="color: #F81207">T3_XML_versXML-BVH.xsl : XML > XML conforme au schéma BVH</span>
-
-#### Objectifs de la transformation : 
-
-- changer / nettoyer le balisage conformément au modèle des BVH
-
-- normaliser tous les mots ne contenant qu'un élément à normaliser (premi-re vague de normalisation)
-
-- mettre en place un `header` conforme aux normes de l'OVIL et de la TEI p5
-
-- mettre en place un frontiespiece conforme (index, castList) avec la balise `front` (→ **Voir** : `faceties_guide_de_relecture.odt`)
-
-- mettre en place de `<space quantity="1" unit="lignes"/>`
-
-- gérer les alinéas implicites et explicites (`(C)`,`(D)`) en `l` et `p`
-
-- différencier par un `choice change` les césures implictes `Ĝ` (`<choice change="cesure_implicite">`) des césures explicites `Ñ` (`<pc change="cesure_explicite">`)
-
-- gérer les cul-de-lampes avec une balise `cul_de_lampe` en `l` et `p`
-
-- entourer d'un `choice` les balises `corr` et`sic` qui servent pour l'insertion des interventions éditoriales (coquilles)
-
-- résoudre les abréviations et les dissimulations
- 
-#### Consignes : 
-
-- transformer le fichier `NOM_DU_DOCUMENT_xml_2_3.xml` (étape précédente) avec `T3_XML_versXML-BVH.xsl`
-
-- enregistrer le résultat XML en spécifiant `NOM_DU_DOCUMENT_xml_3.xml`
-
-
-### <span style="color: #F81207">T3bis_XML_versXML-BVH.xsl : XML conforme au schéma BVH</span>
-
-#### Objectifs de la transformation : 
-
-- normaliser le deuxième élément dans les mot possédant deux éléments à normaliser
-
-- prendre en charge le troisième élément à normaliser si besoin : il suffit alors de repasser la transformation sur le texte
-
-#### Consignes : 
-
-- transformer le fichier `NOM_DU_DOCUMENT_xml_3.xml` (étape précédente) avec `T3_XML_versXML-BVH.xsl`
-
-- enregistrer le résultat XML en spécifiant `NOM_DU_DOCUMENT_xml_3_bis.xml`
-
-
-### <span style="color: #F81207">T4_XML-TEI_vers_HTML.orig.xsl - T4_XML-TEI_vers_HTML.reg.xsl</span>
-
-#### Objectifs de la transformation : 
-
-- création de deux transformations `xsl`, une dite ".orig" qui désigne la version fac-similaire, et l'autre dite ".reg" pour la version normalisée
-
-- chaque transformation reprend les informations et les balises qui sont propres au rendu `html` que l'on souhaite obtenir (→ **Voir** : `faceties-cahier_des_charges.odt`)
-
-- les transformations sont liées à la `css` correspondante au rendu `html` voulu
-
-#### Consignes : 
-
-##### version fac-similaire
-
-- transformer le fichier `NOM_DU_DOCUMENT_xml_3_bis.xml` (étape précédente) avec `T4_XML-TEI_vers_HTML.orig.xsl`
-
-- enregistrer le résultat XML en spécifiant `version_fac_similaire.html`
-
-##### version normalisée
-
-- transformer le fichier `NOM_DU_DOCUMENT_xml_3_bis.xml` (étape précédente) avec `T4_XML-TEI_vers_HTML.reg.xsl`
-
-- enregistrer le résultat XML en spécifiant `version_normalisee.html`
-
-
-## <span style="color: #000080">V. Le corpus *Facéties* - Bibliographie</span>
-
-Le corpus est constitué de dix ouvrages prioritaires dans leur transcription. 
-
-- **Auteurs représentés** :
-
-   - ANONYME, *Le recueil des hystoires des repeus franches*, 1490, III-F-019 (005)
-   - ANONYME, *Les avantures ioyeuses et faitz merveilleux de Tiel Ulespiegle. Ensemble, les grandes fortunes à luy avenues en diverses regions, lequel par falace ne se laissoit aucunement tromper. Le tout traduit d’Allemant en Françoys*, 1559, XI-D-033 (006)
-   - ANONYME, *Les cent nouvelles. S’ensuyvent les cent nouvelles contenant cent hystoires ou nouveaulx comptes plaisans a deviser en toutes bonnes compaignies par matiere de ioyeusete*, 1530, IV-E-026 (007)
-   - A.D.S.D., *Les comptes du monde adventureux. Où sont recitees plusieurs belles Histoires memorables; & propres pour resiouir la compagnie, & éviter mélancholie*, 1595, XII-B-059 (008)
-   - BOCCACE, *Boccace des cent nouvelles*, ?, XVIII-C-013 (003)
-   - BOCCACE, *Le Decameron de Messire Iehan Bocace Florentin, nouvellement traduict d’Italien en Françoys par Maistre Anthoine le Macon conseiller du Roy & tresorier de lextraordinaire de ses guerres, trad. Antoine Le Maçon*, 1545, IV-H-038 (004)
-   - CHAPPUYS, Gabriel, *Les facetieuses iournees, contenans cent certaines et agreables Nouvelles la plus part advenuës de nostre temps, les autres recueillies & choisies de tous les plus excellents autheurs estrangers qui en ont escrit. Par G.C.D.T. Gabriel Chappuis tourangeau*, 1584, III-D-006 (009)
-   - MOTTE ROULLANT, LA, *Les Fascetieux devitz des cent nouvelles, nouvelles, tres récréatives et fort exemplaires pour resveiller les bons espritz Francoys, veuz et remis en leur naturel, par le seigneur de la Motte Roullant Lyonnois, homme tresdocte & bien renommé*,  1549, V-C-005 (008)
-   - POGGE, Le, VALLA, Lorenzo et PÉTRARQUE, *Pogii florentini oratoris clarissimi facetiarum liber incipit feliciter ; Facetie morales Laurentii vallensis alias esopus grecus per dictum Laurentium translatus incipiunt feliciter ; Francisci petrarche de salibus virorum illustrium ac facetiis. Tractatus incipit feliciter*, 1475, VIII-F-042 (001)
-   - POGGE, Le, *S’ensuyvent les facecies de Poge translatees de latin en francoys qui traitent de plusieurs nouvelles choses moralles*,  1512, III-F-116 (002)
-
-- **Voir aussi** : voir la liste des dix ouvrages (pdf)
-
-
+	- modification du balisage conformément au modèle des BVH
+	- normalisation des mots contenant un seul élément à normaliser (première vague de normalisation)
+	- mise en place du `header` conforme aux normes de l'OVBIL
+	- mise en place d'un frontispiece conforme avec la balise `front` (→ **Voir** : `faceties_guide_de_relecture.odt`)
+	- mise en place des `<space quantity="1" unit="lignes"/>`
+	- gérer les alinéas implicites et explicites (`(C)`,`(D)`) en `l` et `p`
+	- différencier par un `choice change` les césures implicites `Ĝ` (`<choice change="cesure_implicite">`) des césures explicites `Ñ` (`<pc change="cesure_explicite">`)
+	- gérer les cul-de-lampes avec une balise `cul_de_lampe` en `l` et `p`
+	- entourer d'un `choice` les balises `corr` et`sic` qui servent pour l'insertion des interventions éditoriales (coquilles)
+	- résoudre les abréviations et les dissimilations
+- `T3bis_XML_versXML-BVH` 
+	- s'applique lorsque les mots contiennent déjà une abréviation
+	- peut-être appliquée autant de fois que nécessaire
+	- **ce dernier résultat nécessite une relecture pour résoudre les abréviations qui ne peuvent pas être automatisées : par/per et que/qui**. Lorsqu'elles sont présentes, cela doit générer une erreur. Elles sont repérées dans le texte par des '#'.
+- `T4_XML-TEI_vers_HTML_orig`
+	- version fac-similaire
+
+- `T4_XML-TEI_vers_HTML_reg`
+	- version normalisée 
+
+- Les transformations XML vers HTML sont liées à la `css` correspondante au rendu `html` voulu
+
+- A noter : l'utilisation de saxon-PE 9.8.0.12
+
+Le script `application_multiple_xsl.py` applique les transformations jusqu'à la `T3bis_XML_versXML-BVH`
+
+## Informations sur le corpus
+
+### Auteurs représentés
+
+ANONYME, *Le recueil des hystoires des repeus franches*, 1490, III-F-019 (005)  
+ANONYME, *Les avantures ioyeuses et faitz merveilleux de Tiel Ulespiegle. Ensemble, les grandes fortunes à luy avenues en diverses regions, lequel par falace ne se laissoit aucunement tromper. Le tout traduit d’Allemant en Françoys*, 1559, XI-D-033 (006)  
+ANONYME, *Les cent nouvelles. S’ensuyvent les cent nouvelles contenant cent hystoires ou nouveaulx comptes plaisans a deviser en toutes bonnes compaignies par matiere de ioyeusete*, 1530, IV-E-026 (007)  
+A.D.S.D., *Les comptes du monde adventureux. Où sont recitees plusieurs belles Histoires memorables; & propres pour resiouir la compagnie, & éviter mélancholie*, 1595, XII-B-059 (008)  
+BOCCACE, *Boccace des cent nouvelles*, ?, XVIII-C-013 (003)  
+BOCCACE, *Le Decameron de Messire Iehan Bocace Florentin, nouvellement traduict d’Italien en Françoys par Maistre Anthoine le Macon conseiller du Roy & tresorier de lextraordinaire de ses guerres, trad. Antoine Le Maçon*, 1545, IV-H-038 (004)    
+CHAPPUYS, Gabriel, *Les facetieuses iournees, contenans cent certaines et agreables Nouvelles la plus part advenuës de nostre temps, les autres recueillies & choisies de tous les plus excellents autheurs estrangers qui en ont escrit. Par G.C.D.T. Gabriel Chappuis tourangeau*, 1584, III-D-006 (009)  
+MOTTE ROULLANT, LA, *Les Fascetieux devitz des cent nouvelles, nouvelles, tres récréatives et fort exemplaires pour resveiller les bons espritz Francoys, veuz et remis en leur naturel, par le seigneur de la Motte Roullant Lyonnois, homme tresdocte & bien renommé*,  1549, V-C-005 (008)  
+POGGE, Le, VALLA, Lorenzo et PÉTRARQUE, *Pogii florentini oratoris clarissimi facetiarum liber incipit feliciter ; Facetie morales Laurentii vallensis alias esopus grecus per dictum Laurentium translatus incipiunt feliciter ; Francisci petrarche de salibus virorum illustrium ac facetiis. Tractatus incipit feliciter*, 1475, VIII-F-042 (001)  
+POGGE, Le, *S’ensuyvent les facecies de Poge translatees de latin en francoys qui traitent de plusieurs nouvelles choses moralles*,  1512, III-F-116 (002)  
 
 
