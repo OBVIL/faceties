@@ -328,10 +328,10 @@
                         <xsl:value-of select="replace($pipou, ' ', '')"/>
                     </xsl:variable>
                     <xsl:attribute name="n">
-                        <xsl:value-of select="$number"/>
+                        <xsl:value-of select="replace($number, '\[|\s|\.|\]', '')"/>
                     </xsl:attribute>
                     <xsl:attribute name="xml:id">
-                        <xsl:value-of select="$number"/>
+                        <xsl:value-of select="replace($number, '\[|\s|\.|\]', '')"/>
                     </xsl:attribute>
                     <xsl:attribute name="facs">
                         <xsl:value-of select="$lien"/>
@@ -343,10 +343,10 @@
                         <xsl:value-of select="."/>
                     </xsl:variable>
                     <xsl:attribute name="n">
-                        <xsl:value-of select="$number"/>
+                        <xsl:value-of select="replace($number, '\[|\s|\.|\]', '')"/>
                     </xsl:attribute>
                     <xsl:attribute name="xml:id">
-                        <xsl:value-of select="$number"/>
+                        <xsl:value-of select="replace($number, '\[|\s|\.|\]', '')"/>
                     </xsl:attribute>
                 </xsl:otherwise>
             </xsl:choose>

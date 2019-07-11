@@ -11,6 +11,7 @@
     Par defaut, le fichier cree sera sauvegarde dans 'transformation_result'
 """
 
+from __future__ import print_function, with_statement
 import sys, os, argparse, re, zipfile, subprocess
 
 parser = argparse.ArgumentParser(description="Running multiple xsl sheets on an odt file")
@@ -22,25 +23,27 @@ parser.add_argument("-o", "--output", nargs="?",
                     help="Path to output directory where the result will be store")
 parser.add_argument("-x", "--xsl", nargs="?",
                     help="Path to xsl directory")
+parser.add_argument("-k", "--keep", action="store_true",
+                    help="Keep tempory files")
 args = parser.parse_args()
 
 if args.input:
     input_dir = args.input
 else:
     input_dir = "odt_corr"
-    print "Using default path to input directory : odt_corr/"
+    print("Using default path to input directory : odt_corr/")
 
 if args.output:
     output_dir = args.output
 else:
     output_dir = "transformation_result"
-    print "Using default path to output directory : transformation_result/"
+    print("Using default path to output directory : transformation_result/")
 
 if args.xsl:
     xsl_dir = args.xsl
 else:
     xsl_dir = "xsl"
-    print "Using default path to xsl directory : xsl/"
+    print("Using default path to xsl directory : xsl/")
 
 # Apply xsl transformations from top to bottom
 transformations = [
@@ -55,7 +58,7 @@ transformations = [
 
 # Creating output directory
 if not os.path.isdir(output_dir):
-    print "Creating output directory : %s" %output_dir
+    print("Creating output directory : %s" %output_dir)
     os.makedirs(output_dir)
 
 re_valid_file = re.compile(r'^[^.~]\w+\.odt$')
@@ -77,7 +80,7 @@ for odt_file in os.listdir(input_dir):
         tmp_output = "%s_%s_output_tmp.xml" %(path_odt_file, i)
 
         transformation_path = os.path.join(xsl_dir, transformation)
-        print "Processing %s with %s" %(odt_file, transformation)
+        print("Processing %s with %s" %(odt_file, transformation))
 
         command = ["java",
                    "-cp",
@@ -95,11 +98,12 @@ for odt_file in os.listdir(input_dir):
         tmp_file_to_delete.append(content)
 
     # Cleaning tmp files and renaming result file
-    for tmpfile in tmp_file_to_delete[:-1]:
-        try:
-            os.remove(tmpfile) 
-        except OSError:
-            pass
+    if not args.keep:
+        for tmpfile in tmp_file_to_delete[:-1]:
+            try:
+                os.remove(tmpfile) 
+            except OSError:
+                pass
     try:
         os.rename(tmp_file_to_delete[-1],
                  os.path.join(input_dir, odt_file.replace('.odt', '-result.xml')))
