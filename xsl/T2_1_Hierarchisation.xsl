@@ -52,6 +52,10 @@
             <xsl:when test="contains(local-name(), 'Police')">
                 <xsl:apply-templates/>
             </xsl:when>
+            <!--[AL]-->
+            <xsl:when test="contains(local-name(), 'Standard')">
+                <xsl:apply-templates/>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="{local-name()}">
                     <xsl:for-each select="attribute::*">
@@ -584,5 +588,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
+    <!--[AL] Test pour prise en charge des cul-de-lampe-->
+    
     
 </xsl:stylesheet>
