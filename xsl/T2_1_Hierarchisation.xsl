@@ -530,7 +530,7 @@
     <xsl:template match="node()[starts-with(name(), 'lettrine')]">
         <xsl:for-each select=".">
             <xsl:element name="c">
-                <xsl:attribute name="rend">lettrine</xsl:attribute>
+                <xsl:attribute name="type">lettrine</xsl:attribute>
                 <xsl:attribute name="style">
                     <xsl:text>font-size:</xsl:text>
                     <xsl:value-of select="substring-after(name(),'lettrine')"/>
