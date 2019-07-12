@@ -98,7 +98,7 @@ Sept transformations sont à exécuter dans l'ordre pour transformer l'`.odt` en
 
 - A noter : l'utilisation de saxon-PE 9.8.0.12
 
-Le script `application_multiple_xsl.py` applique les transformations jusqu'à la `T3bis_XML_versXML-BVH`
+Le script `application_multiple_xsl.py` applique les transformations jusqu'à la `T3bis_XML_versXML-BVH`. Il nécessite l'installation au préalable de SaxonHE9-9-1-4J
 
 ## Informations sur le corpus
 
