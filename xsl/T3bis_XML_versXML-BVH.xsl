@@ -14,8 +14,8 @@
         <xsl:comment>(T3bis) Transformation XML vers XML-BVH : <xsl:value-of  select="format-date(current-date(), '[M01]/[D01]/[Y0001]')"/> à <xsl:value-of select="format-dateTime(current-dateTime(), '[H01]:[m01]')"/>. </xsl:comment>
         <xsl:apply-templates/>
     </xsl:template>
-    
-    <xsl:template match="*">
+
+    <!--<xsl:template match="*">
         <xsl:element name="{name()}">
             <xsl:for-each select="attribute::*">
                 <xsl:attribute name="{name()}">
@@ -24,8 +24,20 @@
             </xsl:for-each>
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>-->
+
+    <xsl:template match="@*|node()">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
     </xsl:template>
-    
+
+    <xsl:template match="*" priority="1">
+        <xsl:element name="{local-name()}" namespace="http://www.tei-c.org/ns/1.0">
+            <xsl:apply-templates select="node()|@*" />
+        </xsl:element>
+    </xsl:template>
+
     <!--======================================================
         ALINEAS
     ======================================================-->
