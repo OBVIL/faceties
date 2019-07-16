@@ -236,9 +236,21 @@
             </xsl:when>
             <xsl:when test="starts-with(., 'back')"/>
             <xsl:otherwise>
-                <xsl:element name="head">
-                    <xsl:apply-templates mode="titre"/>
-                </xsl:element>
+                <xsl:variable name="elementName">
+                    <xsl:value-of select="@niv"/>
+                </xsl:variable>
+                <xsl:choose>
+                    <xsl:when test="not(matches($elementName, '[0-9]+'))">
+                        <xsl:element name="{$elementName}">
+                            <xsl:apply-templates mode="titre"/>
+                        </xsl:element>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:element name="head">
+                            <xsl:apply-templates mode="titre"/>
+                        </xsl:element>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
