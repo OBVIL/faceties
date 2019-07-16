@@ -166,39 +166,29 @@
     </xsl:template>
 
     <!-- <frontiespiece> -->
-
     <xsl:template match="frontiespiece">
         <xsl:element name="front">
             <xsl:apply-templates select="./head"/>
+
+            <!-- Ajout des speakers uniques dans le <castList> -->
             <xsl:if test="boolean(.//following::div//descendant::speaker)">
                 <xsl:element name="castList">
-                    <xsl:apply-templates select=".//following::div//descendant::speaker" mode="index"/>
+                    <xsl:for-each select="distinct-values(.//following::div//descendant::speaker)">
+                        <xsl:element name="castItem">
+                            <xsl:attribute name="xml:id">
+                                <xsl:value-of select="replace(., ' ', '_')"/>
+                            </xsl:attribute>
+                            <xsl:value-of select="."/>
+                        </xsl:element>
+                    </xsl:for-each>
                 </xsl:element>
             </xsl:if>
+
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
 
     <xsl:template match="frontiespiece/head"/>
-
-    <xsl:template match="speaker" mode="index">
-        <xsl:variable name="item" select="."/>
-        <xsl:variable name="item_preced" select="preceding::speaker"/>
-        <xsl:variable name="unique">
-            <xsl:if test="count($item_preced[. = $item]) = 1">
-                <xsl:value-of select="$item"/>
-            </xsl:if>
-        </xsl:variable>
-        <xsl:if test="not($unique = '')">
-              <xsl:for-each select="$unique">
-                  <xsl:element name="castItem">
-                      <xsl:attribute name="xml:id">
-                          <xsl:value-of select="replace($unique, ' ', '_')"/>
-                      </xsl:attribute>
-                  </xsl:element>
-              </xsl:for-each>
-        </xsl:if>
-    </xsl:template>
 
     <!-- Structure du texte -->
 
