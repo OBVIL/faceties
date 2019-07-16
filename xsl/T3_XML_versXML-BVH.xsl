@@ -170,7 +170,11 @@
     <xsl:template match="frontiespiece">
         <xsl:element name="front">
             <xsl:apply-templates select="./head"/>
-                <xsl:apply-templates select=".//following::div//descendant::speaker" mode="index"/>
+            <xsl:if test="boolean(.//following::div//descendant::speaker)">
+                <xsl:element name="castList">
+                    <xsl:apply-templates select=".//following::div//descendant::speaker" mode="index"/>
+                </xsl:element>
+            </xsl:if>
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -186,15 +190,13 @@
             </xsl:if>
         </xsl:variable>
         <xsl:if test="not($unique = '')">
-            <xsl:for-each select="$unique">
-                <xsl:element name="castList">
-                    <xsl:element name="castItem">
-                        <xsl:attribute name="xml:id">
-                            <xsl:value-of select="replace($unique, ' ', '_')"/>
-                        </xsl:attribute>
-                    </xsl:element>
-                </xsl:element>
-            </xsl:for-each>
+              <xsl:for-each select="$unique">
+                  <xsl:element name="castItem">
+                      <xsl:attribute name="xml:id">
+                          <xsl:value-of select="replace($unique, ' ', '_')"/>
+                      </xsl:attribute>
+                  </xsl:element>
+              </xsl:for-each>
         </xsl:if>
     </xsl:template>
 
