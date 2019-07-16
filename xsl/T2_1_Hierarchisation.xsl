@@ -52,6 +52,10 @@
             <xsl:when test="contains(local-name(), 'Police')">
                 <xsl:apply-templates/>
             </xsl:when>
+            <!--[AL]-->
+            <xsl:when test="contains(local-name(), 'Standard')">
+                <xsl:apply-templates/>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="{local-name()}">
                     <xsl:for-each select="attribute::*">
@@ -526,7 +530,7 @@
     <xsl:template match="node()[starts-with(name(), 'lettrine')]">
         <xsl:for-each select=".">
             <xsl:element name="c">
-                <xsl:attribute name="rend">lettrine</xsl:attribute>
+                <xsl:attribute name="type">lettrine</xsl:attribute>
                 <xsl:attribute name="style">
                     <xsl:text>font-size:</xsl:text>
                     <xsl:value-of select="substring-after(name(),'lettrine')"/>
@@ -584,5 +588,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
+    <!--[AL] Test pour prise en charge des cul-de-lampe-->
+    
     
 </xsl:stylesheet>

@@ -38,7 +38,7 @@
     <!-- élément text:p -->
     <xsl:template match="text:p">
         <xsl:choose>
-            <xsl:when test="contains(., 'front')">
+            <xsl:when test="contains(., 'front>')">
                 <xsl:value-of select="." disable-output-escaping="yes"/>
             </xsl:when>
             <xsl:otherwise>
