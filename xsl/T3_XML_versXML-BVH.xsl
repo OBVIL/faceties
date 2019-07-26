@@ -131,9 +131,7 @@
                 </profileDesc>
             </teiHeader>
             <text>
-                <body>
-                    <xsl:apply-templates/>
-                </body>
+                <xsl:apply-templates/>
             </text>
         </TEI>
     </xsl:template>
@@ -142,7 +140,7 @@
     <xsl:template match="teiHeader"/>
 
     <!-- (Note) Éléments matchés mais pas leur balise car elles sont déjà introduites dans <xsl:template match="/"> -->
-    <xsl:template match="body | TEI | text">
+    <xsl:template match="TEI | text">
         <xsl:apply-templates/>
     </xsl:template>
 
@@ -184,47 +182,54 @@
                 </xsl:element>
             </xsl:if>
 
-            <xsl:apply-templates/>
+            <xsl:element name="titlePage">
+                <xsl:apply-templates/>
+            </xsl:element>
         </xsl:element>
     </xsl:template>
 
+    <xsl:template match="body">
+        <xsl:element name="body">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
     <xsl:template match="frontiespiece/head"/>
 
     <!-- Structure du texte -->
 
     <xsl:template match="div">
-        <xsl:choose>
-            <xsl:when test="./titre/speaker">
-                <xsl:element name="sp">
-                    <xsl:attribute name="who">
-                        <xsl:value-of select="translate(./titre/speaker, $ABC, $abc)"/>
-                    </xsl:attribute>
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:when>
-            <xsl:when test="./speaker">
-                <xsl:element name="sp">
-                    <xsl:attribute name="who">
-                        <xsl:value-of select="translate(./speaker, $ABC, $abc)"/>
-                    </xsl:attribute>
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:when>
-            <xsl:when test="./titre/contains(., 'back')">
-                <xsl:element name="back">
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:variable name="level">
-                    <xsl:text>div</xsl:text>
-                    <xsl:value-of select="attribute::*"/>
-                </xsl:variable>
-                <xsl:element name="{$level}">
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
+           <xsl:choose>
+               <xsl:when test="./titre/speaker">
+                   <xsl:element name="sp">
+                       <xsl:attribute name="who">
+                           <xsl:value-of select="translate(./titre/speaker, $ABC, $abc)"/>
+                       </xsl:attribute>
+                       <xsl:apply-templates/>
+                   </xsl:element>
+               </xsl:when>
+               <xsl:when test="./speaker">
+                   <xsl:element name="sp">
+                       <xsl:attribute name="who">
+                           <xsl:value-of select="translate(./speaker, $ABC, $abc)"/>
+                       </xsl:attribute>
+                       <xsl:apply-templates/>
+                   </xsl:element>
+               </xsl:when>
+               <xsl:when test="./titre/contains(., 'back')">
+                   <xsl:element name="back">
+                       <xsl:apply-templates/>
+                   </xsl:element>
+               </xsl:when>
+               <xsl:otherwise>
+                   <xsl:variable name="level">
+                       <xsl:text>div</xsl:text>
+                       <xsl:value-of select="attribute::*"/>
+                   </xsl:variable>
+                   <xsl:element name="{$level}">
+                       <xsl:apply-templates/>
+                   </xsl:element>
+               </xsl:otherwise>
+           </xsl:choose>
     </xsl:template>
 
     <xsl:template match="titre">
@@ -236,6 +241,7 @@
             </xsl:when>
             <xsl:when test="starts-with(., 'back')"/>
             <xsl:otherwise>
+                <!-- Création du front -->
                 <xsl:variable name="elementName">
                     <xsl:value-of select="@niv"/>
                 </xsl:variable>
