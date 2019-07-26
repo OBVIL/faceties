@@ -188,11 +188,7 @@
         </xsl:element>
     </xsl:template>
 
-    <xsl:template match="body">
-        <xsl:element name="body">
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
+
     <xsl:template match="frontiespiece/head"/>
 
     <!-- Structure du texte -->
@@ -404,6 +400,12 @@
         </xsl:choose>
     </xsl:template>
 
+
+    <xsl:template match="body">
+        <xsl:element name="body">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
 
     <!-- 
     ===========================================
