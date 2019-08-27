@@ -52,6 +52,7 @@
                             <xsl:value-of select="substring-before($StyP, '_5f_')"/>
                             <xsl:text>_</xsl:text>
                             <xsl:value-of select="substring-after($StyP, '_5f_')"/>
+                            <!--<xsl:value-of select="replace($StyP, '_5f_', '_')"/>-->
                         </xsl:when>
                         <xsl:otherwise><xsl:value-of select="$StyP"/></xsl:otherwise>
                     </xsl:choose>
@@ -73,7 +74,6 @@
         </xsl:choose>
         
     </xsl:template>
-    
     
     <!-- élément text:span -->
     <xsl:template match="text:span">

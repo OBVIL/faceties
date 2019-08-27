@@ -33,11 +33,6 @@
         </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="*" priority="1">
-        <xsl:element name="{local-name()}" namespace="http://www.tei-c.org/ns/1.0">
-            <xsl:apply-templates select="node()|@*" />
-        </xsl:element>
-    </xsl:template>
 
     <!--======================================================
         ALINEAS

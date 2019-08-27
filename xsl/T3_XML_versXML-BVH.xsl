@@ -182,12 +182,9 @@
                 </xsl:element>
             </xsl:if>
 
-            <xsl:element name="titlePage">
-                <xsl:apply-templates/>
-            </xsl:element>
+            <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
-
 
     <xsl:template match="frontiespiece/head"/>
 
@@ -243,9 +240,20 @@
                 </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="not(matches($elementName, '[0-9]+'))">
-                        <xsl:element name="{$elementName}">
-                            <xsl:apply-templates mode="titre"/>
-                        </xsl:element>
+                        <xsl:choose>
+                            <xsl:when test="matches($elementName, 'main|subtitle')">
+                                <xsl:element name="titlePart">
+                                    <xsl:attribute name="type"><xsl:value-of select="$elementName"/></xsl:attribute>
+                                    <xsl:apply-templates mode="titre"/>
+                                </xsl:element>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:element name="{$elementName}">
+                                    <xsl:apply-templates mode="titre"/>
+                                </xsl:element>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:element name="head">
