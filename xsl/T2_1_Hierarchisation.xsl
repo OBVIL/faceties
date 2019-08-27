@@ -165,7 +165,7 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="figure_">
+    <xsl:template match="figure">
         <xsl:element name="figure">
             <xsl:element name="graphic">
                 <xsl:attribute name="url">
