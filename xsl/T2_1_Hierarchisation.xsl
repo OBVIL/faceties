@@ -300,7 +300,7 @@
                 <xsl:apply-templates/>
             </xsl:when>
             <xsl:when test="contains(., '£')">
-                <space quantity="1" unit="line"/>
+                <space quantity="1" unit="lines"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="l">
