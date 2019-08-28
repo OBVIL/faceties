@@ -14,6 +14,7 @@
         - les images -->
     
     <xsl:strip-space elements="*"/>
+    <xsl:output indent="yes"/>
     
     <xsl:template match="/">
         <xsl:comment>OBVIL, CHEVALIER Nolwenn. Projet Facéties. </xsl:comment>
@@ -536,7 +537,8 @@
                     <xsl:value-of select="substring-after(name(),'lettrine')"/>
                     <xsl:text>em</xsl:text>
                 </xsl:attribute>
-                <xsl:apply-templates/>
+                <!--<xsl:apply-templates/>-->
+                <xsl:value-of select="."/>
             </xsl:element>
         </xsl:for-each>
     </xsl:template>
