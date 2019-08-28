@@ -53,7 +53,10 @@ transformations = [
         "T2_3_Hierarchisation.xsl",
         "T3_XML_versXML-BVH.xsl",
         "T3bis_XML_versXML-BVH.xsl",
-        "T3bis_XML_versXML-BVH.xsl"
+        "T3bis_XML_versXML-BVH.xsl",
+        "T4a-corrections.xsl",
+        "T4b-corrections.xsl",
+        "T4c-namespace.xsl",
         ]
 
 # Creating output directory

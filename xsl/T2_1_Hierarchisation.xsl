@@ -14,6 +14,7 @@
         - les images -->
     
     <xsl:strip-space elements="*"/>
+    <xsl:output indent="yes"/>
     
     <xsl:template match="/">
         <xsl:comment>OBVIL, CHEVALIER Nolwenn. Projet Facéties. </xsl:comment>
@@ -165,7 +166,7 @@
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="figure_">
+    <xsl:template match="figure">
         <xsl:element name="figure">
             <xsl:element name="graphic">
                 <xsl:attribute name="url">
@@ -300,7 +301,7 @@
                 <xsl:apply-templates/>
             </xsl:when>
             <xsl:when test="contains(., '£')">
-                <space quantity="1" unit="line"/>
+                <space quantity="1" unit="lines"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="l">
@@ -536,7 +537,8 @@
                     <xsl:value-of select="substring-after(name(),'lettrine')"/>
                     <xsl:text>em</xsl:text>
                 </xsl:attribute>
-                <xsl:apply-templates/>
+                <!--<xsl:apply-templates/>-->
+                <xsl:value-of select="."/>
             </xsl:element>
         </xsl:for-each>
     </xsl:template>
