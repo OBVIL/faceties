@@ -89,11 +89,11 @@ Sept transformations sont à exécuter dans l'ordre pour transformer l'`.odt` en
 	- peut-être appliquée autant de fois que nécessaire
 	- **ce dernier résultat nécessite une relecture pour résoudre les abréviations qui ne peuvent pas être automatisées : par/per et que/qui**. Lorsqu'elles sont présentes, cela doit générer une erreur. Elles sont repérées dans le texte par des '#'.
 - `T4a-corrections.xsl`
-        - corrections des erreurs sur le front
+	- corrections des erreurs sur le <front>
 - `T4b-corrections.xsl`
-        - corrections des erreurs sur le front
+	- corrections des erreurs sur le <front>
 - `T4c-namespace.xsl`
- 	- ajout du namespace
+	- ajout du namespace
 - `T5_XML-TEI_vers_HTML_orig`
 	- version fac-similaire
 - `T5_XML-TEI_vers_HTML_reg`
