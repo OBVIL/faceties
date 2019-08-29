@@ -2209,7 +2209,8 @@
                         </choice>
                         <xsl:value-of select="substring-after(., 'ꝛ')"/>
                     </xsl:when>
-                    <xsl:when test="matches(., '^(\w)9(\w*)$', 'i')">
+                    <!--[AL] Modification pour ne pas matcher des dates-->
+                    <xsl:when test="matches(., '([a-z])9(\w*)', 'i')">
                         <xsl:value-of select="substring-before(., '9')"/>
                         <choice change="abreviation">
                             <orig>
@@ -2298,11 +2299,12 @@
                             <xsl:value-of select="substring-before(., 'aue')"/>
                             <xsl:text>a</xsl:text>
                             <choice change="lettre_ramiste">
+                                <!--[AL] Inversion u/v-->
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:text>e</xsl:text>
@@ -2312,11 +2314,12 @@
                             <xsl:value-of select="substring-before(., 'Aue')"/>
                             <xsl:text>A</xsl:text>
                             <choice change="lettre_ramiste">
+                                <!--[AL] Inversion u/v-->
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:text>e</xsl:text>
@@ -2327,12 +2330,13 @@
                         <xsl:if test="matches(., '^(\w*)au(a|é|i|o|e)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'au')"/>
                             <xsl:text>a</xsl:text>
+                            <!--[AL] Inversion u/v-->
                             <choice change="lettre_ramiste">
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'au')"/>
@@ -2340,12 +2344,13 @@
                         <xsl:if test="matches(., '^(\w*)Au(a|é|i|o|e)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'Au')"/>
                             <xsl:text>A</xsl:text>
+                            <!--[AL] Inversion u/v-->
                             <choice change="lettre_ramiste">
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:value-of select="substring-after(., 'Au')"/>
@@ -2958,12 +2963,13 @@
                     <xsl:when test="matches(., '^(\w*)es?ua(\w*)$', 'i')">
                         <xsl:if test="matches(., '^(\w*)es?ua(\w*)$')">
                             <xsl:value-of select="substring-before(., 'ua')"/>
+                            <!--[AL] Inversion u/v-->
                             <choice change="lettre_ramiste">
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:text>a</xsl:text>
@@ -2985,7 +2991,8 @@
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w+)eru(a|e|é|o|i|y)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'eru')"/>
-                        <xsl:text>eru</xsl:text>
+                        <!--[AL] <xsl:text>eru</xsl:text>-->
+                        <xsl:text>er</xsl:text>
                         <choice change="lettre_ramiste">
                             <orig>
                                 <xsl:text>u</xsl:text>
@@ -3010,7 +3017,7 @@
                     </xsl:when>
                     <xsl:when test="matches(., '^(\w+)epu(o|e|a)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'epu')"/>
-                        <xsl:text>epu</xsl:text>
+                        <xsl:text>ep</xsl:text>
                         <choice change="lettre_ramiste">
                             <orig>
                                 <xsl:text>u</xsl:text>
@@ -3038,12 +3045,13 @@
                         <xsl:if test="matches(., '^(\w*)eui[^l](\w*)$')">
                             <xsl:value-of select="substring-before(., 'eui')"/>
                             <xsl:text>e</xsl:text>
+                            <!--[AL] inversion u/v-->
                             <choice change="lettre_ramiste">
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:text>i</xsl:text>
@@ -3052,12 +3060,13 @@
                         <xsl:if test="matches(., '^(\w*)Eui[^l](\w*)$')">
                             <xsl:value-of select="substring-before(., 'Eui')"/>
                             <xsl:text>E</xsl:text>
+                            <!--[AL] inversion u/v-->
                             <choice change="lettre_ramiste">
                                 <orig>
-                                    <xsl:text>v</xsl:text>
+                                    <xsl:text>u</xsl:text>
                                 </orig>
                                 <reg>
-                                    <xsl:text>u</xsl:text>
+                                    <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
                             <xsl:text>i</xsl:text>
@@ -3736,8 +3745,9 @@
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
                     </xsl:when>
-                    <xsl:when test="matches(., '^(\w*)ieun(\w*)$', 'i')">
-                        <xsl:if test="matches(., '^(\w*)ieun(\w*)$')">
+                    <!--[AL] <xsl:when test="matches(., '^(\w*)ieun(\w*)$', 'i')">-->
+                    <xsl:when test="matches(., '^ieun(\w*)$', 'i')">
+                        <xsl:if test="matches(., '^ieun(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
                                 <orig>
@@ -3749,7 +3759,8 @@
                             </choice>
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
-                        <xsl:if test="matches(., '^(\w*)Ieun(\w*)$')">
+                        <!--[AL] <xsl:if test="matches(., '^(\w*)Ieun(\w*)$')"> -->
+                        <xsl:if test="matches(., '^Ieun(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
                                 <orig>
@@ -4033,7 +4044,6 @@
                                     <xsl:text>v</xsl:text>
                                 </reg>
                             </choice>
-                            <xsl:text>u</xsl:text>
                             <xsl:value-of select="substring-after(., 'iu')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^(\w+)Iu(e|i|o|a|é|y|ÿ)(\w*)$')">
@@ -4294,6 +4304,14 @@
                         </choice>
                         <xsl:text>el</xsl:text>
                         <xsl:value-of select="substring-after(., 'vel')"/>
+                    </xsl:when>
+                    <!--[AL] : régle initial qui ne fonctionne pas. 
+                        Exemple : 
+                        "En lieu ou naura este veu" 
+                        devient "En lieu ou navra este veu"
+                    Ajout d'une règle vide pour ne pas modifier "naura" <xsl:when test="matches(., '^naura$', 'i')">-->
+                    <xsl:when test="matches(., '^naura$', 'i')">
+                        <xsl:value-of select="."/>
                     </xsl:when>
                     <xsl:when test="matches(., '^(nouic|naur|nepueu|nouembre)(\w*)$', 'i')">
                         <xsl:value-of select="substring-before(., 'u')"/>
@@ -5511,7 +5529,6 @@
                         <xsl:text>ing</xsl:text>
                         <xsl:value-of select="substring-after(., 'uing')"/>
                     </xsl:when>
-
                     <xsl:otherwise>
                         <xsl:value-of select="."/>
                     </xsl:otherwise>
