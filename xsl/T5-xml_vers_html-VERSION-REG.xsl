@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs" version="2.0">
-    
+
     <!-- STRUCTURE GLOBALE -->
-    
+
     <xsl:strip-space elements="choice"/>
-    
+    <xsl:output indent="yes"/>
+
     <xsl:template match="/">
         <html lang="fr">
             <head>
@@ -17,9 +18,7 @@
                 <title>Version normalisée</title>
             </head>
             <body onload="initialise_affichage()">
-                
-                
-                
+
                 <div class="index">
                     
                     <div class="index1">
@@ -28,31 +27,16 @@
                             <button type="button"><i class="fa">&#xf02d;</i> Version fac-similaire</button> 
                         </xsl:element>
                     </div>
-                    
                     <div id="definition">
                         <form>
                             <h3>Afficher les normalisations</h3>
                             <div><input type="radio" name="norm" id="affiche_reg" value="affiche_reg" onclick="affiche_tout_reg();"/>Tout afficher</div>
                             <div><input type="radio" name="norm" id="cache_reg" value="cache_reg" onclick="cache_tout_reg();"/>Tout cacher</div>
-                             <hr/><div id="afficher">
+                            <hr/><div id="afficher">
                             </div>
                         </form>
                     </div>
-                    
-<!--                    <div id="definition">
-                        <form>
-                            <h3>Options de lecture</h3>
-                        
-                            <div><input type="checkbox" name="lettre_ramiste" value="checkbox"/>Lettre ramiste</div>
-                            <div><input type="checkbox" name="abreviation" value="checkbox"/>Abréviation</div>
-                            <div><input type="checkbox" name="sic" value="checkbox"/>Coquilles</div>
-                            <div><input type="checkbox" name="cesure_implicite" value="checkbox"/>Césures implicites</div>
-                            
-                            <div id="afficher">
-                            </div>
-                        </form>
-                    </div>-->
-                    
+
                 </div>
                 
                 <div id="texte_complet">
@@ -159,13 +143,13 @@
     <!-- Modification de l'affichage des folio -->
     <xsl:template match="pb">
         <xsl:element name="l">
-        <xsl:element name="span">
-            <xsl:attribute name="class">pb</xsl:attribute>
-            <xsl:attribute name="n"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
-            <xsl:attribute name="xml:id"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
-            <xsl:attribute name="facs"></xsl:attribute>
-            <xsl:value-of select="replace(@n, ' \]', ']')"/>
-        </xsl:element>
+           <xsl:element name="span">
+               <xsl:attribute name="class">pb</xsl:attribute>
+               <xsl:attribute name="n"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
+               <xsl:attribute name="xml:id"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
+               <xsl:attribute name="facs"></xsl:attribute>
+               <xsl:value-of select="replace(@n, ' \]', ']')"/>
+           </xsl:element>
         </xsl:element><br/>
     </xsl:template>
     
@@ -198,4 +182,10 @@
         </xsl:element>
     </xsl:template>
     
+    <!-- Line break -->
+    <xsl:template match="lb">
+        <br/>
+        <xsl:apply-templates/>
+    </xsl:template>
+
 </xsl:stylesheet>

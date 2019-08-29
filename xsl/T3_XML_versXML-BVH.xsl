@@ -444,7 +444,7 @@
                                 <xsl:text>-</xsl:text>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'Ĝ')"/>
                     </xsl:when>
                     <xsl:when test="matches(., '(\w*)[^(ã|ẽ|ĩ|õ|ũ)]Ñ(\w*)', 'i')">
@@ -453,7 +453,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'Ñ')"/>
                     </xsl:when>
 
@@ -958,7 +958,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ãĜm')"/>
                     </xsl:when>
@@ -980,7 +980,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ãĜb')"/>
                     </xsl:when>
@@ -1002,7 +1002,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ãĜp')"/>
                     </xsl:when>
@@ -1027,7 +1027,7 @@
                                         </pc>
                                     </corr>
                                 </choice>
-                                <lb rend="hyphen"/>
+                                <!--<lb rend="hyphen"/>-->
                                 <xsl:text>n</xsl:text>
                                 <xsl:value-of select="substring-after(., 'dãĜn')"/>
                             </xsl:when>
@@ -1049,7 +1049,7 @@
                                         </pc>
                                     </corr>
                                 </choice>
-                                <lb rend="hyphen"/>
+                                <!--<lb rend="hyphen"/>-->
                                 <xsl:text>n</xsl:text>
                                 <xsl:value-of select="substring-after(., 'ãĜn')"/>
                             </xsl:otherwise>
@@ -1073,7 +1073,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'ãĜ')"/>
                     </xsl:when>
 
@@ -1095,7 +1095,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽĜm')"/>
                     </xsl:when>
@@ -1117,7 +1117,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽĜb')"/>
                     </xsl:when>
@@ -1139,7 +1139,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽĜp')"/>
                     </xsl:when>
@@ -1161,7 +1161,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽĜn')"/>
                     </xsl:when>
@@ -1183,7 +1183,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'ẽĜ')"/>
                     </xsl:when>
 
@@ -1205,7 +1205,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩĜm')"/>
                     </xsl:when>
@@ -1227,7 +1227,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩĜb')"/>
                     </xsl:when>
@@ -1249,7 +1249,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩĜp')"/>
                     </xsl:when>
@@ -1271,7 +1271,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩĜn')"/>
                     </xsl:when>
@@ -1293,7 +1293,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'ĩĜ')"/>
                     </xsl:when>
 
@@ -1315,7 +1315,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'õĜm')"/>
                     </xsl:when>
@@ -1337,7 +1337,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'õĜb')"/>
                     </xsl:when>
@@ -1359,7 +1359,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'õĜp')"/>
                     </xsl:when>
@@ -1379,7 +1379,7 @@
                                 <xsl:text>-</xsl:text>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'õĜn')"/>
                     </xsl:when>
@@ -1401,7 +1401,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'õĜ')"/>
                     </xsl:when>
 
@@ -1423,7 +1423,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũĜm')"/>
                     </xsl:when>
@@ -1445,7 +1445,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũĜb')"/>
                     </xsl:when>
@@ -1467,7 +1467,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũĜp')"/>
                     </xsl:when>
@@ -1489,7 +1489,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũĜn')"/>
                     </xsl:when>
@@ -1511,7 +1511,7 @@
                                 </pc>
                             </corr>
                         </choice>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'ũĜ')"/>
                     </xsl:when>
 
@@ -1530,8 +1530,8 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ãÑm')"/>
                     </xsl:when>
@@ -1548,7 +1548,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ãÑb')"/>
                     </xsl:when>
@@ -1565,7 +1565,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ãÑp')"/>
                     </xsl:when>
@@ -1585,7 +1585,7 @@
                                 <pc change="cesure_explicite">
                                     <xsl:text>-</xsl:text>
                                 </pc>
-                                <lb rend="hyphen"/>
+                                <!--<lb rend="hyphen"/>-->
                                 <xsl:text>n</xsl:text>
                                 <xsl:value-of select="substring-after(., 'dãÑn')"/>
                             </xsl:when>
@@ -1602,7 +1602,7 @@
                                 <pc change="cesure_explicite">
                                     <xsl:text>-</xsl:text>
                                 </pc>
-                                <lb rend="hyphen"/>
+                                <!--<lb rend="hyphen"/>-->
                                 <xsl:text>n</xsl:text>
                                 <xsl:value-of select="substring-after(., 'ãÑn')"/>
                             </xsl:otherwise>
@@ -1621,7 +1621,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'ãÑ')"/>
                     </xsl:when>
 
@@ -1638,7 +1638,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽÑm')"/>
                     </xsl:when>
@@ -1655,7 +1655,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽÑb')"/>
                     </xsl:when>
@@ -1672,7 +1672,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽÑp')"/>
                     </xsl:when>
@@ -1689,7 +1689,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'ẽÑn')"/>
                     </xsl:when>
@@ -1706,7 +1706,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'ẽÑ')"/>
                     </xsl:when>
 
@@ -1723,7 +1723,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩÑm')"/>
                     </xsl:when>
@@ -1740,7 +1740,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩÑb')"/>
                     </xsl:when>
@@ -1757,7 +1757,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩÑp')"/>
                     </xsl:when>
@@ -1774,7 +1774,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'ĩÑn')"/>
                     </xsl:when>
@@ -1791,7 +1791,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'ĩÑ')"/>
                     </xsl:when>
 
@@ -1808,7 +1808,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'õÑm')"/>
                     </xsl:when>
@@ -1825,7 +1825,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'õÑb')"/>
                     </xsl:when>
@@ -1842,7 +1842,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'õÑp')"/>
                     </xsl:when>
@@ -1859,7 +1859,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'õÑn')"/>
                     </xsl:when>
@@ -1876,7 +1876,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'õÑ')"/>
                     </xsl:when>
 
@@ -1893,7 +1893,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>m</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũÑm')"/>
                     </xsl:when>
@@ -1910,7 +1910,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>b</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũÑb')"/>
                     </xsl:when>
@@ -1927,7 +1927,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>p</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũÑp')"/>
                     </xsl:when>
@@ -1944,7 +1944,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:text>n</xsl:text>
                         <xsl:value-of select="substring-after(., 'ũÑn')"/>
                     </xsl:when>
@@ -1961,7 +1961,7 @@
                         <pc change="cesure_explicite">
                             <xsl:text>-</xsl:text>
                         </pc>
-                        <lb rend="hyphen"/>
+                        <!--<lb rend="hyphen"/>-->
                         <xsl:value-of select="substring-after(., 'ũÑ')"/>
                     </xsl:when>
 
