@@ -383,6 +383,7 @@
         </xsl:element>
     </xsl:template>
     
+    <!-- Problème ici issue #65-->
     <xsl:template match="*/pb[1]">
             <xsl:choose>
                 <xsl:when test="following-sibling::pb">
