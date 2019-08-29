@@ -2292,7 +2292,13 @@
                         <xsl:value-of select="substring-after(., 'ↄt')"/>
                     </xsl:when>
 
-                    <!-- Résolution des dissiminlations : LES LETTRES RAMISTES > A > u/v -->
+                    <!-- Résolution des dissimilations : LES LETTRES RAMISTES > A > u/v -->
+                    
+                    <!--[AL] Nécessaire d'ajouter pour traiter les termes comme 
+                        "inuention" > "invention" qui ne sont pas pris en compte
+                        ex : inuita
+                        Attention aux mot comme "inutilles"; "continua" qui ne doivent pas bouger
+                    -->
 
                     <xsl:when test="matches(., '^(\w*[^e])aue(\w*)$', 'i')">
                         <xsl:if test="matches(., '^(\w*[^e])aue(\w*)$')">
@@ -3964,7 +3970,8 @@
                             <xsl:value-of select="substring-after(., 'I')"/>
                         </xsl:if>
                     </xsl:when>
-                    <xsl:when test="matches(., '^(ieusn|inue)(\w*)$', 'i')">
+                    <!--[AL] condition qui ne fonctionne pas (inuention devient jnuention)-->
+                    <!--<xsl:when test="matches(., '^(ieusn|inue)(\w*)$', 'i')">
                         <xsl:if test="matches(., '^(ieusn|inue)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'i')"/>
                             <choice change="lettre_ramiste">
@@ -3978,6 +3985,32 @@
                             <xsl:value-of select="substring-after(., 'i')"/>
                         </xsl:if>
                         <xsl:if test="matches(., '^(Ieusn|Inue)(\w*)$')">
+                            <xsl:value-of select="substring-before(., 'I')"/>
+                            <choice change="lettre_ramiste">
+                                <orig>
+                                    <xsl:text>I</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>J</xsl:text>
+                                </reg>
+                            </choice>
+                            <xsl:value-of select="substring-after(., 'I')"/>
+                        </xsl:if>
+                    </xsl:when>-->
+                    <xsl:when test="matches(., '(ieusn)(\w*)$', 'i')">
+                        <xsl:if test="matches(., '(ieusn|inue)(\w*)$')">
+                            <xsl:value-of select="substring-before(., 'i')"/>
+                            <choice change="lettre_ramiste">
+                                <orig>
+                                    <xsl:text>i</xsl:text>
+                                </orig>
+                                <reg>
+                                    <xsl:text>j</xsl:text>
+                                </reg>
+                            </choice>
+                            <xsl:value-of select="substring-after(., 'i')"/>
+                        </xsl:if>
+                        <xsl:if test="matches(., '(Ieusn|Inue)(\w*)$')">
                             <xsl:value-of select="substring-before(., 'I')"/>
                             <choice change="lettre_ramiste">
                                 <orig>
