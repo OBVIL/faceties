@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs" version="2.0">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs" version="2.0">
     
     <!-- STRUCTURE GLOBALE -->
     
     <xsl:strip-space elements="choice"/>
-    
+
+    <xsl:output indent="yes"/>
+
     <xsl:template match="/">
         <html lang="fr">
             <head>
@@ -17,9 +19,7 @@
                 <title>Version fac-similaire</title>
             </head>
             <body onload="initialise_affichage()">
-                
-                
-                
+
                 <div class="index">
                     
                     <div class="index1">
@@ -37,20 +37,6 @@
                             </div>
                         </form>
                     </div>
-                    
-                    <!--<div id="definition">
-                        <form>
-                            <h3>Options de lecture</h3>
-                            
-                            <div><input type="checkbox" name="lettre_ramiste" value="checkbox"/>Lettre ramiste</div>
-                            <div><input type="checkbox" name="abreviation" value="checkbox"/>Abréviation</div>
-                            <div><input type="checkbox" name="sic" value="checkbox"/>Coquilles</div>
-                            <div><input type="checkbox" name="cesure_implicite" value="checkbox"/>Césures implicites</div>
-                            
-                            <div id="afficher">
-                            </div>
-                        </form>
-                    </div>-->
                     
                 </div>
                 
@@ -183,6 +169,15 @@
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
+
+    <xsl:template match="pc">
+        <xsl:element name="span">
+            <xsl:attribute name="class">
+                <xsl:value-of select="local-name()"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
     
     <xsl:template match="choice">
         <xsl:element name="span">
@@ -191,6 +186,12 @@
             </xsl:attribute>
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>
+
+    <!-- Line break -->
+    <xsl:template match="lb">
+        <br/>
+        <xsl:apply-templates/>
     </xsl:template>
     
 </xsl:stylesheet>
