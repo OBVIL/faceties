@@ -384,7 +384,7 @@
     </xsl:template>
     
     <!-- Problème ici issue #65-->
-    <xsl:template match="*/pb[1]">
+    <!--<xsl:template match="*/pb[1]">
             <xsl:choose>
                 <xsl:when test="following-sibling::pb">
                     <xsl:element name="pb">
@@ -397,8 +397,8 @@
                 <xsl:when test="preceding-sibling::pb"/>
             </xsl:choose>
     </xsl:template>
-    
-    <xsl:template match="pb"/>
+
+    <xsl:template match="pb"/>-->
 
     <!-- STYLE DE CARACTERES -->
     
@@ -527,6 +527,10 @@
         </xsl:element>
     </xsl:template>
     
+    <xsl:template match="mevexp">
+            <xsl:apply-templates/>
+    </xsl:template>
+
     <!-- Lettrines -->
     
     <xsl:template match="node()[starts-with(name(), 'lettrine')]">
