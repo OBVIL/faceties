@@ -327,43 +327,30 @@
         </xsl:element>
     </xsl:template>
 
+    <!-- Insertion des liens vers les facs similés -->
+    <xsl:template match="a[pb]">
+        <xsl:element name="pb">
+            <xsl:attribute name="n">
+                <xsl:value-of select="translate(./pb, '[] ', '')"/>
+            </xsl:attribute>
+            <xsl:attribute name="xml:id">
+                <xsl:value-of select="translate(./pb, '[] ', '')"/>
+            </xsl:attribute>
+            <xsl:attribute name="facs">
+                <xsl:value-of select="@href"/>
+            </xsl:attribute>
+        </xsl:element>
+    </xsl:template>
+
+    <!-- Insertion des <pb> sans facs similés -->
     <xsl:template match="pb">
         <xsl:element name="pb">
-            <xsl:choose>
-                <xsl:when test="contains(., 'facs=')">
-                    <xsl:variable name="number">
-                        <xsl:variable name="pipou"
-                            select="substring-before(substring-after(., 'n='), 'facs=')"/>
-                        <xsl:value-of select="replace($pipou, ' ', '')"/>
-                    </xsl:variable>
-                    <xsl:variable name="lien">
-                        <xsl:variable name="pipou"
-                            select="substring-before(substring-after(., 'facs='), ']')"/>
-                        <xsl:value-of select="replace($pipou, ' ', '')"/>
-                    </xsl:variable>
-                    <xsl:attribute name="n">
-                        <xsl:value-of select="replace($number, '\[|\s|\.|\]', '')"/>
-                    </xsl:attribute>
-                    <xsl:attribute name="xml:id">
-                        <xsl:value-of select="replace($number, '\[|\s|\.|\]', '')"/>
-                    </xsl:attribute>
-                    <xsl:attribute name="facs">
-                        <xsl:value-of select="$lien"/>
-                    </xsl:attribute>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:variable name="number">
-                        <!--                        <xsl:value-of select="replace(., '[^0-9]', '')"/>-->
-                        <xsl:value-of select="."/>
-                    </xsl:variable>
-                    <xsl:attribute name="n">
-                        <xsl:value-of select="replace($number, '\[|\s|\.|\]', '')"/>
-                    </xsl:attribute>
-                    <xsl:attribute name="xml:id">
-                        <xsl:value-of select="replace($number, '\[|\s|\.|\]', '')"/>
-                    </xsl:attribute>
-                </xsl:otherwise>
-            </xsl:choose>
+            <xsl:attribute name="n">
+                <xsl:value-of select="translate(., '[] ', '')"/>
+            </xsl:attribute>
+            <xsl:attribute name="xml:id">
+                <xsl:value-of select="translate(., '[] ', '')"/>
+            </xsl:attribute>
         </xsl:element>
     </xsl:template>
 
