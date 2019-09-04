@@ -1,0 +1,22 @@
+.bibl{
+    margin: 2% auto 2%;
+    width:90%;
+    background-color:rgb(248,249,250);
+}
+.hr-out{
+    border-width:10px;
+}
+
+.menu-texte{
+/* Texte des menus (bare de navigation, footer, options de consultation*/
+    font-family:serif;
+    font-size:medium;
+}
+a, a:visited {
+    /* Les liens "au repos" et déjà visités antérieurement */
+    color: black; /* couleur blanche */
+}
+a:hover, a:focus, a:active {
+    /* Les liens au survol, au focus, et actifs : on leur donne la couleur rouge pour l'exemple */
+    color: blue;
+}
