@@ -55,7 +55,7 @@
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"/>
             <!-- CSS & JS-->
             <link rel="stylesheet" href="style.css" type="text/css"/>
-            <script src="./javaScript/extraction.js" defer="defer" />
+            <script src="./javaScript/rendu.js" defer="defer" />
         </head>
     </xsl:template>
 
@@ -106,25 +106,25 @@
                                 afficher</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=""
+                            <input class="form-check-input check-all" type="checkbox" value=""
                                 id="check-cesures"/>
                             <label class="form-check-label" for="check-cesures"> Césures Implicites
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=""
+                            <input class="form-check-input check-all" type="checkbox" value=""
                                 id="check-coquilles"/>
                             <label class="form-check-label" for="check-coquilles"> Coquilles
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=""
+                            <input class="form-check-input check-all" type="checkbox" value=""
                                 id="check-abreviations"/>
                             <label class="form-check-label" for="check-abreviations"> Abréviations
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value=""
+                            <input class="form-check-input check-all" type="checkbox" value=""
                                 id="check-lettresRamistes"/>
                             <label class="form-check-label" for="check-lettresRamistes"> Lettres
                                 ramistes </label>
@@ -238,18 +238,6 @@
         </xsl:element>
     </xsl:template>
     
-    <xsl:template match="sic">
-        <xsl:element name="span">
-            <xsl:attribute name="class">
-                <xsl:value-of select="local-name()"/>
-            </xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    
-    <xsl:template match="corr"/>
-    
-    
     <xsl:template match="head">
         <xsl:element name="h2">
             <xsl:apply-templates/>
@@ -275,28 +263,18 @@
     
     <!-- Modification de l'affichage des folio -->
     <xsl:template match="pb">
-        <xsl:element name="l">
             <xsl:element name="span">
-                <xsl:attribute name="class">pb</xsl:attribute>
+                <xsl:attribute name="class">pb text-muted</xsl:attribute>
                 <xsl:attribute name="n"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
                 <xsl:attribute name="xml:id"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
                 <xsl:attribute name="facs"></xsl:attribute>
                 [<xsl:value-of select="@n"/>]
             </xsl:element>
-        </xsl:element><br/>
+        <br/>
     </xsl:template>
     
     <xsl:template match="orig"/>
-    
-    <xsl:template match="reg">
-        <xsl:element name="span">
-            <xsl:attribute name="class">
-                <xsl:value-of select="local-name()"/>
-            </xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    
+
     <xsl:template match="pc">
         <xsl:element name="span">
             <xsl:attribute name="class">
@@ -311,8 +289,17 @@
             <xsl:attribute name="name">
                 <xsl:value-of select="@*"/>
             </xsl:attribute>
-            <xsl:apply-templates/>
+            <xsl:attribute name="class">
+                <xsl:if test=".[reg]">
+                    <xsl:text>reg</xsl:text>
+                </xsl:if>
+                <xsl:if test=".[corr]">
+                    <xsl:text>corr</xsl:text>
+                </xsl:if>
+            </xsl:attribute>
+            <xsl:value-of select="(corr|reg)/text()"/>
         </xsl:element>
+<!--        <xsl:apply-templates/>-->
     </xsl:template>
     
     <!-- Line break -->
