@@ -212,6 +212,13 @@
         </xsl:element>
     </xsl:template>
     
+    <xsl:template match="titlePart">
+        <xsl:element name="h1">
+            <xsl:apply-templates/>
+        </xsl:element>
+        
+    </xsl:template>
+    
     <xsl:template match="div">
         <xsl:element name="div">
             <xsl:attribute name="class">
@@ -274,7 +281,7 @@
                 <xsl:attribute name="n"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
                 <xsl:attribute name="xml:id"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
                 <xsl:attribute name="facs"></xsl:attribute>
-                <xsl:value-of select="replace(@n, ' \]', ']')"/>
+                [<xsl:value-of select="@n"/>]
             </xsl:element>
         </xsl:element><br/>
     </xsl:template>
