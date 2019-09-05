@@ -273,7 +273,7 @@
                     <xsl:when test="contains(., '(C)')">
                         <xsl:element name="head">
                             <xsl:attribute name="rend">indent</xsl:attribute>
-                            <g type="pied_de_mouche">⸿</g>
+                            <g type="pied_de_mouche">&#182;</g>
                             <xsl:text> </xsl:text>
                             <xsl:value-of select="substring-after(., '(C)')"/>
                         </xsl:element>
