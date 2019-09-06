@@ -152,6 +152,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        <!-- [AL] Ajouter condition (supprime 'lettrine5' ouin ouin) -->
         <xsl:variable name="Balise_trans" select="translate($Balise, '5', '')"/>
         <xsl:choose>
             <xsl:when test="$Balise_trans = ''">

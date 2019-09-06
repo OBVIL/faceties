@@ -24,8 +24,9 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Footer -->
-                <div class="card-footer menu-texte">
+                <div class="card-footer menu-texte pied-de-page">
                     <div>
                         <p class="text-center">Sorbonne Université, <a
                             href="https://obvil.sorbonne-universite.fr/">LABEX
@@ -151,7 +152,7 @@
         
         <div class="container-fluid">
             <div class="container">
-                <div class="card bibl menu-texte">
+                <div class="card menu-texte bibl ">
                     <a class="badge badge-light" href="#bibliographie" data-toggle="collapse"
                         data-target="#bibliographie" aria-expanded="false"
                         aria-controls="bibliographie">Informations bibliographiques</a>
@@ -161,7 +162,7 @@
                             <xsl:call-template name="infoBibContent"/>
                         </div>
                         <hr/>
-                        <div class="card menu-texte">
+                        <div class="card menu-texte info">
                             <a class="badge badge-light" href="#info-ed" data-toggle="collapse"
                                 data-target="#info-ed" aria-expanded="false" aria-controls="info-ed"
                                 >Édition électronique</a>
@@ -297,6 +298,18 @@
         </xsl:element>
     </xsl:template>
     
+    <xsl:template match="c">
+        <xsl:element name="span">
+            <xsl:attribute name="class">
+                <xsl:value-of select="@type"/>
+            </xsl:attribute>
+            <xsl:attribute name="style">
+                <xsl:value-of select="@style"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
     <xsl:template match="choice">
         <xsl:element name="span">
             <xsl:attribute name="name">
@@ -312,7 +325,6 @@
             </xsl:attribute>
             <xsl:value-of select="(corr|reg)/text()"/>
         </xsl:element>
-<!--        <xsl:apply-templates/>-->
     </xsl:template>
     
     <!-- Line break -->

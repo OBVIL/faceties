@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <!-- Footer -->
-                <div class="card-footer menu-texte">
+                <div class="card-footer menu-texte pied-de-page">
                     <div>
                         <p class="text-center">Sorbonne Université, <a
                             href="https://obvil.sorbonne-universite.fr/">LABEX
@@ -213,7 +213,7 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="teiheader"/>
+    <xsl:template match="teiHeader"/>
     
     <xsl:template match="castList | term"/>
 
@@ -222,6 +222,12 @@
             <xsl:attribute name="class">
                 <xsl:value-of select="local-name()"/>
             </xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="titlePart">
+        <xsl:element name="h1">
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -237,24 +243,6 @@
     
     
     <xsl:template match="p">
-        <xsl:element name="span">
-            <xsl:attribute name="class">
-                <xsl:value-of select="local-name()"/>
-            </xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    
-    <xsl:template match="sic">
-        <xsl:element name="span">
-            <xsl:attribute name="class">
-                <xsl:value-of select="local-name()"/>
-            </xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    
-    <xsl:template match="corr">
         <xsl:element name="span">
             <xsl:attribute name="class">
                 <xsl:value-of select="local-name()"/>
@@ -285,29 +273,21 @@
         <xsl:for-each select="1 to $count"><br/></xsl:for-each>
     </xsl:template>
     
-    <!-- Modification de l'affichage des folio -->
+    <!-- Affichage des pb-->
     <xsl:template match="pb">
-        <xsl:element name="l">
-            <xsl:element name="span">
-                <xsl:attribute name="class">pb</xsl:attribute>
-                <xsl:attribute name="n"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
-                <xsl:attribute name="xml:id"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
-                <xsl:attribute name="facs"></xsl:attribute>
-                <xsl:value-of select="replace(@n, ' \]', ']')"/>
-            </xsl:element>
-        </xsl:element><br/>
+        <xsl:element name="span">
+            <xsl:attribute name="class">pb text-muted</xsl:attribute>
+            <xsl:attribute name="n"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
+            <xsl:attribute name="xml:id"><xsl:value-of select="replace(@n, '\[|\s|\.|\]', '')"/></xsl:attribute>
+            <xsl:attribute name="facs"></xsl:attribute>
+            [<xsl:value-of select="@n"/>]
+        </xsl:element>
+        <br/>
     </xsl:template>
     
     <xsl:template match="reg"/>
     
-    <xsl:template match="orig">
-        <xsl:element name="span">
-            <xsl:attribute name="class">
-                <xsl:value-of select="local-name()"/>
-            </xsl:attribute>
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
+    <xsl:template match="corr"/>
     
     <xsl:template match="pc">
         <xsl:element name="span">
@@ -318,12 +298,32 @@
         </xsl:element>
     </xsl:template>
     
+    <xsl:template match="c">
+        <xsl:element name="span">
+            <xsl:attribute name="class">
+                <xsl:value-of select="@type"/>
+            </xsl:attribute>
+            <xsl:attribute name="style">
+                <xsl:value-of select="@style"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+
     <xsl:template match="choice">
         <xsl:element name="span">
             <xsl:attribute name="name">
                 <xsl:value-of select="@*"/>
             </xsl:attribute>
-            <xsl:apply-templates/>
+            <xsl:attribute name="class">
+                <xsl:if test=".[orig]">
+                    <xsl:text>orig</xsl:text>
+                </xsl:if>
+                <xsl:if test=".[sic]">
+                    <xsl:text>sic</xsl:text>
+                </xsl:if>
+            </xsl:attribute>
+            <xsl:value-of select="(sic|orig)/text()"/>
         </xsl:element>
     </xsl:template>
     

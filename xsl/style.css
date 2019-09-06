@@ -3,6 +3,9 @@
     width:90%;
     background-color:rgb(248,249,250);
 }
+.info{
+    background-color:rgb(248,249,250);
+}
 .hr-out{
     border-width:10px;
 }
@@ -23,4 +26,8 @@ a:hover, a:focus, a:active {
 p
 {
    margin:-3px;
+}
+
+.pied-de-page{
+    margin-top:2%;
 }
