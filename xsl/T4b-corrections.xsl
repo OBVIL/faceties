@@ -20,4 +20,29 @@
         </xsl:copy>
     </xsl:template>
     
+    <xsl:template match="editionStmt">
+        <editionStmt>
+            <xsl:apply-templates/>
+            <xsl:call-template name="participants"/>
+        </editionStmt>
+    </xsl:template>
+    
+    <xsl:template name="participants">
+        <respStmt>
+            <name>Jeanne Bineau</name>
+            <resp>édition XML-TEI</resp>
+        </respStmt>
+        <respStmt>
+            <name>Nolwenn Chevalier</name>
+            <resp>édition XML-TEI</resp>
+        </respStmt>
+        <respStmt>
+            <name>Anne-Laure Huet</name>
+            <resp>édition XML-TEI</resp>
+        </respStmt>
+        <respStmt>
+            <name>Arthur Provenier</name>
+            <resp>édition XML-TEI</resp>
+        </respStmt>
+    </xsl:template>
 </xsl:stylesheet>
