@@ -2,11 +2,11 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs" version="2.0">
-
+    
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
-
+    
     <xsl:template match="/">
-
+        
         <html>
             <xsl:call-template name="head"/>
             <body>
@@ -36,10 +36,13 @@
                 </div>
             </body>
         </html>
-
+        
     </xsl:template>
-
-<!-- head : css et js -->
+    
+    <!-- ==========================
+         =====head : css et js=====
+         ========================== -->
+    
     <xsl:template name="head">
         <head>
             <meta charset="UTF-8"/>
@@ -58,8 +61,13 @@
             <script src="./javaScript/rendu.js" defer="defer" />
         </head>
     </xsl:template>
-
-<!-- Navigation Bar -->
+    
+    <!-- ==============================
+         ========= Navigation =========
+         ==============================
+    -->
+    
+    <!-- Navigation Bar -->
     <xsl:template name="nav">
         <nav class="navbar navbar-expand-lg navbar-light bg-light menu-texte">
             <a class="navbar-brand">Facéties</a>
@@ -72,26 +80,26 @@
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link badge badge-light" href="#">Version normalisée<span
-                                class="sr-only">(current)</span></a>
+                            class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link badge badge-light" href="#">Version fac-similaire<span
-                                class="sr-only">(current)</span></a>
+                            class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
             <div>
                 <a class="nav-link badge badge-info" href="#">Textes disponibles<span
-                        class="sr-only">(current)</span></a>
+                    class="sr-only">(current)</span></a>
                 <a class="nav-link badge badge-info"
                     href="http://obvil.sorbonne-universite.fr/projets/faceties">Informations</a>
                 <a class="nav-link badge badge-light" href="https://github.com/OBVIL/faceties"
                     >Github</a>
             </div>
         </nav>
-
+        
     </xsl:template>
-<!-- Options -->
+    <!-- Options -->
     <xsl:template name="options">
         <div class="col-lg-2 col-md-2 col-sm-none col-xs-none">
             <div class="sticky-top">
@@ -135,7 +143,10 @@
         </div>
     </xsl:template>
     
-<!-- Informations -->
+    <!-- ==============================
+         =========Informations=========
+         ==============================
+    -->
     <xsl:template name="info">
         
         <div class="container-fluid">
@@ -147,7 +158,6 @@
                     <div class="card-body collapse" id="bibliographie">
                         <div>
                             <hr/>
-                            <!-- Informations biblio -->
                             <xsl:call-template name="infoBibContent"/>
                         </div>
                         <hr/>
@@ -156,7 +166,6 @@
                                 data-target="#info-ed" aria-expanded="false" aria-controls="info-ed"
                                 >Édition électronique</a>
                             <div class="card-body collapse" id="info-ed">
-                                <!-- Informations édition électronique -->
                                 <xsl:call-template name="infoEdContent"/>
                             </div>
                         </div>
@@ -167,7 +176,8 @@
         </div>
         
     </xsl:template>
-
+    
+    <!-- Informations biblio -->
     <xsl:template name="infoBibContent">
         <p class="card-text text-left"><B>Auteur</B> : <xsl:value-of select="/TEI/teiHeader/fileDesc/titleStmt/author"/></p>
         <p class="card-text text-left"><B>Titre</B> : <xsl:value-of select="/TEI/teiHeader/fileDesc/titleStmt/title"/></p>
@@ -177,6 +187,7 @@
         <p class="card-text text-left"><B>Localisation</B> : <xsl:value-of select="/TEI/teiHeader/fileDesc/sourceDesc/bibl/biblScope"/></p>
     </xsl:template>
     
+    <!-- Informations édition électronique -->
     <xsl:template name="infoEdContent">
         <p class="card-text text-left"><B>Date de publication</B> : <xsl:value-of
             select="/TEI/teiHeader/fileDesc/publicationStmt/date/@when"/></p>
@@ -190,8 +201,10 @@
         </xsl:for-each>
         </p>
     </xsl:template>
-
-<!-- Texte -->
+    
+    <!-- ==================
+         ======Texte ======
+         ==================-->
     <xsl:template name="text"> 
         <div class="col-lg-5 col-md-6 col-sm-7 col-xs-7">
             <div>
@@ -308,13 +321,16 @@
         <xsl:apply-templates/>
     </xsl:template>
 
-<!-- PDF -->
+    <!-- =========
+         ===PDF===
+         =========-->
     <xsl:template name="pdf">
+        <!-- Lien vers PDF à ajouter -->
         <div class="col-lg-5 col-md-4 col-sm-none col-xs-none">
             <div class="sticky-top">
-                <object data="Cote XXVI-D-033.pdf" width="100%"
+                <object data="" width="100%"
                     height="600px">
-                    <embed src="Cote XXVI-D-033.pdf#8" width="100%"
+                    <embed src="" width="100%"
                         height="600px"/>
                 </object>
             </div>
