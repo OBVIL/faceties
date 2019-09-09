@@ -153,17 +153,31 @@
             </xsl:choose>
         </xsl:variable>
         <!-- [AL] Ajouter condition (supprime 'lettrine5' ouin ouin) -->
-        <xsl:variable name="Balise_trans" select="translate($Balise, '5', '')"/>
-        <xsl:choose>
-            <xsl:when test="$Balise_trans = ''">
-                <xsl:apply-templates/>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:element name="{$Balise_trans}">
+        <xsl:if test="not($Balise='lettrine5')">
+            <xsl:variable name="Balise_trans" select="translate($Balise, '5', '')"/>
+            <xsl:choose>
+                <xsl:when test="$Balise_trans = ''">
                     <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:element name="{$Balise_trans}">
+                        <xsl:apply-templates/>
+                    </xsl:element>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:if>
+        <xsl:if test="$Balise='lettrine5'">
+            <xsl:choose>
+                <xsl:when test="$Balise = ''">
+                    <xsl:apply-templates/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:element name="{$Balise}">
+                        <xsl:apply-templates/>
+                    </xsl:element>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:if>
     </xsl:template>
 
     <xsl:template match="text:line-break">
