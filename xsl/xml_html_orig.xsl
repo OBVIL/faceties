@@ -161,7 +161,7 @@
                             <xsl:call-template name="infoBibContent"/>
                         </div>
                         <hr/>
-                        <div class="card menu-texte">
+                        <div class="card menu-texte info">
                             <a class="badge badge-light" href="#info-ed" data-toggle="collapse"
                                 data-target="#info-ed" aria-expanded="false" aria-controls="info-ed"
                                 >Édition électronique</a>
