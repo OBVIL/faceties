@@ -3,18 +3,25 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0"
     xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
     xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs" version="2.0">
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
+    <xsl:variable name="metafile"
+        select="document('zip:file:/Users/obvil/Documents/GitHub/faceties/test/faceties_005.odt!/meta.xml')"/>
+
+    <!--Accéder aux métadonnées du fichier odt-->
+    <xsl:variable name="meta" select="$metafile//office:document-meta/office:meta/meta:user-defined"/>
 
     <!--===========================================================
         ========== Structure Générale du fichier XML-TEI ==========
         ===========================================================-->
 
-
     <xsl:template match="office:text">
         <TEI>
+            <xsl:value-of select="$meta[@meta:name = 'author']"/>
             <teiHeader>
                 <fileDesc>
                     <xsl:call-template name="titleStmt"/>
@@ -35,8 +42,6 @@
         </TEI>
     </xsl:template>
 
-
-
     <!--=================================================
         =========== Construction du teiHeader ===========
         =================================================-->
@@ -47,18 +52,13 @@
     <!--Création du TitleStmt-->
     <xsl:template name="titleStmt">
         <xsl:element name="titleStmt">
-            <xsl:for-each
-                select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'term']">
-                <xsl:if test="contains(child::text(), 'Titre')">
-                    <xsl:element name="title">
-                        <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                    </xsl:element>
-                </xsl:if>
-                <xsl:if test="contains(child::text(), 'author')">
-                    <xsl:element name="author">
-                        <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                    </xsl:element>
-                </xsl:if>
+            <xsl:element name="title">
+                <xsl:value-of select="$meta[@meta:name = 'title']"/>
+            </xsl:element>
+            <xsl:for-each select="$meta[@meta:name = 'author']">
+                <xsl:element name="author">
+                    <xsl:value-of select="$meta[@meta:name = 'author']"/>
+                </xsl:element>
             </xsl:for-each>
         </xsl:element>
     </xsl:template>
@@ -66,22 +66,17 @@
     <!--Création de l'editionStmt-->
     <xsl:template name="editionStmt">
         <edition>OBVIL</edition>
-        <xsl:for-each
-            select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'term']">
-            <xsl:if test="contains(child::text(), 'resp')">
-                <xsl:element name="respStmt">
-                    <xsl:element name="name">
-                        <xsl:variable name="resp" select="substring-before(child::text(), ' | ')"/>
-
-                        <xsl:variable name="name" select="substring-after($resp, ': ')"/>
-
-                        <xsl:value-of select="$name"/>
-                    </xsl:element>
-                    <xsl:element name="resp">
-                        <xsl:value-of select="substring-after(child::text(), ' | ')"/>
-                    </xsl:element>
+        <xsl:for-each select="$meta[@meta:name = 'resp']">
+            <xsl:element name="respStmt">
+                <xsl:element name="name">
+                    <xsl:value-of
+                        select="replace($meta[@meta:name = 'resp'], '(\w+ \w+) \([^\)]+\)', '$1')"/>
                 </xsl:element>
-            </xsl:if>
+                <xsl:element name="resp">
+                    <xsl:value-of
+                        select="replace($meta[@meta:name = 'resp'], '\w+ \w+ \(([^\)]+)\)', '$1')"/>
+                </xsl:element>
+            </xsl:element>
         </xsl:for-each>
         <respStmt>
             <name>Nolwenn Chevalier</name>
@@ -100,26 +95,17 @@
     <!--Création du publicationStmt-->
     <xsl:template name="publicationStmt">
         <xsl:element name="publicationStmt">
-            <xsl:for-each
-                select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'term']">
-                <xsl:if test="contains(child::text(), 'publisher')">
-                    <xsl:element name="publisher">
-                        <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                    </xsl:element>
-                </xsl:if>
-                <xsl:if test="contains(child::text(), 'issued')">
-                    <xsl:element name="date">
-                        <xsl:attribute name="when">
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:attribute>
-                    </xsl:element>
-                </xsl:if>
-                <xsl:if test="contains(child::text(), 'idno')">
-                    <xsl:element name="idno">
-                        <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                    </xsl:element>
-                </xsl:if>
-            </xsl:for-each>
+            <xsl:element name="publisher">
+                <xsl:value-of select="$meta[@meta:name = 'publisher']"/>
+            </xsl:element>
+            <xsl:element name="date">
+                <xsl:attribute name="when">
+                    <xsl:value-of select="$meta[@meta:name = 'dateEd']"/>
+                </xsl:attribute>
+            </xsl:element>
+            <xsl:element name="idno">
+                <xsl:value-of select="$meta[@meta:name = 'idno']"/>
+            </xsl:element>
             <availability status="restricted">
                 <licence target="http://creativecommons.org/licenses/by-nc-nd/3.0/fr/">
                     <p>Cette ressource électronique protégée par le code de la propriété
@@ -145,41 +131,25 @@
     <xsl:template name="sourceDesc">
         <xsl:element name="sourceDesc">
             <xsl:element name="bibl">
-                <xsl:for-each
-                    select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'term']">
-                    <xsl:if test="contains(child::text(), 'Titre')">
-                        <xsl:element name="hi">
-                            <xsl:attribute name="rend">i</xsl:attribute>
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:element>
-                    </xsl:if>
-                    <xsl:if test="contains(child::text(), 'author')">
-                        <xsl:element name="author">
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:element>
-                    </xsl:if>
-                    <xsl:if test="contains(child::text(), 'pubPlace')">
-                        <xsl:element name="pubPlace">
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:element>
-                    </xsl:if>
-                    <xsl:if test="contains(child::text(), 'publisher')">
-                        <xsl:element name="publisher">
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:element>
-                    </xsl:if>
-
-                    <xsl:if test="contains(child::text(), 'created')">
-                        <xsl:element name="date">
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:element>
-                    </xsl:if>
-                    <xsl:if test="contains(child::text(), 'biblScope')">
-                        <xsl:element name="biblScope">
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:element>
-                    </xsl:if>
-                </xsl:for-each>
+                <xsl:element name="hi">
+                    <xsl:attribute name="rend">i</xsl:attribute>
+                    <xsl:value-of select="$meta[@meta:name = 'title']"/>
+                </xsl:element>
+                <xsl:element name="author">
+                    <xsl:value-of select="$meta[@meta:name = 'author']"/>
+                </xsl:element>
+                <xsl:element name="pubPlace">
+                    <xsl:value-of select="$meta[@meta:name = 'pubPlace']"/>
+                </xsl:element>
+                <xsl:element name="publisher">
+                    <xsl:value-of select="$meta[@meta:name = 'publisher']"/>
+                </xsl:element>
+                <xsl:element name="date">
+                    <xsl:value-of select="$meta[@meta:name = 'dateCreation']"/>
+                </xsl:element>
+                <xsl:element name="biblScope">
+                    <xsl:value-of select="$meta[@meta:name = 'localisation']"/>
+                </xsl:element>
             </xsl:element>
         </xsl:element>
     </xsl:template>
@@ -187,62 +157,53 @@
     <!--======= profileDesc ========-->
 
     <xsl:template name="profileDesc">
-        <xsl:for-each
-            select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'term']">
-            <xsl:if test="contains(child::text(), 'created')">
-                <xsl:element name="creation">
-                    <xsl:element name="date">
-                        <xsl:attribute name="when">
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:attribute>
-                    </xsl:element>
-                </xsl:element>
-            </xsl:if>
-            <xsl:if test="contains(child::text(), 'langue')">
-                <xsl:element name="langUsage">
-                    <xsl:element name="language">
-                        <xsl:attribute name="ident">
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:attribute>
-                    </xsl:element>
-                </xsl:element>
-            </xsl:if>
-        </xsl:for-each>
+        <xsl:element name="creation">
+            <xsl:element name="date">
+                <xsl:attribute name="when">
+                    <xsl:value-of select="$meta[@meta:name = 'dateCreation']"/>
+                </xsl:attribute>
+            </xsl:element>
+        </xsl:element>
+        <xsl:element name="langUsage">
+            <xsl:element name="language">
+                <xsl:attribute name="ident">
+                    <xsl:value-of select="$meta[@meta:name = 'langue']"/>
+                </xsl:attribute>
+            </xsl:element>
+        </xsl:element>
         <xsl:call-template name="textClass"/>
     </xsl:template>
 
-    <!--S'il y a des mots clés (<keywords/>, stylés en "term")-->
 
+    <!--S'il y a des mots-clés (lieu/personnage)-->
     <xsl:template name="textClass">
-        <xsl:element name="textClass">
-            <xsl:element name="keywords">
-                <xsl:for-each
-                    select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'term']">
-                    <xsl:if test="contains(child::text(), 'lieu')">
-                        <xsl:element name="term">
-                            <xsl:attribute name="n">lieu</xsl:attribute>
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:element>
-                    </xsl:if>
-                    <xsl:if test="contains(child::text(), 'personnage')">
-                        <xsl:element name="term">
-                            <xsl:attribute name="n">personnage</xsl:attribute>
-                            <xsl:value-of select="substring-after(child::text(), ': ')"/>
-                        </xsl:element>
-                    </xsl:if>
-                </xsl:for-each>
+        <xsl:if test="$meta[@meta:name = 'personnage1'] or $meta[@meta:name = 'lieu1']">
+            <xsl:element name="textClass">
+                <xsl:element name="keywords">
+                    <xsl:for-each select="$meta/@meta:name">
+                        <xsl:if test="matches(., 'lieu|personnage')">
+                            <xsl:variable name="n" select="replace(.,'\d','')"/>
+                            <xsl:variable name="text" select="parent::node()/text()"/>
+                                <xsl:element name="term">
+                                <xsl:attribute name="n"><xsl:value-of select="$n"/></xsl:attribute>
+                                    <xsl:value-of select="$text"/>
+                                </xsl:element>
+                        </xsl:if>
+                    </xsl:for-each>
+                </xsl:element>
             </xsl:element>
-        </xsl:element>
+        </xsl:if>
+
     </xsl:template>
 
-    <!--==========TEXT============-->
 
+    <!--==========TEXT============-->
+    
     <!--========================================
         ========== Construction du front =======
         ========================================-->
-
-
-
+   
+   
     <!-- Si il y a un front (vérification avec style frontTitleMain)-->
     <xsl:template
         match="document-content/office:body/office:text/text:p[@text:style-name = 'frontTitleMain']"
@@ -264,7 +225,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-
+    
     <!--Si il y a un sous titre au front (frontSubtitle)-->
     <xsl:template
         match="/office:document-content/office:body/office:text/text:p[@text:style-name = 'frontSubtitle']"
@@ -276,7 +237,7 @@
             />
         </xsl:element>
     </xsl:template>
-
+    
     <!--Si il y une image dans le front (frontFigure)-->
     <xsl:template
         match="/office:document-content/office:body/office:text/text:p[@text:style-name = 'frontFigure']"
@@ -291,7 +252,7 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-
+    
     <!--Si il y a mention de l'imprimeur dans le front (docImprint)-->
     <xsl:template
         match="/office:document-content/office:body/office:text/text:p[@text:style-name = 'docImprint']"
@@ -302,7 +263,7 @@
             />
         </xsl:element>
     </xsl:template>
-
+    
     <!--Si il y a un épigraphe (frontEpigraph)-->
     <xsl:template
         match="/office:document-content/office:body/office:text/text:p[@text:style-name = 'frontEpigraph']"
@@ -315,16 +276,13 @@
             </xsl:element>
         </xsl:element>
     </xsl:template>
-
-
-
+    
     <!--========================================
         ========== Construction du body ========
         ========================================-->
-
+    
     <xsl:template match="text:p" name="texte">
         <xsl:for-each select="/office:document-content/office:body/office:text/text:p">
-            <xsl:if test="@text:style-name = 'term'"/>
             <xsl:if test="@text:style-name = 'Standard'">
                 <xsl:if test="child::node() = text:span[@text:style-name = 'pb']">
                     <xsl:element name="pb">
@@ -337,20 +295,41 @@
                         </xsl:attribute>
                     </xsl:element>
                 </xsl:if>
+                <xsl:if test="child::node() = text:a">
+                    <xsl:element name="pb">
+                        <xsl:variable name="pb" select="replace(child::node()/text:span[@text:style-name = 'pb'], '\[|\]|\s', '')"/>
+                        <xsl:attribute name="n">
+                            <xsl:value-of select="$pb"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="xml:id">
+                            <xsl:value-of select="$pb"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="facs">
+                            <xsl:value-of select="child::node()/@xlink:href"/>
+                        </xsl:attribute>
+                    </xsl:element>
+                </xsl:if>
+            </xsl:if>
+            <xsl:if test="starts-with(@text:style-name, 'titre')">
+                <xsl:variable name="balise" select="@text:style-name"/>
+                <xsl:variable name="text" select="."/>
+                <xsl:element name="{$balise}">
+                    <xsl:value-of select="$text"/>
+                </xsl:element>
+            </xsl:if>
+            
+            <xsl:if test="@text:style-name = 'l'">
+                <xsl:copy>
+                    <xsl:apply-templates select="@*|node()"/>
+                </xsl:copy>
             </xsl:if>
         </xsl:for-each>
     </xsl:template>
-
-    <!--    <xsl:template match="text:p" name="body">
-        <xsl:element name="{local-name()}">
-            <xsl:for-each select="./@*">
-                <xsl:attribute name="{local-name()}">
-                    <xsl:value-of select="."/>
-                </xsl:attribute>
-            </xsl:for-each>
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>-->
-
-
+    
+    <xsl:template match="@*|node()">
+        <xsl:copy>
+            <xsl:apply-templates select="@*|node()"/>
+        </xsl:copy>
+    </xsl:template>
+    
 </xsl:stylesheet>
