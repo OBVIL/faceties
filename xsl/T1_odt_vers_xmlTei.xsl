@@ -5,23 +5,39 @@
     xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0"
-    xpath-default-namespace="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="xs" version="2.0">
+    xpath-default-namespace="http://www.tei-c.org/ns/1.0"
+    exclude-result-prefixes="xs" version="2.0">
 
     <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
     <xsl:variable name="metafile"
-        select="document('zip:file:/Users/obvil/Documents/GitHub/faceties/test/faceties_005.odt!/meta.xml')"/>
+        select="document('zip:file:/Users/obvil/Documents/GitHub/faceties/test/faceties_006.odt!/meta.xml')"/>
 
     <!--Accéder aux métadonnées du fichier odt-->
     <xsl:variable name="meta" select="$metafile//office:document-meta/office:meta/meta:user-defined"/>
 
+
+    
+    <!--Suppression des balises inutiles et espaces de noms-->
+    <xsl:template match="office:document-content">
+        <xsl:apply-templates />
+   </xsl:template>
+    
+    <xsl:template match="office:scripts"/>
+    <xsl:template match="office:font-face-decls"/>
+    <xsl:template match="office:automatic-styles"/>
+    <xsl:template match="office:body">
+        <xsl:apply-templates />
+    </xsl:template>
+    
+    <xsl:template match="text:soft-page-break"/>
+    
     <!--===========================================================
         ========== Structure Générale du fichier XML-TEI ==========
         ===========================================================-->
 
     <xsl:template match="office:text">
         <TEI>
-            <xsl:value-of select="$meta[@meta:name = 'author']"/>
             <teiHeader>
                 <fileDesc>
                     <xsl:call-template name="titleStmt"/>
@@ -198,138 +214,87 @@
 
 
     <!--==========TEXT============-->
-    
     <!--========================================
-        ========== Construction du front =======
+        ========== Récupération du front =======
         ========================================-->
-   
-   
-    <!-- Si il y a un front (vérification avec style frontTitleMain)-->
-    <xsl:template
-        match="document-content/office:body/office:text/text:p[@text:style-name = 'frontTitleMain']"
-        name="front">
-        <xsl:element name="front">
-            <xsl:element name="titlePage">
-                <xsl:element name="docTitle">
-                    <xsl:element name="titlePart">
-                        <xsl:attribute name="type">main</xsl:attribute>
-                        <xsl:value-of
-                            select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'frontTitleMain']"
-                        />
-                    </xsl:element>
-                    <xsl:call-template name="frontSubtitle"/>
+    
+    <xsl:template name="front">
+        <xsl:if test="/office:document-content/office:body/office:text/text:p/@text:style-name, 'frontTitleMain'">
+            <xsl:element name="front">
+            <xsl:for-each select="/office:document-content/office:body/office:text/text:p">
+            <xsl:if test="starts-with(@text:style-name, 'front')">
+                <xsl:element name="{@text:style-name}">
+                    <xsl:apply-templates select="@*|node()"/>
                 </xsl:element>
-                <xsl:call-template name="frontFigure"/>
-                <xsl:call-template name="docImprint"/>
-                <xsl:call-template name="frontEpigraph"/>
+            </xsl:if>
+         </xsl:for-each>
             </xsl:element>
-        </xsl:element>
-    </xsl:template>
-    
-    <!--Si il y a un sous titre au front (frontSubtitle)-->
-    <xsl:template
-        match="/office:document-content/office:body/office:text/text:p[@text:style-name = 'frontSubtitle']"
-        name="frontSubtitle">
-        <xsl:element name="titlePart">
-            <xsl:attribute name="type">subtitle</xsl:attribute>
-            <xsl:value-of
-                select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'frontSubtitle']"
-            />
-        </xsl:element>
-    </xsl:template>
-    
-    <!--Si il y une image dans le front (frontFigure)-->
-    <xsl:template
-        match="/office:document-content/office:body/office:text/text:p[@text:style-name = 'frontFigure']"
-        name="frontFigure">
-        <xsl:element name="figure">
-            <xsl:element name="graphic">
-                <xsl:attribute name="url">
-                    <xsl:value-of
-                        select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'frontFigure']"
-                    />
-                </xsl:attribute>
-            </xsl:element>
-        </xsl:element>
-    </xsl:template>
-    
-    <!--Si il y a mention de l'imprimeur dans le front (docImprint)-->
-    <xsl:template
-        match="/office:document-content/office:body/office:text/text:p[@text:style-name = 'docImprint']"
-        name="docImprint">
-        <xsl:element name="docImprint">
-            <xsl:value-of
-                select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'docImprint']"
-            />
-        </xsl:element>
-    </xsl:template>
-    
-    <!--Si il y a un épigraphe (frontEpigraph)-->
-    <xsl:template
-        match="/office:document-content/office:body/office:text/text:p[@text:style-name = 'frontEpigraph']"
-        name="frontEpigraph">
-        <xsl:element name="epigraph">
-            <xsl:element name="p">
-                <xsl:value-of
-                    select="/office:document-content/office:body/office:text/text:p[@text:style-name = 'frontEpigraph']"
-                />
-            </xsl:element>
-        </xsl:element>
+        </xsl:if>
     </xsl:template>
     
     <!--========================================
-        ========== Construction du body ========
+        ========== Récupération du texte========
         ========================================-->
     
-    <xsl:template match="text:p" name="texte">
+    <xsl:template name="texte">
         <xsl:for-each select="/office:document-content/office:body/office:text/text:p">
+
             <xsl:if test="@text:style-name = 'Standard'">
-                <xsl:if test="child::node() = text:span[@text:style-name = 'pb']">
-                    <xsl:element name="pb">
-                        <xsl:variable name="pb" select="replace(text:span[@text:style-name = 'pb'], '\[|\]|\s', '')"/>
-                        <xsl:attribute name="n">
-                            <xsl:value-of select="$pb"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="xml:id">
-                            <xsl:value-of select="$pb"/>
-                        </xsl:attribute>
-                    </xsl:element>
-                </xsl:if>
-                <xsl:if test="child::node() = text:a">
-                    <xsl:element name="pb">
-                        <xsl:variable name="pb" select="replace(child::node()/text:span[@text:style-name = 'pb'], '\[|\]|\s', '')"/>
-                        <xsl:attribute name="n">
-                            <xsl:value-of select="$pb"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="xml:id">
-                            <xsl:value-of select="$pb"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="facs">
-                            <xsl:value-of select="child::node()/@xlink:href"/>
-                        </xsl:attribute>
-                    </xsl:element>
+                <xsl:if test="child::node()">
+                    <xsl:apply-templates/>
                 </xsl:if>
             </xsl:if>
+            
             <xsl:if test="starts-with(@text:style-name, 'titre')">
                 <xsl:variable name="balise" select="@text:style-name"/>
-                <xsl:variable name="text" select="."/>
                 <xsl:element name="{$balise}">
-                    <xsl:value-of select="$text"/>
+                    <xsl:apply-templates select="@*|node()"/>
                 </xsl:element>
             </xsl:if>
             
             <xsl:if test="@text:style-name = 'l'">
-                <xsl:copy>
+                <xsl:element name="l">
                     <xsl:apply-templates select="@*|node()"/>
-                </xsl:copy>
+                </xsl:element>
             </xsl:if>
+            <xsl:if test="@text:style-name = 'p'">
+                <xsl:element name="p">
+                    <xsl:apply-templates select="@*|node()"/>
+                </xsl:element>
+            </xsl:if>
+            <xsl:if test="@text:style-name = 'speaker'">
+                <xsl:element name="speaker">
+                    <xsl:value-of select="."/>
+                </xsl:element>
+            </xsl:if>
+            <xsl:if test="starts-with(@text:style-name, 'culDeLampe')">
+                <xsl:element name="p">
+                    <xsl:apply-templates select="@*|node()"/>
+                </xsl:element>
+            </xsl:if>
+            
         </xsl:for-each>
     </xsl:template>
     
-    <xsl:template match="@*|node()">
-        <xsl:copy>
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:copy>
+    <!-- copy elements -->
+    <xsl:template match="*">
+        <xsl:element name="{local-name()}">
+            <xsl:apply-templates select="@* | node()"/>
+        </xsl:element>
     </xsl:template>
+    
+    <!-- copy attributes -->
+    <xsl:template match="@*">
+        <xsl:attribute name="{local-name()}">
+            <xsl:value-of select="."/>
+        </xsl:attribute>
+    </xsl:template>
+    
+    <!-- copy the rest of the nodes -->
+    <xsl:template match="comment() | text() | processing-instruction()">
+        <xsl:copy/>
+    </xsl:template>
+
+    
     
 </xsl:stylesheet>
